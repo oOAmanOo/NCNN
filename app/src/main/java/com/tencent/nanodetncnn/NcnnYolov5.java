@@ -23,7 +23,7 @@ public class NcnnYolov5
     public native boolean openCamera(int facing);
     public native boolean closeCamera();
     public native boolean setOutputWindow(Surface surface);
-
+    public static native void varifyCheck(char value);
     static {
         System.loadLibrary("ncnnyolov5");
     }

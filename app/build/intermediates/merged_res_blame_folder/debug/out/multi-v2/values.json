@@ -4,7 +4,7 @@
             "outputFile": "com.tencent.nanodetncnn.app-mergeDebugResources-3:/values/values.xml",
             "map": [
                 {
-                    "source": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/res/values/strings.xml",
+                    "source": "/home/bingo/Public/AS2/NCNN/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "7,3,2",
                         "startColumns": "4,4,4",

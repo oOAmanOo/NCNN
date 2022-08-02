@@ -15,7 +15,6 @@
 #include "yolov5.h"
 #include "cstdio"
 #include "cstring"
-#include "com_tencent_nanodetncnn_JavaCallC.h"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>

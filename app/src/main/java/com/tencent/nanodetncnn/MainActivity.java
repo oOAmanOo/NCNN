@@ -45,7 +45,6 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
     private int current_model = 0;
     private int current_cpugpu = 0;
     private char result = '1';
-    private JavaCallC JavaCallC;
 
     private SurfaceView cameraView;
 
@@ -57,8 +56,6 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
         setContentView(R.layout.main);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        JavaCallC = new JavaCallC();
 
         cameraView = (SurfaceView) findViewById(R.id.cameraview);
 
@@ -123,7 +120,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
             }else{
                 result = '1';
             }
-            JavaCallC.varifyCheck(result);
+            NcnnYolov5.varifyCheck(result);
         });
 
         reload();

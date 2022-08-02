@@ -255,4 +255,11 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_nanodetncnn_NcnnYolov5_setOutputWind
     return JNI_TRUE;
 }
 
+static char result = '1';
+JNIEXPORT void JNICALL
+Java_com_tencent_nanodetncnn_NcnnYolov5_varifyCheck(JNIEnv *env, jclass clazz, jchar value) {
+    // TODO: implement varifyCheck()
+    result = value;
+}
+
 }
