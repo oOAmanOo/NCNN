@@ -1,0 +1,53 @@
+CMAKE SERVER: message: "\n"
+
+CMAKE SERVER: message: "[== \"CMake Server\" ==[\n"
+
+CMAKE SERVER: message: "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n"
+
+CMAKE SERVER: message: "]== \"CMake Server\" ==]\n"
+
+CMAKE SERVER: message: "[== \"CMake Server\" ==[\n"
+
+CMAKE SERVER: message: "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni\",\n  \"buildDirectory\": \"/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/armeabi-v7a\",\n  \"generator\": \"Ninja\"\n}\n"
+
+CMAKE SERVER: message: "]== \"CMake Server\" ==]\n"
+
+CMAKE SERVER: message: "\n"
+
+CMAKE SERVER: message: "[== \"CMake Server\" ==[\n"
+
+CMAKE SERVER: message: "{\"cookie\":\"gradle-cmake-cookie\",\"inReplyTo\":\"handshake\",\"type\":\"reply\"}\n"
+
+CMAKE SERVER: message: "]== \"CMake Server\" ==]\n"
+
+CMAKE SERVER: message: "[== \"CMake Server\" ==[\n"
+
+CMAKE SERVER: message: "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d24\",\n    \"-DANDROID_PLATFORM\\u003dandroid-24\",\n    \"-DANDROID_ABI\\u003darmeabi-v7a\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003darmeabi-v7a\",\n    \"-DANDROID_NDK\\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105\",\n    \"-DCMAKE_ANDROID_NDK\\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003d/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003d/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/armeabi-v7a\",\n    \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\\u003d/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/armeabi-v7a\",\n    \"-DCMAKE_BUILD_TYPE\\u003dDebug\"\n  ]\n}\n"
+
+CMAKE SERVER: message: "]== \"CMake Server\" ==]\n"
+
+CMAKE SERVER: message: "\n"
+
+CMAKE SERVER: message: "[== \"CMake Server\" ==[\n"
+
+CMAKE SERVER: message: "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"CMake Warning at /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android-legacy.toolchain.cmake:415 (message):\\n  An old version of CMake is being used that cannot automatically detect\\n  compiler attributes.  Compiler identification is being bypassed.  Some\\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\\n  CMake\'s built-in compiler identification.\\nCall Stack (most recent call first):\\n  /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake:54 (include)\\n  /home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/armeabi-v7a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\\n  CMakeLists.txt:1 (project)\\n\\n\",\"title\":\"Warning\",\"type\":\"message\"}\n"
+
+CMAKE SERVER: message: "]== \"CMake Server\" ==]\n"
+
+CMAKE SERVER: level: WARN
+message: "CMake Warning at /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android-legacy.toolchain.cmake:415 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake\'s built-in compiler identification.\nCall Stack (most recent call first):\n  /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake:54 (include)\n  /home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/armeabi-v7a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  CMakeLists.txt:1 (project)\n"
+
+CMAKE SERVER: level: WARN
+message: "CMake Warning at /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android-legacy.toolchain.cmake:415 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake\'s built-in compiler identification.\nCall Stack (most recent call first):\n  /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake:54 (include)\n  /home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/armeabi-v7a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  CMakeLists.txt:1 (project)\n"
+
+CMAKE SERVER: message: "\n"
+
+CMAKE SERVER: message: "[== \"CMake Server\" ==[\n"
+
+CMAKE SERVER: message: "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"CMake Error at /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake:10 (message):\\n  Failed to find \\\"GL/gl.h\\\" in \\\"/usr/include/libdrm\\\".\\nCall Stack (most recent call first):\\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake:146 (include)\\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake:87 (find_package)\\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5/Qt5Config.cmake:26 (find_package)\\n  CMakeLists.txt:24 (find_package)\\n\\n\",\"title\":\"Error\",\"type\":\"message\"}\n"
+
+CMAKE SERVER: message: "]== \"CMake Server\" ==]\n"
+
+CMAKE SERVER: level: ERROR
+message: "CMake Error at /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake:10 (message):\n  Failed to find \"GL/gl.h\" in \"/usr/include/libdrm\".\nCall Stack (most recent call first):\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake:146 (include)\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake:87 (find_package)\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5/Qt5Config.cmake:26 (find_package)\n  CMakeLists.txt:24 (find_package)\n"
+

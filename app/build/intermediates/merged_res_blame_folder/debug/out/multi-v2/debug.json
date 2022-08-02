@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.tencent.nanodetncnn.app-merged_res-5:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "7,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "221,103,55",
+                        "endLines": "10,6,2",
+                        "endColumns": "19,19,47",
+                        "endOffsets": "325,216,98"
+                    },
+                    "to": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,164,282",
+                        "endLines": "5,9,10",
+                        "endColumns": "19,19,47",
+                        "endOffsets": "159,277,325"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt

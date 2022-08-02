@@ -1,0 +1,8 @@
+com.tencent.nanodetncnn.app-pngs-0 /home/bingo/Public/ncnn-Android-Yolov5/app/build/generated/res/pngs/debug
+com.tencent.nanodetncnn.app-resValues-1 /home/bingo/Public/ncnn-Android-Yolov5/app/build/generated/res/resValues/debug
+com.tencent.nanodetncnn.app-rs-2 /home/bingo/Public/ncnn-Android-Yolov5/app/build/generated/res/rs/debug
+com.tencent.nanodetncnn.app-mergeDebugResources-3 /home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.tencent.nanodetncnn.app-mergeDebugResources-4 /home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.tencent.nanodetncnn.app-merged_res-5 /home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/merged_res/debug
+com.tencent.nanodetncnn.app-debug-6 /home/bingo/Public/ncnn-Android-Yolov5/app/src/debug/res
+com.tencent.nanodetncnn.app-main-7 /home/bingo/Public/ncnn-Android-Yolov5/app/src/main/res

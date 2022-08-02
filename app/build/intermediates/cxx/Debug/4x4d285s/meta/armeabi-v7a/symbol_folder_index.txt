@@ -1,0 +1,1 @@
+/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/armeabi-v7a

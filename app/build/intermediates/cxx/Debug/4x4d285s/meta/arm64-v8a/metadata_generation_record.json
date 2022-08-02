@@ -1,0 +1,226 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 24 min SDK version: arm64-v8a",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1817320797
+  },
+  {
+    "level_": 0,
+    "message_": "rebuilding JSON /home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/arm64-v8a/android_gradle_build.json due to:",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1030776754
+  },
+  {
+    "level_": 0,
+    "message_": "- a dependent build file changed",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -277662795
+  },
+  {
+    "level_": 0,
+    "message_": "  - /home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 2032307262
+  },
+  {
+    "level_": 0,
+    "message_": "keeping json folder \u0027/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/arm64-v8a\u0027 but regenerating project",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1642597791
+  },
+  {
+    "level_": 0,
+    "message_": "executing cmake Executable : /home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d24\n-DANDROID_PLATFORM\u003dandroid-24\n-DANDROID_ABI\u003darm64-v8a\n-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a\n-DANDROID_NDK\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105\n-DCMAKE_ANDROID_NDK\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105\n-DCMAKE_TOOLCHAIN_FILE\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/arm64-v8a\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/arm64-v8a\n-DCMAKE_BUILD_TYPE\u003dDebug\n-B/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/arm64-v8a\n-GNinja\njvmArgs : \n\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 13429806
+  },
+  {
+    "level_": 0,
+    "message_": "\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 951131598
+  },
+  {
+    "level_": 0,
+    "message_": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -225984344
+  },
+  {
+    "level_": 0,
+    "message_": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -941368953
+  },
+  {
+    "level_": 0,
+    "message_": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1832152472
+  },
+  {
+    "level_": 0,
+    "message_": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni\",\n  \"buildDirectory\": \"/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/arm64-v8a\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 875849612
+  },
+  {
+    "level_": 0,
+    "message_": "{\"cookie\":\"gradle-cmake-cookie\",\"inReplyTo\":\"handshake\",\"type\":\"reply\"}\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 176090857
+  },
+  {
+    "level_": 0,
+    "message_": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d24\",\n    \"-DANDROID_PLATFORM\\u003dandroid-24\",\n    \"-DANDROID_ABI\\u003darm64-v8a\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003darm64-v8a\",\n    \"-DANDROID_NDK\\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105\",\n    \"-DCMAKE_ANDROID_NDK\\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003d/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003d/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003d/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/arm64-v8a\",\n    \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\\u003d/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/arm64-v8a\",\n    \"-DCMAKE_BUILD_TYPE\\u003dDebug\"\n  ]\n}\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1748847770
+  },
+  {
+    "level_": 0,
+    "message_": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"CMake Warning at /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android-legacy.toolchain.cmake:415 (message):\\n  An old version of CMake is being used that cannot automatically detect\\n  compiler attributes.  Compiler identification is being bypassed.  Some\\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\\n  CMake\u0027s built-in compiler identification.\\nCall Stack (most recent call first):\\n  /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake:54 (include)\\n  /home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\\n  CMakeLists.txt:1 (project)\\n\\n\",\"title\":\"Warning\",\"type\":\"message\"}\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 551373109
+  },
+  {
+    "level_": 2,
+    "message_": "CMake Warning at /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android-legacy.toolchain.cmake:415 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake\u0027s built-in compiler identification.\nCall Stack (most recent call first):\n  /home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake:54 (include)\n  /home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/Debug/4x4d285s/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  CMakeLists.txt:1 (project)\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -82099437
+  },
+  {
+    "level_": 0,
+    "message_": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"CMake Error at /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake:10 (message):\\n  Failed to find \\\"GL/gl.h\\\" in \\\"/usr/include/libdrm\\\".\\nCall Stack (most recent call first):\\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake:146 (include)\\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake:87 (find_package)\\n  /opt/Qt5.7.0/5.7/gcc_64/lib/cmake/Qt5/Qt5Config.cmake:26 (find_package)\\n  CMakeLists.txt:24 (find_package)\\n\\n\",\"title\":\"Error\",\"type\":\"message\"}\n",
+    "file_": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1417511673
+  }
+]

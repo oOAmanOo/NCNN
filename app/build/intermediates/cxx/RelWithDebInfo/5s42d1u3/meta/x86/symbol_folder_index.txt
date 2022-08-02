@@ -1,0 +1,1 @@
+/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/RelWithDebInfo/5s42d1u3/obj/x86

@@ -1,0 +1,8 @@
+{
+  "ndkVersionFromDsl": "25.0.8775105",
+  "sdkFolder": "/home/bingo/Android/Sdk",
+  "sideBySideNdkFolderNames": [
+    "20.1.5948944",
+    "25.0.8775105"
+  ]
+}
