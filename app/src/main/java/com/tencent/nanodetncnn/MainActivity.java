@@ -28,6 +28,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -43,6 +44,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
     private Spinner spinnerCPUGPU;
     private int current_model = 0;
     private int current_cpugpu = 0;
+    private char result = '1';
+    private JavaCallC JavaCallC;
 
     private SurfaceView cameraView;
 
@@ -55,24 +58,23 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        JavaCallC = new JavaCallC();
+
         cameraView = (SurfaceView) findViewById(R.id.cameraview);
 
         cameraView.getHolder().setFormat(PixelFormat.RGBA_8888);
         cameraView.getHolder().addCallback(this);
 
         Button buttonSwitchCamera = (Button) findViewById(R.id.buttonSwitchCamera);
-        buttonSwitchCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
+        buttonSwitchCamera.setOnClickListener(arg0 -> {
 
-                int new_facing = 1 - facing;
+            int new_facing = 1 - facing;
 
-                ncnnyolov5.closeCamera();
+            ncnnyolov5.closeCamera();
 
-                ncnnyolov5.openCamera(new_facing);
+            ncnnyolov5.openCamera(new_facing);
 
-                facing = new_facing;
-            }
+            facing = new_facing;
         });
 
         spinnerModel = (Spinner) findViewById(R.id.spinnerModel);
@@ -109,6 +111,19 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
             public void onNothingSelected(AdapterView<?> arg0)
             {
             }
+        });
+
+        Button VarButton = (Button) findViewById(R.id.endVarify);
+        VarButton.setOnClickListener(view -> {
+            if(result == '1'){
+
+                Toast toast = Toast.makeText( MainActivity.this, "點了按鈕1", Toast.LENGTH_SHORT);
+                toast.show();
+                result = '2';
+            }else{
+                result = '1';
+            }
+            JavaCallC.varifyCheck(result);
         });
 
         reload();

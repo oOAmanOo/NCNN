@@ -1,9 +1,9 @@
 {
-  "ndkFolder": "/home/pinery/SoftWares/android-studio/Android/Sdk/ndk/22.1.7171670",
+  "ndkFolder": "/home/bingo/Android/Sdk/ndk/25.0.8775105",
   "messages": [
     {
       "level": "INFO",
-      "message": "android.ndkVersion from module build.gradle is not set"
+      "message": "android.ndkVersion from module build.gradle is 25.0.8775105"
     },
     {
       "level": "INFO",
@@ -15,27 +15,27 @@
     },
     {
       "level": "INFO",
-      "message": "sdkFolder is /home/pinery/SoftWares/android-studio/Android/Sdk"
+      "message": "sdkFolder is /home/bingo/Android/Sdk"
     },
     {
       "level": "INFO",
-      "message": "Considering /home/pinery/SoftWares/android-studio/Android/Sdk/ndk-bundle in SDK ndk-bundle folder"
+      "message": "Considering /home/bingo/Android/Sdk/ndk-bundle in SDK ndk-bundle folder"
     },
     {
       "level": "INFO",
-      "message": "Considering /home/pinery/SoftWares/android-studio/Android/Sdk/ndk/22.1.7171670 in SDK ndk folder"
+      "message": "Considering /home/bingo/Android/Sdk/ndk/20.1.5948944 in SDK ndk folder"
     },
     {
       "level": "INFO",
-      "message": "Considering /home/pinery/SoftWares/android-studio/Android/Sdk/ndk/21.0.6113669 in SDK ndk folder"
+      "message": "Considering /home/bingo/Android/Sdk/ndk/25.0.8775105 in SDK ndk folder"
     },
     {
       "level": "INFO",
-      "message": "Rejected /home/pinery/SoftWares/android-studio/Android/Sdk/ndk-bundle in SDK ndk-bundle folder because that location has no source.properties"
+      "message": "Rejected /home/bingo/Android/Sdk/ndk-bundle in SDK ndk-bundle folder because that location has no source.properties"
     },
     {
       "level": "INFO",
-      "message": "No user requested version, choosing /home/pinery/SoftWares/android-studio/Android/Sdk/ndk/22.1.7171670 which is version 22.1.7171670"
+      "message": "Found requested NDK version 25.0.8775105 at /home/bingo/Android/Sdk/ndk/25.0.8775105"
     }
   ]
 }

@@ -4,42 +4,46 @@
 4    android:versionCode="1"
 5    android:versionName="1.1" >
 6
-7    <uses-sdk android:minSdkVersion="24" />
-7-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml
-8
-9    <uses-permission android:name="android.permission.CAMERA" />
-9-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:6:5-65
-9-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:6:22-62
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="24" />
+9-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml
 10
-11    <uses-feature android:name="android.hardware.camera2.full" />
-11-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:7:5-66
-11-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:7:19-63
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:6:5-65
+11-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:6:22-62
 12
-13    <application
-13-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:9:5-18:19
-14        android:debuggable="true"
-15        android:label="@string/app_name"
-15-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:9:18-50
-16        android:testOnly="true" >
-17        <activity
-17-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:10:9-17:20
-18            android:name="com.tencent.nanodetncnn.MainActivity"
-18-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:10:19-46
-19            android:label="@string/app_name"
-19-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:11:19-51
-20            android:screenOrientation="portrait" >
-20-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:12:19-55
-21            <intent-filter>
-21-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:13:13-16:29
-22                <action android:name="android.intent.action.MAIN" />
-22-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:14:17-69
-22-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:14:25-66
-23
-24                <category android:name="android.intent.category.LAUNCHER" />
-24-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:15:17-77
-24-->/home/pinery/code/Deploy/Android/ncnn-android-yolov5-video/app/src/main/AndroidManifest.xml:15:27-74
-25            </intent-filter>
-26        </activity>
-27    </application>
-28
-29</manifest>
+13    <uses-feature android:name="android.hardware.camera2.full" />
+13-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:7:5-66
+13-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:7:19-63
+14
+15    <application
+15-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:9:5-18:19
+16        android:debuggable="true"
+17        android:extractNativeLibs="false"
+18        android:label="@string/app_name"
+18-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:9:18-50
+19        android:testOnly="true" >
+20        <activity
+20-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:10:9-17:20
+21            android:name="com.tencent.nanodetncnn.MainActivity"
+21-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:10:19-46
+22            android:label="@string/app_name"
+22-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:11:19-51
+23            android:screenOrientation="portrait" >
+23-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:12:19-55
+24            <intent-filter>
+24-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:13:13-16:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:14:17-69
+25-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:14:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:15:17-77
+27-->/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/AndroidManifest.xml:15:27-74
+28            </intent-filter>
+29        </activity>
+30    </application>
+31
+32</manifest>

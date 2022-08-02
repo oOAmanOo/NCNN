@@ -13,15 +13,25 @@
 // specific language governing permissions and limitations under the License.
 
 #include "yolov5.h"
+#include "cstdio"
+#include "cstring"
+#include "com_tencent_nanodetncnn_JavaCallC.h"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
 #include "cpu.h"
 
+#include "android/log.h"
+#define LOG_TAG "System.out"
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+//#include "save_log.h"
+//save_log save_log;
+static char result = '1';
 class YoloV5Focus: public ncnn::Layer
 {
 public:
+
     YoloV5Focus()
     {
         one_blob_only = true;
@@ -390,7 +400,7 @@ int Yolov5::detect(const cv::Mat& rgb, std::vector<Object>& objects, float prob_
     // stride 16
     {
         ncnn::Mat out;
-        ex.extract("781", out);
+        ex.extract("354", out);
 
         ncnn::Mat anchors(6);
         anchors[0] = 30.f;
@@ -409,7 +419,7 @@ int Yolov5::detect(const cv::Mat& rgb, std::vector<Object>& objects, float prob_
     // stride 32
     {
         ncnn::Mat out;
-        ex.extract("801", out);
+        ex.extract("367", out);
 
         ncnn::Mat anchors(6);
         anchors[0] = 116.f;
@@ -471,18 +481,24 @@ int Yolov5::detect(const cv::Mat& rgb, std::vector<Object>& objects, float prob_
     return 0;
 }
 
+
 int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 {
+
     static const char* class_names[] = {
-            "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat", "traffic light",
-            "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow",
-            "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee",
-            "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard",
-            "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple",
-            "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "couch",
-            "potted plant", "bed", "dining table", "toilet", "tv", "laptop", "mouse", "remote", "keyboard", "cell phone",
-            "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors", "teddy bear",
-            "hair drier", "toothbrush"
+            "Apple", "Artichoke", "Asparagus", "Bagel", "Baked goods",
+            "Banana", "Beer", "Bell pepper", "Bottle", "Bread", "Broccoli",
+            "Burrito", "Cabbage", "Cake", "Cantaloupe", "Carrot", "Cheese",
+            "Cocktail", "Coconut", "Coffee", "Common fig", "Cookie", "Crab",
+            "Croissant", "Cucumber", "Dessert", "Doughnut", "Drink", "Egg",
+            "Fish", "Food", "French fries", "Fruit", "Grape", "Grapefruit",
+            "Guacamole", "Hamburger", "Hot dog", "Ice cream", "Juice", "Lemon",
+            "Lobster", "Mango", "Milk", "Muffin", "Mushroom", "Orange", "Oyster",
+            "Pancake", "Pasta", "Pastry", "Peach", "Pear", "Pineapple", "Pizza",
+            "Pomegranate", "Popcorn", "Potato", "Pretzel", "Pumpkin", "Radish",
+            "Salad", "Sandwich", "Seafood", "Shellfish", "Shrimp", "Snack", "Squid",
+            "Strawberry", "Submarine sandwich", "Sushi", "Taco", "Tart", "Tea",
+            "Tin can", "Tomato", "Vegetable", "Waffle", "Watermelon", "Wine", "Zucchini"
     };
     static const unsigned char colors[19][3] = {
             { 54,  67, 244},
@@ -510,6 +526,7 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 
     for (size_t i = 0; i < objects.size(); i++)
     {
+        static char past_result = '1';
         const Object& obj = objects[i];
 
         const unsigned char* color = colors[color_index % 19];
@@ -522,6 +539,28 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
         char text[256];
         sprintf(text, "%s %.1f%%", class_names[obj.label], obj.prob * 100);
 
+//      save verified class name in txt file
+
+        FILE* file =NULL;
+        if(past_result != result){
+            LOGI("%s","result change\n");
+            past_result = result;
+        }
+
+        if(result != '1'){
+            file = fopen("/data/data/com.tencent.nanodetncnn/result.txt", "a");
+        }else {
+            file = fopen("/data/data/com.tencent.nanodetncnn/result.txt", "w");
+            result = '1';
+        }
+        if(file == NULL){
+            LOGI("%s","Failed to open outputfile.\n");
+        }
+
+        int num = strlen(class_names[obj.label])+1;
+        fwrite(class_names[obj.label],num,1,file);
+        fwrite(",",1,1,file);
+        fclose(file);
         int baseLine = 0;
         cv::Size label_size = cv::getTextSize(text, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
 
@@ -542,4 +581,32 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 
 
     return 0;
+}
+
+//extern "C"
+//JNIEXPORT void JNICALL
+//Java_com_tencent_nanodetncnn_MainActivity_varifyCheck(JNIEnv *env, jobject obj, jchar value) {
+//     TODO: implement varifyCheck()
+//    char re_val = value;
+//    LOGI("Hello, this is my integer  %s",  value);
+//    result = value;
+//    return;
+//    LOGI("Hello, this is my integer  %s",  value);
+//    result = value;
+//}
+//extern "C"
+//JNIEXPORT void JNICALL
+//Java_com_tencent_nanodetncnn_JNI_varifyCheck(JNIEnv *env, jobject thiz, jchar value) {
+//    // TODO: implement varifyCheck()
+//    char re_val = value;
+//    LOGI("Hello, this is my integer  %s",  value);
+//    result = value;
+//}
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_tencent_nanodetncnn_JavaCallC_varifyCheck(JNIEnv *env, jobject obj, jchar value) {
+    // TODO: implement varifyCheck()
+    char re_val = value;
+    LOGI("Hello, this is my integer  %s",  value);
+    result = value;
 }

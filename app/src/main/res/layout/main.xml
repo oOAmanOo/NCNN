@@ -36,6 +36,13 @@
         android:drawSelectorOnTop="true"
         android:entries="@array/cpugpu_array" />
 
+    <Button
+        android:id="@+id/endVarify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="End Varify" />
+
     </LinearLayout>
 
     <SurfaceView
