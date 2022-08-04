@@ -53,6 +53,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
     private int current_model = 0;
     private int current_cpugpu = 0;
     private char result_java = '1';
+    private int duplicate_class = 0;
 
     private SurfaceView cameraView;
 
@@ -138,9 +139,24 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
         ArrayList<String> class_list = new ArrayList<String>(500);
 
         while(read.hasNext()){
-            class_list.add(read.next());
-
+            String next_class;
+            next_class = read.next();
+            class_list.forEach((e)->{
+                System.out.println(e);
+                System.out.println(next_class);
+                if(e.equals(next_class)){
+                    duplicate_class = 1;
+                }
+                System.out.println(duplicate_class);
+            });
+            if(duplicate_class == 0){
+                class_list.add(next_class);
+            }
+            duplicate_class = 0;
         }
+
+        Toast toast = Toast.makeText( MainActivity.this, "-"+class_list+"-", Toast.LENGTH_SHORT);
+        toast.show();
         class_list.forEach(t -> System.out.println(t));
 //        for(String element : class_list){
 //            System.out.println(element);
