@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
     private Spinner spinnerCPUGPU;
     private int current_model = 0;
     private int current_cpugpu = 0;
-    private char result = '1';
+    private char result_java = '1';
 
     private SurfaceView cameraView;
 
@@ -112,15 +112,14 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
         VarButton.setOnClickListener(view -> {
-            if(result == '1'){
-
-                Toast toast = Toast.makeText( MainActivity.this, "點了按鈕1", Toast.LENGTH_SHORT);
-                toast.show();
-                result = '2';
+            if(result_java == '1'){
+                result_java = '2';
             }else{
-                result = '1';
+                result_java = '1';
             }
-            NcnnYolov5.varifyCheck(result);
+            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
+            toast.show();
+            NcnnYolov5.varifyCheck(result_java);
         });
 
         reload();

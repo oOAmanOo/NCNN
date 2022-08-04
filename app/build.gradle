@@ -3,19 +3,6 @@ apply plugin: 'com.android.application'
 
 
 android {
-
-//    task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native libs') {
-//        destinationDir file("$projectDir/app/src/main/java")
-//        baseName 'native-libs'
-//        extension 'jar'
-//        from fileTree(dir: 'java', include: '**/*.so')
-//        into "$projectDir/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib"
-//    }
-//
-//    tasks.withType(Compile) {
-//        compileTask -> compileTask.dependsOn(nativeLibsToJar)
-//    }
-
     compileSdkVersion 24
 
     defaultConfig {
@@ -34,7 +21,6 @@ android {
 
     dependencies {
         implementation 'com.android.support:support-v4:24.0.0'
-//        provided fileTree(dir: 'java', include: ['*.jar'])
     }
     ndkVersion '25.0.8775105'
 }

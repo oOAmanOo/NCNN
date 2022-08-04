@@ -15,9 +15,12 @@
 #include "yolov5.h"
 #include "cstdio"
 #include "cstring"
+#include "string"
+using namespace std;
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <fstream>
 
 #include "cpu.h"
 
@@ -26,7 +29,10 @@
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 //#include "save_log.h"
 //save_log save_log;
-static char result = '1';
+int num = 1;
+char new_txt = '1';
+char result_java = '1';
+
 class YoloV5Focus: public ncnn::Layer
 {
 public:
@@ -525,7 +531,7 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 
     for (size_t i = 0; i < objects.size(); i++)
     {
-        static char past_result = '1';
+
         const Object& obj = objects[i];
 
         const unsigned char* color = colors[color_index % 19];
@@ -537,29 +543,30 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 
         char text[256];
         sprintf(text, "%s %.1f%%", class_names[obj.label], obj.prob * 100);
-
-//      save verified class name in txt file
-
         FILE* file =NULL;
-        if(past_result != result){
-            LOGI("%s","result change\n");
-            past_result = result;
-        }
 
-        if(result != '1'){
+        if(result_java == '2'){
+            new_txt = '1';
+            return 0;
+        }
+        if(new_txt == '0'){
             file = fopen("/data/data/com.tencent.nanodetncnn/result.txt", "a");
         }else {
             file = fopen("/data/data/com.tencent.nanodetncnn/result.txt", "w");
-            result = '1';
+            new_txt = '0';
         }
         if(file == NULL){
             LOGI("%s","Failed to open outputfile.\n");
         }
 
-        int num = strlen(class_names[obj.label])+1;
+        num = strlen(class_names[obj.label]);
+//        LOGI("%s",class_names[obj.label]);
+//        LOGI("num %d",num);
         fwrite(class_names[obj.label],num,1,file);
-        fwrite(",",1,1,file);
+        fwrite(" ",1,1,file);
         fclose(file);
+
+
         int baseLine = 0;
         cv::Size label_size = cv::getTextSize(text, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
 
@@ -582,30 +589,9 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
     return 0;
 }
 
-//extern "C"
-//JNIEXPORT void JNICALL
-//Java_com_tencent_nanodetncnn_MainActivity_varifyCheck(JNIEnv *env, jobject obj, jchar value) {
-//     TODO: implement varifyCheck()
-//    char re_val = value;
-//    LOGI("Hello, this is my integer  %s",  value);
-//    result = value;
-//    return;
-//    LOGI("Hello, this is my integer  %s",  value);
-//    result = value;
-//}
-//extern "C"
-//JNIEXPORT void JNICALL
-//Java_com_tencent_nanodetncnn_JNI_varifyCheck(JNIEnv *env, jobject thiz, jchar value) {
-//    // TODO: implement varifyCheck()
-//    char re_val = value;
-//    LOGI("Hello, this is my integer  %s",  value);
-//    result = value;
-//}
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_tencent_nanodetncnn_JavaCallC_varifyCheck(JNIEnv *env, jobject obj, jchar value) {
+Java_com_tencent_nanodetncnn_NcnnYolov5_varifyCheck(JNIEnv *env, jclass clazz, jchar value) {
     // TODO: implement varifyCheck()
-    char re_val = value;
-    LOGI("Hello, this is my integer  %s",  value);
-    result = value;
+    result_java = value;
 }
