@@ -6,42 +6,42 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
-8-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml
+8-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="24" />
-9-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml
+9-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:6:5-65
-11-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:6:22-62
+11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:6:5-65
+11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:6:22-62
 12
 13    <uses-feature android:name="android.hardware.camera2.full" />
-13-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:7:5-66
-13-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:7:19-63
+13-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:7:5-66
+13-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:7:19-63
 14
 15    <application
-15-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:9:5-18:19
+15-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:5-18:19
 16        android:debuggable="true"
 17        android:extractNativeLibs="false"
 18        android:label="@string/app_name"
-18-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:9:18-50
+18-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:18-50
 19        android:testOnly="true" >
 20        <activity
-20-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:10:9-17:20
+20-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:9-17:20
 21            android:name="com.tencent.nanodetncnn.MainActivity"
-21-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:10:19-46
+21-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:19-46
 22            android:label="@string/app_name"
-22-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:11:19-51
+22-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:19-51
 23            android:screenOrientation="portrait" >
-23-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:12:19-55
+23-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:12:19-55
 24            <intent-filter>
-24-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:13:13-16:29
+24-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:13-16:29
 25                <action android:name="android.intent.action.MAIN" />
-25-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:14:17-69
-25-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:14:25-66
+25-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:17-69
+25-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:25-66
 26
 27                <category android:name="android.intent.category.LAUNCHER" />
-27-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:15:17-77
-27-->/home/bingo/Public/AS2/NCNN/app/src/main/AndroidManifest.xml:15:27-74
+27-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:17-77
+27-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:27-74
 28            </intent-filter>
 29        </activity>
 30    </application>

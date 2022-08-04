@@ -563,7 +563,7 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 //        LOGI("%s",class_names[obj.label]);
 //        LOGI("num %d",num);
         fwrite(class_names[obj.label],num,1,file);
-        fwrite(" ",1,1,file);
+        fwrite("\n",1,1,file);
         fclose(file);
 
 

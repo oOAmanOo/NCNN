@@ -2,5 +2,9 @@
     {
         "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_main.xml.flat",
         "source": "com.tencent.nanodetncnn.app-main-7:/layout/main.xml"
+    },
+    {
+        "merged": "/home/bingo/.gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_main.xml.flat",
+        "source": "/home/bingo/.gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/main.xml"
     }
 ]

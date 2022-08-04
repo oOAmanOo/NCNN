@@ -33,6 +33,14 @@ import android.widget.Toast;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class MainActivity extends Activity implements SurfaceHolder.Callback
 {
     public static final int REQUEST_CAMERA = 100;
@@ -117,9 +125,31 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
             }else{
                 result_java = '1';
             }
-            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
-            toast.show();
+//            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
+//            toast.show();
             NcnnYolov5.varifyCheck(result_java);
+    try{
+        FileInputStream fis  = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
+        BufferedReader in= new BufferedReader(new InputStreamReader((fis)));
+//        BufferedReader in = new BufferedReader(new FileReader("result.txt"));
+        Scanner read = new Scanner(in);
+        read.useDelimiter("\n");
+        String title, category, runningTime, year, price;
+        ArrayList<String> class_list = new ArrayList<String>(500);
+
+        while(read.hasNext()){
+            class_list.add(read.next());
+
+        }
+        class_list.forEach(t -> System.out.println(t));
+//        for(String element : class_list){
+//            System.out.println(element);
+//        }
+    }
+    catch (Exception ex){}
+
+
+
         });
 
         reload();
@@ -170,4 +200,6 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
 
         ncnnyolov5.closeCamera();
     }
+
+
 }
