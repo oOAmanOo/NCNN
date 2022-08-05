@@ -14,8 +14,13 @@
 
 package com.tencent.nanodetncnn;
 
+import static java.security.AccessController.getContext;
+
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -38,6 +43,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -129,31 +135,55 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
 //            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
 //            toast.show();
             NcnnYolov5.varifyCheck(result_java);
-    try{
-        FileInputStream fis  = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
-        BufferedReader in= new BufferedReader(new InputStreamReader((fis)));
+    try {
+        FileInputStream fis = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
+        BufferedReader in = new BufferedReader(new InputStreamReader((fis)));
 //        BufferedReader in = new BufferedReader(new FileReader("result.txt"));
         Scanner read = new Scanner(in);
         read.useDelimiter("\n");
         String title, category, runningTime, year, price;
         ArrayList<String> class_list = new ArrayList<String>(500);
 
-        while(read.hasNext()){
+        while (read.hasNext()) {
             String next_class;
             next_class = read.next();
-            class_list.forEach((e)->{
+            class_list.forEach((e) -> {
                 System.out.println(e);
                 System.out.println(next_class);
-                if(e.equals(next_class)){
+                if (e.equals(next_class)) {
                     duplicate_class = 1;
                 }
                 System.out.println(duplicate_class);
             });
-            if(duplicate_class == 0){
+            if (duplicate_class == 0) {
                 class_list.add(next_class);
             }
             duplicate_class = 0;
         }
+
+
+//        ********************************************************************************************
+
+        String confirm_class_list[] = class_list.toArray(new String[class_list.size()]);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+        alertDialog.setTitle("AlertDialog");
+        boolean[] checkedItems = new boolean[class_list.size()];
+        Arrays.fill(checkedItems, Boolean.FALSE);
+        alertDialog.setMultiChoiceItems(confirm_class_list, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i, boolean isChecked) {
+
+                if(isChecked)
+                    Toast.makeText(MainActivity.this, "Add "+ confirm_class_list[i], Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        AlertDialog alert = alertDialog.create();
+        alert.setCanceledOnTouchOutside(true);
+        alert.show();
+
+
+//        ********************************************************************************************
 
         Toast toast = Toast.makeText( MainActivity.this, "-"+class_list+"-", Toast.LENGTH_SHORT);
         toast.show();
@@ -170,6 +200,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback
 
         reload();
     }
+
+
 
     private void reload()
     {

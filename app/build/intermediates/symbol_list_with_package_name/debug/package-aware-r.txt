@@ -3,6 +3,7 @@ array cpugpu_array
 array model_array
 id buttonSwitchCamera
 id cameraview
+id click
 id endVarify
 id spinnerCPUGPU
 id spinnerModel
