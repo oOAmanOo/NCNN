@@ -2,13 +2,17 @@ package recycler;
 
 //import android.support.v7.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tencent.nanodetncnn.MainActivity;
@@ -32,19 +36,25 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListHolder holder, @SuppressLint("RecyclerView") int position) {
 //        holder.textView.setText(list[position]);
-        holder.checkBox.setText(list[position]);
-        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+        holder.d1_textView.setText(list[position]);
+        holder.d1_imageView.setImageResource(R.drawable.pic1);
+//        holder.d1_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(imgName[position]),"drawable", context.getPackageName()));
+        holder.d1_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(holder.checkBox.isChecked()) {
+                if(MainActivity.class_list_checked[position] != String.valueOf(1)) {
+                    holder.d1_textView.setTextColor(Color.parseColor("#F2F2F3"));
+                    holder.d1_card.setBackgroundColor(Color.parseColor("#A100455F"));
                     MainActivity.class_list_checked[position] = String.valueOf(1);
                 }else{
+                    holder.d1_textView.setTextColor(Color.parseColor("#00455F"));
+                    holder.d1_card.setBackgroundColor(Color.parseColor("#F2F2F3"));
                     MainActivity.class_list_checked[position] = String.valueOf(0);
                 }
                 System.out.println(MainActivity.class_list_checked[position]);
-                System.out.println(holder.checkBox.getText());
+                System.out.println(holder.d1_textView.getText());
             }
         });
     }
@@ -57,13 +67,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
 
     static class ListHolder extends RecyclerView.ViewHolder {
 
-//        TextView textView;
-        CheckBox checkBox;
-
+        CardView d1_card;
+        TextView d1_textView;
+        ImageView d1_imageView;
         public ListHolder(@NonNull View itemView){
             super(itemView);
-            checkBox = (CheckBox) itemView.findViewById(R.id.checkBox);
-//            textView= (TextView) itemView.findViewById(R.id.textView);
+            d1_card = (CardView) itemView.findViewById(R.id.d1_card);
+            d1_textView= (TextView) itemView.findViewById(R.id.d1_textView);
+            d1_imageView = (ImageView) itemView.findViewById(R.id.d1_imageView);
+
         }
 
     }

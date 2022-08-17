@@ -27,7 +27,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -68,12 +67,24 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     private Spinner spinnerCPUGPU;
     private int current_model = 0;
     private int current_cpugpu = 0;
-    private char result_java = '1';
+    public static char result_java = '1';
     private int duplicate_class = 0;
     final Context context = this;
+    JSONObject obj = null;
+    JSONArray table = null;
+    JSONObject data = null;
+    public static String uid;
     public static String confirm_class_list[];
+    public static String confirm_class_name[];
     public static String class_list_checked[];
-//    = new String[];
+    public static String fridge_did[];
+    public static String fridge_name[];
+    public static String fridge_position[];
+    public static String fridge_expiredate[];
+    public static String fridge_imgName[];
+    public static String fridge_amount[];
+    public static String fridge_memo[];
+    int check = 0;
 
     private SurfaceView cameraView;
     private String result;
@@ -155,116 +166,77 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
         VarButton.setOnClickListener(view -> {
-            if(result_java == '1'){
-                result_java = '2';
-            }else{
+            if(result_java == '2'){
                 result_java = '1';
-            }
+                NcnnYolov5.varifyCheck(result_java);
+            }else {
+                result_java = '2';
+                NcnnYolov5.varifyCheck(result_java);
 //            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
 //            toast.show();
-            NcnnYolov5.varifyCheck(result_java);
-        try {
-            FileInputStream fis = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
-            BufferedReader in = new BufferedReader(new InputStreamReader((fis)));
-//          BufferedReader in = new BufferedReader(new FileReader("result.txt"));
-            Scanner read = new Scanner(in);
-            read.useDelimiter("\n");
-            String title, category, runningTime, year, price;
-            ArrayList<String> class_list = new ArrayList<String>(500);
 
-            while (read.hasNext()) {
-                String next_class;
-                next_class = read.next();
-                class_list.forEach((e) -> {
-//                  System.out.println(e);
-//                  System.out.println(next_class);
-                    if (e.equals(next_class)) {
-                        duplicate_class = 1;
+                try {
+                    FileInputStream fis = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
+                    BufferedReader in = new BufferedReader(new InputStreamReader((fis)));
+//              BufferedReader in = new BufferedReader(new FileReader("result.txt"));
+                    Scanner read = new Scanner(in);
+                    read.useDelimiter("\n");
+                    String title, category, runningTime, year, price;
+                    ArrayList<String> class_list = new ArrayList<String>(500);
+
+                    while (read.hasNext()) {
+                        String next_class;
+                        next_class = read.next();
+                        class_list.forEach((e) -> {
+//                      System.out.println(e);
+//                      System.out.println(next_class);
+                            if (e.equals(next_class)) {
+                                duplicate_class = 1;
+                            }
+//                      System.out.println(duplicate_class);
+                        });
+                        if (duplicate_class == 0) {
+                            class_list.add(next_class);
+                        }
+                        duplicate_class = 0;
                     }
-//                  System.out.println(duplicate_class);
-                });
-                if (duplicate_class == 0) {
-                    class_list.add(next_class);
-                }
-                duplicate_class = 0;
+
+
+//        ********************************************************************************************
+
+                    confirm_class_list = class_list.toArray(new String[class_list.size()]);
+                    class_list_checked = class_list.toArray(new String[class_list.size()]);
+
+                    check = confirm_class_list.length;
+                    try {
+                        obj = new JSONObject(result);
+                        table = obj.getJSONArray("food_dic");
+                        for (int i = 0; i < table.length(); i++) {
+                            data = table.getJSONObject(i);
+                            for (int j = 0; j < confirm_class_list.length; j++) {
+                                if (data.getString("engName").equals(confirm_class_list[j])) {
+                                    confirm_class_list[j] = data.getString("name");
+                                    --check;
+                                    break;
+                                }
+                            }
+                            if (check == 0) {
+                                break;
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    //delete after db built complete
+                    check = 0;
+                    fragment1_test.show(fm, "dialog_tag");
+//        ********************************************************************************************
+
+//                    Toast toast = Toast.makeText(MainActivity.this, "-" + class_list + "-", Toast.LENGTH_SHORT);
+//                    toast.show();
+//                      class_list.forEach(t -> System.out.println(t));
+                } catch (Exception ex) {}
             }
-
-
-//        ********************************************************************************************
-
-        confirm_class_list = class_list.toArray(new String[class_list.size()]);
-        class_list_checked = class_list.toArray(new String[class_list.size()]);
-//        final Dialog AlertDialog = new Dialog(context);
-//        AlertDialog.setContentView(R.layout.fragment1_layout);
-        fragment1_test.show(fm,"dialog_tag");
-
-//        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-//        fragment1_test.getDialog().setTitle("Confirm Ingredients");
-//        boolean[] checkedItems = new boolean[class_list.size()];
-//        Arrays.fill(checkedItems, Boolean.FALSE);
-//        alertDialog.setMultiChoiceItems(confirm_class_list, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-
-//            @Override
-//            public void onClick(DialogInterface dialog, int i, boolean isChecked) {
-
-//                if(isChecked) {
-//                    Toast.makeText(MainActivity.this, "Add " + confirm_class_list[i], Toast.LENGTH_SHORT).show();
-//                    class_list_checked[i] = String.valueOf(1);
-//                }else{
-//                    class_list_checked[i] = String.valueOf(0);
-//                }
-//
-//
-//            }
-//        });
-
-//        alertDialog.setPositiveButton("Next",new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface arg0, int arg1) {
-//                // TODO Auto-generated method stub
-//                Toast.makeText(MainActivity.this, "Confirm",Toast.LENGTH_SHORT).show();
-//                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-//                alertDialog.setTitle("Modify Confirm Ingredients");
-//
-//
-//
-//            }
-//
-//        });
-
-//        alertDialog.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface arg0, int arg1) {
-//                // TODO Auto-generated method stub
-//                Toast.makeText(MainActivity.this, "Cancel",Toast.LENGTH_SHORT).show();
-//            }
-//
-//        });
-//
-//        alertDialog.setNeutralButton("Add Ingredients",new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface arg0, int arg1) {
-//                // TODO Auto-generated method stub
-//                Toast.makeText(MainActivity.this, "Add",Toast.LENGTH_SHORT).show();
-//            }
-//
-//        });
-//        alertDialog.show();
-//
-//
-//        AlertDialog alert = alertDialog.create();
-//        alert.setCanceledOnTouchOutside(true);
-//        alert.show();
-
-
-//        ********************************************************************************************
-
-        Toast toast = Toast.makeText( MainActivity.this, "-"+class_list+"-", Toast.LENGTH_SHORT);
-        toast.show();
-//        class_list.forEach(t -> System.out.println(t));
-//        }
-    }
-    catch (Exception ex){}
         });
         reload();
     }
@@ -326,6 +298,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb_copy.php?uid=duck");//宣告使用post方法連線
+//                HttpPost httpPost = new HttpPost("http://140.117.71.11/user_insert.php");//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
@@ -355,27 +328,44 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             // 當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
                 public void run() {
-                    JSONObject obj = null;
-                    JSONArray table = null;
-                    JSONObject data = null;
 
-                    try {
-                       obj = new JSONObject(result);
-                        System.out.println(obj);
-                       //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
-                       table = obj.getJSONArray("food_dic");
-//                        System.out.println(table);
-                       //data list
-                        for (int i = 0; i < table.length(); i++) {
-                            data = table.getJSONObject(i);
-                            System.out.println(data);
-                            //data data
-                            System.out.println(data.getString("name"));
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        System.out.println("7");
-                    }
+                    String a = result;
+
+
+//                    try {
+//                        table = new JSONArray(result);
+////                        System.out.println(table.getString(0));
+//                        a = table.getString(0);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+////                        System.out.println(table);
+////                    result="a";
+//                    if(a.equals("註冊")){
+//                        System.out.println("same");
+//                    }else{
+//                        System.out.println("not the same");
+//                    }
+//                    System.out.println(a);
+//                    System.out.println(result);
+
+//                    try {
+//                            obj = new JSONObject(result);
+//
+////                        System.out.println(obj);
+//                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
+//                            table = obj.getJSONArray("food_dic");
+////                        System.out.println(table);
+//                       //data list
+//                        for (int i = 0; i < table.length(); i++) {
+//                            data = table.getJSONObject(i);
+////                            System.out.println(data);
+//                            //data data
+////                            System.out.println(data.getString("name"));
+//                        }
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             });
         }

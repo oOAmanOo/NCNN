@@ -4,11 +4,12 @@ package com.tencent.nanodetncnn.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.tencent.nanodetncnn.R;
@@ -21,16 +22,20 @@ public final class ListAdapterBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final CheckBox checkBox;
+  public final CardView d1Card;
 
   @NonNull
-  public final ImageView imageView2;
+  public final ImageView d1ImageView;
 
-  private ListAdapterBinding(@NonNull FrameLayout rootView, @NonNull CheckBox checkBox,
-      @NonNull ImageView imageView2) {
+  @NonNull
+  public final TextView d1TextView;
+
+  private ListAdapterBinding(@NonNull FrameLayout rootView, @NonNull CardView d1Card,
+      @NonNull ImageView d1ImageView, @NonNull TextView d1TextView) {
     this.rootView = rootView;
-    this.checkBox = checkBox;
-    this.imageView2 = imageView2;
+    this.d1Card = d1Card;
+    this.d1ImageView = d1ImageView;
+    this.d1TextView = d1TextView;
   }
 
   @Override
@@ -60,19 +65,25 @@ public final class ListAdapterBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.checkBox;
-      CheckBox checkBox = ViewBindings.findChildViewById(rootView, id);
-      if (checkBox == null) {
+      id = R.id.d1_card;
+      CardView d1Card = ViewBindings.findChildViewById(rootView, id);
+      if (d1Card == null) {
         break missingId;
       }
 
-      id = R.id.imageView2;
-      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView2 == null) {
+      id = R.id.d1_imageView;
+      ImageView d1ImageView = ViewBindings.findChildViewById(rootView, id);
+      if (d1ImageView == null) {
         break missingId;
       }
 
-      return new ListAdapterBinding((FrameLayout) rootView, checkBox, imageView2);
+      id = R.id.d1_textView;
+      TextView d1TextView = ViewBindings.findChildViewById(rootView, id);
+      if (d1TextView == null) {
+        break missingId;
+      }
+
+      return new ListAdapterBinding((FrameLayout) rootView, d1Card, d1ImageView, d1TextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

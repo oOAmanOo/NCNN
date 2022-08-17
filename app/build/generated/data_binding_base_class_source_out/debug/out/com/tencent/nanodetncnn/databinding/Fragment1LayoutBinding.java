@@ -21,15 +21,19 @@ public final class Fragment1LayoutBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button button;
+  public final Button nextButton;
+
+  @NonNull
+  public final Button reButton;
 
   @NonNull
   public final RecyclerView recyclerView;
 
-  private Fragment1LayoutBinding(@NonNull LinearLayout rootView, @NonNull Button button,
-      @NonNull RecyclerView recyclerView) {
+  private Fragment1LayoutBinding(@NonNull LinearLayout rootView, @NonNull Button nextButton,
+      @NonNull Button reButton, @NonNull RecyclerView recyclerView) {
     this.rootView = rootView;
-    this.button = button;
+    this.nextButton = nextButton;
+    this.reButton = reButton;
     this.recyclerView = recyclerView;
   }
 
@@ -60,9 +64,15 @@ public final class Fragment1LayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button;
-      Button button = ViewBindings.findChildViewById(rootView, id);
-      if (button == null) {
+      id = R.id.next_button;
+      Button nextButton = ViewBindings.findChildViewById(rootView, id);
+      if (nextButton == null) {
+        break missingId;
+      }
+
+      id = R.id.re_button;
+      Button reButton = ViewBindings.findChildViewById(rootView, id);
+      if (reButton == null) {
         break missingId;
       }
 
@@ -72,7 +82,8 @@ public final class Fragment1LayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new Fragment1LayoutBinding((LinearLayout) rootView, button, recyclerView);
+      return new Fragment1LayoutBinding((LinearLayout) rootView, nextButton, reButton,
+          recyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
