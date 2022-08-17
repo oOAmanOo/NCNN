@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+
+
+android {
+    compileSdk 32
+    useLibrary 'org.apache.http.legacy'
+
+
+
+    defaultConfig {
+        configurations.all {
+//            resolutionStrategy { force 'androidx.core:core:1.6.0' }
+        }
+
+        applicationId "com.tencent.nanodetncnn"
+        archivesBaseName = "$applicationId"
+
+        minSdkVersion 24
+    }
+
+    externalNativeBuild {
+        cmake {
+            version "3.10.2"
+            path file('src/main/jni/CMakeLists.txt')
+        }
+    }
+
+    dependencies {
+
+//        implementation 'com.android.support:support-v4:24.0.0'
+        implementation 'com.android.support:recyclerview-v7:24.2.1'
+//        implementation 'com.android.support:recyclerview-v7:24.0.0'
+        implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+        implementation fileTree(dir: 'libs', include:['*.jar'])
+
+
+
+    }
+
+    buildscript {
+        repositories {
+            google()
+            mavenCentral()
+        }
+        dependencies {
+            classpath "com.google.firebase:firebase-crashlytics-gradle:2.9.1"
+        }
+    }
+
+    ndkVersion '25.0.8775105'
+    buildFeatures {
+        viewBinding true
+
+    }
+}
+
+dependencies {
+
+//    implementation 'com.android.support:cardview-v7:24.0.0'
+//    implementation 'com.android.support:design:24.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.fragment:fragment:1.5.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation  "androidx.core:core-ktx:1.8.0"
+
+}
+
+

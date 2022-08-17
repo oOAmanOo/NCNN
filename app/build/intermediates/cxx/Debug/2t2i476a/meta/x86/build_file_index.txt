@@ -1,0 +1,1 @@
+/home/bingo/Public/NCNN/app/src/main/jni/CMakeLists.txt
