@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/d1_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -24,7 +24,7 @@
         app:cardBackgroundColor="#00FFFFFF">
 
         <Button
-            android:id="@+id/re_button"
+            android:id="@+id/d1_re_button"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_weight=".50"
@@ -42,7 +42,7 @@
             android:typeface="normal" />
 
         <Button
-            android:id="@+id/next_button"
+            android:id="@+id/d1_next_button"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_gravity="end"

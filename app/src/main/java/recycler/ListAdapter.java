@@ -30,7 +30,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
 
     @Override
     public ListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_adapter,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_adapter1,parent,false);
         ListHolder holder = new ListHolder(v);
         return holder;
     }
@@ -53,8 +53,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
                     holder.d1_card.setBackgroundColor(Color.parseColor("#F2F2F3"));
                     MainActivity.class_list_checked[position] = String.valueOf(0);
                 }
-                System.out.println(MainActivity.class_list_checked[position]);
-                System.out.println(holder.d1_textView.getText());
+//                System.out.println(MainActivity.class_list_checked[position]);
+//                System.out.println(holder.d1_textView.getText());
             }
         });
     }

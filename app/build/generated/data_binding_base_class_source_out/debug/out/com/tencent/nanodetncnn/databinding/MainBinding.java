@@ -40,9 +40,12 @@ public final class MainBinding implements ViewBinding {
   @NonNull
   public final Spinner spinnerModel;
 
+  @NonNull
+  public final Button uploadButton;
+
   private MainBinding(@NonNull LinearLayout rootView, @NonNull Button buttonSwitchCamera,
       @NonNull SurfaceView cameraview, @NonNull TextView click, @NonNull Button endVarify,
-      @NonNull Spinner spinnerCPUGPU, @NonNull Spinner spinnerModel) {
+      @NonNull Spinner spinnerCPUGPU, @NonNull Spinner spinnerModel, @NonNull Button uploadButton) {
     this.rootView = rootView;
     this.buttonSwitchCamera = buttonSwitchCamera;
     this.cameraview = cameraview;
@@ -50,6 +53,7 @@ public final class MainBinding implements ViewBinding {
     this.endVarify = endVarify;
     this.spinnerCPUGPU = spinnerCPUGPU;
     this.spinnerModel = spinnerModel;
+    this.uploadButton = uploadButton;
   }
 
   @Override
@@ -115,8 +119,14 @@ public final class MainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.upload_button;
+      Button uploadButton = ViewBindings.findChildViewById(rootView, id);
+      if (uploadButton == null) {
+        break missingId;
+      }
+
       return new MainBinding((LinearLayout) rootView, buttonSwitchCamera, cameraview, click,
-          endVarify, spinnerCPUGPU, spinnerModel);
+          endVarify, spinnerCPUGPU, spinnerModel, uploadButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

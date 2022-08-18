@@ -21,20 +21,20 @@ public final class Fragment1LayoutBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button nextButton;
+  public final Button d1NextButton;
 
   @NonNull
-  public final Button reButton;
+  public final Button d1ReButton;
 
   @NonNull
-  public final RecyclerView recyclerView;
+  public final RecyclerView d1RecyclerView;
 
-  private Fragment1LayoutBinding(@NonNull LinearLayout rootView, @NonNull Button nextButton,
-      @NonNull Button reButton, @NonNull RecyclerView recyclerView) {
+  private Fragment1LayoutBinding(@NonNull LinearLayout rootView, @NonNull Button d1NextButton,
+      @NonNull Button d1ReButton, @NonNull RecyclerView d1RecyclerView) {
     this.rootView = rootView;
-    this.nextButton = nextButton;
-    this.reButton = reButton;
-    this.recyclerView = recyclerView;
+    this.d1NextButton = d1NextButton;
+    this.d1ReButton = d1ReButton;
+    this.d1RecyclerView = d1RecyclerView;
   }
 
   @Override
@@ -64,26 +64,26 @@ public final class Fragment1LayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.next_button;
-      Button nextButton = ViewBindings.findChildViewById(rootView, id);
-      if (nextButton == null) {
+      id = R.id.d1_next_button;
+      Button d1NextButton = ViewBindings.findChildViewById(rootView, id);
+      if (d1NextButton == null) {
         break missingId;
       }
 
-      id = R.id.re_button;
-      Button reButton = ViewBindings.findChildViewById(rootView, id);
-      if (reButton == null) {
+      id = R.id.d1_re_button;
+      Button d1ReButton = ViewBindings.findChildViewById(rootView, id);
+      if (d1ReButton == null) {
         break missingId;
       }
 
-      id = R.id.recyclerView;
-      RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerView == null) {
+      id = R.id.d1_recyclerView;
+      RecyclerView d1RecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (d1RecyclerView == null) {
         break missingId;
       }
 
-      return new Fragment1LayoutBinding((LinearLayout) rootView, nextButton, reButton,
-          recyclerView);
+      return new Fragment1LayoutBinding((LinearLayout) rootView, d1NextButton, d1ReButton,
+          d1RecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

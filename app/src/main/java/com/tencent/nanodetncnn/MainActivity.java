@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -27,6 +28,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -51,6 +53,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -59,7 +62,11 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     public static final int REQUEST_CAMERA = 100;
 
     private NcnnYolov5 ncnnyolov5 = new NcnnYolov5();
-    final fragment1 fragment1_test = new fragment1();
+    final fragment1 fragment1 = new fragment1();
+    final fragment5 fragment5 = new fragment5();
+
+    private static Context mContext;
+    public static Context mContext2;
 
     private int facing = 0;
 
@@ -73,21 +80,28 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     JSONObject obj = null;
     JSONArray table = null;
     JSONObject data = null;
+    public static int addNum = 0;
     public static String uid;
     public static String confirm_class_list[];
-    public static String confirm_class_name[];
     public static String class_list_checked[];
-    public static String fridge_did[];
-    public static String fridge_name[];
-    public static String fridge_position[];
-    public static String fridge_expiredate[];
-    public static String fridge_imgName[];
-    public static String fridge_amount[];
-    public static String fridge_memo[];
-    int check = 0;
+    public static String fridge_did[] = new String[50];
+    public static String fridge_name[] = new String[50];
+    public static String fridge_position[] = new String[50];
+    public static LocalDate fridge_expiredate[] = new LocalDate[50];
+    public static String fridge_imgName[] = new String[50];
+    public static String fridge_amount[] = new String[50];
+    public static String fridge_memo[] = new String[50];
+    public static int fridge_index = 0;
+    public static int old_fridge_index = 0;
+    private int check = 0;
+    public static int last_dialog = 0;
+    public static int current_dialog = 0;
+    public static int origin_dialog = 0;
+    public static String json;
 
+    Handler handler;
     private SurfaceView cameraView;
-    private String result;
+    public static String result;
 
 
     public MainActivity() throws IOException{
@@ -103,7 +117,8 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
+        mContext = this;
+        mContext2 = this;
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -229,18 +244,66 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                     }
                     //delete after db built complete
                     check = 0;
-                    fragment1_test.show(fm, "dialog_tag");
+                    fragment1.show(fm, "dialog_tag");
+                    current_dialog = 1;
+                    origin_dialog = 1;
+                    last_dialog = 0;
+
 //        ********************************************************************************************
 
 //                    Toast toast = Toast.makeText(MainActivity.this, "-" + class_list + "-", Toast.LENGTH_SHORT);
 //                    toast.show();
 //                      class_list.forEach(t -> System.out.println(t));
-                } catch (Exception ex) {}
+                } catch (Exception ex) {
+                    //nothing been verify
+                    fragment5.show(fm, "dialog_tag");
+                    current_dialog = 5;
+                    origin_dialog = 5;
+                    last_dialog = 0;
+                    Toast a = Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT);
+                    a.show();
+                }
             }
         });
         reload();
     }
-
+    public static void dialog_change(int current_dialog, int origin_dialog, int last_dialog, FragmentManager fm){
+        final fragment1 fragment1 = new fragment1();
+        final fragment2 fragment2 = new fragment2();
+        final fragment3 fragment3 = new fragment3();
+        final fragment4 fragment4 = new fragment4();
+        final fragment5 fragment5 = new fragment5();
+        if(current_dialog == 1){
+            fragment1.show(fm, "dialog_tag");
+        }else if(current_dialog == 2){
+            fragment2.show(fm, "dialog_tag");
+        }else if(current_dialog == 3){
+            fragment3.show(fm, "dialog_tag");
+        }else if(current_dialog == 4){
+            fragment4.show(fm, "dialog_tag");
+        }else if(current_dialog == 6 && origin_dialog == 3){
+            fragment3.show(fm, "dialog_tag");
+        }else if(current_dialog == 6 && origin_dialog == 5){
+            fragment5.show(fm, "dialog_tag");
+        }
+        if (current_dialog == 0){  //send
+            MainActivity.origin_dialog = 0;
+            Thread thread = new Thread(upload);
+            thread.start();
+        }else{
+            MainActivity.last_dialog = MainActivity.origin_dialog;
+            MainActivity.origin_dialog = MainActivity.current_dialog;
+        }
+    }
+    public void dispatchMessage(final String message){
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                Toast return_upload = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
+                return_upload.show();
+            }
+        });
+    }
     private void reload()
     {
         boolean ret_init = ncnnyolov5.loadModel(getAssets(), current_model, current_cpugpu);
@@ -248,6 +311,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         {
             Log.e("MainActivity", "ncnnyolv5 loadModel failed");
         }
+
     }
 
     @Override
@@ -328,27 +392,6 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             // 當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
                 public void run() {
-
-                    String a = result;
-
-
-//                    try {
-//                        table = new JSONArray(result);
-////                        System.out.println(table.getString(0));
-//                        a = table.getString(0);
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-////                        System.out.println(table);
-////                    result="a";
-//                    if(a.equals("註冊")){
-//                        System.out.println("same");
-//                    }else{
-//                        System.out.println("not the same");
-//                    }
-//                    System.out.println(a);
-//                    System.out.println(result);
-
 //                    try {
 //                            obj = new JSONObject(result);
 //
@@ -370,20 +413,62 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             });
         }
     };
-
 //    ********************************************************************************************************
+    private static final Runnable upload = new Runnable() {
+        public void run() {
+            String result;
+            try {
+//                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb_copy.php?uid=duck");//宣告使用post方法連線
+//                HttpPost httpPost = new HttpPost("http://140.117.71.11/user_insert.php");//宣告使用post方法連線
 
-//    private void replaceFragment(Fragment fragment){
-//
-//        FragmentManager fragmentManager = getFragmentManager();
-//        Bundle bundle=new Bundle();
-////        bundle.putString("data",scount);
-////        FragmentManager fragmentManager = getSupportFragmentManager();
-////        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragment.setArguments(bundle);
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.MainActivity, fragment);
-//        fragmentTransaction.commit();
-//    }
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+                params.add(new BasicNameValuePair("json", MainActivity.json));
+                params.add(new BasicNameValuePair("uid", "duck"));
+                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                String box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    box += line;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+                String return_val = null;
+                JSONArray table = null;
+                try {
+                    table = new JSONArray(result);
+                    return_val = table.getString(0);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Toast return_upload;
+                if(return_val.equals("新增成功")){
+                    return_upload = Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT);
+                }else{
+                    return_upload = Toast.makeText(mContext, result, Toast.LENGTH_SHORT);
+                }
+                return_upload.show();
+
+//                ACTIVITY CHANGE
+//                Intent intent=new Intent(mContext, otherActivity.class);
+//                startActivity(intent);
+
+            } catch (Exception e) {
+                result = e.toString();
+            }
+        }
+    };
 }

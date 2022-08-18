@@ -7,12 +7,19 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/d2_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </androidx.recyclerview.widget.RecyclerView>
-
+    <ImageButton
+        android:id="@+id/AddFood"
+        android:layout_width="90dip"
+        android:layout_height="90dip"
+        android:layout_gravity="bottom|center"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitStart"
+        app:srcCompat="@android:drawable/ic_menu_add"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +31,7 @@
         app:cardBackgroundColor="#00FFFFFF">
 
         <Button
-            android:id="@+id/re_button"
+            android:id="@+id/d2_re_button"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_weight=".50"
@@ -42,7 +49,7 @@
             android:typeface="normal" />
 
         <Button
-            android:id="@+id/next_button"
+            android:id="@+id/d2_next_button"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_gravity="end"

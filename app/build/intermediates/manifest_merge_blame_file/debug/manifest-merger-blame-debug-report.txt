@@ -18,11 +18,11 @@
 12-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:22-64
 13
 14    <uses-feature android:name="android.hardware.camera2.full" />
-14-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:5-66
-14-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:19-63
+14-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:5-66
+14-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:19-63
 15
 16    <application
-16-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:12:5-26:19
+16-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:12:5-28:19
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 17-->[androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 18        android:debuggable="true"
@@ -31,29 +31,29 @@
 20-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:12:18-50
 21        android:testOnly="true" >
 22        <uses-library
-22-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:9-15:40
+22-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:9-16:40
 23            android:name="org.apache.http.legacy"
-23-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:13-50
+23-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:13-50
 24            android:required="false" />
-24-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:13-37
+24-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:13-37
 25
 26        <activity
-26-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:9-23:20
+26-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:9-27:20
 27            android:name="com.tencent.nanodetncnn.MainActivity"
-27-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:19-46
+27-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:13-41
 28            android:label="@string/app_name"
-28-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:17:19-51
+28-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:13-45
 29            android:screenOrientation="portrait" >
-29-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:19-55
+29-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:13-49
 30            <intent-filter>
-30-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:13-22:29
+30-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:13-26:29
 31                <action android:name="android.intent.action.MAIN" />
-31-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:17-69
-31-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:25-66
+31-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:23:17-69
+31-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:23:25-66
 32
 33                <category android:name="android.intent.category.LAUNCHER" />
-33-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:17-77
-33-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:27-74
+33-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:25:17-77
+33-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:25:27-74
 34            </intent-filter>
 35        </activity>
 36
@@ -78,6 +78,19 @@
 46                android:value="androidx.startup" />
 46-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 47        </provider>
-48    </application>
-49
-50</manifest>
+48
+49        <uses-library
+49-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+50            android:name="androidx.window.extensions"
+50-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+51            android:required="false" />
+51-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+52        <uses-library
+52-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+53            android:name="androidx.window.sidecar"
+53-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+54            android:required="false" />
+54-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+55    </application>
+56
+57</manifest>
