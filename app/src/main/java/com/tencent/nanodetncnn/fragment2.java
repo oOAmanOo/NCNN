@@ -7,18 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.File;
+
 import recycler.ListAdapter_2;
 
+
 public class fragment2 extends DialogFragment {
-
-//    @Nullable
-
+    public Dialog dialog2;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment2_layout, container);
@@ -36,7 +38,7 @@ public class fragment2 extends DialogFragment {
             fridge_did[i] = MainActivity.fridge_did[i];
             fridge_name[i] = MainActivity.fridge_name[i];
             fridge_position[i] = MainActivity.fridge_position[i];
-            fridge_expiredate[i] = MainActivity.fridge_expiredate[i].toString();
+            fridge_expiredate[i] = MainActivity.fridge_expiredate[i];
             fridge_imgName[i] = MainActivity.fridge_imgName[i];
             fridge_amount[i] = MainActivity.fridge_amount[i];
             fridge_memo[i] = MainActivity.fridge_memo[i];
@@ -45,8 +47,8 @@ public class fragment2 extends DialogFragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(listAdapter_2);
 
-        Dialog dialog2 = this.getDialog();
-        dialog2.setTitle(Html.fromHtml("<font color='#00455F'>請aaa選擇欲添加至冰箱的食物"));
+        dialog2 = this.getDialog();
+        dialog2.setTitle(Html.fromHtml("<font color='#00455F'>食物資訊編輯"));
         dialog2.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager() ;
 
@@ -55,7 +57,7 @@ public class fragment2 extends DialogFragment {
             @Override
             public void onClick(View v) {
                     MainActivity.current_dialog = 1;
-                    dialog2.dismiss();
+                    dialog2.hide();
                     MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
         });
@@ -66,35 +68,40 @@ public class fragment2 extends DialogFragment {
             public void onClick(View v) {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("[");
-                for (int i = 0; i <= MainActivity.fridge_index; ++i){
+                for (int i = 0; i < MainActivity.fridge_index; ++i){
                     if(i == 0){
                         stringBuilder.append("{");
                     }else{
                         stringBuilder.append(",{");
                     }
-                    stringBuilder.append("\"did\":\"" + MainActivity.fridge_did[i] + "\", ");
-                    stringBuilder.append("\"position\":\"" + MainActivity.fridge_position[i] + "\", ");
-                    stringBuilder.append("\"expireDate\":\"" + MainActivity.fridge_expiredate[i] + "\", ");
-                    stringBuilder.append("\"amount\":\"" + MainActivity.fridge_amount[i] + "\", ");
-                    stringBuilder.append("\"memo\":\"" + MainActivity.fridge_memo[i] + "\",");
+                    stringBuilder.append("\"did\":\"" + MainActivity.fridge_did[i] + "\",");
+                    stringBuilder.append("\"name\":\"" + MainActivity.fridge_name[i] + "\",");
+                    stringBuilder.append("\"position\":\"" + MainActivity.fridge_position[i] + "\",");
+                    stringBuilder.append("\"expireDate\":\"" + MainActivity.fridge_expiredate[i] + "\",");
+                    stringBuilder.append("\"amount\":\"" + MainActivity.fridge_amount[i] + "\",");
+                    stringBuilder.append("\"memo\":\"" + MainActivity.fridge_memo[i] + "\"");
                     stringBuilder.append("}");
                 }
                 stringBuilder.append("]");
                 MainActivity.json = stringBuilder.toString();
+                MainActivity.result_java = '1';
+                File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
+                file.delete();
+                NcnnYolov5.varifyCheck(MainActivity.result_java);
                 MainActivity.current_dialog = 0;
-                dialog2.dismiss();
+                dialog2.hide();
                 MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
         });
-//        Button add_button = (Button) view.findViewById(R.id.d2_next_button);
-//        add_button.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                MainActivity.current_dialog = 3;
-//                dialog2.dismiss();
-//                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.past_dialog, fm);
-//            }
-//        });
+        ImageButton add_button = (ImageButton) view.findViewById(R.id.d2_AddFood);
+        add_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MainActivity.current_dialog = 3;
+                dialog2.hide();
+                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+            }
+        });
 
         return view;
     }

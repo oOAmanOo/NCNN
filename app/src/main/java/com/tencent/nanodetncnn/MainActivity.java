@@ -15,11 +15,13 @@
 package com.tencent.nanodetncnn;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -49,11 +51,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -87,7 +89,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     public static String fridge_did[] = new String[50];
     public static String fridge_name[] = new String[50];
     public static String fridge_position[] = new String[50];
-    public static LocalDate fridge_expiredate[] = new LocalDate[50];
+    public static String fridge_expiredate[] = new String[50];
     public static String fridge_imgName[] = new String[50];
     public static String fridge_amount[] = new String[50];
     public static String fridge_memo[] = new String[50];
@@ -98,6 +100,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     public static int current_dialog = 0;
     public static int origin_dialog = 0;
     public static String json;
+    int i = 0;
 
     Handler handler;
     private SurfaceView cameraView;
@@ -109,15 +112,19 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     }
 
     /** Called when the activity is first created. */
+    @SuppressLint("SdCardPath")
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+
+        File file_test = new File("/data/data/com.tencent.nanodetncnn/result.txt");
+        file_test.delete();
 
         final FragmentManager fm = getSupportFragmentManager() ;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        mContext = this;
+        mContext = MainActivity.this;
         mContext2 = this;
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -177,7 +184,10 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             public void onNothingSelected(AdapterView<?> arg0)
             {
             }
+
         });
+
+
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
         VarButton.setOnClickListener(view -> {
@@ -244,6 +254,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                     }
                     //delete after db built complete
                     check = 0;
+                    fm.beginTransaction().remove(fragment1).commit();
                     fragment1.show(fm, "dialog_tag");
                     current_dialog = 1;
                     origin_dialog = 1;
@@ -256,17 +267,20 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 //                      class_list.forEach(t -> System.out.println(t));
                 } catch (Exception ex) {
                     //nothing been verify
+                    fm.beginTransaction().remove(fragment5).commit();
                     fragment5.show(fm, "dialog_tag");
                     current_dialog = 5;
                     origin_dialog = 5;
                     last_dialog = 0;
-                    Toast a = Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT);
+                    Toast a = Toast.makeText(MainActivity.this, "未辨識到任何食物", Toast.LENGTH_SHORT);
                     a.show();
                 }
             }
         });
+
         reload();
     }
+
     public static void dialog_change(int current_dialog, int origin_dialog, int last_dialog, FragmentManager fm){
         final fragment1 fragment1 = new fragment1();
         final fragment2 fragment2 = new fragment2();
@@ -274,36 +288,48 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         final fragment4 fragment4 = new fragment4();
         final fragment5 fragment5 = new fragment5();
         if(current_dialog == 1){
+            fm.beginTransaction().remove(fragment1).commit();
             fragment1.show(fm, "dialog_tag");
         }else if(current_dialog == 2){
+            fm.beginTransaction().remove(fragment2).commit();
             fragment2.show(fm, "dialog_tag");
         }else if(current_dialog == 3){
+            fm.beginTransaction().remove(fragment3).commit();
             fragment3.show(fm, "dialog_tag");
         }else if(current_dialog == 4){
+            fm.beginTransaction().remove(fragment4).commit();
             fragment4.show(fm, "dialog_tag");
-        }else if(current_dialog == 6 && origin_dialog == 3){
+        }else if(current_dialog == 6 && last_dialog == 3){
+            fm.beginTransaction().remove(fragment3).commit();
             fragment3.show(fm, "dialog_tag");
-        }else if(current_dialog == 6 && origin_dialog == 5){
+        }else if(current_dialog == 6 && last_dialog == 5){
+            fm.beginTransaction().remove(fragment5).commit();
             fragment5.show(fm, "dialog_tag");
         }
         if (current_dialog == 0){  //send
             MainActivity.origin_dialog = 0;
+            MainActivity.current_dialog = 0;
+            MainActivity.last_dialog = 0;
             Thread thread = new Thread(upload);
             thread.start();
-        }else{
+        }else if(current_dialog == -1) {
+            MainActivity.origin_dialog = 0;
+            MainActivity.current_dialog = 0;
+            MainActivity.last_dialog = 0;
+        }else {
             MainActivity.last_dialog = MainActivity.origin_dialog;
             MainActivity.origin_dialog = MainActivity.current_dialog;
         }
     }
-    public void dispatchMessage(final String message){
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                Toast return_upload = Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT);
-                return_upload.show();
-            }
-        });
+    public static Handler UIHandler;
+    static
+    {
+        UIHandler = new Handler(Looper.getMainLooper());
     }
+    public static void runOnUI(Runnable runnable) {
+        UIHandler.post(runnable);
+    }
+
     private void reload()
     {
         boolean ret_init = ncnnyolov5.loadModel(getAssets(), current_model, current_cpugpu);
@@ -313,7 +339,6 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         }
 
     }
-
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height)
     {
@@ -350,7 +375,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
         ncnnyolov5.closeCamera();
     }
-
+    
 
 
     //    **************************************** load database_info ****************************************************************
@@ -421,8 +446,8 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb_copy.php?uid=duck");//宣告使用post方法連線
-//                HttpPost httpPost = new HttpPost("http://140.117.71.11/user_insert.php");//宣告使用post方法連線
+//                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb_copy.php?uid=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_insert.php?uid=duck");//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
@@ -445,30 +470,25 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                 }
                 inputStream.close();
                 result = box;
-                String return_val = null;
-                JSONArray table = null;
-                try {
-                    table = new JSONArray(result);
-                    return_val = table.getString(0);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                Toast return_upload;
-                if(return_val.equals("新增成功")){
-                    return_upload = Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT);
-                }else{
-                    return_upload = Toast.makeText(mContext, result, Toast.LENGTH_SHORT);
-                }
-                return_upload.show();
-
-//                ACTIVITY CHANGE
-//                Intent intent=new Intent(mContext, otherActivity.class);
-//                startActivity(intent);
-
             } catch (Exception e) {
                 result = e.toString();
             }
+
+            String finalResult = result;
+            MainActivity.runOnUI(new Runnable() {
+                public void run() {
+                    String return_val = null;
+                    JSONArray table = null;
+                    try {
+                        table = new JSONArray(finalResult);
+                        return_val = table.getString(0);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     };
 }

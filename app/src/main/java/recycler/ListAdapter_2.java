@@ -3,14 +3,21 @@ package recycler;
 //import android.support.v7.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.text.Editable;
+import android.text.Html;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,19 +61,43 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
 
     @Override
     public void onBindViewHolder(@NonNull ListHolder_2 holder, @SuppressLint("RecyclerView") int position) {
-
-        if(position >= MainActivity.fridge_index){
-            return;
-        }
-        System.out.println(1);
         holder.d2_textView.setText(fridge_name[position]);
-        System.out.println("fridge_amount[position]"+fridge_amount[position]);
-        holder.d2_Number_plaintext.setText(fridge_amount[position].toString());
-        System.out.println(3);
-        holder.d2_position_plaintext.setText(fridge_position[position]);
-        System.out.println(4);
-        holder.d2_expireddate_date.setText(fridge_expiredate[position].toString());
-        System.out.println(5);
+//        holder.d2_imageView.setImageResource(R.drawable.pic1);
+        holder.d2_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(fridge_imgName[position]),"drawable", context.getPackageName()));
+        if(fridge_position[position].equals("1")){
+            holder.d2_Position_spinner.setSelection(0);
+        }else{
+            holder.d2_Position_spinner.setSelection(1);
+        }
+        holder.d2_Position_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity.fridge_position[position] = Integer.toString(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        holder.d2_Number_plaintext.setText(fridge_amount[position]);
+        holder.d2_Number_plaintext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                MainActivity.fridge_amount[position] = holder.d2_Number_plaintext.getText().toString();
+            }
+        });
+        holder.d2_expireddate_date.setText(fridge_expiredate[position]);
         holder.d2_expireddate_date.setOnClickListener(new View.OnClickListener(){
             //在點了按鈕後才跳出日曆
             @Override
@@ -82,36 +113,45 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
                         String dateTime = String.valueOf(year)+"-"+String.valueOf(month+1)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
-                        System.out.println(dateTime);
                         holder.d2_expireddate_date.setText(dateTime);//setText上去editText~
-
+                        MainActivity.fridge_expiredate[position] = dateTime;
                     }
                 },year,month,day).show();
             }
-        });;
-        System.out.println(6);
-        holder.d2_remark_plaintext.setText(fridge_memo[position]);
-        System.out.println(7);
-        holder.d2_imageView.setImageResource(R.drawable.pic1);
-        System.out.println(8);
-//        holder.d2_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(fridge_imgName[position]),"drawable", context.getPackageName()));
-//        holder.d2_card.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                if(MainActivity.class_list_checked[position] != String.valueOf(1)) {
-////                    holder.d2_textView.setTextColor(Color.parseColor("#F2F2F3"));
-////                    holder.d2_card.setBackgroundColor(Color.parseColor("#A100455F"));
-////                    MainActivity.class_list_checked[position] = String.valueOf(1);
-////                }else{
-////                    holder.d2_textView.setTextColor(Color.parseColor("#00455F"));
-////                    holder.d2_card.setBackgroundColor(Color.parseColor("#F2F2F3"));
-////                    MainActivity.class_list_checked[position] = String.valueOf(0);
-////                }
-////                System.out.println(MainActivity.class_list_checked[position]);
-////                System.out.println(holder.d2_textView.getText());
-//            }
-//        });
-        System.out.println(9);
+        });
+        holder.d2_remark_plaintext_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder memotext = new AlertDialog.Builder(v.getContext());
+                final EditText editText_memo = new EditText(v.getContext());
+                memotext.setView(editText_memo);
+                if(!(MainActivity.fridge_memo[position].equals("#"))){
+                    editText_memo.setText(MainActivity.fridge_memo[position]);
+                }
+                memotext.setTitle(Html.fromHtml("<font color='#00455F'>備註"));
+                memotext.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.fridge_memo[position] = editText_memo.getText().toString();
+                        if(editText_memo.getText().toString().length() > 4){
+                            String substring = editText_memo.getText().toString().substring(0,4);
+                            substring += "...";
+                            holder.d2_remark_plaintext.setText(substring);
+                            editText_memo.setText(MainActivity.fridge_memo[position]);
+                            dialog.dismiss();
+                        }else{
+                            holder.d2_remark_plaintext.setText(editText_memo.getText().toString());
+                            editText_memo.setText(MainActivity.fridge_memo[position]);
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                AlertDialog dialog = memotext.create();
+                dialog.setView(editText_memo, 60, 0, 60, 0);
+                dialog.show();
+            }
+        });
+
     }
 
 
@@ -122,14 +162,16 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
 
     static class ListHolder_2 extends RecyclerView.ViewHolder {
 
+
         CardView d2_card;
         TextView d2_textView;
         ImageView d2_imageView;
 
         EditText d2_Number_plaintext;
-        EditText d2_position_plaintext;
+        Spinner d2_Position_spinner;
         TextView d2_expireddate_date;
         EditText d2_remark_plaintext;
+        TextView d2_remark_plaintext_2;
 
 
         public ListHolder_2(@NonNull View itemView){
@@ -137,13 +179,12 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
             d2_textView= (TextView) itemView.findViewById(R.id.d2_textView);
             d2_imageView = (ImageView) itemView.findViewById(R.id.d2_imageView);
             d2_Number_plaintext = (EditText) itemView.findViewById(R.id.d2_Number_plaintext);
-            d2_position_plaintext = (EditText) itemView.findViewById(R.id.d2_position_plaintext);
+            d2_Position_spinner = (Spinner) itemView.findViewById(R.id.d2_Position_spinner);
             d2_expireddate_date = (TextView) itemView.findViewById(R.id.d2_expireddate_date);
             d2_remark_plaintext = (EditText) itemView.findViewById(R.id.d2_remark_plaintext);
+            d2_remark_plaintext_2 =(TextView) itemView.findViewById(R.id.d2_remark_plaintext_2);
 
             d2_card = (CardView) itemView.findViewById(R.id.d2_card);
-
-
         }
 
     }

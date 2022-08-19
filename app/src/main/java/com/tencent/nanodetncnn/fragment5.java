@@ -19,12 +19,12 @@ import java.io.File;
 public class fragment5 extends DialogFragment {
 
 //    @Nullable
-
+    public Dialog dialog5;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment5_layout, container);
 
-        Dialog dialog5 = this.getDialog();
+        dialog5 = this.getDialog();
         dialog5.setTitle(Html.fromHtml("<font color='#00455F'>請輸入欲手動新增食物筆數"));
         dialog5.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
@@ -37,8 +37,9 @@ public class fragment5 extends DialogFragment {
                 File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
                 file.delete();
                 NcnnYolov5.varifyCheck(MainActivity.result_java);
-                MainActivity.current_dialog = 0;
-                dismiss();
+                MainActivity.current_dialog = -1;
+                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                dialog5.hide();
             }
         });
         Button next_button = (Button) view.findViewById(R.id.d5_next_button);
@@ -49,7 +50,7 @@ public class fragment5 extends DialogFragment {
                 EditText d5_editTextNumber = (EditText) view.findViewById(R.id.d5_editTextNumber);
                 MainActivity.addNum = Integer.parseInt(d5_editTextNumber.getText().toString());
                 MainActivity.current_dialog = 4;
-                dialog5.dismiss();
+                dialog5.hide();
                 MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
         });

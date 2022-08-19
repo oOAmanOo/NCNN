@@ -27,7 +27,7 @@ import recycler.ListAdapter;
 public class fragment1 extends DialogFragment {
 
 //    @Nullable
-
+    public Dialog dialog1;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1_layout, container);
@@ -36,7 +36,7 @@ public class fragment1 extends DialogFragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(listAdapter);
 
-        Dialog dialog1 = this.getDialog();
+        dialog1 = this.getDialog();
         dialog1.setTitle(Html.fromHtml("<font color='#00455F'>請選擇欲添加至冰箱的食物"));
         dialog1.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
@@ -49,8 +49,8 @@ public class fragment1 extends DialogFragment {
                 File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
                 file.delete();
                 NcnnYolov5.varifyCheck(MainActivity.result_java);
-                MainActivity.current_dialog = 0;
-                dismiss();
+                MainActivity.current_dialog = -1;
+                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
         });
         Button next_button = (Button) view.findViewById(R.id.d1_next_button);
@@ -58,7 +58,7 @@ public class fragment1 extends DialogFragment {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                int none_click = 0;
+                int none_click = 1;
                 for (int i = 0; i < MainActivity.confirm_class_list.length; i++) {
                     if(!MainActivity.class_list_checked[i].equals("1")) {
                         ++none_click;
@@ -79,7 +79,7 @@ public class fragment1 extends DialogFragment {
                                     MainActivity.fridge_did[MainActivity.fridge_index] = data.getString("did");
                                     MainActivity.fridge_name[MainActivity.fridge_index] = data.getString("name");
                                     MainActivity.fridge_position[MainActivity.fridge_index] = data.getString("position");
-                                    MainActivity.fridge_expiredate[MainActivity.fridge_index] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay")));
+                                    MainActivity.fridge_expiredate[MainActivity.fridge_index] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay"))).toString();
                                     MainActivity.fridge_imgName[MainActivity.fridge_index] = data.getString("imgName");
                                     MainActivity.fridge_amount[MainActivity.fridge_index] = "1";
                                     MainActivity.fridge_memo[MainActivity.fridge_index] = "#";

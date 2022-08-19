@@ -9,6 +9,10 @@
         <item>CPU</item>
         <item>GPU</item>
     </string-array>
+    <string-array name="fridge">
+        <item>冷凍</item>
+        <item>冷藏</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_upload">uploadActivity</string>

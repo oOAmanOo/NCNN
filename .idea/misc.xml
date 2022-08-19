@@ -4,11 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_baseline_crop_din_24.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2405" />
         <entry key="app/src/main/res/layout/activity_fridge_upload.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/activity_upload.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/content_upload.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/fragment1_layout.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment2_layout.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/fragment2_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment3_layout.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/fragment4_layout.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/fragment5_layout.xml" value="0.2265625" />
@@ -21,8 +27,8 @@
         <entry key="app/src/main/res/layout/layout_modify_ingredient.xml" value="0.18297101449275363" />
         <entry key="app/src/main/res/layout/layout_modify_ingredients.xml" value="0.1490036231884058" />
         <entry key="app/src/main/res/layout/list_adapter.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/list_adapter1.xml" value="0.18541666666666667" />
-        <entry key="app/src/main/res/layout/list_adapter2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_adapter1.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/list_adapter2.xml" value="0.5" />
         <entry key="app/src/main/res/layout/list_adapter4.xml" value="0.5" />
         <entry key="app/src/main/res/layout/list_adpater.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/main.xml" value="0.18" />

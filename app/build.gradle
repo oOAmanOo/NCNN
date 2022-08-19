@@ -6,6 +6,10 @@ android {
     compileSdk 32
     useLibrary 'org.apache.http.legacy'
 
+//    defaultConfig{
+//        vectorDrawables.useSupportLibrary = true
+//    }
+
 
 
     defaultConfig {
@@ -33,6 +37,7 @@ android {
 //        implementation 'com.android.support:recyclerview-v7:24.0.0'
         implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
         implementation fileTree(dir: 'libs', include:['*.jar'])
+        implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 
 
 
