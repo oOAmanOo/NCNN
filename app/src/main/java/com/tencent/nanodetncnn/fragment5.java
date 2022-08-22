@@ -1,5 +1,6 @@
 package com.tencent.nanodetncnn;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
@@ -49,9 +50,15 @@ public class fragment5 extends DialogFragment {
             public void onClick(View v) {
                 EditText d5_editTextNumber = (EditText) view.findViewById(R.id.d5_editTextNumber);
                 MainActivity.addNum = Integer.parseInt(d5_editTextNumber.getText().toString());
-                MainActivity.current_dialog = 4;
-                dialog5.hide();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                if(MainActivity.addNum > 0){
+                    MainActivity.current_dialog = 4;
+                    dialog5.hide();
+                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                }else{
+                    AlertDialog.Builder dumb = new AlertDialog.Builder(MainActivity.mContext2);
+
+                }
+
             }
         });
         return view;
