@@ -26,7 +26,7 @@ import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tencent.nanodetncnn.MainActivity;
+import com.tencent.nanodetncnn.Verify_Activity;
 import com.tencent.nanodetncnn.R;
 
 import java.util.Calendar;
@@ -81,7 +81,7 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
         holder.d2_Position_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.fridge_position[position] = Integer.toString(position);
+                Verify_Activity.fridge_position[position] = Integer.toString(position);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -105,7 +105,7 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                     fridgeAmountText[position] = 0;
                 }else{
                     fridgeAmountText[position] = 1;
-                    MainActivity.fridge_amount[position] = holder.d2_Number_plaintext.getText().toString();
+                    Verify_Activity.fridge_amount[position] = holder.d2_Number_plaintext.getText().toString();
                 }
             }
         });
@@ -121,11 +121,11 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
                 //取出年月日
-                DatePickerDialog  datePickerDialog = new DatePickerDialog(MainActivity.mContext2, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog  datePickerDialog = new DatePickerDialog(Verify_Activity.mContext2, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         String dateTime = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
                         holder.d2_expireddate_date.setText(dateTime);//setText上去editText~
-                        MainActivity.fridge_expiredate[position] = dateTime;
+                        Verify_Activity.fridge_expiredate[position] = dateTime;
                     }
                 },year,month,day);
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()-10000);
@@ -148,23 +148,23 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                 AlertDialog.Builder memotext = new AlertDialog.Builder(v.getContext());
                 final EditText editText_memo = new EditText(v.getContext());
                 memotext.setView(editText_memo);
-                if(!(MainActivity.fridge_memo[position].equals("#"))){
-                    editText_memo.setText(MainActivity.fridge_memo[position]);
+                if(!(Verify_Activity.fridge_memo[position].equals("#"))){
+                    editText_memo.setText(Verify_Activity.fridge_memo[position]);
                 }
                 memotext.setTitle(Html.fromHtml("<font color='#00455F'>備註"));
                 memotext.setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        MainActivity.fridge_memo[position] = editText_memo.getText().toString();
+                        Verify_Activity.fridge_memo[position] = editText_memo.getText().toString();
                         if(editText_memo.getText().toString().length() > 4){
                             String substring = editText_memo.getText().toString().substring(0,4);
                             substring += "...";
                             holder.d2_remark_plaintext.setText(substring);
-                            editText_memo.setText(MainActivity.fridge_memo[position]);
+                            editText_memo.setText(Verify_Activity.fridge_memo[position]);
                             dialog.dismiss();
                         }else{
                             holder.d2_remark_plaintext.setText(editText_memo.getText().toString());
-                            editText_memo.setText(MainActivity.fridge_memo[position]);
+                            editText_memo.setText(Verify_Activity.fridge_memo[position]);
                             dialog.dismiss();
                         }
                     }

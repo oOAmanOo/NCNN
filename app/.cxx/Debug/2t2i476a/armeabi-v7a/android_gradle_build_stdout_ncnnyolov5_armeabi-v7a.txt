@@ -1,0 +1,10 @@
+ninja: Entering directory `/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/armeabi-v7a'
+[1/4] Building CXX object CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o
+/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp:152:117: warning: format specifies type 'long' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "onCaptureSequenceCompleted %p %d %ld", session, sequenceId, frameNumber);
+                                                                                         ~~~                        ^~~~~~~~~~~
+                                                                                         %lld
+1 warning generated.
+[2/4] Building CXX object CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o
+[3/4] Building CXX object CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o
+[4/4] Linking CXX shared library /home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/armeabi-v7a/libncnnyolov5.so

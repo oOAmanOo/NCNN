@@ -1,17 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
 MERGED from [androidx.databinding:viewbinding:7.2.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/91064bfcf3d834d346489b916c2e9ee8/transformed/jetified-viewbinding-7.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/d65c554ecbb1eb12ffc0914b11dd362a/transformed/navigation-ui-2.5.1/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.material:material:1.4.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35c69b59585be5ab8e4b75884f21579b/transformed/material-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/72de3ad0e7ea8651a6e87e246ac967c6/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cf2a97d9c5719b92ddf0482175003ffc/transformed/recyclerview-1.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8ad4b0562467dfb6f3cd10869bd03e3f/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f5aa2f1153fdfa881e01a266582b64ea/transformed/jetified-appcompat-resources-1.5.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.5.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/eaddbf8150176006ad66bd9632b8bbc8/transformed/appcompat-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/34c3819cee2951fdcdce0cc29fa8544c/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-fragment:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/c9b0cbab25b5d487877c20b6c5f8f570/transformed/navigation-fragment-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment-ktx:1.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cce8903573dede246f81fe889e2e4e7e/transformed/jetified-fragment-ktx-1.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.5.2] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/597b8c92de7c120ad233134bdce2ed0a/transformed/fragment-1.5.2/AndroidManifest.xml:17:1-24:12
@@ -20,6 +21,7 @@ MERGED from [androidx.navigation:navigation-runtime:2.5.1] /home/bingo/Public/nc
 MERGED from [androidx.activity:activity-ktx:1.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/af39231f5c95c5b7427ff7feef4dfb5f/transformed/jetified-activity-ktx-1.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7f3e4d289c4dc2e34e31c7b0934bc86f/transformed/jetified-activity-1.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/92389d42dacee50431fdf899a9097c97/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a0f487a4babc02e94edd80c903b84cb8/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/9b680f4524c73cf4651435f7b7ab96a9/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a9f454f90017dca7389400a6976be6d0/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/430c7d56da58dbd5db15fb73bf8b9144/transformed/navigation-common-2.5.1/AndroidManifest.xml:17:1-24:12
@@ -30,14 +32,17 @@ MERGED from [androidx.core:core-ktx:1.8.0] /home/bingo/Public/ncnn-Android-Yolov
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/e1b23a5846fa69c62ae6c2763eaeb253/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/76ac61211554d9c5217342b54e99bfca/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/edcdf00559453ac5f7364b461524ff25/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8a6303413022a75475e0d43fea7dc5ec/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/22af41d6efc01e2b1f6684642bfbf4e6/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/2ffd33c42ee9142780d270ad93a06b80/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a8679e86c596eacd88a37e3e0f2d577f/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/edcdf00559453ac5f7364b461524ff25/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/4256eb7d1165099cdd30ddd844e112fc/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/134b728fa4e8aa6475e3c09158ebb5ed/transformed/media-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/387d5ef4643d90387856cf012a81eaaf/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5dc7619c10ef7678503baa0c7d18529c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7f38362bc79cae2826970a4e78d0cb43/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a32d82e6af18449b0f4026f574aea670/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f136b622d5d51d18b4122772ea3408ab/transformed/jetified-savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
@@ -48,48 +53,54 @@ MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /home/bingo/Public/
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/2805ee03bf31be31fdf16bad4c3aa5a5/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/1fa47a43f34e3fe0e9af9cc4f33d4b0a/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/9edc97b4929ab5c71815cd3246cf40bf/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/50d1210be62fa0ff51eb398d1f0c84bc/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35b72efce75877fe3d34144efb2d1bc8/transformed/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/31c94971858b77c86d12722d37bd24d0/transformed/lifecycle-livedata-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/6493169760891f9c505984cb745e4cbd/transformed/jetified-lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/91268df8ffd79857440e160d9aebbf42/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/18bea7d8b6ce63feab6ed492d57d56cb/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/c91ee04b2e3e2b4e3408d247f58d785c/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/daafd13ed6472e5d90ee94a442cae491/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bd2b858bc6569916fd0b165974e7ef03/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:17:1-56:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cc06242ea379559a7b6be7811f23a532/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-66:12
 	package
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:3:5-38
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:4:5-38
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:5:5-30
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:6:5-30
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:3:5-51
 	xmlns:android
 		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:4:5-28
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:5:5-28
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.CAMERA
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:7:5-65
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:22:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:22:5-65
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:7:22-62
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:22-62
 uses-permission#android.permission.INTERNET
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:5-67
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:22-64
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:22-64
 uses-feature#android.hardware.camera2.full
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:5-66
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:5-66
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:19-63
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:19-63
 application
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:12:5-29:19
-MERGED from [com.google.android.material:material:1.4.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35c69b59585be5ab8e4b75884f21579b/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.4.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35c69b59585be5ab8e4b75884f21579b/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:5-64:19
+MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8ad4b0562467dfb6f3cd10869bd03e3f/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8ad4b0562467dfb6f3cd10869bd03e3f/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
@@ -104,36 +115,104 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/1fa47a43f34e3fe0e9af9cc4f33d4b0a/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/1fa47a43f34e3fe0e9af9cc4f33d4b0a/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:46:5-54:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:46:5-54:19
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:12:18-50
-uses-library#org.apache.http.legacy
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:9-16:40
-	android:required
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:13-37
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:13-50
-activity#com.tencent.nanodetncnn.MainActivity
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:9-28:20
-	android:screenOrientation
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:13-49
-	android:label
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:13-45
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:9-41
+	android:fullBackupContent
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:9-54
+	android:roundIcon
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:9-54
+	tools:targetApi
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:9-29
+	android:icon
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:17:9-43
+	android:allowBackup
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:2-28
 	android:theme
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:13-43
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:9-56
+	android:dataExtractionRules
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:9-65
+uses-library#org.apache.http.legacy
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:24:9-26:40
+	android:required
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:13-41
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:25:13-50
+activity#com.tencent.nanodetncnn.Verify_Activity
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:28:9-34:20
+	android:screenOrientation
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:31:13-49
+	android:label
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:30:13-45
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:33:13-36
+	android:theme
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:29:13-44
+activity#com.tencent.nanodetncnn.MainActivity2
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:35:2-37:40
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:36:13-42
+activity#com.tencent.nanodetncnn.MainActivity
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:38:9-40:40
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:39:13-41
+activity#com.tencent.nanodetncnn.MainActivityreg
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:41:9-43:40
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:42:13-44
+activity#com.tencent.nanodetncnn.login.LoginActivity
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:44:9-47:60
+	android:label
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:47:13-57
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:45:13-48
+activity#com.tencent.nanodetncnn.MainActivityfunc
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:48:9-50:40
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:50:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:49:13-45
+activity#com.tencent.nanodetncnn.MainActivitywelcome
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:51:9-58:20
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:53:13-36
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:52:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:54:13-57:29
 action#android.intent.action.MAIN
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:55:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:56:17-77
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:56:27-74
+activity#com.tencent.nanodetncnn.CaptureAct
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:59:9-63:63
+	android:screenOrientation
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:61:13-51
+	android:stateNotNeeded
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:62:13-42
+	android:windowSoftInputMode
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:63:13-60
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:60:13-39
 uses-sdk
 INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
@@ -142,8 +221,8 @@ MERGED from [androidx.databinding:viewbinding:7.2.1] /home/bingo/Public/ncnn-And
 MERGED from [androidx.databinding:viewbinding:7.2.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/91064bfcf3d834d346489b916c2e9ee8/transformed/jetified-viewbinding-7.2.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-ui:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/d65c554ecbb1eb12ffc0914b11dd362a/transformed/navigation-ui-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-ui:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/d65c554ecbb1eb12ffc0914b11dd362a/transformed/navigation-ui-2.5.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.material:material:1.4.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35c69b59585be5ab8e4b75884f21579b/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.4.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35c69b59585be5ab8e4b75884f21579b/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/72de3ad0e7ea8651a6e87e246ac967c6/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/72de3ad0e7ea8651a6e87e246ac967c6/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cf2a97d9c5719b92ddf0482175003ffc/transformed/recyclerview-1.2.1/AndroidManifest.xml:20:5-22:41
@@ -154,6 +233,8 @@ MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /home/bingo/Public/nc
 MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f5aa2f1153fdfa881e01a266582b64ea/transformed/jetified-appcompat-resources-1.5.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.5.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/eaddbf8150176006ad66bd9632b8bbc8/transformed/appcompat-1.5.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.5.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/eaddbf8150176006ad66bd9632b8bbc8/transformed/appcompat-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/34c3819cee2951fdcdce0cc29fa8544c/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/34c3819cee2951fdcdce0cc29fa8544c/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-fragment:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/c9b0cbab25b5d487877c20b6c5f8f570/transformed/navigation-fragment-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-fragment:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/c9b0cbab25b5d487877c20b6c5f8f570/transformed/navigation-fragment-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment-ktx:1.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cce8903573dede246f81fe889e2e4e7e/transformed/jetified-fragment-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
@@ -170,6 +251,8 @@ MERGED from [androidx.activity:activity:1.5.1] /home/bingo/Public/ncnn-Android-Y
 MERGED from [androidx.activity:activity:1.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7f3e4d289c4dc2e34e31c7b0934bc86f/transformed/jetified-activity-1.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/92389d42dacee50431fdf899a9097c97/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/92389d42dacee50431fdf899a9097c97/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a0f487a4babc02e94edd80c903b84cb8/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a0f487a4babc02e94edd80c903b84cb8/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/9b680f4524c73cf4651435f7b7ab96a9/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/9b680f4524c73cf4651435f7b7ab96a9/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a9f454f90017dca7389400a6976be6d0/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
@@ -190,6 +273,8 @@ MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/bingo/Public/ncnn-
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/76ac61211554d9c5217342b54e99bfca/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/edcdf00559453ac5f7364b461524ff25/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/edcdf00559453ac5f7364b461524ff25/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8a6303413022a75475e0d43fea7dc5ec/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8a6303413022a75475e0d43fea7dc5ec/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/22af41d6efc01e2b1f6684642bfbf4e6/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -198,14 +283,18 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bingo/Public/nc
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/2ffd33c42ee9142780d270ad93a06b80/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a8679e86c596eacd88a37e3e0f2d577f/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a8679e86c596eacd88a37e3e0f2d577f/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/edcdf00559453ac5f7364b461524ff25/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/edcdf00559453ac5f7364b461524ff25/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/4256eb7d1165099cdd30ddd844e112fc/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/4256eb7d1165099cdd30ddd844e112fc/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/134b728fa4e8aa6475e3c09158ebb5ed/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/134b728fa4e8aa6475e3c09158ebb5ed/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/387d5ef4643d90387856cf012a81eaaf/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.transition:transition:1.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/387d5ef4643d90387856cf012a81eaaf/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5dc7619c10ef7678503baa0c7d18529c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5dc7619c10ef7678503baa0c7d18529c/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7f38362bc79cae2826970a4e78d0cb43/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7f38362bc79cae2826970a4e78d0cb43/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a32d82e6af18449b0f4026f574aea670/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
@@ -226,22 +315,26 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bingo/Public/ncnn-And
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/1fa47a43f34e3fe0e9af9cc4f33d4b0a/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/9edc97b4929ab5c71815cd3246cf40bf/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/9edc97b4929ab5c71815cd3246cf40bf/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/50d1210be62fa0ff51eb398d1f0c84bc/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/50d1210be62fa0ff51eb398d1f0c84bc/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35b72efce75877fe3d34144efb2d1bc8/transformed/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/35b72efce75877fe3d34144efb2d1bc8/transformed/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/31c94971858b77c86d12722d37bd24d0/transformed/lifecycle-livedata-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/31c94971858b77c86d12722d37bd24d0/transformed/lifecycle-livedata-2.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/6493169760891f9c505984cb745e4cbd/transformed/jetified-lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/6493169760891f9c505984cb745e4cbd/transformed/jetified-lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/91268df8ffd79857440e160d9aebbf42/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/91268df8ffd79857440e160d9aebbf42/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/18bea7d8b6ce63feab6ed492d57d56cb/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/18bea7d8b6ce63feab6ed492d57d56cb/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/c91ee04b2e3e2b4e3408d247f58d785c/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/c91ee04b2e3e2b4e3408d247f58d785c/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/daafd13ed6472e5d90ee94a442cae491/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/daafd13ed6472e5d90ee94a442cae491/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bd2b858bc6569916fd0b165974e7ef03/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bd2b858bc6569916fd0b165974e7ef03/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cc06242ea379559a7b6be7811f23a532/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cc06242ea379559a7b6be7811f23a532/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
@@ -292,3 +385,53 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-
 		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+uses-feature#android.hardware.camera
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:25:5-27:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:27:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:26:9-47
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74

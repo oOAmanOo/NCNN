@@ -28,22 +28,22 @@ public class fragment2 extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment2_layout, container);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.d2_recyclerView);
         System.out.println(1);
-        String fridge_did[] = new String[MainActivity.fridge_index];
-        String fridge_name[] = new String[MainActivity.fridge_index];
-        String fridge_position[] = new String[MainActivity.fridge_index];
-        String fridge_expiredate[] = new String[MainActivity.fridge_index];
-        String fridge_imgName[] = new String[MainActivity.fridge_index];
-        String fridge_amount[] = new String[MainActivity.fridge_index];
-        String fridge_memo[] = new String[MainActivity.fridge_index];
+        String fridge_did[] = new String[Verify_Activity.fridge_index];
+        String fridge_name[] = new String[Verify_Activity.fridge_index];
+        String fridge_position[] = new String[Verify_Activity.fridge_index];
+        String fridge_expiredate[] = new String[Verify_Activity.fridge_index];
+        String fridge_imgName[] = new String[Verify_Activity.fridge_index];
+        String fridge_amount[] = new String[Verify_Activity.fridge_index];
+        String fridge_memo[] = new String[Verify_Activity.fridge_index];
         System.out.println(2);
-        for (int i = 0; i < MainActivity.fridge_index; ++i){
-            fridge_did[i] = MainActivity.fridge_did[i];
-            fridge_name[i] = MainActivity.fridge_name[i];
-            fridge_position[i] = MainActivity.fridge_position[i];
-            fridge_expiredate[i] = MainActivity.fridge_expiredate[i];
-            fridge_imgName[i] = MainActivity.fridge_imgName[i];
-            fridge_amount[i] = MainActivity.fridge_amount[i];
-            fridge_memo[i] = MainActivity.fridge_memo[i];
+        for (int i = 0; i < Verify_Activity.fridge_index; ++i){
+            fridge_did[i] = Verify_Activity.fridge_did[i];
+            fridge_name[i] = Verify_Activity.fridge_name[i];
+            fridge_position[i] = Verify_Activity.fridge_position[i];
+            fridge_expiredate[i] = Verify_Activity.fridge_expiredate[i];
+            fridge_imgName[i] = Verify_Activity.fridge_imgName[i];
+            fridge_amount[i] = Verify_Activity.fridge_amount[i];
+            fridge_memo[i] = Verify_Activity.fridge_memo[i];
         }
         System.out.println(3);
         ListAdapter_2 listAdapter_2 = new ListAdapter_2(this.getActivity(), fridge_did, fridge_name, fridge_position, fridge_expiredate, fridge_imgName, fridge_amount, fridge_memo);
@@ -56,7 +56,7 @@ public class fragment2 extends DialogFragment {
         final FragmentManager fm = getParentFragmentManager() ;
 
         Button re_button = (Button) view.findViewById(R.id.d2_re_button);
-        if(MainActivity.enter_dialog == 1){
+        if(Verify_Activity.enter_dialog == 1){
             re_button.setText("上一步");
         }else{
             re_button.setText("重新辨識");
@@ -64,18 +64,18 @@ public class fragment2 extends DialogFragment {
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(MainActivity.enter_dialog == 1){
-                    MainActivity.current_dialog = 1;
+                if(Verify_Activity.enter_dialog == 1){
+                    Verify_Activity.current_dialog = 1;
                 }else{
-                    MainActivity.result_java = '1';
-                    MainActivity.verButton.setText("完成辨識");
+                    Verify_Activity.result_java = '1';
+                    Verify_Activity.verButton.setText("完成辨識");
                     File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
                     file.delete();
-                    NcnnYolov5.varifyCheck(MainActivity.result_java);
-                    MainActivity.current_dialog = -1;
+                    NcnnYolov5.varifyCheck(Verify_Activity.result_java);
+                    Verify_Activity.current_dialog = -1;
                 }
                 dialog2.dismiss();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
             }
         });
 
@@ -93,29 +93,29 @@ public class fragment2 extends DialogFragment {
                 if(next == 1){
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.append("[");
-                    for (int i = 0; i < MainActivity.fridge_index; ++i){
+                    for (int i = 0; i < Verify_Activity.fridge_index; ++i){
                         if(i == 0){
                             stringBuilder.append("{");
                         }else{
                             stringBuilder.append(",{");
                         }
-                        stringBuilder.append("\"did\":\"" + MainActivity.fridge_did[i] + "\",");
-                        stringBuilder.append("\"name\":\"" + MainActivity.fridge_name[i] + "\",");
-                        stringBuilder.append("\"position\":\"" + MainActivity.fridge_position[i] + "\",");
-                        stringBuilder.append("\"expireDate\":\"" + MainActivity.fridge_expiredate[i] + "\",");
-                        stringBuilder.append("\"amount\":\"" + MainActivity.fridge_amount[i] + "\",");
-                        stringBuilder.append("\"memo\":\"" + MainActivity.fridge_memo[i] + "\"");
+                        stringBuilder.append("\"did\":\"" + Verify_Activity.fridge_did[i] + "\",");
+                        stringBuilder.append("\"name\":\"" + Verify_Activity.fridge_name[i] + "\",");
+                        stringBuilder.append("\"position\":\"" + Verify_Activity.fridge_position[i] + "\",");
+                        stringBuilder.append("\"expireDate\":\"" + Verify_Activity.fridge_expiredate[i] + "\",");
+                        stringBuilder.append("\"amount\":\"" + Verify_Activity.fridge_amount[i] + "\",");
+                        stringBuilder.append("\"memo\":\"" + Verify_Activity.fridge_memo[i] + "\"");
                         stringBuilder.append("}");
                     }
                     stringBuilder.append("]");
-                    MainActivity.json = stringBuilder.toString();
-                    MainActivity.result_java = '1';
+                    Verify_Activity.json = stringBuilder.toString();
+                    Verify_Activity.result_java = '1';
                     File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
                     file.delete();
-                    NcnnYolov5.varifyCheck(MainActivity.result_java);
-                    MainActivity.current_dialog = 0;
+                    NcnnYolov5.varifyCheck(Verify_Activity.result_java);
+                    Verify_Activity.current_dialog = 0;
                     dialog2.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                    Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
                 }else{
                     AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
                     dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
@@ -135,9 +135,9 @@ public class fragment2 extends DialogFragment {
         add_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                MainActivity.current_dialog = 3;
+                Verify_Activity.current_dialog = 3;
                 dialog2.hide();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
             }
         });
 

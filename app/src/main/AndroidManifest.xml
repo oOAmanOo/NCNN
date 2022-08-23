@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.tencent.nanodetncnn"
     android:versionCode="1"
     android:versionName="1.1">
@@ -9,23 +10,57 @@
 
     <uses-feature android:name="android.hardware.camera2.full" />
 
-    <application android:label="@string/app_name">
+    <application 
+	android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication_scan"
+        tools:targetApi="31">
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Verify_Activity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/MyTheme">
+            android:theme="@style/MyTheme"
+            android:exported="true">
+        </activity>
+	<activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityreg"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".MainActivityfunc"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivitywelcome"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CaptureAct"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

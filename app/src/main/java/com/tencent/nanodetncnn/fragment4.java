@@ -34,8 +34,8 @@ public class fragment4 extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment4_layout, container);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.d4_recyclerView);
 
-        int addIndex[] = new int[MainActivity.addNum];
-        for(int i = 0; i < MainActivity.addNum; ++i){
+        int addIndex[] = new int[Verify_Activity.addNum];
+        for(int i = 0; i < Verify_Activity.addNum; ++i){
             addIndex[i] = i;
 
         }
@@ -52,9 +52,9 @@ public class fragment4 extends DialogFragment {
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                    MainActivity.current_dialog = 3;
+                    Verify_Activity.current_dialog = 3;
                     dialog4.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                    Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
             }
         });
 
@@ -71,33 +71,33 @@ public class fragment4 extends DialogFragment {
                     }
                 }
                 if(next == 1){
-                    MainActivity.fridge_index += MainActivity.addNum;
+                    Verify_Activity.fridge_index += Verify_Activity.addNum;
                     try {
                         JSONObject obj = null;
                         JSONArray table = null;
                         JSONObject data = null;
-                        obj = new JSONObject(MainActivity.result);
+                        obj = new JSONObject(Verify_Activity.result);
                         table = obj.getJSONArray("food_dic");
 
                         for (int i = 0; i < table.length(); i++) {
                             data = table.getJSONObject(i);
-                            for (int j = MainActivity.old_fridge_index; j < MainActivity.fridge_index; j++) {
-                                if (data.getString("name").equals(MainActivity.fridge_name[j])) {
-                                    MainActivity.fridge_did[j] = data.getString("did");
-                                    MainActivity.fridge_position[j] = data.getString("position");
-                                    MainActivity.fridge_expiredate[j] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay"))).toString();
-                                    MainActivity.fridge_imgName[j] = data.getString("imgName");
-                                    MainActivity.fridge_amount[j] = "1";
-                                    MainActivity.fridge_memo[j] = "#";
+                            for (int j = Verify_Activity.old_fridge_index; j < Verify_Activity.fridge_index; j++) {
+                                if (data.getString("name").equals(Verify_Activity.fridge_name[j])) {
+                                    Verify_Activity.fridge_did[j] = data.getString("did");
+                                    Verify_Activity.fridge_position[j] = data.getString("position");
+                                    Verify_Activity.fridge_expiredate[j] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay"))).toString();
+                                    Verify_Activity.fridge_imgName[j] = data.getString("imgName");
+                                    Verify_Activity.fridge_amount[j] = "1";
+                                    Verify_Activity.fridge_memo[j] = "#";
                                 }
                             }
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    MainActivity.current_dialog = 2;
+                    Verify_Activity.current_dialog = 2;
                     dialog4.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                    Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
                 }else{
                     AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
                     dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));

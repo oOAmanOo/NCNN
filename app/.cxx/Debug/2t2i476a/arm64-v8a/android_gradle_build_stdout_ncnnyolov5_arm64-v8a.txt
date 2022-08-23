@@ -1,3 +1,9 @@
 ninja: Entering directory `/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/arm64-v8a'
-[1/2] Building CXX object CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o
-[2/2] Linking CXX shared library /home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so
+[0/1] Re-running CMake...
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/arm64-v8a
+[1/4] Building CXX object CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o
+[2/4] Building CXX object CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o
+[3/4] Building CXX object CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o
+[4/4] Linking CXX shared library /home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so

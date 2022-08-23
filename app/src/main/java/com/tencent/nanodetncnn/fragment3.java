@@ -32,7 +32,7 @@ public class fragment3 extends DialogFragment {
         final FragmentManager fm = getParentFragmentManager();
 
         Button re_button = (Button) view.findViewById(R.id.d3_re_button);
-        if(MainActivity.enter_dialog == 1){
+        if(Verify_Activity.enter_dialog == 1){
             re_button.setText("上一步");
         }else{
             re_button.setText("重新辨識");
@@ -40,18 +40,18 @@ public class fragment3 extends DialogFragment {
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(MainActivity.enter_dialog == 1){
-                    MainActivity.current_dialog = 2;
+                if(Verify_Activity.enter_dialog == 1){
+                    Verify_Activity.current_dialog = 2;
                 }else{
-                    MainActivity.result_java = '1';
-                    MainActivity.verButton.setText("完成辨識");
+                    Verify_Activity.result_java = '1';
+                    Verify_Activity.verButton.setText("完成辨識");
                     File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
                     file.delete();
-                    NcnnYolov5.varifyCheck(MainActivity.result_java);
-                    MainActivity.current_dialog = -1;
+                    NcnnYolov5.varifyCheck(Verify_Activity.result_java);
+                    Verify_Activity.current_dialog = -1;
                 }
                 dialog3.hide();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
             }
         });
         Button next_button = (Button) view.findViewById(R.id.d3_next_button);
@@ -73,10 +73,10 @@ public class fragment3 extends DialogFragment {
                     AlertDialog dialog = dumb.create();
                     dialog.show();
                 }else {
-                    MainActivity.addNum = Integer.parseInt(d3_editTextNumber.getText().toString());
-                    MainActivity.current_dialog = 4;
+                    Verify_Activity.addNum = Integer.parseInt(d3_editTextNumber.getText().toString());
+                    Verify_Activity.current_dialog = 4;
                     dialog3.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                    Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
                 }
             }
         });

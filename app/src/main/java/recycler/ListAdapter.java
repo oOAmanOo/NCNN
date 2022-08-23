@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tencent.nanodetncnn.MainActivity;
+import com.tencent.nanodetncnn.Verify_Activity;
 import com.tencent.nanodetncnn.R;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
@@ -41,8 +41,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
         holder.d1_textView.setText(list[position]);
         holder.d1_imageView.setImageResource(R.drawable.pic1);
 //        holder.d1_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(imgName[position]),"drawable", context.getPackageName()));
-        if(MainActivity.last_dialog != 0){
-            if(MainActivity.class_list_checked[position] == String.valueOf(1)) {
+        if(Verify_Activity.last_dialog != 0){
+            if(Verify_Activity.class_list_checked[position] == String.valueOf(1)) {
                 holder.d1_textView.setTextColor(Color.parseColor("#F2F2F3"));
                 holder.d1_card.setBackgroundColor(Color.parseColor("#A100455F"));
             }else{
@@ -54,14 +54,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
         holder.d1_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MainActivity.class_list_checked[position] != String.valueOf(1)) {
+                if(Verify_Activity.class_list_checked[position] != String.valueOf(1)) {
                     holder.d1_textView.setTextColor(Color.parseColor("#F2F2F3"));
                     holder.d1_card.setBackgroundColor(Color.parseColor("#A100455F"));
-                    MainActivity.class_list_checked[position] = String.valueOf(1);
+                    Verify_Activity.class_list_checked[position] = String.valueOf(1);
                 }else{
                     holder.d1_textView.setTextColor(Color.parseColor("#00455F"));
                     holder.d1_card.setBackgroundColor(Color.parseColor("#F2F2F3"));
-                    MainActivity.class_list_checked[position] = String.valueOf(0);
+                    Verify_Activity.class_list_checked[position] = String.valueOf(0);
                 }
             }
         });

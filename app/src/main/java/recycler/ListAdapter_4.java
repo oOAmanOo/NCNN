@@ -14,8 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.R;
+import com.tencent.nanodetncnn.Verify_Activity;
 
 import java.time.LocalDate;
 
@@ -57,14 +57,14 @@ public class ListAdapter_4 extends RecyclerView.Adapter<ListAdapter_4.ListHolder
             public void afterTextChanged(Editable s) {
                 if(!(holder.d4_editTextName.getText().toString().matches(""))){
                     foodNameText[position] = 1;
-                    int index = MainActivity.fridge_index + position;
-                    MainActivity.fridge_did[index] = holder.d4_editTextName.getText().toString();
-                    MainActivity.fridge_name[index] = holder.d4_editTextName.getText().toString();
-                    MainActivity.fridge_expiredate[index] = LocalDate.now().plusDays(2).toString();
-                    MainActivity.fridge_imgName[index] ="question";
-                    MainActivity.fridge_position[index] = "2";
-                    MainActivity.fridge_amount[index] = "1";
-                    MainActivity.fridge_memo[index] = "#";
+                    int index = Verify_Activity.fridge_index + position;
+                    Verify_Activity.fridge_did[index] = holder.d4_editTextName.getText().toString();
+                    Verify_Activity.fridge_name[index] = holder.d4_editTextName.getText().toString();
+                    Verify_Activity.fridge_expiredate[index] = LocalDate.now().plusDays(2).toString();
+                    Verify_Activity.fridge_imgName[index] ="question";
+                    Verify_Activity.fridge_position[index] = "2";
+                    Verify_Activity.fridge_amount[index] = "1";
+                    Verify_Activity.fridge_memo[index] = "#";
                 }
             }
         });

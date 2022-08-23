@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,317",
+                        "endColumns": "58,46,155,106",
+                        "endOffsets": "109,156,312,419"
+                    },
+                    "to": {
+                        "startLines": "33,34,35,36",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3262,3321,3368,3524",
+                        "endColumns": "58,46,155,106",
+                        "endOffsets": "3316,3363,3519,3626"
+                    }
+                },
+                {
                     "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
