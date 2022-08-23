@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "/home/bingo/Public/AS2/NCNN/app/src/main/jni/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/home/bingo/Public/AS2/NCNN/app/.cxx/Debug/2169x1k5/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/home/bingo/Public/AS2/NCNN/app/.cxx/Debug/2169x1k5/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ncnnyolov5-Debug-x86": {
+      "artifactName": "ncnnyolov5",
+      "buildCommandComponents": [
+        "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/bingo/Public/AS2/NCNN/app/.cxx/Debug/2169x1k5/x86",
+        "ncnnyolov5"
+      ],
+      "abi": "x86",
+      "output": "/home/bingo/Public/AS2/NCNN/app/build/intermediates/cxx/Debug/2169x1k5/obj/x86/libncnnyolov5.so",
+      "runtimeFiles": []
+    }
+  }
+}
