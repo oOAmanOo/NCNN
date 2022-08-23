@@ -1,8 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--  <style name="Theme.NCNN.NoActionBar" >-->
+<!--  <style name="app_name.NoActionBar" >-->
 <!--  <item name="windowActionBar">false</item>-->
 <!--  <item name="windowNoTitle">true</item>-->
 <!--</style>-->
-<!--  <style name="Theme.NCNN.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
-<!--  <style name="Theme.NCNN.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+<!--&lt;!&ndash;  <style name="Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />&ndash;&gt;-->
+<!--&lt;!&ndash;  <style name="Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <string name="app_name">ncnnyolov5</string>&ndash;&gt;-->
+
+<!--    <style name="app_name" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        <item name="android:background">@color/white</item>-->
+<!--        <item name="background">@color/white</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--        <item name="actionBarStyle">@color/white</item>-->
+<!--    </style> android:style/Theme.Light @style/Widget.AppCompat.Light.ActionBar.Solid.Inverse-->
+    <style name="MyTheme" >
+            <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar">
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
 </resources>

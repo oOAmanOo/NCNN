@@ -2,6 +2,7 @@ package com.tencent.nanodetncnn;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -49,14 +50,23 @@ public class fragment5 extends DialogFragment {
             @Override
             public void onClick(View v) {
                 EditText d5_editTextNumber = (EditText) view.findViewById(R.id.d5_editTextNumber);
-                MainActivity.addNum = Integer.parseInt(d5_editTextNumber.getText().toString());
-                if(MainActivity.addNum > 0){
+                if(d5_editTextNumber.getText().toString().matches("")){
+                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>請填入新增食物筆數，數值需大於 0"));
+                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    AlertDialog dialog = dumb.create();
+                    dialog.show();
+                }else{
+                    MainActivity.addNum = Integer.parseInt(d5_editTextNumber.getText().toString());
                     MainActivity.current_dialog = 4;
                     dialog5.hide();
                     MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
-                }else{
-                    AlertDialog.Builder dumb = new AlertDialog.Builder(MainActivity.mContext2);
-
                 }
 
             }

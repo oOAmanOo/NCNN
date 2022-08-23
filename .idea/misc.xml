@@ -16,7 +16,7 @@
         <entry key="app/src/main/res/layout/fragment1_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment2_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment3_layout.xml" value="0.2265625" />
-        <entry key="app/src/main/res/layout/fragment4_layout.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/fragment4_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment5_layout.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_modify__ingredients.xml" value="0.1" />
@@ -31,7 +31,7 @@
         <entry key="app/src/main/res/layout/list_adapter2.xml" value="0.5" />
         <entry key="app/src/main/res/layout/list_adapter4.xml" value="0.5" />
         <entry key="app/src/main/res/layout/list_adpater.xml" value="0.18385416666666668" />
-        <entry key="app/src/main/res/layout/main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/main.xml" value="0.22" />
       </map>
     </option>
   </component>

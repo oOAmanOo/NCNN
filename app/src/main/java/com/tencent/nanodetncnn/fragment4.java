@@ -1,6 +1,8 @@
 package com.tencent.nanodetncnn;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -50,7 +52,7 @@ public class fragment4 extends DialogFragment {
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                    MainActivity.current_dialog = 6;
+                    MainActivity.current_dialog = 3;
                     dialog4.hide();
                     MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
@@ -61,35 +63,56 @@ public class fragment4 extends DialogFragment {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                MainActivity.old_fridge_index = MainActivity.fridge_index;
-                MainActivity.fridge_index += MainActivity.addNum;
-                try {
-                    JSONObject obj = null;
-                    JSONArray table = null;
-                    JSONObject data = null;
-                    obj = new JSONObject(MainActivity.result);
-                    table = obj.getJSONArray("food_dic");
+                int next = 1;
+                for (int i = 0; i < ListAdapter_4.foodNameText.length; i++) {
+                    if(ListAdapter_4.foodNameText[i] == 0){
+                        next = 0;
+                        break;
+                    }
+                }
+                if(next == 1){
+                    MainActivity.fridge_index += MainActivity.addNum;
+                    try {
+                        JSONObject obj = null;
+                        JSONArray table = null;
+                        JSONObject data = null;
+                        obj = new JSONObject(MainActivity.result);
+                        table = obj.getJSONArray("food_dic");
 
-                    for (int i = 0; i < table.length(); i++) {
-                        data = table.getJSONObject(i);
-                        for (int j = MainActivity.old_fridge_index; j < MainActivity.fridge_index; j++) {
-                            if (data.getString("name").equals(MainActivity.fridge_name[j])) {
-                                MainActivity.fridge_did[j] = data.getString("did");
-                                MainActivity.fridge_position[j] = data.getString("position");
-                                MainActivity.fridge_expiredate[j] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay"))).toString();
-                                MainActivity.fridge_imgName[j] = data.getString("imgName");
-                                MainActivity.fridge_amount[j] = "1";
-                                MainActivity.fridge_memo[j] = "#";
-                                System.out.println(j+" : "+MainActivity.fridge_memo[j]);
+                        for (int i = 0; i < table.length(); i++) {
+                            data = table.getJSONObject(i);
+                            for (int j = MainActivity.old_fridge_index; j < MainActivity.fridge_index; j++) {
+                                if (data.getString("name").equals(MainActivity.fridge_name[j])) {
+                                    MainActivity.fridge_did[j] = data.getString("did");
+                                    MainActivity.fridge_position[j] = data.getString("position");
+                                    MainActivity.fridge_expiredate[j] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay"))).toString();
+                                    MainActivity.fridge_imgName[j] = data.getString("imgName");
+                                    MainActivity.fridge_amount[j] = "1";
+                                    MainActivity.fridge_memo[j] = "#";
+                                    System.out.println(j+" : "+MainActivity.fridge_memo[j]);
+                                }
                             }
                         }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    MainActivity.current_dialog = 2;
+                    dialog4.hide();
+                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                }else{
+                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>食物名稱欄位不可空白<br>若需調整數量請點擊上一步"));
+                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    AlertDialog dialog = dumb.create();
+                    dialog.show();
                 }
-                MainActivity.current_dialog = 2;
-                dialog4.hide();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+
             }
         });
         return view;

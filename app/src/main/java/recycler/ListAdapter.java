@@ -41,6 +41,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
         holder.d1_textView.setText(list[position]);
         holder.d1_imageView.setImageResource(R.drawable.pic1);
 //        holder.d1_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(imgName[position]),"drawable", context.getPackageName()));
+        if(MainActivity.last_dialog != 0){
+            if(MainActivity.class_list_checked[position] == String.valueOf(1)) {
+                holder.d1_textView.setTextColor(Color.parseColor("#F2F2F3"));
+                holder.d1_card.setBackgroundColor(Color.parseColor("#A100455F"));
+            }else{
+                holder.d1_textView.setTextColor(Color.parseColor("#00455F"));
+                holder.d1_card.setBackgroundColor(Color.parseColor("#F2F2F3"));
+            }
+        }
+
         holder.d1_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,8 +63,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
                     holder.d1_card.setBackgroundColor(Color.parseColor("#F2F2F3"));
                     MainActivity.class_list_checked[position] = String.valueOf(0);
                 }
-//                System.out.println(MainActivity.class_list_checked[position]);
-//                System.out.println(holder.d1_textView.getText());
             }
         });
     }

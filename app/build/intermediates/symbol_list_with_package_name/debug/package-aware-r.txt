@@ -2027,7 +2027,6 @@ id chip_group
 id chronometer
 id circle_center
 id clear_text
-id click
 id clip_horizontal
 id clip_vertical
 id clockwise
@@ -2048,6 +2047,7 @@ id custom
 id customPanel
 id cut
 id d1_card
+id d1_constraint
 id d1_imageView
 id d1_next_button
 id d1_re_button
@@ -2072,6 +2072,7 @@ id d3_editTextNumber
 id d3_next_button
 id d3_re_button
 id d4_card
+id d4_constraint
 id d4_editText
 id d4_next_button
 id d4_re_button
@@ -2404,7 +2405,6 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id upload_button
 id useLogo
 id vertical_only
 id view_offset_helper
@@ -2945,6 +2945,8 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style MyActionBar
+style MyTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

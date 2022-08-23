@@ -1,6 +1,8 @@
 package com.tencent.nanodetncnn;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -13,6 +15,8 @@ import android.widget.EditText;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
+
+import java.io.File;
 
 public class fragment3 extends DialogFragment {
 
@@ -28,10 +32,24 @@ public class fragment3 extends DialogFragment {
         final FragmentManager fm = getParentFragmentManager();
 
         Button re_button = (Button) view.findViewById(R.id.d3_re_button);
+        if(MainActivity.enter_dialog == 1){
+            re_button.setText("上一步");
+        }else{
+            re_button.setText("重新辨識");
+        }
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                MainActivity.current_dialog = 2;
+                if(MainActivity.enter_dialog == 1){
+                    MainActivity.current_dialog = 2;
+                }else{
+                    MainActivity.result_java = '1';
+                    MainActivity.verButton.setText("完成辨識");
+                    File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
+                    file.delete();
+                    NcnnYolov5.varifyCheck(MainActivity.result_java);
+                    MainActivity.current_dialog = -1;
+                }
                 dialog3.hide();
                 MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
@@ -42,10 +60,24 @@ public class fragment3 extends DialogFragment {
             @Override
             public void onClick(View v) {
                 EditText d3_editTextNumber = (EditText) view.findViewById(R.id.d3_editTextNumber);
-                MainActivity.addNum = Integer.parseInt(d3_editTextNumber.getText().toString());
-                MainActivity.current_dialog = 4;
-                dialog3.hide();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                if(d3_editTextNumber.getText().toString().matches("") || Integer.parseInt(d3_editTextNumber.getText().toString()) <= 0){
+                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>請填入新增食物筆數，數值需大於 0"));
+                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    AlertDialog dialog = dumb.create();
+                    dialog.show();
+                }else {
+                    MainActivity.addNum = Integer.parseInt(d3_editTextNumber.getText().toString());
+                    MainActivity.current_dialog = 4;
+                    dialog3.hide();
+                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                }
             }
         });
         return view;

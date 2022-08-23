@@ -46,11 +46,13 @@ public class fragment1 extends DialogFragment {
             @Override
             public void onClick(View v) {
                 MainActivity.result_java = '1';
+                MainActivity.verButton.setText("完成辨識");
                 File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
                 file.delete();
                 NcnnYolov5.varifyCheck(MainActivity.result_java);
                 MainActivity.current_dialog = -1;
                 MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                dialog1.hide();
             }
         });
         Button next_button = (Button) view.findViewById(R.id.d1_next_button);
@@ -58,13 +60,14 @@ public class fragment1 extends DialogFragment {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                int none_click = 1;
+                int click_check = 0;
                 for (int i = 0; i < MainActivity.confirm_class_list.length; i++) {
-                    if(!MainActivity.class_list_checked[i].equals("1")) {
-                        ++none_click;
+                    if(MainActivity.class_list_checked[i].equals("1")) {
+                        click_check = 1;
+                        break;
                     }
                 }
-                if(none_click != MainActivity.confirm_class_list.length) {
+                if(click_check == 1) {
                     try {
                         MainActivity.fridge_index = 0;
                         JSONObject obj = null;
@@ -87,18 +90,16 @@ public class fragment1 extends DialogFragment {
                                 }
                             }
                         }
-
+                        MainActivity.old_fridge_index = MainActivity.fridge_index;
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     MainActivity.current_dialog = 2;
-                    dialog1.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
                 }else{
                     MainActivity.current_dialog = 5;
-                    dialog1.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
                 }
+                dialog1.hide();
+                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
             }
         });
         return view;

@@ -3,80 +3,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#00C56F6F"
     android:orientation="vertical"
     android:visibility="visible">
 
-    <Button
-        android:id="@+id/upload_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Button"
-        android:visibility="invisible"
-        tools:visibility="invisible" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/buttonSwitchCamera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="切换摄像头" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp">
 
         <Spinner
             android:id="@+id/spinnerModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
-            android:entries="@array/model_array" />
+            android:entries="@array/model_array"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone" />
 
         <Spinner
             android:id="@+id/spinnerCPUGPU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_weight=".1"
             android:drawSelectorOnTop="true"
             android:entries="@array/cpugpu_array" />
 
         <Button
-            android:id="@+id/endVarify"
-            android:layout_width="200dp"
+            android:id="@+id/buttonSwitchCamera"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="End Varify" />
+            android:layout_margin="5dp"
+            android:layout_weight=".5"
+            android:background="@color/dialog_card"
+            android:backgroundTint="@color/colorAccent"
+            android:text="切換鏡頭"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/endVarify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight=".5"
+            android:background="@color/colorAccent"
+            android:text="完成辨識"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
-    <SurfaceView
-        android:id="@+id/cameraview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/click"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Click"
-            android:textSize="30sp" />
-
+        <SurfaceView
+            android:id="@+id/cameraview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

@@ -23,10 +23,15 @@ public class ListAdapter_4 extends RecyclerView.Adapter<ListAdapter_4.ListHolder
 
     int[] addIndex;
     Context context;
+    public static int[] foodNameText;
 
     public ListAdapter_4(Context context, int[] addIndex){
         this.context = context;
         this.addIndex = addIndex;
+        this.foodNameText = addIndex;
+        for (int i = 0; i < foodNameText.length; i++) {
+            this.foodNameText[i] = 0;
+        }
     }
 
     @Override
@@ -50,14 +55,17 @@ public class ListAdapter_4 extends RecyclerView.Adapter<ListAdapter_4.ListHolder
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void afterTextChanged(Editable s) {
-                int index = MainActivity.fridge_index + position;
-                MainActivity.fridge_did[index] = holder.d4_editTextName.getText().toString();
-                MainActivity.fridge_name[index] = holder.d4_editTextName.getText().toString();
-                MainActivity.fridge_expiredate[index] = LocalDate.now().plusDays(2).toString();
-                MainActivity.fridge_imgName[index] ="question";
-                MainActivity.fridge_position[index] = "2";
-                MainActivity.fridge_amount[index] = "1";
-                MainActivity.fridge_memo[index] = "#";
+                if(!(holder.d4_editTextName.getText().toString().matches(""))){
+                    foodNameText[position] = 1;
+                    int index = MainActivity.fridge_index + position;
+                    MainActivity.fridge_did[index] = holder.d4_editTextName.getText().toString();
+                    MainActivity.fridge_name[index] = holder.d4_editTextName.getText().toString();
+                    MainActivity.fridge_expiredate[index] = LocalDate.now().plusDays(2).toString();
+                    MainActivity.fridge_imgName[index] ="question";
+                    MainActivity.fridge_position[index] = "2";
+                    MainActivity.fridge_amount[index] = "1";
+                    MainActivity.fridge_memo[index] = "#";
+                }
             }
         });
     }

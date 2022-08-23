@@ -38,6 +38,7 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
     String[] fridge_imgName;
     String[] fridge_amount;
     String[] fridge_memo;
+    public static int[] fridgeAmountText;
 
     Context context;
 
@@ -49,6 +50,11 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
         this.fridge_imgName = fridge_imgName;
         this.fridge_amount = fridge_amount;
         this.fridge_memo = fridge_memo;
+        this.fridgeAmountText = new int[fridge_did.length];
+        for (int i = 0; i < fridge_did.length; i++) {
+            this.fridgeAmountText[i] = 1;
+        }
+
         this.context = context;
     }
 
@@ -74,10 +80,8 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 MainActivity.fridge_position[position] = Integer.toString(position);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
         holder.d2_Number_plaintext.setText(fridge_amount[position]);
@@ -94,7 +98,12 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
 
             @Override
             public void afterTextChanged(Editable s) {
-                MainActivity.fridge_amount[position] = holder.d2_Number_plaintext.getText().toString();
+                if(holder.d2_Number_plaintext.getText().toString().matches("") || Integer.parseInt(holder.d2_Number_plaintext.getText().toString()) <= 0){
+                    fridgeAmountText[position] = 0;
+                }else{
+                    fridgeAmountText[position] = 1;
+                    MainActivity.fridge_amount[position] = holder.d2_Number_plaintext.getText().toString();
+                }
             }
         });
         holder.d2_expireddate_date.setText(fridge_expiredate[position]);
@@ -111,7 +120,6 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                 new DatePickerDialog(MainActivity.mContext2, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-
                         String dateTime = String.valueOf(year)+"-"+String.valueOf(month+1)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
                         holder.d2_expireddate_date.setText(dateTime);//setText上去editText~
                         MainActivity.fridge_expiredate[position] = dateTime;

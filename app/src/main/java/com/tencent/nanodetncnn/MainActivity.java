@@ -64,8 +64,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     public static final int REQUEST_CAMERA = 100;
 
     private NcnnYolov5 ncnnyolov5 = new NcnnYolov5();
-    final fragment1 fragment1 = new fragment1();
-    final fragment5 fragment5 = new fragment5();
+
 
     private static Context mContext;
     public static Context mContext2;
@@ -96,11 +95,13 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     public static int fridge_index = 0;
     public static int old_fridge_index = 0;
     private int check = 0;
-    public static int last_dialog = 0;
+    public static int enter_dialog = 0;
     public static int current_dialog = 0;
     public static int origin_dialog = 0;
+    public static int last_dialog = 0;
     public static String json;
     int i = 0;
+    public static Button verButton;
 
     Handler handler;
     private SurfaceView cameraView;
@@ -116,7 +117,6 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-
         File file_test = new File("/data/data/com.tencent.nanodetncnn/result.txt");
         file_test.delete();
 
@@ -190,12 +190,15 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
+        verButton = VarButton;
         VarButton.setOnClickListener(view -> {
             if(result_java == '2'){
                 result_java = '1';
+                VarButton.setText("完成辨識");
                 NcnnYolov5.varifyCheck(result_java);
             }else {
                 result_java = '2';
+                VarButton.setText("開始辨識");
                 NcnnYolov5.varifyCheck(result_java);
 //            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
 //            toast.show();
@@ -254,8 +257,10 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                     }
                     //delete after db built complete
                     check = 0;
+                    final fragment1 fragment1 = new fragment1();
                     fm.beginTransaction().remove(fragment1).commit();
                     fragment1.show(fm, "dialog_tag");
+                    enter_dialog = 1;
                     current_dialog = 1;
                     origin_dialog = 1;
                     last_dialog = 0;
@@ -267,10 +272,12 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 //                      class_list.forEach(t -> System.out.println(t));
                 } catch (Exception ex) {
                     //nothing been verify
-                    fm.beginTransaction().remove(fragment5).commit();
-                    fragment5.show(fm, "dialog_tag");
-                    current_dialog = 5;
-                    origin_dialog = 5;
+                    final fragment3 fragment3 = new fragment3();
+                    fm.beginTransaction().remove(fragment3).commit();
+                    fragment3.show(fm, "dialog_tag");
+                    enter_dialog = 3;
+                    current_dialog = 3;
+                    origin_dialog = 3;
                     last_dialog = 0;
                     Toast a = Toast.makeText(MainActivity.this, "未辨識到任何食物", Toast.LENGTH_SHORT);
                     a.show();
@@ -299,20 +306,21 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         }else if(current_dialog == 4){
             fm.beginTransaction().remove(fragment4).commit();
             fragment4.show(fm, "dialog_tag");
-        }else if(current_dialog == 6 && last_dialog == 3){
-            fm.beginTransaction().remove(fragment3).commit();
-            fragment3.show(fm, "dialog_tag");
-        }else if(current_dialog == 6 && last_dialog == 5){
+        }else if(current_dialog == 5){
             fm.beginTransaction().remove(fragment5).commit();
             fragment5.show(fm, "dialog_tag");
         }
         if (current_dialog == 0){  //send
+            MainActivity.addNum = 0;
+            MainActivity.enter_dialog = 0;
             MainActivity.origin_dialog = 0;
             MainActivity.current_dialog = 0;
             MainActivity.last_dialog = 0;
             Thread thread = new Thread(upload);
             thread.start();
-        }else if(current_dialog == -1) {
+        }else if(current_dialog == -1) { //close
+            MainActivity.addNum = 0;
+            MainActivity.enter_dialog = 0;
             MainActivity.origin_dialog = 0;
             MainActivity.current_dialog = 0;
             MainActivity.last_dialog = 0;

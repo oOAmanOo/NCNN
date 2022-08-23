@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -29,9 +28,6 @@ public final class MainBinding implements ViewBinding {
   public final SurfaceView cameraview;
 
   @NonNull
-  public final TextView click;
-
-  @NonNull
   public final Button endVarify;
 
   @NonNull
@@ -40,20 +36,15 @@ public final class MainBinding implements ViewBinding {
   @NonNull
   public final Spinner spinnerModel;
 
-  @NonNull
-  public final Button uploadButton;
-
   private MainBinding(@NonNull LinearLayout rootView, @NonNull Button buttonSwitchCamera,
-      @NonNull SurfaceView cameraview, @NonNull TextView click, @NonNull Button endVarify,
-      @NonNull Spinner spinnerCPUGPU, @NonNull Spinner spinnerModel, @NonNull Button uploadButton) {
+      @NonNull SurfaceView cameraview, @NonNull Button endVarify, @NonNull Spinner spinnerCPUGPU,
+      @NonNull Spinner spinnerModel) {
     this.rootView = rootView;
     this.buttonSwitchCamera = buttonSwitchCamera;
     this.cameraview = cameraview;
-    this.click = click;
     this.endVarify = endVarify;
     this.spinnerCPUGPU = spinnerCPUGPU;
     this.spinnerModel = spinnerModel;
-    this.uploadButton = uploadButton;
   }
 
   @Override
@@ -95,12 +86,6 @@ public final class MainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.click;
-      TextView click = ViewBindings.findChildViewById(rootView, id);
-      if (click == null) {
-        break missingId;
-      }
-
       id = R.id.endVarify;
       Button endVarify = ViewBindings.findChildViewById(rootView, id);
       if (endVarify == null) {
@@ -119,14 +104,8 @@ public final class MainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.upload_button;
-      Button uploadButton = ViewBindings.findChildViewById(rootView, id);
-      if (uploadButton == null) {
-        break missingId;
-      }
-
-      return new MainBinding((LinearLayout) rootView, buttonSwitchCamera, cameraview, click,
-          endVarify, spinnerCPUGPU, spinnerModel, uploadButton);
+      return new MainBinding((LinearLayout) rootView, buttonSwitchCamera, cameraview, endVarify,
+          spinnerCPUGPU, spinnerModel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

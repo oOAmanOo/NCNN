@@ -20,10 +20,9 @@
             app:layout_constrainedHeight="true"
             app:layout_constraintBaseline_toBottomOf="@id/d2_constraint"
             app:layout_constraintEnd_toEndOf="@id/d2_constraint"
-            app:layout_constraintHeight_max="400dp"
+            app:layout_constraintHeight_max="200dp"
             app:layout_constraintStart_toStartOf="@id/d2_constraint"
             app:layout_constraintTop_toTopOf="@id/d2_constraint">
-
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
