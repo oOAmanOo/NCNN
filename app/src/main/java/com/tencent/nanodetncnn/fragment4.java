@@ -89,7 +89,6 @@ public class fragment4 extends DialogFragment {
                                     MainActivity.fridge_imgName[j] = data.getString("imgName");
                                     MainActivity.fridge_amount[j] = "1";
                                     MainActivity.fridge_memo[j] = "#";
-                                    System.out.println(j+" : "+MainActivity.fridge_memo[j]);
                                 }
                             }
                         }

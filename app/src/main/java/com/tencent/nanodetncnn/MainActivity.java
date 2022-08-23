@@ -137,7 +137,6 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
         cameraView.getHolder().setFormat(PixelFormat.RGBA_8888);
         cameraView.getHolder().addCallback(this);
-
         Button buttonSwitchCamera = (Button) findViewById(R.id.buttonSwitchCamera);
         buttonSwitchCamera.setOnClickListener(arg0 -> {
 
@@ -149,7 +148,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
             facing = new_facing;
         });
-
+//        buttonSwitchCamera.callOnClick();
         spinnerModel = (Spinner) findViewById(R.id.spinnerModel);
         spinnerModel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -184,10 +183,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             public void onNothingSelected(AdapterView<?> arg0)
             {
             }
-
         });
-
-
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
         verButton = VarButton;
@@ -200,9 +196,6 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                 result_java = '2';
                 VarButton.setText("開始辨識");
                 NcnnYolov5.varifyCheck(result_java);
-//            Toast toast = Toast.makeText( MainActivity.this, "點了按鈕"+result_java, Toast.LENGTH_SHORT);
-//            toast.show();
-
                 try {
                     FileInputStream fis = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
                     BufferedReader in = new BufferedReader(new InputStreamReader((fis)));
@@ -293,7 +286,6 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         final fragment2 fragment2 = new fragment2();
         final fragment3 fragment3 = new fragment3();
         final fragment4 fragment4 = new fragment4();
-        final fragment5 fragment5 = new fragment5();
         if(current_dialog == 1){
             fm.beginTransaction().remove(fragment1).commit();
             fragment1.show(fm, "dialog_tag");
@@ -306,12 +298,10 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         }else if(current_dialog == 4){
             fm.beginTransaction().remove(fragment4).commit();
             fragment4.show(fm, "dialog_tag");
-        }else if(current_dialog == 5){
-            fm.beginTransaction().remove(fragment5).commit();
-            fragment5.show(fm, "dialog_tag");
         }
         if (current_dialog == 0){  //send
             MainActivity.addNum = 0;
+            MainActivity.fridge_index = 0;
             MainActivity.enter_dialog = 0;
             MainActivity.origin_dialog = 0;
             MainActivity.current_dialog = 0;
@@ -320,6 +310,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             thread.start();
         }else if(current_dialog == -1) { //close
             MainActivity.addNum = 0;
+            MainActivity.fridge_index = 0;
             MainActivity.enter_dialog = 0;
             MainActivity.origin_dialog = 0;
             MainActivity.current_dialog = 0;

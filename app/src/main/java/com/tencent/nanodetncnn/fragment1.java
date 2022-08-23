@@ -96,7 +96,7 @@ public class fragment1 extends DialogFragment {
                     }
                     MainActivity.current_dialog = 2;
                 }else{
-                    MainActivity.current_dialog = 5;
+                    MainActivity.current_dialog = 3;
                 }
                 dialog1.hide();
                 MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);

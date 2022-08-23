@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -21,6 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +30,7 @@ import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.R;
 
 import java.util.Calendar;
+
 
 public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder_2> {
 
@@ -109,6 +112,7 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
         holder.d2_expireddate_date.setText(fridge_expiredate[position]);
         holder.d2_expireddate_date.setOnClickListener(new View.OnClickListener(){
             //在點了按鈕後才跳出日曆
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 Calendar calendar = Calendar.getInstance();
@@ -117,16 +121,27 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
                 //取出年月日
-                new DatePickerDialog(MainActivity.mContext2, new DatePickerDialog.OnDateSetListener() {
-                    @Override
+                DatePickerDialog  datePickerDialog = new DatePickerDialog(MainActivity.mContext2, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        String dateTime = String.valueOf(year)+"-"+String.valueOf(month+1)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
+                        String dateTime = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
                         holder.d2_expireddate_date.setText(dateTime);//setText上去editText~
                         MainActivity.fridge_expiredate[position] = dateTime;
                     }
-                },year,month,day).show();
+                },year,month,day);
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()-10000);
+                datePickerDialog.show();
+
             }
         });
+        if(!(fridge_memo[position].equals("#"))){
+            if(fridge_memo[position].length() > 4){
+                String substring = fridge_memo[position].substring(0,4);
+                substring += "...";
+                holder.d2_remark_plaintext.setText(substring);
+            }else{
+                holder.d2_remark_plaintext.setText(fridge_memo[position]);
+            }
+        }
         holder.d2_remark_plaintext_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

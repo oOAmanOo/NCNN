@@ -1,2 +1,3 @@
 ninja: Entering directory `/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/arm64-v8a'
-ninja: no work to do.
+[1/2] Building CXX object CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o
+[2/2] Linking CXX shared library /home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so

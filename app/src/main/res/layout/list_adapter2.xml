@@ -88,6 +88,7 @@
                 android:inputType="numberSigned"
                 android:text="Num"
                 android:textAlignment="textStart"
+                android:textColor="@android:color/secondary_text_light"
                 android:textSize="14sp" />
 
             <TextView
@@ -107,6 +108,7 @@
                 android:layout_marginStart="90dp"
                 android:layout_marginTop="80dp"
                 android:fontFamily="sans-serif-medium"
+                android:textColor="@android:color/secondary_text_light"
                 android:textSize="14sp"
                 android:translationZ="10dp" />
 
@@ -121,6 +123,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:linksClickable="false"
                 android:longClickable="false"
+                android:textColor="@android:color/secondary_text_light"
                 android:textIsSelectable="false"
                 android:textSize="14sp"
                 android:translationZ="-10dp" />
@@ -134,29 +137,35 @@
                 android:text="備註"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/d2_remark_plaintext_2"
-                android:layout_width="70dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="180dp"
-                android:layout_marginTop="70dp"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
-                android:translationZ="10dp" />
 
             <EditText
                 android:id="@+id/d2_remark_plaintext"
                 android:layout_width="70dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginStart="180dp"
                 android:layout_marginTop="70dp"
                 android:ems="10"
                 android:fontFamily="sans-serif-medium"
                 android:inputType="text"
+                android:paddingBottom="10dp"
                 android:textAlignment="viewStart"
+                android:textColor="@android:color/secondary_text_light"
                 android:textSize="14sp"
                 android:translationZ="-10dp"
+                android:visibility="visible"
                 tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/d2_remark_plaintext_2"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="75dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="14sp"
+                android:translationZ="10dp"
+                android:visibility="visible" />
 
         </androidx.cardview.widget.CardView>
 

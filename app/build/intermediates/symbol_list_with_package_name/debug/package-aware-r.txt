@@ -2077,9 +2077,6 @@ id d4_editText
 id d4_next_button
 id d4_re_button
 id d4_recyclerView
-id d5_editTextNumber
-id d5_next_button
-id d5_re_button
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2512,7 +2509,6 @@ layout fragment1_layout
 layout fragment2_layout
 layout fragment3_layout
 layout fragment4_layout
-layout fragment5_layout
 layout list_adapter1
 layout list_adapter2
 layout list_adapter4

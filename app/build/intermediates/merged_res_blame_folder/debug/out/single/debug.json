@@ -36,10 +36,6 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/ic_baseline_playlist_add_check_24.xml"
     },
     {
-        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment2_layout.xml.flat",
-        "source": "com.tencent.nanodetncnn.app-main-7:/layout/fragment2_layout.xml"
-    },
-    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment4_layout.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment4_layout.xml"
     },
@@ -62,10 +58,6 @@
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/mipmap-hdpi_ic_add_blue.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/mipmap-hdpi/ic_add_blue.png"
-    },
-    {
-        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment4_layout.xml.flat",
-        "source": "com.tencent.nanodetncnn.app-main-7:/layout/fragment4_layout.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_search_24.xml.flat",
@@ -104,16 +96,16 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/main.xml"
     },
     {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_list_adapter2.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-7:/layout/list_adapter2.xml"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_keyboard_backspace_24.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/ic_baseline_keyboard_backspace_24.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment5_layout.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment5_layout.xml"
-    },
-    {
-        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment1_layout.xml.flat",
-        "source": "com.tencent.nanodetncnn.app-main-7:/layout/fragment1_layout.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxxhdpi_ic_add_blue.png.flat",

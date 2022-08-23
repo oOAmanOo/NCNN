@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -21,6 +22,9 @@ public final class Fragment4LayoutBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ConstraintLayout d4Constraint;
+
+  @NonNull
   public final Button d4NextButton;
 
   @NonNull
@@ -29,9 +33,11 @@ public final class Fragment4LayoutBinding implements ViewBinding {
   @NonNull
   public final RecyclerView d4RecyclerView;
 
-  private Fragment4LayoutBinding(@NonNull LinearLayout rootView, @NonNull Button d4NextButton,
+  private Fragment4LayoutBinding(@NonNull LinearLayout rootView,
+      @NonNull ConstraintLayout d4Constraint, @NonNull Button d4NextButton,
       @NonNull Button d4ReButton, @NonNull RecyclerView d4RecyclerView) {
     this.rootView = rootView;
+    this.d4Constraint = d4Constraint;
     this.d4NextButton = d4NextButton;
     this.d4ReButton = d4ReButton;
     this.d4RecyclerView = d4RecyclerView;
@@ -64,6 +70,12 @@ public final class Fragment4LayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.d4_constraint;
+      ConstraintLayout d4Constraint = ViewBindings.findChildViewById(rootView, id);
+      if (d4Constraint == null) {
+        break missingId;
+      }
+
       id = R.id.d4_next_button;
       Button d4NextButton = ViewBindings.findChildViewById(rootView, id);
       if (d4NextButton == null) {
@@ -82,8 +94,8 @@ public final class Fragment4LayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new Fragment4LayoutBinding((LinearLayout) rootView, d4NextButton, d4ReButton,
-          d4RecyclerView);
+      return new Fragment4LayoutBinding((LinearLayout) rootView, d4Constraint, d4NextButton,
+          d4ReButton, d4RecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
