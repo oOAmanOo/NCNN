@@ -37,8 +37,8 @@ public class fragment4 extends DialogFragment {
         int addIndex[] = new int[Verify_Activity.addNum];
         for(int i = 0; i < Verify_Activity.addNum; ++i){
             addIndex[i] = i;
-
         }
+
         ListAdapter_4 listAdapter_4 = new ListAdapter_4(this.getActivity(), addIndex);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(listAdapter_4);

@@ -46,6 +46,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -416,23 +417,20 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
             // 當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
                 public void run() {
-//                    try {
-//                            obj = new JSONObject(result);
-//
-////                        System.out.println(obj);
-//                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
-//                            table = obj.getJSONArray("food_dic");
-////                        System.out.println(table);
-//                       //data list
-//                        for (int i = 0; i < table.length(); i++) {
-//                            data = table.getJSONObject(i);
-////                            System.out.println(data);
-//                            //data data
-////                            System.out.println(data.getString("name"));
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
+                    try {
+                            obj = new JSONObject(result);
+                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
+                            table = obj.getJSONArray("food_hate");
+                            //data list
+                            for (int i = 0; i < table.length(); i++) {
+                                data = table.getJSONObject(i);
+
+                                //data data
+                                System.out.println(data.getString("name"));
+                            }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }

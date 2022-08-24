@@ -56,7 +56,8 @@ public class MainActivityfunc extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v){
-        scanCode();
+
+        Intent intent=new Intent(MainActivityfunc.this, Verify_Activity.class); startActivity(intent);
     }
 
     private void scanCode(){
