@@ -13,6 +13,12 @@
         <entry key="app/src/main/res/layout/activity_fridge_upload.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/activity_upload.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/content_upload.xml" value="0.14221014492753623" />
+        <entry key="app/src/main/res/layout/editfridge1_layout.xml" value="0.2210144927536232" />
+        <entry key="app/src/main/res/layout/editfridge21_layout.xml" value="0.2210144927536232" />
+        <entry key="app/src/main/res/layout/editfridge22_layout.xml" value="0.2210144927536232" />
+        <entry key="app/src/main/res/layout/editfridge_adapter1.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/editfridge_adapter2.xml" value="0.282798833819242" />
+        <entry key="app/src/main/res/layout/editfridge_adapter3.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment1_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment2_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment3_layout.xml" value="0.2265625" />
