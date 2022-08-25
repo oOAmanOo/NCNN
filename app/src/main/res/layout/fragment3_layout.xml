@@ -6,6 +6,21 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="請輸入欲手動新增食物筆數"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="18dp" />
+
     <EditText
         android:id="@+id/d3_editTextNumber"
         android:layout_width="match_parent"
@@ -21,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="20dp"
         android:translationZ="-30dp"
@@ -31,6 +46,7 @@
             android:id="@+id/d3_re_button"
             android:layout_width="100dp"
             android:layout_height="40dp"
+            android:layout_marginRight="128dp"
             android:layout_weight=".50"
             android:background="@color/colorAccent"
             android:clickable="true"

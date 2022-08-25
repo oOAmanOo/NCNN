@@ -57,6 +57,11 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.tencent.nanodetncnn.MainActivity2"
@@ -77,11 +82,11 @@
         <activity
             android:name="com.tencent.nanodetncnn.MainActivitywelcome"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name="com.tencent.nanodetncnn.CaptureAct"

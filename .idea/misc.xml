@@ -13,11 +13,12 @@
         <entry key="app/src/main/res/layout/activity_fridge_upload.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/activity_upload.xml" value="0.14221014492753623" />
         <entry key="app/src/main/res/layout/content_upload.xml" value="0.14221014492753623" />
-        <entry key="app/src/main/res/layout/fragment1_layout.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment2_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment1_layout.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment2_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment3_layout.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/fragment4_layout.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment5_layout.xml" value="0.2265625" />
+        <entry key="app/src/main/res/layout/fragment_cust1.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_modify__ingredients.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_modify_ingredients.xml" value="0.23324275362318841" />
@@ -27,8 +28,8 @@
         <entry key="app/src/main/res/layout/layout_modify_ingredient.xml" value="0.18297101449275363" />
         <entry key="app/src/main/res/layout/layout_modify_ingredients.xml" value="0.1490036231884058" />
         <entry key="app/src/main/res/layout/list_adapter.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/list_adapter1.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/list_adapter2.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/list_adapter1.xml" value="0.1557377049180328" />
+        <entry key="app/src/main/res/layout/list_adapter2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list_adapter4.xml" value="0.5" />
         <entry key="app/src/main/res/layout/list_adpater.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/main.xml" value="0.22" />

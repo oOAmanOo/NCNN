@@ -210,12 +210,9 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                         String next_class;
                         next_class = read.next();
                         class_list.forEach((e) -> {
-//                      System.out.println(e);
-//                      System.out.println(next_class);
                             if (e.equals(next_class)) {
                                 duplicate_class = 1;
                             }
-//                      System.out.println(duplicate_class);
                         });
                         if (duplicate_class == 0) {
                             class_list.add(next_class);
@@ -263,7 +260,6 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
 
 //                    Toast toast = Toast.makeText(MainActivity.this, "-" + class_list + "-", Toast.LENGTH_SHORT);
 //                    toast.show();
-//                      class_list.forEach(t -> System.out.println(t));
                 } catch (Exception ex) {
                     //nothing been verify
                     final fragment3 fragment3 = new fragment3();
@@ -386,11 +382,9 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb_copy.php?uid=duck");//宣告使用post方法連線
-//                HttpPost httpPost = new HttpPost("http://140.117.71.11/user_insert.php");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?uid=duck");//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
                 params.add(new BasicNameValuePair("uid","duck"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
@@ -417,20 +411,20 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
             // 當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
                 public void run() {
-                    try {
-                            obj = new JSONObject(result);
-                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
-                            table = obj.getJSONArray("food_hate");
-                            //data list
-                            for (int i = 0; i < table.length(); i++) {
-                                data = table.getJSONObject(i);
-
-                                //data data
-                                System.out.println(data.getString("name"));
-                            }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                            obj = new JSONObject(result);
+//                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
+//                            table = obj.getJSONArray("food_hate");
+//                            //data list
+//                            for (int i = 0; i < table.length(); i++) {
+//                                data = table.getJSONObject(i);
+//
+//                                //data data
+//                                System.out.println(data.getString("name"));
+//                            }
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             });
         }
@@ -440,10 +434,8 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
         public void run() {
             String result;
             try {
-//                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-//                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb_copy.php?uid=duck");//宣告使用post方法連線
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_insert.php?uid=duck");//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();

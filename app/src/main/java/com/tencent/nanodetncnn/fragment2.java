@@ -8,6 +8,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -27,7 +28,6 @@ public class fragment2 extends DialogFragment {
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment2_layout, container);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.d2_recyclerView);
-        System.out.println(1);
         String fridge_did[] = new String[Verify_Activity.fridge_index];
         String fridge_name[] = new String[Verify_Activity.fridge_index];
         String fridge_position[] = new String[Verify_Activity.fridge_index];
@@ -35,7 +35,6 @@ public class fragment2 extends DialogFragment {
         String fridge_imgName[] = new String[Verify_Activity.fridge_index];
         String fridge_amount[] = new String[Verify_Activity.fridge_index];
         String fridge_memo[] = new String[Verify_Activity.fridge_index];
-        System.out.println(2);
         for (int i = 0; i < Verify_Activity.fridge_index; ++i){
             fridge_did[i] = Verify_Activity.fridge_did[i];
             fridge_name[i] = Verify_Activity.fridge_name[i];
@@ -45,13 +44,12 @@ public class fragment2 extends DialogFragment {
             fridge_amount[i] = Verify_Activity.fridge_amount[i];
             fridge_memo[i] = Verify_Activity.fridge_memo[i];
         }
-        System.out.println(3);
         ListAdapter_2 listAdapter_2 = new ListAdapter_2(this.getActivity(), fridge_did, fridge_name, fridge_position, fridge_expiredate, fridge_imgName, fridge_amount, fridge_memo);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(listAdapter_2);
 
         dialog2 = this.getDialog();
-        dialog2.setTitle(Html.fromHtml("<font color='#00455F'>食物資訊編輯"));
+        dialog2.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog2.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager() ;
 

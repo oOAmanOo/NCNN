@@ -4,10 +4,10 @@ package com.tencent.nanodetncnn;
 import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
@@ -38,7 +38,7 @@ public class fragment1 extends DialogFragment {
         recyclerView.setAdapter(listAdapter);
 
         dialog1 = this.getDialog();
-        dialog1.setTitle(Html.fromHtml("<font color='#00455F'>請選擇欲添加至冰箱的食物"));
+        dialog1.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog1.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
 

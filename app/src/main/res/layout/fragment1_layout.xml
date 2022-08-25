@@ -2,14 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#FFFFFF"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="請選擇欲添加至冰箱的食物"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="18dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/d1_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/d1_recyclerView"
             android:layout_width="match_parent"
@@ -19,9 +33,10 @@
             app:layout_constraintEnd_toEndOf="@id/d1_constraint"
             app:layout_constraintHeight_max="200dp"
             app:layout_constraintStart_toStartOf="@id/d1_constraint"
-            app:layout_constraintTop_toTopOf="@id/d1_constraint">>
+            app:layout_constraintTop_toTopOf="@id/d1_constraint">
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,11 +51,12 @@
             android:id="@+id/d1_re_button"
             android:layout_width="100dp"
             android:layout_height="40dp"
+            android:layout_marginRight="128dp"
             android:layout_weight=".50"
             android:background="@color/colorAccent"
             android:clickable="true"
-            android:focusable="auto"
             android:contextClickable="false"
+            android:focusable="auto"
             android:fontFamily="sans-serif-medium"
             android:forceHasOverlappingRendering="false"
             android:gravity="center"

@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2.5dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="2.5dp"
         android:clickable="true"
         app:cardBackgroundColor="@color/dialog_card">
 
@@ -46,6 +47,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             tools:src="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>

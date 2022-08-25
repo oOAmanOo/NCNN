@@ -3166,7 +3166,6 @@ int id textView4 0x7f090225
 int id textView5 0x7f090226
 int id textView6 0x7f090227
 int id textView7 0x7f090228
-int id textView8 0x7f090229
 int id text_input_end_icon 0x7f09022a
 int id text_input_error_icon 0x7f09022b
 int id text_input_start_icon 0x7f09022c
@@ -3361,7 +3360,6 @@ int layout fragment_profile 0x7f0c003d
 int layout fragment_ready_to_eat 0x7f0c003e
 int layout fragment_search 0x7f0c003f
 int layout fragment_settings 0x7f0c0040
-int layout list_adapter 0x7f0c0041
 int layout list_adapter1 0x7f0c0042
 int layout list_adapter2 0x7f0c0043
 int layout list_adapter4 0x7f0c0044

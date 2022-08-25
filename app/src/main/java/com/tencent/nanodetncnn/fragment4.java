@@ -9,6 +9,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
@@ -44,7 +45,7 @@ public class fragment4 extends DialogFragment {
         recyclerView.setAdapter(listAdapter_4);
 
         dialog4 = this.getDialog();
-        dialog4.setTitle(Html.fromHtml("<font color='#00455F'>請填入食物名稱"));
+        dialog4.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog4.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
 

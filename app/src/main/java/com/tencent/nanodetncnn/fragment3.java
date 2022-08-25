@@ -9,6 +9,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,7 +28,7 @@ public class fragment3 extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment3_layout, container);
 
         dialog3 = this.getDialog();
-        dialog3.setTitle(Html.fromHtml("<font color='#00455F'>請輸入欲手動新增食物筆數"));
+        dialog3.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog3.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
 
