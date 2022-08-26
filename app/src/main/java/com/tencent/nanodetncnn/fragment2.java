@@ -27,7 +27,6 @@ public class fragment2 extends DialogFragment {
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment2_layout, container);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.d2_recyclerView);
-        System.out.println(1);
         String fridge_did[] = new String[MainActivity.fridge_index];
         String fridge_name[] = new String[MainActivity.fridge_index];
         String fridge_position[] = new String[MainActivity.fridge_index];
@@ -35,7 +34,6 @@ public class fragment2 extends DialogFragment {
         String fridge_imgName[] = new String[MainActivity.fridge_index];
         String fridge_amount[] = new String[MainActivity.fridge_index];
         String fridge_memo[] = new String[MainActivity.fridge_index];
-        System.out.println(2);
         for (int i = 0; i < MainActivity.fridge_index; ++i){
             fridge_did[i] = MainActivity.fridge_did[i];
             fridge_name[i] = MainActivity.fridge_name[i];

@@ -1,0 +1,1 @@
+/home/bingo/Public/AS2/NCNN/app/build/intermediates/cxx/Debug/2169x1k5/obj/x86_64

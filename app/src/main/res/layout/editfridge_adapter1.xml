@@ -8,7 +8,7 @@
     tools:context=".fragment1">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/d1_card"
+        android:id="@+id/ef11_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -19,7 +19,7 @@
         app:cardBackgroundColor="@color/dialog_card">
 
         <ImageView
-            android:id="@+id/d1_imageView"
+            android:id="@+id/ef11_imageView"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
@@ -29,7 +29,7 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/d1_textView"
+            android:id="@+id/ef11_textView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
 
@@ -52,7 +52,7 @@
             tools:text="Apple" />
 
         <EditText
-            android:id="@+id/f1_editTExt"
+            android:id="@+id/ef11_editTExt"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
 

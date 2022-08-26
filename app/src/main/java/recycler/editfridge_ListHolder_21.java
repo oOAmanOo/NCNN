@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tencent.nanodetncnn.R;
 
-public class editfridge_ListHolder_2 extends RecyclerView.ViewHolder {
+public class editfridge_ListHolder_21 extends RecyclerView.ViewHolder {
     ImageView ef21_imageView;
     TextView ef21_textView;
     RecyclerView ef21_recyclerview;
-    public editfridge_ListHolder_2(@NonNull View itemView) {
+    public editfridge_ListHolder_21(@NonNull View itemView) {
         super(itemView);
         ImageView ef21_imageView;
         TextView ef21_textView;

@@ -4,7 +4,7 @@
             "outputFile": "com.tencent.nanodetncnn.app-mergeDebugResources-3:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/bingo/Public/NCNN/app/src/main/res/values-w600dp/dimens.xml",
+                    "source": "/home/bingo/Public/AS2/NCNN/app/src/main/res/values-w600dp/dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "6",

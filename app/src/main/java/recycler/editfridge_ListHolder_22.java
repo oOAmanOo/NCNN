@@ -3,46 +3,29 @@ package recycler;
 
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Spinner;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tencent.nanodetncnn.R;
 
-public class editfridge_ListHolder_3 extends RecyclerView.ViewHolder {
-    CardView d2_card;
-    TextView d2_textView;
-    ImageView d2_imageView;
-
-    EditText d2_Number_plaintext;
-    Spinner d2_Position_spinner;
-    TextView d2_expireddate_date;
-    EditText d2_remark_plaintext;
-    TextView d2_remark_plaintext_2;
-    public editfridge_ListHolder_3(@NonNull View itemView) {
+public class editfridge_ListHolder_22 extends RecyclerView.ViewHolder {
+    TextView ef22_date_textview;
+    TextView ef22_amount_textview;
+    EditText ef22_editTextNumber;
+    ImageButton ef22_imageButton;
+    public editfridge_ListHolder_22(@NonNull View itemView) {
         super(itemView);
-        CardView d2_card;
-        TextView d2_textView;
-        ImageView d2_imageView;
-
-        EditText d2_Number_plaintext;
-        Spinner d2_position_plaintext;
-        TextView d2_expireddate_date;
-        EditText d2_remark_plaintext;
-        TextView d2_remark_plaintext_2;
-        d2_textView= (TextView) itemView.findViewById(R.id.d2_textView);
-        d2_imageView = (ImageView) itemView.findViewById(R.id.d2_imageView);
-        d2_Number_plaintext = (EditText) itemView.findViewById(R.id.d2_Number_plaintext);
-        d2_Position_spinner = (Spinner) itemView.findViewById(R.id.d2_Position_spinner);
-        d2_expireddate_date = (TextView) itemView.findViewById(R.id.d2_expireddate_date);
-        d2_remark_plaintext = (EditText) itemView.findViewById(R.id.d2_remark_plaintext);
-        d2_remark_plaintext_2 =(TextView) itemView.findViewById(R.id.d2_remark_plaintext_2);
-
-        d2_card = (CardView) itemView.findViewById(R.id.d2_card);
+        TextView ef22_date_textview;
+        TextView ef22_amount_textview;
+        EditText ef22_editTextNumber;
+        ImageButton ef22_imageButton;
+        ef22_date_textview= (TextView) itemView.findViewById(R.id.ef22_date_textview);
+        ef22_amount_textview= (TextView) itemView.findViewById(R.id.ef22_amount_textview);
+        ef22_editTextNumber= (EditText) itemView.findViewById(R.id.ef22_editTextNumber);
+        ef22_imageButton= (ImageButton) itemView.findViewById(R.id.ef22_imageButton);
     }
 
 }

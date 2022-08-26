@@ -65,6 +65,39 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
     private NcnnYolov5 ncnnyolov5 = new NcnnYolov5();
 
+//    duck dialog
+    public static String[] editfridge_did = new String[100];
+    public static String[] editfridge_name = new String[100];
+    public static String[] editfridge_imgName = new String[100];
+    public static int[] editfridge_num = new int[100];
+    public static int[] editfridge_count = new int[100];
+    public static int[] editfridge_fault = new int[100];
+    public static int editfridge_index = 0;
+    public static String[] editfridgedb_fid = new String[200];
+    public static String[] editfridgedb_did = new String[200];
+    public static String[] editfridgedb_name = new String[200];
+    public static String[] editfridgedb_position = new String[200];
+    public static String[] editfridgedb_insertDate = new String[200];
+    public static String[] editfridgedb_expireDate = new String[200];
+    public static String[] editfridgedb_uid = new String[200];
+    public static int[] editfridgedb_amount = new int[200];
+    public static String[] editfridgedb_memo = new String[200];
+    public static int[] editfridgedb_editnum = new int[200];
+    public static int editfridgedb_index = 0;
+    public static String info_editfridge_name;
+    public static String info_editfridge_imgName;
+    public static String info_editfridgedb_position;
+    public static String info_editfridgedb_insertDate;
+    public static String info_editfridgedb_expireDate;
+    public static String info_editfridgedb_uid;
+    public static String info_editfridgedb_amount;
+    public static String info_editfridgedb_memo;
+    public static int current_editdialog = 0;
+    public static int origin_editdialog = 0;
+    public static int run_editdialog = 0;
+    public static String editjson;
+    public static String editjsonupload;
+    public static FragmentManager fm_p;
 
     private static Context mContext;
     public static Context mContext2;
@@ -77,21 +110,17 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
     private int current_cpugpu = 0;
     public static char result_java = '1';
     private int duplicate_class = 0;
-    final Context context = this;
-    JSONObject obj = null;
-    JSONArray table = null;
-    JSONObject data = null;
     public static int addNum = 0;
     public static String uid;
     public static String confirm_class_list[];
     public static String class_list_checked[];
-    public static String fridge_did[] = new String[50];
-    public static String fridge_name[] = new String[50];
-    public static String fridge_position[] = new String[50];
-    public static String fridge_expiredate[] = new String[50];
-    public static String fridge_imgName[] = new String[50];
-    public static String fridge_amount[] = new String[50];
-    public static String fridge_memo[] = new String[50];
+    public static String fridge_did[] = new String[100];
+    public static String fridge_name[] = new String[100];
+    public static String fridge_position[] = new String[100];
+    public static String fridge_expiredate[] = new String[100];
+    public static String fridge_imgName[] = new String[100];
+    public static String fridge_amount[] = new String[100];
+    public static String fridge_memo[] = new String[100];
     public static int fridge_index = 0;
     public static int old_fridge_index = 0;
     private int check = 0;
@@ -121,7 +150,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         file_test.delete();
 
         final FragmentManager fm = getSupportFragmentManager() ;
-
+        fm_p = fm;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         mContext = MainActivity.this;
@@ -230,6 +259,9 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 
                     check = confirm_class_list.length;
                     try {
+                        JSONObject obj = null;
+                        JSONArray table = null;
+                        JSONObject data = null;
                         obj = new JSONObject(result);
                         table = obj.getJSONArray("food_dic");
                         for (int i = 0; i < table.length(); i++) {
@@ -250,14 +282,13 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                     }
                     //delete after db built complete
                     check = 0;
-                    final fragment1 fragment1 = new fragment1();
-                    fm.beginTransaction().remove(fragment1).commit();
-                    fragment1.show(fm, "dialog_tag");
-                    enter_dialog = 1;
-                    current_dialog = 1;
-                    origin_dialog = 1;
-                    last_dialog = 0;
-
+//                    final fragment1 fragment1 = new fragment1();
+//                    fm.beginTransaction().remove(fragment1).commit();
+//                    fragment1.show(fm, "dialog_tag");
+//                    enter_dialog = 1;
+//                    current_dialog = 1;
+//                    origin_dialog = 1;
+//                    last_dialog = 0;
 //        ********************************************************************************************
 
 //                    Toast toast = Toast.makeText(MainActivity.this, "-" + class_list + "-", Toast.LENGTH_SHORT);
@@ -265,15 +296,22 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 //                      class_list.forEach(t -> System.out.println(t));
                 } catch (Exception ex) {
                     //nothing been verify
-                    final fragment3 fragment3 = new fragment3();
-                    fm.beginTransaction().remove(fragment3).commit();
-                    fragment3.show(fm, "dialog_tag");
-                    enter_dialog = 3;
-                    current_dialog = 3;
-                    origin_dialog = 3;
-                    last_dialog = 0;
-                    Toast a = Toast.makeText(MainActivity.this, "未辨識到任何食物", Toast.LENGTH_SHORT);
-                    a.show();
+//                    final fragment3 fragment3 = new fragment3();
+//                    fm.beginTransaction().remove(fragment3).commit();
+//                    fragment3.show(fm, "dialog_tag");
+//                    enter_dialog = 3;
+//                    current_dialog = 3;
+//                    origin_dialog = 3;
+//                    last_dialog = 0;
+//                    Toast a = Toast.makeText(MainActivity.this, "未辨識到任何食物", Toast.LENGTH_SHORT);
+//                    a.show();
+
+                    //                    duck dialog
+                    final editfridge_dfragment1 editfridge_dfragment1 = new editfridge_dfragment1();
+                    fm.beginTransaction().remove(editfridge_dfragment1).commit();
+                    editfridge_dfragment1.show(fm, "dialog_tag");
+                    current_editdialog = 1;
+                    origin_editdialog = 1;
                 }
             }
         });
@@ -281,25 +319,25 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
         reload();
     }
 
-    public static void dialog_change(int current_dialog, int origin_dialog, int last_dialog, FragmentManager fm){
+    public static void dialog_change(int current_dialog, int origin_dialog, int last_dialog, FragmentManager fm) {
         final fragment1 fragment1 = new fragment1();
         final fragment2 fragment2 = new fragment2();
         final fragment3 fragment3 = new fragment3();
         final fragment4 fragment4 = new fragment4();
-        if(current_dialog == 1){
+        if (current_dialog == 1) {
             fm.beginTransaction().remove(fragment1).commit();
             fragment1.show(fm, "dialog_tag");
-        }else if(current_dialog == 2){
+        } else if (current_dialog == 2) {
             fm.beginTransaction().remove(fragment2).commit();
             fragment2.show(fm, "dialog_tag");
-        }else if(current_dialog == 3){
+        } else if (current_dialog == 3) {
             fm.beginTransaction().remove(fragment3).commit();
             fragment3.show(fm, "dialog_tag");
-        }else if(current_dialog == 4){
+        } else if (current_dialog == 4) {
             fm.beginTransaction().remove(fragment4).commit();
             fragment4.show(fm, "dialog_tag");
         }
-        if (current_dialog == 0){  //send
+        if (current_dialog == 0) {  //send
             MainActivity.addNum = 0;
             MainActivity.fridge_index = 0;
             MainActivity.enter_dialog = 0;
@@ -308,18 +346,57 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             MainActivity.last_dialog = 0;
             Thread thread = new Thread(upload);
             thread.start();
-        }else if(current_dialog == -1) { //close
+        } else if (current_dialog == -1) { //close
             MainActivity.addNum = 0;
             MainActivity.fridge_index = 0;
             MainActivity.enter_dialog = 0;
             MainActivity.origin_dialog = 0;
             MainActivity.current_dialog = 0;
             MainActivity.last_dialog = 0;
-        }else {
+        } else {
             MainActivity.last_dialog = MainActivity.origin_dialog;
             MainActivity.origin_dialog = MainActivity.current_dialog;
         }
     }
+
+//        duck dialog
+    public static void editdialog_change(int current_editdialog, int origin_editdialog, FragmentManager fm){
+        final editfridge_dfragment1 editfridge_dfragment1 = new editfridge_dfragment1();
+        final editfridge_dfragment2 editfridge_dfragment2 = new editfridge_dfragment2();
+        final editfridge_dfragment3 editfridge_dfragment3 = new editfridge_dfragment3();
+        if(current_editdialog == 0){ //send
+            if(MainActivity.editjsonupload.equals("[]")){
+                Toast.makeText(mContext, "未編輯任何食物", Toast.LENGTH_SHORT).show();
+            }else{
+                Thread thread = new Thread(editupload);
+                thread.start();
+                MainActivity.run_editdialog = 0;
+                MainActivity.editfridgedb_index = 0;
+                MainActivity.editfridge_index = 0;
+            }
+            MainActivity.origin_editdialog = MainActivity.current_editdialog;
+        }else if(current_editdialog == 1){
+            fm.beginTransaction().remove(editfridge_dfragment1).commit();
+            editfridge_dfragment1.show(fm, "editdialog_tag");
+            MainActivity.origin_editdialog = MainActivity.current_editdialog;
+        }else if(current_editdialog == 2){
+            if(MainActivity.run_editdialog == 0){
+                Thread thread = new Thread(editsearch);
+                thread.start();
+                MainActivity.run_editdialog = 1;
+            }else if(MainActivity.run_editdialog == 1){
+                fm.beginTransaction().remove(editfridge_dfragment2).commit();
+                editfridge_dfragment2.show(fm, "editdialog_tag");
+                MainActivity.run_editdialog = 0;
+                MainActivity.origin_editdialog = MainActivity.current_editdialog;
+            }
+        }else if(current_editdialog == 3){
+            fm.beginTransaction().remove(editfridge_dfragment3).commit();
+            editfridge_dfragment3.show(fm, "editdialog_tag");
+            MainActivity.current_editdialog = MainActivity.origin_editdialog;
+        }
+    }
+
     public static Handler UIHandler;
     static
     {
@@ -416,23 +493,32 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
             // 當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
                 public void run() {
-//                    try {
-//                            obj = new JSONObject(result);
-//
-////                        System.out.println(obj);
-//                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
-//                            table = obj.getJSONArray("food_dic");
-////                        System.out.println(table);
-//                       //data list
-//                        for (int i = 0; i < table.length(); i++) {
-//                            data = table.getJSONObject(i);
-////                            System.out.println(data);
-//                            //data data
-////                            System.out.println(data.getString("name"));
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
+//                    duck dialog
+                    try {
+                        JSONObject obj = null;
+                        JSONArray table = null;
+                        JSONObject data = null;
+                        obj = new JSONObject(result);
+                        //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
+                        table = obj.getJSONArray("food_dic");
+                        //data list
+                        for (int i = 0; i < table.length(); i++) {
+                            data = table.getJSONObject(i);
+                            editfridge_did[i] = data.getString("did");
+                            editfridge_name[i] = data.getString("name");
+                            editfridge_imgName[i] = data.getString("imgName");
+                            editfridge_num[i] = 1;
+                            editfridge_count[i] = 0;
+                            ++editfridge_index;
+                            if(i == 1){
+                                break;
+                            }
+                            //data data
+//                            System.out.println(data.getString("name"));
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
@@ -440,7 +526,7 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
 //    ********************************************************************************************************
     private static final Runnable upload = new Runnable() {
         public void run() {
-            String result;
+            String result_data;
             try {
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
@@ -468,17 +554,17 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                     box += "\n";
                 }
                 inputStream.close();
-                result = box;
+                result_data = box;
             } catch (Exception e) {
-                result = e.toString();
+                result_data = e.toString();
             }
 
-            String finalResult = result;
+            String finalResult = result_data;
             MainActivity.runOnUI(new Runnable() {
                 public void run() {
                     String return_val = null;
-                    JSONArray table = null;
                     try {
+                        JSONArray table = null;
                         table = new JSONArray(finalResult);
                         return_val = table.getString(0);
                     } catch (JSONException e) {
@@ -488,6 +574,138 @@ public class MainActivity extends FragmentActivity implements SurfaceHolder.Call
                 }
             });
 
+        }
+    };
+
+    //duck dialog
+    private static final Runnable editsearch = new Runnable() {
+        public void run() {
+            String result_data;
+            try {
+//                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_editsearch.php?uid=duck");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+                params.add(new BasicNameValuePair("json", MainActivity.editjson));
+                params.add(new BasicNameValuePair("uid", "duck"));
+                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                String box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    box += line;
+                    box += "\n";
+                }
+                inputStream.close();
+                result_data = box;
+            } catch (Exception e) {
+                result_data = e.toString();
+            }
+
+            String finalResult = result_data;
+            MainActivity.runOnUI(new Runnable() {
+                public void run() {
+                    try {
+                        JSONArray table = null;
+                        JSONArray tablea = null;
+                        JSONObject data = null;
+                        table =new JSONArray(finalResult);
+                        for (int j = 0; j < editfridge_index; j++) {
+                            //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
+                            tablea = table.getJSONArray(j);
+                            //data list
+                            for (int i = 0; i < tablea.length(); i++) {
+                                data = tablea.getJSONObject(i);
+                                editfridgedb_fid[editfridgedb_index] = data.getString("fid");
+                                editfridgedb_did[editfridgedb_index] = data.getString("did");
+                                editfridgedb_name[editfridgedb_index] = data.getString("name");
+                                editfridgedb_position[editfridgedb_index] = data.getString("position");
+                                editfridgedb_insertDate[editfridgedb_index] = data.getString("insertDate");
+                                editfridgedb_expireDate[editfridgedb_index] = data.getString("expireDate");
+                                editfridgedb_uid[editfridgedb_index] = data.getString("uid");
+                                editfridgedb_amount[editfridgedb_index] = Integer.parseInt(data.getString("amount"));
+                                if(data.getString("memo") == ""){
+                                    editfridgedb_memo[editfridgedb_index] = "#";
+                                }else{
+                                    editfridgedb_memo[editfridgedb_index] = data.getString("memo");
+                                }
+                                editfridgedb_editnum[editfridgedb_index] = 0;
+                                ++editfridge_count[j];
+                                ++editfridgedb_index;
+                            }
+                        }
+                        MainActivity.current_editdialog = 2;
+                        MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+        }
+    };
+
+    private static final Runnable editupload = new Runnable() {
+        public void run() {
+            String result_data;
+            try {
+//                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_modify.php?uid=duck");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+                System.out.println(MainActivity.editjsonupload);
+                params.add(new BasicNameValuePair("json", MainActivity.editjsonupload));
+                params.add(new BasicNameValuePair("uid", "duck"));
+                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                String box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    box += line;
+                    box += "\n";
+                }
+                inputStream.close();
+                result_data = box;
+                System.out.println(result_data);
+            } catch (Exception e) {
+                result_data = e.toString();
+            }
+
+            String finalResult = result_data;
+            MainActivity.runOnUI(new Runnable() {
+                public void run() {
+                    String return_val = null;
+                    try {
+                        JSONArray table = null;
+                        table = new JSONArray(finalResult);
+                        return_val = table.getString(0);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     };
 }

@@ -1,0 +1,7 @@
+Executable : /home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/home/bingo/Public/AS2/NCNN/app/.cxx/Debug/2169x1k5/armeabi-v7a
+ncnnyolov5
+jvmArgs : 
+

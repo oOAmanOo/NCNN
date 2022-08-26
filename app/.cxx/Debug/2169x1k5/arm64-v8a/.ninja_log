@@ -1,0 +1,5 @@
+# ninja log v5
+1	1747	1661496945	CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o	9ab5c66d856d4777
+1	1761	1661496945	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	7dbf514316ca55f
+1	1924	1661496945	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	a88dbb7b30845ff1
+1924	3433	1661496947	/home/bingo/Public/AS2/NCNN/app/build/intermediates/cxx/Debug/2169x1k5/obj/arm64-v8a/libncnnyolov5.so	74ece1d7947d148d

@@ -1,4 +1,4 @@
-package com.tencent.nanodetncnn.placeholder;
+package com.tencent.nanodetncnn;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,118 +9,118 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tencent.nanodetncnn.MainActivity;
-import com.tencent.nanodetncnn.NcnnYolov5;
-import com.tencent.nanodetncnn.R;
-
-import java.io.File;
-
-import recycler.ListAdapter_2;
+import recycler.editfridge_ListAdapter_21;
 
 
 public class editfridge_dfragment2 extends DialogFragment {
-    public Dialog dialog2;
+    public Dialog editdialog2;
+    public static FragmentActivity nested_f ;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment2_layout, container);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.d2_recyclerView);
-        System.out.println(1);
-        String fridge_did[] = new String[MainActivity.fridge_index];
-        String fridge_name[] = new String[MainActivity.fridge_index];
-        String fridge_position[] = new String[MainActivity.fridge_index];
-        String fridge_expiredate[] = new String[MainActivity.fridge_index];
-        String fridge_imgName[] = new String[MainActivity.fridge_index];
-        String fridge_amount[] = new String[MainActivity.fridge_index];
-        String fridge_memo[] = new String[MainActivity.fridge_index];
-        System.out.println(2);
-        for (int i = 0; i < MainActivity.fridge_index; ++i){
-            fridge_did[i] = MainActivity.fridge_did[i];
-            fridge_name[i] = MainActivity.fridge_name[i];
-            fridge_position[i] = MainActivity.fridge_position[i];
-            fridge_expiredate[i] = MainActivity.fridge_expiredate[i];
-            fridge_imgName[i] = MainActivity.fridge_imgName[i];
-            fridge_amount[i] = MainActivity.fridge_amount[i];
-            fridge_memo[i] = MainActivity.fridge_memo[i];
+        FragmentActivity nested_f = this.getActivity();
+        View view = inflater.inflate(R.layout.editfridge2_layout, container);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.ef2_recyclerView);
+        String editfridge_did[] = new String[MainActivity.editfridge_index];
+        String editfridge_name[] = new String[MainActivity.editfridge_index];
+        String editfridge_imgName[] = new String[MainActivity.editfridge_index];
+        for (int i = 0; i < MainActivity.editfridge_index; ++i){
+            editfridge_did[i] = MainActivity.editfridge_did[i];
+            editfridge_name[i] = MainActivity.editfridge_name[i];
+            editfridge_imgName[i] = MainActivity.editfridge_imgName[i];
         }
-        System.out.println(3);
-        ListAdapter_2 listAdapter_2 = new ListAdapter_2(this.getActivity(), fridge_did, fridge_name, fridge_position, fridge_expiredate, fridge_imgName, fridge_amount, fridge_memo);
+        editfridge_ListAdapter_21 editfridge_listAdapter_2 = new editfridge_ListAdapter_21(this.getActivity(), editfridge_did, editfridge_name, editfridge_imgName);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        recyclerView.setAdapter(listAdapter_2);
+        recyclerView.setAdapter(editfridge_listAdapter_2);
 
-        dialog2 = this.getDialog();
-        dialog2.setTitle(Html.fromHtml("<font color='#00455F'>食物資訊編輯"));
-        dialog2.setCanceledOnTouchOutside(false);
-        final FragmentManager fm = getParentFragmentManager() ;
+        editdialog2 = this.getDialog();
+        editdialog2.setTitle(Html.fromHtml("<font color='#00455F'>食物編輯確認"));
+        editdialog2.setCanceledOnTouchOutside(false);
+        final FragmentManager fm = getParentFragmentManager();
 
-        Button re_button = (Button) view.findViewById(R.id.d2_re_button);
-        if(MainActivity.enter_dialog == 1){
-            re_button.setText("上一步");
-        }else{
-            re_button.setText("重新辨識");
-        }
+        Button re_button = (Button) view.findViewById(R.id.ef2_re_button);
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(MainActivity.enter_dialog == 1){
-                    MainActivity.current_dialog = 1;
-                }else{
-                    MainActivity.result_java = '1';
-                    MainActivity.verButton.setText("完成辨識");
-                    File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
-                    file.delete();
-                    NcnnYolov5.varifyCheck(MainActivity.result_java);
-                    MainActivity.current_dialog = -1;
-                }
-                dialog2.dismiss();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                MainActivity.current_editdialog = 1;
+                editdialog2.dismiss();
+                MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, fm);
             }
         });
 
-        Button next_button = (Button) view.findViewById(R.id.d2_next_button);
+        Button next_button = (Button) view.findViewById(R.id.ef2_next_button);
         next_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 int next = 1;
-                for (int i = 0; i < ListAdapter_2.fridgeAmountText.length; i++) {
-                    if(ListAdapter_2.fridgeAmountText[i] == 0){
+                System.out.println(1);
+                for (int i = 0; i < MainActivity.editfridge_fault.length; i++) {
+                    System.out.println(111);
+                    if(MainActivity.editfridge_fault[i] == -2){
+                        System.out.println(2);
+                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數量超過存儲數量"));
+                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        AlertDialog dialog = dumb.create();
+                        dialog.show();
+                        next = 0;
+                        break;
+                    }else if(MainActivity.editfridge_fault[i] == -1){
+                        System.out.println(3);
+                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數值不得為負數"));
+                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        AlertDialog dialog = dumb.create();
+                        dialog.show();
                         next = 0;
                         break;
                     }
                 }
                 if(next == 1){
+                    System.out.println(4);
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.append("[");
-                    for (int i = 0; i < MainActivity.fridge_index; ++i){
-                        if(i == 0){
+                    int first = 0;
+                    for (int i = 0; i < MainActivity.editfridgedb_index; ++i){
+                        if(MainActivity.editfridgedb_editnum[i] == 0){
+                            continue;
+                        }else if(first == 0){
+                            ++first;
                             stringBuilder.append("{");
                         }else{
                             stringBuilder.append(",{");
                         }
-                        stringBuilder.append("\"did\":\"" + MainActivity.fridge_did[i] + "\",");
-                        stringBuilder.append("\"name\":\"" + MainActivity.fridge_name[i] + "\",");
-                        stringBuilder.append("\"position\":\"" + MainActivity.fridge_position[i] + "\",");
-                        stringBuilder.append("\"expireDate\":\"" + MainActivity.fridge_expiredate[i] + "\",");
-                        stringBuilder.append("\"amount\":\"" + MainActivity.fridge_amount[i] + "\",");
-                        stringBuilder.append("\"memo\":\"" + MainActivity.fridge_memo[i] + "\"");
+                        stringBuilder.append("\"did\":\"" + MainActivity.editfridgedb_did[i] + "\",");
+                        stringBuilder.append("\"fid\":\"" + MainActivity.editfridgedb_fid[i] + "\",");
+                        stringBuilder.append("\"name\":\"" + MainActivity.editfridgedb_name[i] + "\",");
+                        stringBuilder.append("\"editnum\":\"" + MainActivity.editfridgedb_editnum[i] + "\"");
                         stringBuilder.append("}");
                     }
                     stringBuilder.append("]");
-                    MainActivity.json = stringBuilder.toString();
-                    MainActivity.result_java = '1';
-                    File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
-                    file.delete();
-                    NcnnYolov5.varifyCheck(MainActivity.result_java);
-                    MainActivity.current_dialog = 0;
-                    dialog2.hide();
-                    MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
+                    MainActivity.editjsonupload = stringBuilder.toString();
+                    MainActivity.current_editdialog = 0;
+                    editdialog2.hide();
+                    MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, fm);
                 }else{
+                    System.out.println(5);
                     AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
                     dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
                     dumb.setMessage(Html.fromHtml("<font color='#00455F'>食物數量不可小於 1"));
@@ -135,16 +135,6 @@ public class editfridge_dfragment2 extends DialogFragment {
                 }
             }
         });
-        ImageButton add_button = (ImageButton) view.findViewById(R.id.d2_AddFood);
-        add_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                MainActivity.current_dialog = 3;
-                dialog2.hide();
-                MainActivity.dialog_change(MainActivity.current_dialog, MainActivity.origin_dialog, MainActivity.last_dialog, fm);
-            }
-        });
-
         return view;
     }
 }
