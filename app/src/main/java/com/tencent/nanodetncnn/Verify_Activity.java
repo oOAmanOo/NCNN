@@ -17,6 +17,7 @@ package com.tencent.nanodetncnn;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -46,7 +48,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -103,6 +104,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     public static String json;
     int i = 0;
     public static Button verButton;
+    public static ImageButton change_button;
 
     Handler handler;
     private SurfaceView cameraView;
@@ -118,13 +120,14 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        getActionBar().hide();
         File file_test = new File("/data/data/com.tencent.nanodetncnn/result.txt");
         file_test.delete();
 
         final FragmentManager fm = getSupportFragmentManager() ;
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.verify_main);
         mContext = Verify_Activity.this;
         mContext2 = this;
 
@@ -184,6 +187,13 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
             public void onNothingSelected(AdapterView<?> arg0)
             {
             }
+        });
+
+        ImageButton change_button_0 = (ImageButton) findViewById(R.id.change_button);
+        change_button = change_button_0;
+        change_button.setOnClickListener(view -> {
+            Intent intent = new Intent(Verify_Activity.this, MainActivity.class);
+            startActivity(intent);
         });
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
@@ -475,6 +485,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                         e.printStackTrace();
                     }
                     Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT).show();
+                    change_button.callOnClick();
                 }
             });
 

@@ -9,6 +9,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.tencent.nanodetncnn.login.LoginActivity;
+
 public class MainActivitywelcome extends AppCompatActivity {
 
     @Override
@@ -32,7 +34,7 @@ public class MainActivitywelcome extends AppCompatActivity {
     };
 
     public void getHome(){
-        Intent intent= new Intent(MainActivitywelcome.this, MainActivity.class);
+        Intent intent= new Intent(MainActivitywelcome.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

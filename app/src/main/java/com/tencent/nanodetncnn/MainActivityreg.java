@@ -73,7 +73,7 @@ public class MainActivityreg extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                Intent intent=new Intent(MainActivityreg.this, MainActivityfunc.class); startActivity(intent);
+                Intent intent=new Intent(MainActivityreg.this, MainActivity.class); startActivity(intent);
 
             }
         });

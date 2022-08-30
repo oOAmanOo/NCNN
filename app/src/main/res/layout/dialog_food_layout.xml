@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.9"
+        android:translationZ="-30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.9"
+            android:background="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="點擊非冰箱食材更新可行性"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp" />
+
+        <ImageButton
+            android:id="@+id/ef1_notifyimageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center_horizontal|center_vertical"
+            android:layout_marginLeft="45dp"
+            android:layout_weight="0.1"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleX="0.35"
+            android:scaleY="0.35"
+            app:srcCompat="@mipmap/ic_add_blue" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ef1_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/white">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ef1_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBaseline_toBottomOf="@id/ef1_constraint"
+            app:layout_constraintEnd_toEndOf="@id/ef1_constraint"
+            app:layout_constraintHeight_max="200dp"
+            app:layout_constraintStart_toStartOf="@id/ef1_constraint"
+            app:layout_constraintTop_toTopOf="@id/ef1_constraint">
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1/10"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/update_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="40"
+        android:translationZ="-30dp"
+        app:cardBackgroundColor="#00FFFFFF">
+
+        <Button
+            android:id="@+id/ef1_re_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="128dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorAccent"
+            android:clickable="true"
+            android:contextClickable="false"
+            android:focusable="auto"
+            android:fontFamily="sans-serif-medium"
+            android:forceHasOverlappingRendering="false"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            android:textSize="15sp"
+            android:typeface="normal" />
+
+
+
+        <Button
+            android:id="@+id/ef1_next_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="128dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorAccent"
+            android:clickable="true"
+            android:focusable="auto"
+            android:fontFamily="sans-serif-medium"
+            android:forceHasOverlappingRendering="false"
+            android:text="下一步"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            android:textSize="15sp"
+            android:typeface="normal" />
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+
+

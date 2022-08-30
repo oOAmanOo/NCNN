@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
 MERGED from [androidx.databinding:viewbinding:7.2.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/91064bfcf3d834d346489b916c2e9ee8/transformed/jetified-viewbinding-7.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.5.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/d65c554ecbb1eb12ffc0914b11dd362a/transformed/navigation-ui-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:17:1-26:12
@@ -64,9 +64,9 @@ MERGED from [androidx.print:print:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/f11a2796b54455e05ab8603854e4e469/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:17:1-56:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cc06242ea379559a7b6be7811f23a532/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
-INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:2:1-69:12
 	package
 		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:4:5-38
 		INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
@@ -93,12 +93,20 @@ uses-permission#android.permission.INTERNET
 ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:5-67
 	android:name
 		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:22-64
-uses-feature#android.hardware.camera2.full
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:5-66
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:5-78
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:19-63
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:5-75
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:22-73
+uses-feature#android.hardware.camera2.full
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:5-66
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:19-63
 application
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:5-68:19
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:5-67:19
 MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/bfec8dfcaf6c34e166a516bbd7a3f400/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/8ad4b0562467dfb6f3cd10869bd03e3f/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -120,99 +128,91 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/nc
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:9-35
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:9-35
 	android:label
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:9-41
 	android:fullBackupContent
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:9-54
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:9-54
 	android:roundIcon
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:9-54
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:9-54
 	tools:targetApi
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:9-29
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:25:9-29
 	android:icon
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:14:2-28
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:6-32
 	android:theme
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:9-56
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:23:9-56
 	android:dataExtractionRules
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:9-65
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:17:9-65
+	android:usesCleartextTraffic
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:24:9-44
 uses-library#org.apache.http.legacy
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:24:9-26:40
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:27:9-29:40
 	android:required
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:26:13-37
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:25:13-50
-activity#com.tencent.nanodetncnn.Verify_Activity
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:28:9-38:20
-	android:screenOrientation
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:31:13-49
-	android:label
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:30:13-45
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:28:13-50
+activity#com.tencent.nanodetncnn.MainActivity
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:31:6-39:20
 	android:exported
 		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:33:13-36
-	android:theme
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:32:13-43
+	tools:ignore
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:34:13-40
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:29:13-44
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:32:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:34:13-37:29
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:35:13-38:29
 action#android.intent.action.MAIN
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:35:17-69
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:35:25-66
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:36:17-77
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:36:27-74
-activity#com.tencent.nanodetncnn.MainActivity2
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:39:2-41:40
-	android:exported
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:41:13-37
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:40:13-42
-activity#com.tencent.nanodetncnn.MainActivity
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:42:9-44:40
-	android:exported
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:44:13-37
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:43:13-41
-activity#com.tencent.nanodetncnn.MainActivityreg
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:45:9-47:40
-	android:exported
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:47:13-37
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:46:13-44
-activity#com.tencent.nanodetncnn.login.LoginActivity
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:48:9-51:60
-	android:label
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:51:13-57
-	android:exported
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:50:13-37
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:49:13-48
-activity#com.tencent.nanodetncnn.MainActivityfunc
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:52:9-54:40
-	android:exported
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:54:13-37
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:53:13-45
-activity#com.tencent.nanodetncnn.MainActivitywelcome
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:55:9-62:20
-	android:exported
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:57:13-36
-	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:56:13-48
-activity#com.tencent.nanodetncnn.CaptureAct
-ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:63:9-67:63
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:37:27-74
+activity#com.tencent.nanodetncnn.Verify_Activity
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:40:9-46:20
 	android:screenOrientation
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:65:13-51
-	android:stateNotNeeded
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:66:13-42
-	android:windowSoftInputMode
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:67:13-60
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:43:13-49
+	android:label
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:42:13-45
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:45:13-36
+	android:theme
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:44:13-43
 	android:name
-		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:64:13-39
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:41:13-44
+activity#com.tencent.nanodetncnn.MainActivityreg
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:47:9-49:40
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:49:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:48:13-44
+activity#com.tencent.nanodetncnn.login.LoginActivity
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:50:9-53:60
+	android:label
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:53:13-57
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:51:13-48
+activity#com.tencent.nanodetncnn.MainActivitywelcome
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:54:9-61:20
+	android:exported
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:56:13-36
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:55:13-48
+activity#com.tencent.nanodetncnn.CaptureAct
+ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:62:9-66:63
+	android:screenOrientation
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:64:13-51
+	android:stateNotNeeded
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:65:13-42
+	android:windowSoftInputMode
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:66:13-60
+	android:name
+		ADDED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:63:13-39
 uses-sdk
 INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml

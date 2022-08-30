@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentSearch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -12,48 +13,76 @@
     tools:layout_editor_absoluteX="30dp"
     tools:layout_editor_absoluteY="163dp">
 
+<!--    <TextView-->
+<!--        android:id="@+id/recipesearchtext"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="recipesearchtext"-->
+<!--        android:visibility="gone"-->
+<!--        android:focusable="false"-->
+<!--        android:focusableInTouchMode="false"/>-->
 
-    <EditText
-        android:id="@+id/search_input"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_block"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="306dp"
-        android:minHeight="55dp"
-        android:layout_marginStart="20dp"
-        android:backgroundTint="@color/light_gray"
-        android:contentDescription="search for recipe"
-        android:hint="search for recipe"
-        android:scrollbarThumbHorizontal="@android:drawable/editbox_background"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp"
-        tools:visibility="visible">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </EditText>
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_gray"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="search for recipe"
+            android:minWidth="306dp"
+            android:minHeight="55dp"
+            android:scrollbarThumbHorizontal="@android:drawable/editbox_background"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="10dp"
+            tools:visibility="visible"
+            android:autofillHints="search for recipe">
+
+        </EditText>
 
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/search_input"
-        android:backgroundTint="@color/white"
-        android:contentDescription="search"
-        android:minWidth="48dp"
-        app:srcCompat="@drawable/ic_baseline_search_24" />
+        <ImageView
+            android:id="@+id/searchbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@+id/search_input"
+            android:backgroundTint="@color/white"
+            android:contentDescription="search"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:minWidth="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_input"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_search_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <GridLayout
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_input"
+        android:layout_marginTop="60dp"
         android:columnCount="2"
-        android:rowCount="2">
+        android:rowCount="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_block">
 
 
         <androidx.cardview.widget.CardView
+
+            android:id="@+id/normalMode"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_row="0"
@@ -74,13 +103,14 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/normal"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:layout_marginTop="44dp"
                     android:layout_marginBottom="60dp"
-                    android:src="@drawable/normal"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/general"
                     app:layout_constraintBottom_toTopOf="@+id/textView2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -92,10 +122,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="normal"
+                    android:text="一般模式"
                     android:textAlignment="center"
                     android:textColor="@color/colorAccent"
-                    android:textSize="25sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -106,6 +136,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/manageMode"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_row="0"
@@ -126,13 +157,13 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/manage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/manage"
+                    android:src="@drawable/diet"
                     app:layout_constraintBottom_toTopOf="@+id/textView3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -143,10 +174,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="manage"
+                    android:text="管理模式"
                     android:textAlignment="center"
                     android:textColor="@color/colorAccent"
-                    android:textSize="25sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -155,6 +186,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/fitnessMdde"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_row="1"
@@ -162,7 +194,10 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
@@ -175,9 +210,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/fitness"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginBottom="38dp"
@@ -192,10 +227,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="fitness"
+                    android:text="健身模式"
                     android:textAlignment="center"
                     android:textColor="@color/colorAccent"
-                    android:textSize="25sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -204,6 +239,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/relaxMode"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_row="1"
@@ -211,7 +247,10 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
@@ -224,9 +263,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/relax"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:layout_marginTop="13dp"
                     android:layout_marginBottom="23dp"
@@ -241,10 +280,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="relax"
+                    android:text="頹廢模式"
                     android:textAlignment="center"
                     android:textColor="@color/colorAccent"
-                    android:textSize="25sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -253,4 +292,5 @@
         </androidx.cardview.widget.CardView>
     </GridLayout>
 
-</RelativeLayout>
+
+</FrameLayout>

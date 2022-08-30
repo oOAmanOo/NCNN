@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.tencent.nanodetncnn.MainActivityfunc;
+import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.MainActivityreg;
 import com.tencent.nanodetncnn.R;
 import com.tencent.nanodetncnn.databinding.ActivityLoginBinding;
@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                 //loginViewModel.login(usernameEditText.getText().toString(),passwordEditText.getText().toString());
                 if(usernameEditText.getText().toString().equals("a")&&passwordEditText.getText().toString().equals("aaaaaa")){
                     //查詢資料庫，判斷是否正確
-                    Intent intent=new Intent(LoginActivity.this, MainActivityfunc.class);
+                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 }else {
                     dialogw();
