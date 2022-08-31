@@ -3533,6 +3533,7 @@ menu button_nav_menu
 mipmap ic_add_blue
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_launcher_white
 plurals mtrl_badge_content_description
 raw zxing_beep
 string abc_action_bar_home_description
