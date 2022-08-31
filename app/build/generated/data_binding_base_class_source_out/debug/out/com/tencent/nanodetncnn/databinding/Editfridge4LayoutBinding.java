@@ -29,6 +29,9 @@ public final class Editfridge4LayoutBinding implements ViewBinding {
   public final Button ef4NextButton;
 
   @NonNull
+  public final Button ef4ReButton;
+
+  @NonNull
   public final EditText ef4RemarkEdittext;
 
   @NonNull
@@ -39,11 +42,12 @@ public final class Editfridge4LayoutBinding implements ViewBinding {
 
   private Editfridge4LayoutBinding(@NonNull FrameLayout rootView,
       @NonNull EditText editTextTextPersonName, @NonNull Button ef4NextButton,
-      @NonNull EditText ef4RemarkEdittext, @NonNull Spinner ef4Spinner,
+      @NonNull Button ef4ReButton, @NonNull EditText ef4RemarkEdittext, @NonNull Spinner ef4Spinner,
       @NonNull TextView ef4TimeTextview) {
     this.rootView = rootView;
     this.editTextTextPersonName = editTextTextPersonName;
     this.ef4NextButton = ef4NextButton;
+    this.ef4ReButton = ef4ReButton;
     this.ef4RemarkEdittext = ef4RemarkEdittext;
     this.ef4Spinner = ef4Spinner;
     this.ef4TimeTextview = ef4TimeTextview;
@@ -88,6 +92,12 @@ public final class Editfridge4LayoutBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ef4_re_button;
+      Button ef4ReButton = ViewBindings.findChildViewById(rootView, id);
+      if (ef4ReButton == null) {
+        break missingId;
+      }
+
       id = R.id.ef4_remark_edittext;
       EditText ef4RemarkEdittext = ViewBindings.findChildViewById(rootView, id);
       if (ef4RemarkEdittext == null) {
@@ -107,7 +117,7 @@ public final class Editfridge4LayoutBinding implements ViewBinding {
       }
 
       return new Editfridge4LayoutBinding((FrameLayout) rootView, editTextTextPersonName,
-          ef4NextButton, ef4RemarkEdittext, ef4Spinner, ef4TimeTextview);
+          ef4NextButton, ef4ReButton, ef4RemarkEdittext, ef4Spinner, ef4TimeTextview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

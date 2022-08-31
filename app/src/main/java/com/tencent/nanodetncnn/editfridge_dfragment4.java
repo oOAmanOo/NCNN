@@ -99,6 +99,16 @@ public class editfridge_dfragment4 extends DialogFragment {
             }
         });
 
+        Button re_button = (Button) view.findViewById(R.id.ef4_re_button);
+        re_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                efdialog4.dismiss();
+                MainActivity.current_editdialog = -1;
+                MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
+            }
+        });
+
         Button next_button = (Button) view.findViewById(R.id.ef4_next_button);
         next_button.setOnClickListener(new View.OnClickListener(){
             @Override

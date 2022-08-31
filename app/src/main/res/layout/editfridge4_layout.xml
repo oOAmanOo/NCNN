@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="17dp"
                 android:layout_marginRight="40dp"
                 android:layout_weight=".3" />
 
@@ -99,14 +99,14 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="55dp"
                 android:text="待辦清單內容"
-                android:textColor="@android:color/secondary_text_light_nodisable"
+                android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ef4_remark_edittext"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="15dp"
@@ -120,6 +120,7 @@
                 android:enabled="true"
                 android:fontFamily="sans-serif-medium"
                 android:foregroundTint="@color/white"
+                android:gravity="top|left"
                 android:inputType="textMultiLine|textPersonName"
                 android:linksClickable="true"
                 android:longClickable="true"
@@ -135,20 +136,38 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:translationZ="-30dp"
             app:cardBackgroundColor="#00FFFFFF">
+
+            <Button
+                android:id="@+id/ef4_re_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="128dp"
+                android:layout_weight=".50"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:contextClickable="false"
+                android:focusable="auto"
+                android:fontFamily="sans-serif-medium"
+                android:forceHasOverlappingRendering="false"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"
+                android:textSize="15sp"
+                android:typeface="normal" />
 
             <Button
                 android:id="@+id/ef4_next_button"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center"
+                android:layout_marginLeft="128dp"
                 android:layout_weight=".50"
                 android:background="@color/colorAccent"
                 android:clickable="true"

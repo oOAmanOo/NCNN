@@ -2897,6 +2897,7 @@ id ef3_position_textview
 id ef3_remark_edittext
 id ef3_textView
 id ef4_next_button
+id ef4_re_button
 id ef4_remark_edittext
 id ef4_spinner
 id ef4_time_textview
