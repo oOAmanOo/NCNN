@@ -117,8 +117,6 @@ public class editfridge_dfragment4 extends DialogFragment {
                 MainActivity.current_editdialog = 0;
                 efdialog4.dismiss();
                 MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
-
-
             }
         });
 
