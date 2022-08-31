@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
@@ -97,8 +98,28 @@ public class dialog_fragment extends DialogFragment {
         efdialog1.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager() ;
 
-        Button re_button = (Button) view.findViewById(R.id.ef1_re_button);
+        ImageButton notifyimageButton = (ImageButton) view.findViewById(R.id.ef1_notifyimageButton);
+        notifyimageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.notify_notification = "記得買";
+                int first = 0;
+                for (int i = 0; i < listItem.length; i++) {
+                    if(checkeditems[i] == false){
+                        if(first != 0){
+                            MainActivity.notify_notification += " , ";
+                        }
+                        ++first;
+                        MainActivity.notify_notification += listItem[i];
+                    }
+                }
+                MainActivity.current_editdialog = 4;
+                MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, fm);
+                efdialog1.hide();
+            }
+        });
 
+        Button re_button = (Button) view.findViewById(R.id.ef1_re_button);
         re_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -114,14 +135,6 @@ public class dialog_fragment extends DialogFragment {
         next_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-//                int next = 1;
-//                for (int i = 0; i < editfridge_ListAdapter_1.editfridgeAmountText.length; i++) {
-//                    if(editfridge_ListAdapter_1.editfridgeAmountText[i] == 0){
-//                        next = 0;
-//                        break;
-//                    }
-//                }
-
                 int first = 0;
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("[");
@@ -141,23 +154,6 @@ public class dialog_fragment extends DialogFragment {
                 MainActivity.current_editdialog = 2;
                 efdialog1.hide();
                 MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, fm);
-
-
-//                if(next == 1){
-//
-//                }else{
-//                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
-//                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
-//                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>食物數量不可小於 1"));
-//                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            dialog.dismiss();
-//                        }
-//                    });
-//                    AlertDialog dialog = dumb.create();
-//                    dialog.show();
-//                }
             }
         });
 

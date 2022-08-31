@@ -30,13 +30,13 @@ public final class DialogFoodLayoutBinding implements ViewBinding {
   public final Button ef1NextButton;
 
   @NonNull
+  public final ImageButton ef1NotifyimageButton;
+
+  @NonNull
   public final Button ef1ReButton;
 
   @NonNull
   public final RecyclerView ef1RecyclerView;
-
-  @NonNull
-  public final ImageButton imageButton;
 
   @NonNull
   public final TextView percentage;
@@ -46,15 +46,15 @@ public final class DialogFoodLayoutBinding implements ViewBinding {
 
   private DialogFoodLayoutBinding(@NonNull LinearLayout rootView,
       @NonNull ConstraintLayout ef1Constraint, @NonNull Button ef1NextButton,
-      @NonNull Button ef1ReButton, @NonNull RecyclerView ef1RecyclerView,
-      @NonNull ImageButton imageButton, @NonNull TextView percentage,
+      @NonNull ImageButton ef1NotifyimageButton, @NonNull Button ef1ReButton,
+      @NonNull RecyclerView ef1RecyclerView, @NonNull TextView percentage,
       @NonNull Button updatePercentage) {
     this.rootView = rootView;
     this.ef1Constraint = ef1Constraint;
     this.ef1NextButton = ef1NextButton;
+    this.ef1NotifyimageButton = ef1NotifyimageButton;
     this.ef1ReButton = ef1ReButton;
     this.ef1RecyclerView = ef1RecyclerView;
-    this.imageButton = imageButton;
     this.percentage = percentage;
     this.updatePercentage = updatePercentage;
   }
@@ -98,6 +98,12 @@ public final class DialogFoodLayoutBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ef1_notifyimageButton;
+      ImageButton ef1NotifyimageButton = ViewBindings.findChildViewById(rootView, id);
+      if (ef1NotifyimageButton == null) {
+        break missingId;
+      }
+
       id = R.id.ef1_re_button;
       Button ef1ReButton = ViewBindings.findChildViewById(rootView, id);
       if (ef1ReButton == null) {
@@ -107,12 +113,6 @@ public final class DialogFoodLayoutBinding implements ViewBinding {
       id = R.id.ef1_recyclerView;
       RecyclerView ef1RecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (ef1RecyclerView == null) {
-        break missingId;
-      }
-
-      id = R.id.imageButton;
-      ImageButton imageButton = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton == null) {
         break missingId;
       }
 
@@ -129,7 +129,7 @@ public final class DialogFoodLayoutBinding implements ViewBinding {
       }
 
       return new DialogFoodLayoutBinding((LinearLayout) rootView, ef1Constraint, ef1NextButton,
-          ef1ReButton, ef1RecyclerView, imageButton, percentage, updatePercentage);
+          ef1NotifyimageButton, ef1ReButton, ef1RecyclerView, percentage, updatePercentage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

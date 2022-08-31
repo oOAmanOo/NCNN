@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NormalRecipeList normalRecipeList = new NormalRecipeList();
 
     //    duck dialog
-
     public static int[] editfridge_count = new int[100];
     public static int[] editfridge_fault = new int[100];
     public static String[] editfridgedb_fid = new String[200];
@@ -80,6 +79,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String editjsonupload;
     public static FragmentManager fm_p;
     public static int reload = 0;
+
+    //notify_user
+    public static String[] notify_user_id = new String[200];
+    public static String[] notify_user_name = new String[200];
+    public static int notify_user_index = 0;
+    public static String notify_uid;
+    public static String notify_notification;
+    public static String notify_notifyTime;
+    public static int notify_dialog = 0;
 
     private static Context mContext;
     public static Context mContext2;
@@ -193,19 +201,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final dialog_fragment dialog_fragment = new dialog_fragment();
         final editfridge_dfragment2 editfridge_dfragment2 = new editfridge_dfragment2();
         final editfridge_dfragment3 editfridge_dfragment3 = new editfridge_dfragment3();
+        final editfridge_dfragment4 editfridge_dfragment4 = new editfridge_dfragment4();
 
         dialog_fragment.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
         editfridge_dfragment2.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
         editfridge_dfragment3.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
+        editfridge_dfragment4.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
 
         if(current_editdialog == 0){ //send
-            if(MainActivity.editjsonupload.equals("[]")){
-                Toast.makeText(mContext, "未編輯任何食物", Toast.LENGTH_SHORT).show();
-            }else{
-                Thread thread = new Thread(editupload);
+            if(MainActivity.notify_dialog == 1){
+                Thread thread = new Thread(notifyupload);
                 thread.start();
+                MainActivity.notify_dialog = 0;
                 MainActivity.run_editdialog = 0;
                 MainActivity.editfridgedb_index = 0;
+            }else{
+                if(MainActivity.editjsonupload.equals("[]")){
+                    Toast.makeText(mContext, "未編輯任何食物", Toast.LENGTH_SHORT).show();
+                }else{
+                    Thread thread = new Thread(editupload);
+                    thread.start();
+                    MainActivity.run_editdialog = 0;
+                    MainActivity.editfridgedb_index = 0;
+                }
             }
             MainActivity.origin_editdialog = MainActivity.current_editdialog;
             Thread thread_0 = new Thread(mutiThread);
@@ -228,6 +246,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(current_editdialog == 3){
             fm.beginTransaction().remove(editfridge_dfragment3).commit();
             editfridge_dfragment3.show(fm, "editdialog_tag");
+            MainActivity.current_editdialog = MainActivity.origin_editdialog;
+        }else if(current_editdialog == 4){
+            fm.beginTransaction().remove(editfridge_dfragment4).commit();
+            editfridge_dfragment4.show(fm, "editdialog_tag");
             MainActivity.current_editdialog = MainActivity.origin_editdialog;
         }else if(current_editdialog == -1){
             MainActivity.run_editdialog = 0;
@@ -271,7 +293,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 inputStream.close();
                 result = box;
 
+                //notify_user
+                try {
+                    JSONObject obj = null;
+                    JSONArray table = null;
+                    JSONObject data = null;
+                    obj = new JSONObject(result);
+                    //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
+                    table = obj.getJSONArray("user");
+                    //data list
+                    notify_user_index = 0;
+                    for (int i = 0; i < table.length(); i++) {
+                        data = table.getJSONObject(i);
+                        //data data
+                        notify_user_id[i] = data.getString("uid");
+                        notify_user_name[i] = data.getString("name");
+                        ++notify_user_index;
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
+                //recipe
                 AllRecipeList.result(result);
                 AllRecipeList.getallfoodhistory(result);
 
@@ -371,11 +414,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        System.out.println("AHHHHHHHHHHHHHHHHHHHHH");
                     }
                 }
             });
-
         }
     };
 
@@ -426,7 +467,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "冰箱存儲 - "+return_val, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    };
+
+    private static final Runnable notifyupload = new Runnable() {
+        public void run() {
+            String result_data;
+            try {
+//                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/notify_insert.php?uid=duck");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+                params.add(new BasicNameValuePair("uid", MainActivity.notify_uid));
+                params.add(new BasicNameValuePair("notification", MainActivity.notify_notification));
+                params.add(new BasicNameValuePair("notifyTime", MainActivity.notify_notifyTime));
+                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                String box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    box += line;
+                    box += "\n";
+                }
+                inputStream.close();
+                result_data = box;
+                System.out.println(result_data);
+            } catch (Exception e) {
+                result_data = e.toString();
+            }
+
+            String finalResult = result_data;
+            MainActivity.runOnUI(new Runnable() {
+                public void run() {
+                    String return_val = null;
+                    try {
+                        JSONArray table = null;
+                        table = new JSONArray(finalResult);
+                        return_val = table.getString(0);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(mContext, "待辦清單 - "+return_val, Toast.LENGTH_SHORT).show();
                 }
             });
         }

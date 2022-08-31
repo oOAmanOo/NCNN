@@ -1,57 +1,114 @@
 package com.tencent.nanodetncnn;
 
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.fragment.app.DialogFragment;
 
+import java.util.Calendar;
+
 
 public class editfridge_dfragment4 extends DialogFragment {
-    public Dialog efdialog3;
+    public Dialog efdialog4;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.editfridge3_layout, container);
-        efdialog3 = this.getDialog();
-        efdialog3.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-//        efdialog3.setCanceledOnTouchOutside(false);
-        ImageView ef3_imageView = (ImageView) view.findViewById(R.id.ef3_imageView);
-        TextView ef3_textView = (TextView) view.findViewById(R.id.ef3_textView);
-        TextView ef3_owner_textview = (TextView) view.findViewById(R.id.ef3_owner_textview);
-        TextView ef3_position_textview = (TextView) view.findViewById(R.id.ef3_position_textview);
-        TextView ef3_insertDate_textview = (TextView) view.findViewById(R.id.ef3_insertDate_textview);
-        TextView ef3_expireDate_textview = (TextView) view.findViewById(R.id.ef3_expireDate_textview);
-        TextView ef3_amount_textview4 = (TextView) view.findViewById(R.id.ef3_amount_textview4);
-        TextView ef3_remark_edittext = (TextView) view.findViewById(R.id.ef3_remark_edittext);
+        View view = inflater.inflate(R.layout.editfridge4_layout, container);
+        efdialog4 = this.getDialog();
+        efdialog4.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
-        ef3_imageView.setImageResource(getContext().getApplicationContext().getResources().getIdentifier(String.valueOf(MainActivity.info_editfridge_imgName),"drawable", getContext().getPackageName()));
-        ef3_textView.setText(MainActivity.info_editfridge_name);
-        ef3_owner_textview.setText(MainActivity.info_editfridgedb_uid);
-
-        if(MainActivity.info_editfridgedb_position.equals("0")){
-            ef3_position_textview.setText("冷凍");
-        }else{
-            ef3_position_textview.setText("冷藏");
+        Spinner ef4_spinner = (Spinner) view.findViewById(R.id.ef4_spinner);
+        String[] spinner_array = new String[MainActivity.notify_user_index];
+        for (int i = 0; i < MainActivity.notify_user_index; i++) {
+            spinner_array[i] = MainActivity.notify_user_name[i];
         }
-        ef3_insertDate_textview.setText(MainActivity.info_editfridgedb_insertDate);
-        ef3_expireDate_textview.setText(MainActivity.info_editfridgedb_expireDate);
-        ef3_amount_textview4.setText(MainActivity.info_editfridgedb_amount);
-        ef3_remark_edittext.setText(MainActivity.info_editfridgedb_memo);
-        Button next_button = (Button) view.findViewById(R.id.ef3_next_button);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String> (MainActivity.mContext2, android.R.layout.simple_spinner_item, spinner_array);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ef4_spinner.setAdapter(adapter);
+        ef4_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity.notify_uid = ef4_spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        TextView ef4_time_textview = (TextView) view.findViewById(R.id.ef4_time_textview);
+        ef4_time_textview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePicker timePicker = new TimePicker(MainActivity.mContext2);
+                Calendar calendar = Calendar.getInstance();
+                int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+                int month = calendar.get(Calendar.MINUTE);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.mContext2, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        String time = String.valueOf(hourOfDay) + ":" + String.valueOf(minute);
+                        ef4_time_textview.setText(time);
+                        MainActivity.notify_notifyTime = time + ":00";
+                    }
+                },20,0,true);
+//                timePickerDialog.
+//                        setMinDate(System.currentTimeMillis()-10000);
+                timePickerDialog.show();
+            }
+        });
+
+        EditText ef4_remark_edittext = (EditText) view.findViewById(R.id.ef4_remark_edittext);
+        ef4_remark_edittext.setText(MainActivity.notify_notification);
+        ef4_remark_edittext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(!(ef4_remark_edittext.getText().toString().matches(""))){
+                    MainActivity.notify_notification = ef4_remark_edittext.getText().toString();
+                }else{
+                    MainActivity.notify_notification = "NULL";
+                }
+            }
+        });
+
+        Button next_button = (Button) view.findViewById(R.id.ef4_next_button);
         next_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                efdialog3.dismiss();
+                MainActivity.notify_dialog = 1;
+                MainActivity.current_editdialog = 0;
+                efdialog4.dismiss();
+                MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
+
+
             }
         });
 

@@ -2863,12 +2863,14 @@ int id easeInOut 0x7f0900f0
 int id easeOut 0x7f0900f1
 int id east 0x7f0900f2
 int id editTextTextPassword2 0x7f0900f3
+int id editTextTextPersonName 0x7f0902a3
 int id editTextTextPersonName2 0x7f0900f4
 int id edit_query 0x7f0900f5
 int id edittext_dropdown_editable 0x7f0900f6
 int id edittext_dropdown_noneditable 0x7f0900f7
 int id ef1_constraint 0x7f0900f8
 int id ef1_next_button 0x7f0900f9
+int id ef1_notifyimageButton 0x7f0902a4
 int id ef1_re_button 0x7f0900fa
 int id ef1_recyclerView 0x7f0900fb
 int id ef21_card 0x7f0900fc
@@ -2893,6 +2895,10 @@ int id ef3_owner_textview 0x7f09010e
 int id ef3_position_textview 0x7f09010f
 int id ef3_remark_edittext 0x7f090110
 int id ef3_textView 0x7f090111
+int id ef4_next_button 0x7f0902a5
+int id ef4_remark_edittext 0x7f0902a6
+int id ef4_spinner 0x7f0902a7
+int id ef4_time_textview 0x7f0902a8
 int id elastic 0x7f090112
 int id end 0x7f090113
 int id endToStart 0x7f090114
@@ -2951,7 +2957,6 @@ int id ifRoom 0x7f090148
 int id ignore 0x7f090149
 int id ignoreRequest 0x7f09014a
 int id image 0x7f09014b
-int id imageButton 0x7f0902a2
 int id imageView 0x7f09014c
 int id immediateStop 0x7f09014d
 int id included 0x7f09014e
@@ -3411,6 +3416,7 @@ int layout dialog_food_adapter 0x7f0c0030
 int layout dialog_food_layout 0x7f0c0031
 int layout editfridge2_layout 0x7f0c0032
 int layout editfridge3_layout 0x7f0c0033
+int layout editfridge4_layout 0x7f0c00a2
 int layout editfridge_adapter21 0x7f0c0034
 int layout editfridge_adapter22 0x7f0c0035
 int layout fragment1_layout 0x7f0c0036

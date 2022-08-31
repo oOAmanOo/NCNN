@@ -2864,12 +2864,14 @@ id easeInOut
 id easeOut
 id east
 id editTextTextPassword2
+id editTextTextPersonName
 id editTextTextPersonName2
 id edit_query
 id edittext_dropdown_editable
 id edittext_dropdown_noneditable
 id ef1_constraint
 id ef1_next_button
+id ef1_notifyimageButton
 id ef1_re_button
 id ef1_recyclerView
 id ef21_card
@@ -2894,6 +2896,10 @@ id ef3_owner_textview
 id ef3_position_textview
 id ef3_remark_edittext
 id ef3_textView
+id ef4_next_button
+id ef4_remark_edittext
+id ef4_spinner
+id ef4_time_textview
 id elastic
 id end
 id endToStart
@@ -2952,7 +2958,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton
 id imageView
 id immediateStop
 id included
@@ -3412,6 +3417,7 @@ layout dialog_food_adapter
 layout dialog_food_layout
 layout editfridge2_layout
 layout editfridge3_layout
+layout editfridge4_layout
 layout editfridge_adapter21
 layout editfridge_adapter22
 layout fragment1_layout
