@@ -1,0 +1,114 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.alarmclock_test"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.VIBRATE" />
+11-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:5:5-66
+11-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:5:22-63
+12    <uses-permission android:name="android.permission.WAKE_LOCK" />
+12-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:6:5-68
+12-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:6:22-65
+13
+14    <application
+14-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:8:5-41:19
+15        android:allowBackup="true"
+15-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:9:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+17        android:dataExtractionRules="@xml/data_extraction_rules"
+17-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:10:9-65
+18        android:debuggable="true"
+19        android:fullBackupContent="@xml/backup_rules"
+19-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:11:9-54
+20        android:icon="@mipmap/ic_launcher"
+20-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:12:9-43
+21        android:label="@string/app_name"
+21-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:13:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:14:9-54
+23        android:supportsRtl="true"
+23-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:15:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.AlarmClock_test" >
+25-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:16:9-53
+26        <activity
+26-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:18:9-28:20
+27            android:name="com.example.alarmclock_test.TimeAlarmActivity"
+27-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:19:13-73
+28            android:exported="true"
+28-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:20:13-36
+29            android:label="@string/app_name"
+29-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:21:13-45
+30            android:theme="@style/Theme.AlarmClock_test.NoActionBar" >
+30-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:22:13-69
+31            <intent-filter>
+31-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:23:13-27:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:24:17-69
+32-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:24:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:26:17-77
+34-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:26:27-74
+35            </intent-filter>
+36        </activity>
+37
+38        <receiver
+38-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:29:9-34:20
+39            android:name="com.example.alarmclock_test.alarmReceiver"
+39-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:29:19-75
+40            android:exported="true" >
+40-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:30:13-36
+41            <intent-filter>
+41-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:31:13-33:29
+42                <action android:name="notification_cancelled" />
+42-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:32:17-64
+42-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:32:25-62
+43            </intent-filter>
+44        </receiver>
+45        <receiver
+45-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:35:9-40:20
+46            android:name="com.example.alarmclock_test.alarmReceiver2"
+46-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:35:19-76
+47            android:exported="true" >
+47-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:36:13-36
+48            <intent-filter>
+48-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:31:13-33:29
+49                <action android:name="notification_cancelled" />
+49-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:32:17-64
+49-->/home/bingo/Desktop/AlarmClock_test/app/src/main/AndroidManifest.xml:32:25-62
+50            </intent-filter>
+51        </receiver>
+52
+53        <provider
+53-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+54            android:name="androidx.startup.InitializationProvider"
+54-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+55            android:authorities="com.example.alarmclock_test.androidx-startup"
+55-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+56            android:exported="false" >
+56-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+57            <meta-data
+57-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+58-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+59                android:value="androidx.startup" />
+59-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/112a099502228b2b317b1c79d5f085b0/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7cfe2704946b18bb678666b3953b74c4/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+61                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+61-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7cfe2704946b18bb678666b3953b74c4/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+62                android:value="androidx.startup" />
+62-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/7cfe2704946b18bb678666b3953b74c4/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+63        </provider>
+64    </application>
+65
+66</manifest>
