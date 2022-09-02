@@ -99,8 +99,6 @@ public class editfridge_ListAdapter_22 extends RecyclerView.Adapter<editfridge_L
                 if(!(holder.ef22_editTextNumber.getText().toString().matches(""))){
                     if(Integer.parseInt(holder.ef22_editTextNumber.getText().toString()) > editfridgedb_amount[position]){
                         MainActivity.editfridge_fault[editfridge_index21] = -2;
-                    }else if(Integer.parseInt(holder.ef22_editTextNumber.getText().toString()) < 0){
-                        MainActivity.editfridge_fault[editfridge_index21] = -1;
                     }else{
                         MainActivity.editfridge_fault[editfridge_index21] = 0;
                         MainActivity.editfridgedb_editnum[count_index + position] = Integer.parseInt(holder.ef22_editTextNumber.getText().toString());
@@ -111,6 +109,7 @@ public class editfridge_ListAdapter_22 extends RecyclerView.Adapter<editfridge_L
                 }
             }
         });
+
     }
 
 

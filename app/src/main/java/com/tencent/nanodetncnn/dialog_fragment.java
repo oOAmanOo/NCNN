@@ -73,21 +73,6 @@ public class dialog_fragment extends DialogFragment {
             }
         });
 
-
-
-//        String editfridge_did[] = new String[MainActivity.editfridge_index];
-//        String editfridge_name[] = new String[MainActivity.editfridge_index];
-//
-//
-//
-//        int editfridge_num[] = new int[MainActivity.editfridge_index];
-//        for (int i = 0; i < MainActivity.editfridge_index; ++i){
-//            editfridge_did[i] = MainActivity.editfridge_did[i];
-//            editfridge_name[i] = MainActivity.editfridge_name[i];
-//            editfridge_num[i] = MainActivity.editfridge_num[i];
-//        }
-
-
         dialog_fragment_ListAdapter_1 dialog_fragment_ListAdapter_1 = new dialog_fragment_ListAdapter_1(this.getActivity(),listDid , listItem, listImg, allfoodDid);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(dialog_fragment_ListAdapter_1);
@@ -138,7 +123,9 @@ public class dialog_fragment extends DialogFragment {
                 int first = 0;
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("[");
+                System.out.println(listDid.length);
                 for (int i = 0; i < listDid.length; ++i){
+                    System.out.println(i);
                     if(allfoodDid[i]) {
 
                         if(first != 0){

@@ -40,7 +40,7 @@ public final class ActivityMainActivityregBinding implements ViewBinding {
   public final EditText passwordconfirm;
 
   @NonNull
-  public final EditText useremail;
+  public final EditText usercellphone;
 
   @NonNull
   public final EditText username;
@@ -48,7 +48,7 @@ public final class ActivityMainActivityregBinding implements ViewBinding {
   private ActivityMainActivityregBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button btnback, @NonNull Button btnreg, @NonNull ConstraintLayout container,
       @NonNull ProgressBar loading, @NonNull EditText password, @NonNull EditText passwordconfirm,
-      @NonNull EditText useremail, @NonNull EditText username) {
+      @NonNull EditText usercellphone, @NonNull EditText username) {
     this.rootView = rootView;
     this.btnback = btnback;
     this.btnreg = btnreg;
@@ -56,7 +56,7 @@ public final class ActivityMainActivityregBinding implements ViewBinding {
     this.loading = loading;
     this.password = password;
     this.passwordconfirm = passwordconfirm;
-    this.useremail = useremail;
+    this.usercellphone = usercellphone;
     this.username = username;
   }
 
@@ -119,9 +119,9 @@ public final class ActivityMainActivityregBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.useremail;
-      EditText useremail = ViewBindings.findChildViewById(rootView, id);
-      if (useremail == null) {
+      id = R.id.usercellphone;
+      EditText usercellphone = ViewBindings.findChildViewById(rootView, id);
+      if (usercellphone == null) {
         break missingId;
       }
 
@@ -132,7 +132,7 @@ public final class ActivityMainActivityregBinding implements ViewBinding {
       }
 
       return new ActivityMainActivityregBinding((ConstraintLayout) rootView, btnback, btnreg,
-          container, loading, password, passwordconfirm, useremail, username);
+          container, loading, password, passwordconfirm, usercellphone, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

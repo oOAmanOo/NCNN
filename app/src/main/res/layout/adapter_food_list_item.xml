@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_video_large_grid_list_item_all"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <View
+        android:id="@+id/adapter_food_list_item_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="100dp">
+
+
+
+            <ImageView
+                android:id="@+id/adapter_food_list_item_pic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/banana" />
+
+            <View
+                android:id="@+id/adapter_food_list_item_chose"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/a10_bg_shape_2" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/adapter_food_list_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:text="名稱"
+            android:textColor="@color/font_b"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/adapter_food_list_item_amount"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="總數"
+            android:textColor="@color/font_b"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/adapter_food_list_item_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:text="22"
+            android:textColor="@color/font_b"
+            android:textSize="14sp"
+            tools:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/adapter_food_list_item_own"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="22"
+            android:textColor="@color/font_b"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -35,6 +35,7 @@ public class dialog_fragment_ListAdapter_1 extends RecyclerView.Adapter<dialog_f
         this.listImg = listImgs;
         this.context = context;
         this.allfoodDid = allfoodDids;
+        System.out.println(listName.length);
     }
 
     @Override
@@ -46,43 +47,42 @@ public class dialog_fragment_ListAdapter_1 extends RecyclerView.Adapter<dialog_f
 
     @Override
     public void onBindViewHolder(@NonNull dialog_fragment_ListHolder_1 holder, @SuppressLint("RecyclerView") int position) {
-        holder.ef11_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(listImg[position]),"drawable", context.getPackageName()));
-        holder.ef11_textView.setText(listName[position]);
+        System.out.println(position);
+        if(listName.length != position){
+            holder.ef11_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(listImg[position]),"drawable", context.getPackageName()));
+            holder.ef11_textView.setText(listName[position]);
 //        holder.ef11_imageView.setImageResource(R.drawable.pic1);
-
-
-        if(allfoodDid[position]){   // 預先勾選已有食材
-            holder.checkedbox.setImageResource(R.drawable.checked);   // checked item == true
-            dialog_fragment.checkeditems[position] = true;
-
-        }else{
-            holder.checkedbox.setImageResource(R.drawable.unchecked);
-            dialog_fragment.checkeditems[position] = false;
-
-        }
-
-
-        holder.dialog_food_card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!allfoodDid[position]){
-                    if(dialog_fragment.checkeditems[position] == false){
-                        holder.checkedbox.setImageResource(R.drawable.checked);
-                        dialog_fragment.checkeditems[position] = true;
-                    }
-                    else{
-                        holder.checkedbox.setImageResource(R.drawable.unchecked);
-                        dialog_fragment.checkeditems[position] = false;
-                    }
-                    dialog_fragment.update_percentage.callOnClick();
-                }
-
-
+            if(allfoodDid[position]){   // 預先勾選已有食材
+                holder.checkedbox.setImageResource(R.drawable.checked);   // checked item == true
+                dialog_fragment.checkeditems[position] = true;
+            }else{
+                holder.checkedbox.setImageResource(R.drawable.unchecked);
+                dialog_fragment.checkeditems[position] = false;
 
             }
-        });
-        dialog_fragment.update_percentage.callOnClick();
 
+
+            holder.dialog_food_card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!allfoodDid[position]){
+                        if(dialog_fragment.checkeditems[position] == false){
+                            holder.checkedbox.setImageResource(R.drawable.checked);
+                            dialog_fragment.checkeditems[position] = true;
+                        }
+                        else{
+                            holder.checkedbox.setImageResource(R.drawable.unchecked);
+                            dialog_fragment.checkeditems[position] = false;
+                        }
+                        dialog_fragment.update_percentage.callOnClick();
+                    }
+
+
+
+                }
+            });
+            dialog_fragment.update_percentage.callOnClick();
+        }
     }
 
 

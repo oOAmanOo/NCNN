@@ -60,19 +60,21 @@
                 android:textColor="@android:color/secondary_text_dark"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:imeOptions="actionDone|flagNoEnterAction"/>
 
             <ImageButton
                 android:id="@+id/ef22_imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-20dp"
+                android:layout_marginStart="-10dp"
                 android:layout_marginTop="-15dp"
-                android:backgroundTint="#00FFFFFF"
+                android:background="#00FFFFFF"
+                android:contentDescription="information"
+                android:scaleType="center"
                 android:scaleX="0.25"
                 android:scaleY="0.25"
-                android:src="@mipmap/ic_launcher"
-                android:tint="#00FFFFFF" />
+                android:src="@mipmap/ic_launcher" />
 
         </androidx.cardview.widget.CardView>
 

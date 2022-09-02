@@ -12,4 +12,33 @@
     <color name="light_gray">#D8D9DA</color>
     <color name="black">#000000</color>
 
+
+    <color name="font_b">#101010</color>
+    <color name="font_g">#555555</color>
+    <color name="font_l">#aaaaaa</color>
+    <color name="font_blue_1">#021B47</color>
+
+
+    <color name="food_ok">#F2F2F3</color>
+    <color name="food_re">#FFEEBE</color>
+    <color name="food_ex">#FDC2C2</color>
+
+    <color name="gray1">#EFEFEF</color>
+    <color name="gray2">#666666</color>
+    <color name="gray3">#555555</color>
+    <color name="gray4">#888888</color>
+    <color name="gray5">#999999</color>
+    <color name="base_color_6f">#e0EFEFEF</color>
+    <color name="gray6">#aaaaaa</color>
+    <color name="gray7">#bbbbbb</color>
+    <color name="gray8">#cccccc</color>
+    <color name="gray9">#dddddd</color>
+    <color name="gray10">#e5e5e5</color>
+
+    <!-- 透明 -->
+    <color name="tran_colr">#00000000</color>
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_red_light">#ffff4444</color>
 </resources>

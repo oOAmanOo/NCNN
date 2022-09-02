@@ -78,6 +78,11 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         ImageView merge_recipe_img_detail = view.findViewById(R.id.merge_recipe_img_detail);
         Button evaluate_btn = view.findViewById(R.id.evaluatebtn);
 
+        listItem = null;
+        listDId = null;
+        listImg = null;
+        HistoryfoodName = null;
+        HistoryfoodDid = null;
 
         if(currentMode == "normal"){
             merge_recipe_name_detail.setText(NormalRecipeList.allRecipeNames[position_now]);
@@ -252,11 +257,49 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
             }
         }
 
+        else if(currentMode == "autosearch"){
+
+            merge_recipe_name_detail.setText(AutoRecipeList.allRecipeNames[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]);
+            merge_recipe_food_detail.setText(AutoRecipeList.tempallRecipeFood[position_now]);
+            merge_recipe_tag_detail.setText(AutoRecipeList.allRecipeSugar[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+AutoRecipeList.allRecipeSalt[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+AutoRecipeList.allRecipeOil[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]);
+            merge_recipe_step_detail.setText(AutoRecipeList.allRecipeSteps[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]);
+            merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(AutoRecipeList.imgName[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]),"drawable", context.getPackageName()));
+
+            System.out.println(AutoRecipeList.tempallRecipeFood[position_now]);
+            System.out.println(AutoRecipeList.allRecipeDid[position_now]);
+            System.out.println(AutoRecipeList.allRecipeFoodImg[position_now]);
+
+            listItem = AutoRecipeList.tempallRecipeFood[position_now].split(",");
+            listDId = AutoRecipeList.allRecipeDid[position_now].split(",");
+            listImg = AutoRecipeList.allRecipeFoodImg[position_now].split(",");
+            HistoryfoodName = AutoRecipeList.allfoodhistoryName;
+            HistoryfoodDid = AutoRecipeList.allfoodhistoryDid;
+
+            checkedItem = new boolean[listItem.length];
+            AllfoodDid = new boolean[listItem.length];
+            int num = 0;
+            System.out.println("listDid.length"+listDId.length);
+            for(int i = 0; i < AutoRecipeList.allfoodhistoryName.length; ++i ){
+                for (int j = 0; j < listItem.length; j++) {
+                    if(Objects.equals(listItem[j], AutoRecipeList.allfoodhistoryName[i])){
+                        AllfoodDid[j] = true;
+
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < AllfoodDid.length; i++) {
+                if(AllfoodDid[i] != true){
+                    AllfoodDid[i] = false;
+                }
+            }
+        }
 
 
         evaluate_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("listDid.length"+listDId.length);
                 dialog_fragment.getlistItem(listItem,listDId,listImg, HistoryfoodName,AllfoodDid);
                 MainActivity.current_editdialog = 1;
                 MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);

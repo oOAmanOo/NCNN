@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    >
+
+
+    <TextView
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="35dp"
+        android:text="總數"
+        android:textColor="@color/font_b"
+        android:textSize="14sp" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="過期日"
+        android:textColor="@color/font_b"
+        android:textSize="14sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="擁有者"
+        android:textColor="@color/font_b"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="位置"
+        android:textColor="@color/font_b"
+        android:textSize="14sp" />
+
+</LinearLayout>

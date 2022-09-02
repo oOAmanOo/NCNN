@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tencent.nanodetncnn"
+    package="com.tencent.nanodetncnn_tempmerge"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -56,13 +56,20 @@
 
         <activity
             android:name="com.tencent.nanodetncnn.MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
+        <activity
+            android:name="com.tencent.nanodetncnn.passvaluecustActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tencent.nanodetncnn.passvalueActivity"
+            android:exported="false" />
         <activity
             android:name="com.tencent.nanodetncnn.Verify_Activity"
             android:exported="true"
@@ -71,30 +78,26 @@
             android:theme="@style/MyTheme" >
         </activity>
         <activity
-            android:name="com.tencent.nanodetncnn.MainActivityreg"
-            android:exported="false" />
-        <activity
             android:name="com.tencent.nanodetncnn.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
             android:name="com.tencent.nanodetncnn.MainActivitywelcome"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name="com.tencent.nanodetncnn.CaptureAct"
-            android:screenOrientation="fullSensor"
-            android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden" />
+            android:name="com.tencent.nanodetncnn.MainActivityreg"
+            android:exported="true" >
+        </activity>
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.tencent.nanodetncnn.androidx-startup"
+            android:authorities="com.tencent.nanodetncnn_tempmerge.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

@@ -42,7 +42,31 @@ public class RelaxRecipeList {
 
 
     public static void recipe(String result){
+        allRecipeId = new String[500];
+        imgName = new String[500];
+        allRecipeNames = new String[500];
+        allRecipeSteps = new String[500];
 
+        allRecipeSugar = new String[500];
+        allRecipeSalt = new String[500];
+        allRecipeOil = new String[500];
+
+        recipefoodRid = new String[500];
+        recipefoodDid = new String[500];
+
+        allfoodDid = new String[800];
+        allfoodName = new String[800];
+        allfoodImg = new String[800];
+
+        allRecipeFood= new String[500];
+        allRecipeDid= new String[500];
+        allRecipeFoodImg = new String[500];
+
+        recipe_food_num = 0;
+        recipeindex = 0;
+
+        allfoodhistoryDid = new String[1000];
+        allfoodhistoryName = new String[1000];
         JSONObject obj = null;
         JSONArray recipe = null;
         JSONArray recipe_food = null;

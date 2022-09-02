@@ -11,7 +11,7 @@ android {
 //            resolutionStrategy { force 'androidx.core:core:1.6.0' }
         }
 
-        applicationId "com.tencent.nanodetncnn"
+        applicationId "com.tencent.nanodetncnn_tempmerge"
         archivesBaseName = "$applicationId"
 
         minSdkVersion 24
@@ -21,6 +21,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     externalNativeBuild {
         cmake {
@@ -32,6 +33,7 @@ android {
     dependencies {
 
 //        implementation 'com.android.support:support-v4:24.0.0'
+        //noinspection GradleCompatible
         implementation 'com.android.support:recyclerview-v7:24.2.1'
 //        implementation 'com.android.support:recyclerview-v7:24.0.0'
         implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
@@ -58,26 +60,34 @@ android {
 
     }
     buildTypes {
+        debug {
+            buildConfigField "boolean", "DeveloperModel", "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
+            buildConfigField "boolean", "DeveloperModel", "false"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    repositories {
+        maven { url 'https://jitpack.io' }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures{
-        viewBinding true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation 'com.github.donkingliang:HeaderViewAdapter:1.2.2'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.fragment:fragment:1.5.2'
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -106,6 +116,15 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment:2.4.2'
+    implementation 'androidx.navigation:navigation-ui:2.4.2'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.1'
 }
 
 

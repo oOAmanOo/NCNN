@@ -50,18 +50,51 @@ public final class ActivityLoginBinding implements ViewBinding {
   @Nullable
   public final Button register;
 
-  @NonNull
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-w1240dp/</li>
+   *   <li>layout-w936dp/</li>
+   * </ul>
+   */
+  @Nullable
+  public final EditText uid;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-w1240dp/</li>
+   *   <li>layout-w936dp/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
   public final EditText username;
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout container, @NonNull ProgressBar loading, @NonNull Button login,
-      @NonNull EditText password, @Nullable Button register, @NonNull EditText username) {
+      @NonNull EditText password, @Nullable Button register, @Nullable EditText uid,
+      @Nullable EditText username) {
     this.rootView = rootView;
     this.container = container;
     this.loading = loading;
     this.login = login;
     this.password = password;
     this.register = register;
+    this.uid = uid;
     this.username = username;
   }
 
@@ -115,14 +148,14 @@ public final class ActivityLoginBinding implements ViewBinding {
       id = R.id.register;
       Button register = ViewBindings.findChildViewById(rootView, id);
 
+      id = R.id.uid;
+      EditText uid = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.username;
       EditText username = ViewBindings.findChildViewById(rootView, id);
-      if (username == null) {
-        break missingId;
-      }
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, container, loading, login,
-          password, register, username);
+          password, register, uid, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

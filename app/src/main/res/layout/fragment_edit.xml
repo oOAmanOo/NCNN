@@ -3,66 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context="com.tencent.nanodetncnn.EditFragment">
+    android:layout_marginLeft="50dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="50dp"
+    android:background="@color/white"
+    tools:context=".EditFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:text="選擇模式"
-        android:textColor="@color/colorAccent" />
+        android:text="選擇模式" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
         <RadioButton
             android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorAccent"
             android:checked="true"
-            android:text="一般"
-            android:textColor="@color/colorAccent" />
+            android:text="一般" />
 
         <RadioButton
             android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorAccent"
-            android:text="健身"
-            android:textColor="@color/colorAccent" />
+            android:text="健身" />
 
         <RadioButton
             android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorAccent"
-            android:text="頹廢"
-            android:textColor="@color/colorAccent" />
+            android:text="頹廢" />
 
         <RadioButton
             android:id="@+id/btn4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorAccent"
-            android:text="管理"
-            android:textColor="@color/colorAccent" />
+            android:text="管理" />
 
         <RadioButton
             android:id="@+id/btn5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorAccent"
-            android:text="客製化"
-            android:textColor="@color/colorAccent" />
+            android:text="客製化" />
     </RadioGroup>
 
 
@@ -70,11 +62,7 @@
         android:id="@+id/btnpost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="160dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="300dp"
-        android:text="提交"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorLink="@color/white" />
+        android:text="提交" />
 </FrameLayout>

@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,29 +21,37 @@ public final class FragmentProfileBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final TextView alertTime;
+
+  @NonNull
   public final Button button;
 
   @NonNull
   public final Button button2;
 
   @NonNull
-  public final EditText editTextTextPassword2;
+  public final TextView mode;
 
   @NonNull
-  public final EditText editTextTextPersonName2;
+  public final TextView name;
 
   @NonNull
   public final FrameLayout profile;
 
-  private FragmentProfileBinding(@NonNull FrameLayout rootView, @NonNull Button button,
-      @NonNull Button button2, @NonNull EditText editTextTextPassword2,
-      @NonNull EditText editTextTextPersonName2, @NonNull FrameLayout profile) {
+  @NonNull
+  public final TextView recipeTime;
+
+  private FragmentProfileBinding(@NonNull FrameLayout rootView, @NonNull TextView alertTime,
+      @NonNull Button button, @NonNull Button button2, @NonNull TextView mode,
+      @NonNull TextView name, @NonNull FrameLayout profile, @NonNull TextView recipeTime) {
     this.rootView = rootView;
+    this.alertTime = alertTime;
     this.button = button;
     this.button2 = button2;
-    this.editTextTextPassword2 = editTextTextPassword2;
-    this.editTextTextPersonName2 = editTextTextPersonName2;
+    this.mode = mode;
+    this.name = name;
     this.profile = profile;
+    this.recipeTime = recipeTime;
   }
 
   @Override
@@ -73,6 +81,12 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.alertTime;
+      TextView alertTime = ViewBindings.findChildViewById(rootView, id);
+      if (alertTime == null) {
+        break missingId;
+      }
+
       id = R.id.button;
       Button button = ViewBindings.findChildViewById(rootView, id);
       if (button == null) {
@@ -85,22 +99,28 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextTextPassword2;
-      EditText editTextTextPassword2 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPassword2 == null) {
+      id = R.id.mode;
+      TextView mode = ViewBindings.findChildViewById(rootView, id);
+      if (mode == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName2;
-      EditText editTextTextPersonName2 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName2 == null) {
+      id = R.id.name;
+      TextView name = ViewBindings.findChildViewById(rootView, id);
+      if (name == null) {
         break missingId;
       }
 
       FrameLayout profile = (FrameLayout) rootView;
 
-      return new FragmentProfileBinding((FrameLayout) rootView, button, button2,
-          editTextTextPassword2, editTextTextPersonName2, profile);
+      id = R.id.recipeTime;
+      TextView recipeTime = ViewBindings.findChildViewById(rootView, id);
+      if (recipeTime == null) {
+        break missingId;
+      }
+
+      return new FragmentProfileBinding((FrameLayout) rootView, alertTime, button, button2, mode,
+          name, profile, recipeTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

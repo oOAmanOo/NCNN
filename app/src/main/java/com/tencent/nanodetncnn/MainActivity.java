@@ -1,5 +1,6 @@
 package com.tencent.nanodetncnn;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -20,6 +22,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.tencent.nanodetncnn.databinding.ActivityMainBinding;
+import com.tencent.nanodetncnn.fridge.MyFridgeFragment;
+import com.tencent.nanodetncnn.fridge.fridge_editfridge_dfragment2;
+import com.tencent.nanodetncnn.fridge.fridge_editfridge_dfragment3;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ActivityMainBinding binding;
     public static String result;
     public static int count;
+    TextView textView;
     public static ArrayList<String> stringList = new ArrayList<String>();
 
     private NormalRecipeList normalRecipeList = new NormalRecipeList();
@@ -78,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String editjson;
     public static String editjsonupload;
     public static FragmentManager fm_p;
-    public static int reload = 0;
+    public static int first_load = 1;
+    public static Activity profilereload_MainActivity;
 
     //notify_user
     public static String[] notify_user_id = new String[200];
@@ -92,12 +99,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static Context mContext;
     public static Context mContext2;
 
+    //bee part
+    public static int fridge_run_editdialog = 0;
+    public static Button scanBtn_public;
+
+    //John
+    public static String uid;
+    public static String foodhateid[]=new String[200];
+    public static String foodhatename[]=new String[200];
+    public static int hatefood_index=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        profilereload_MainActivity = this;
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
+
+        //John
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("data_uid");
 
         Thread thread = new Thread(mutiThread);
         thread.start();
@@ -107,8 +129,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContext = MainActivity.this;
         mContext2 = this;
 
-        scanBtn =findViewById(R.id.scanBtn);
 
+
+        //fragment傳data的東西
+        getSupportFragmentManager().beginTransaction().add(R.id.frame_layout,new cust1Fragment()).commit();
+        //end
+
+        scanBtn =findViewById(R.id.scanBtn);
+        scanBtn_public = scanBtn;
         scanBtn.setOnClickListener(this);
 
         replaceFragment(new MyFridgeFragment());
@@ -128,9 +156,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                case R.id.expiration:
 //                    replaceFragment(new ExpirationFragment());
 //                    break;
-//                case R.id.profile:
-//                    replaceFragment(new ProfileFragment());
-//                    break;
+                case R.id.profile:
+                    replaceFragment(new ProfileFragment());
+                    scanBtn.setVisibility(View.INVISIBLE);
+                    break;
             }
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
@@ -147,7 +176,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void scanCode(){
 
         IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.setCaptureActivity(CaptureAct.class);
         integrator.setOrientationLocked(false);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         integrator.setPrompt("Scanning Code");
@@ -184,16 +212,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-    private static void replaceFragment(Fragment fragment){
+    public static void replaceFragment(Fragment fragment){
 
         Bundle bundle=new Bundle();
         bundle.putString("data",result);
+
+        bundle.putString("data_uid",uid);
 
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm_p.beginTransaction();
         fragment.setArguments(bundle);
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
+    }
+
+    // bee part
+    public void addFragment(Fragment newF) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction t = fragmentManager.beginTransaction();
+        t.replace(R.id.frame_layout, newF);
+        t.addToBackStack(null);
+        t.commit();
     }
 
     //        duck dialog
@@ -209,6 +248,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editfridge_dfragment4.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
 
         if(current_editdialog == 0){ //send
+            first_load = 1;
             if(MainActivity.notify_dialog == 1){
                 Thread thread = new Thread(notifyupload);
                 thread.start();
@@ -228,7 +268,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity.origin_editdialog = MainActivity.current_editdialog;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
-            MainActivity.reload = 1;
         }else if(current_editdialog == 1){
             fm.beginTransaction().remove(dialog_fragment).commit();
             dialog_fragment.show(fm, "editdialog_tag");
@@ -237,6 +276,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(MainActivity.run_editdialog == 0){
                 Thread thread = new Thread(editsearch);
                 thread.start();
+                MainActivity.run_editdialog = 1;
             }else if(MainActivity.run_editdialog == 1){
                 fm.beginTransaction().remove(editfridge_dfragment2).commit();
                 editfridge_dfragment2.show(fm, "editdialog_tag");
@@ -256,8 +296,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity.editfridgedb_index = 0;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
-            MainActivity.reload = 1;
+//            MainActivity.recipe_reload = 1;
 //            dialog_fragment.listDid.length = 0;
+        }
+    }
+
+    // duck dialog
+    public static void editfridgedialog_change(int current_editdialog, int origin_editdialog, FragmentManager fm){
+        final fridge_editfridge_dfragment2 editfridge_dfragment2 = new fridge_editfridge_dfragment2();
+        final fridge_editfridge_dfragment3 editfridge_dfragment3 = new fridge_editfridge_dfragment3();
+
+        editfridge_dfragment2.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
+        editfridge_dfragment3.setStyle(DialogFragment.STYLE_NORMAL,R.style.CustomDialog);
+
+        if(current_editdialog == 0){ //send
+            first_load = 1;
+            if(MainActivity.notify_dialog == 1){
+                Thread thread = new Thread(notifyupload);
+                thread.start();
+                MainActivity.notify_dialog = 0;
+                MainActivity.run_editdialog = 0;
+                MainActivity.editfridgedb_index = 0;
+            }else{
+                if(MainActivity.editjsonupload.equals("[]")){
+                    Toast.makeText(mContext, "未編輯任何食物", Toast.LENGTH_SHORT).show();
+                }else{
+                    Thread thread = new Thread(editupload);
+                    thread.start();
+                    MainActivity.run_editdialog = 0;
+                    MainActivity.editfridgedb_index = 0;
+                }
+            }
+            Thread thread_0 = new Thread(mutiThread);
+            thread_0.start();
+        }else if(current_editdialog == 2){
+            if(MainActivity.fridge_run_editdialog == 0){
+                Thread thread = new Thread(editsearch);
+                thread.start();
+                MainActivity.fridge_run_editdialog = 1;
+            }else if(MainActivity.fridge_run_editdialog == 1){
+                fm.beginTransaction().remove(editfridge_dfragment2).commit();
+                editfridge_dfragment2.show(fm, "editdialog_tag");
+                MainActivity.fridge_run_editdialog = 0;
+            }
+        }else if(current_editdialog == 3){
+            fm.beginTransaction().remove(editfridge_dfragment3).commit();
+            editfridge_dfragment3.show(fm, "editdialog_tag");
+        }else if(current_editdialog == -1){
+            MainActivity.run_editdialog = 0;
+            MainActivity.editfridgedb_index = 0;
+            Thread thread_0 = new Thread(mutiThread);
+            thread_0.start();
         }
     }
 
@@ -293,6 +382,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 inputStream.close();
                 result = box;
 
+                //John
+                ProfileFragment.user(result,uid);
+                EditFragment.user(result,uid);
+                cust1Fragment.user(uid);
+                cust22222Fragment.hate(result,uid);
+                cust3Fragment.user(result,uid);
+                try {
+                    JSONObject obj=null;
+                    JSONArray table=null;
+                    JSONObject data_json=null;
+
+                    obj=new JSONObject(result);
+                    table=obj.getJSONArray("food_hate");
+                    for (int i = 0; i < table.length() ; i++) {
+                        data_json=table.getJSONObject(i);
+                        foodhateid[i]=data_json.getString("did");
+                        foodhatename[i]=data_json.getString("name");
+                        ++hatefood_index;
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //recipe
+                AllRecipeList.result(result);
+                AllRecipeList.getallfoodhistory(result);
+                NormalRecipeList.recipe(result);
+                NormalRecipeList.getallfoodhistory(result);
+                ManageRecipeList.recipe(result);
+                ManageRecipeList.getallfoodhistory(result);
+                FitnessRecipeList.recipe(result);
+                FitnessRecipeList.getallfoodhistory(result);
+                RelaxRecipeList.recipe(result);
+                RelaxRecipeList.getallfoodhistory(result);
+                AutoRecipeList.recipe(result);
+                AutoRecipeList.getallfoodhistory(result);
+
+                // bee part
+                MyApplication.foodModelPraise.praiseFoodJsonString(result);
+
                 //notify_user
                 try {
                     JSONObject obj = null;
@@ -313,31 +442,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                //recipe
-                AllRecipeList.result(result);
-                AllRecipeList.getallfoodhistory(result);
-
-                NormalRecipeList.recipe(result);
-                NormalRecipeList.getallfoodhistory(result);
-
-                ManageRecipeList.recipe(result);
-                ManageRecipeList.getallfoodhistory(result);
-
-                FitnessRecipeList.recipe(result);
-                FitnessRecipeList.getallfoodhistory(result);
-
-                RelaxRecipeList.recipe(result);
-                RelaxRecipeList.getallfoodhistory(result);
-
-                if(MainActivity.reload == 1){
-                    MainActivity.replaceFragment(new MergeDetailFragment());
-                    MainActivity.reload = 0;
-                }
-
             }catch (Exception e){
                 result = e.toString();
             }
+            // 當這個執行緒完全跑完後執行
+            MainActivity.runOnUI(new Runnable() {
+                public void run() {
+                    if(first_load == 1){
+                        replaceFragment(new MyFridgeFragment());
+                        first_load = 0;
+                    }
+                }
+            });
         }
     };
 
@@ -384,10 +500,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         JSONArray tablea = null;
                         JSONObject data = null;
                         table =new JSONArray(finalResult);
+
+                        editfridgedb_index = 0;
                         for (int j = 0; j < table.length(); j++) {
                             //table : food_dic , fridge , fridge_history , mode , notify_history , recipe , recipe_food , user , user_hate , user_notify
                             tablea = table.getJSONArray(j);
                             //data list
+                            editfridge_count[j] = 0;
                             for (int i = 0; i < tablea.length(); i++) {
                                 data = tablea.getJSONObject(i);
                                 editfridgedb_fid[editfridgedb_index] = data.getString("fid");
@@ -409,8 +528,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                             editfridge_count[j+1] = 0;
                         }
-                        MainActivity.run_editdialog = 1;
-                        MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
+                        if(MainActivity.run_editdialog == 1){
+                            MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
+                        }else if(MainActivity.fridge_run_editdialog == 1){
+                            MainActivity.editfridgedialog_change(2, 0, MainActivity.fm_p);
+
+                        }
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -431,7 +554,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
-                System.out.println(MainActivity.editjsonupload);
+//                System.out.println(MainActivity.editjsonupload);
                 params.add(new BasicNameValuePair("json", MainActivity.editjsonupload));
                 params.add(new BasicNameValuePair("uid", "duck"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
@@ -451,7 +574,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result_data = box;
-                System.out.println(result_data);
+//                System.out.println(result_data);
             } catch (Exception e) {
                 result_data = e.toString();
             }
@@ -504,7 +627,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result_data = box;
-                System.out.println(result_data);
+//                System.out.println(result_data);
             } catch (Exception e) {
                 result_data = e.toString();
             }
@@ -525,31 +648,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
         }
     };
-    private void updateUserData(String result) {
-//        stringList.add(result);
-//        Intent intent = new Intent();
-//        intent.setClass(MainActivity.this, AllRecipeList.class);
-//        intent.putStringArrayListExtra("ListString",stringList);
-//        startActivity(intent);
-
-//            JSONArray parent = new JSONArray(result);
-//            JSONObject child =parent.getJSONObject(0);
-//            String img =child.getString("img");
-//            String rid =child.getString("rid");
-//            String rname =child.getString("rname");
-//            String step =child.getString("step");
-//            Glide.with(this).load("img").into(recipe_image_id);
-//            textView.setText(rid+rname+img+step);
-//            Glide.with(this).load(Uri.parse(img)).into(recipe_image_id);
-//            recipe_txt.setText(rid + img);
-//            recipeName_txt.setText(rname);
-//            step_txt.setText(step);
-//            progressDialog.hide();
-
-
-    }
-
-
-
-
 }

@@ -10,14 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.tencent.nanodetncnn.login.LoginActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,25 +36,19 @@ public class ProfileFragment extends Fragment {
     //試做
     private View view;
     private Context context;
+    public static JSONObject obj = null;
+    public static JSONArray table = null;
+    public static JSONObject data;
 
     //結束
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    String pmode,pname,alerttime,recipetime,modename,scount;
+    TextView mode,name,alertTime,recipeTime;
 
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
@@ -83,32 +79,16 @@ public class ProfileFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_profile, container, false);
         Button btn=(Button) view.findViewById(R.id.button);
         Button btn2=(Button) view.findViewById(R.id.button2);
-        EditText personname=(EditText) view.findViewById(R.id.editTextTextPersonName2);
-
-        EditText password=(EditText) view.findViewById(R.id.editTextTextPassword2);
-        //Toast.makeText(getActivity(), "請先登入帳號", Toast.LENGTH_SHORT).show();//new
-        AlertDialog.Builder alert2 = new AlertDialog.Builder(getContext());//只需要context
-        alert2.setMessage("編輯飲食條件請先登入");
-        alert2.setPositiveButton("ok", null);
-        alert2.show();
+        mode=view.findViewById(R.id.mode);
+        name=view.findViewById(R.id.name);
+        alertTime=view.findViewById(R.id.alertTime);
+        recipeTime=view.findViewById(R.id.recipeTime);
 
 
-
-
-
-        //    btn2.setOnClickListener(new View.OnClickListener() {
-        //        @Override
-        //        public void onClick(View v) {
-        //            Log.v("test","getActivity() "+getActivity());
-        //            //Toast.makeText(getActivity(), "已登出", Toast.LENGTH_SHORT).show();//new
-        //            Toast.makeText(getContext(), "已登出", Toast.LENGTH_SHORT).show();//new
-        //            replaceFragment(new MyFridgeFragment());
-        //Intent intent=new Intent(getActivity(),MainActivity.class);
-        //startActivity(intent);
-        //getActivity().finish();
-        //       }
-        //   });
-
+        if(getArguments()!=null){
+            scount=getArguments().getString("data_uid");//uid
+            updateUserData(data.toString());
+        }
 
         //登出
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +107,6 @@ public class ProfileFragment extends Fragment {
                 alert.setNegativeButton("cancel", null);
                 alert.show();
                 Log.v("test","getActivity() "+getActivity());
-                //Toast.makeText(getActivity(), "已登出", Toast.LENGTH_SHORT).show();//new
             }
         });
 
@@ -135,61 +114,74 @@ public class ProfileFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (personname.getText().toString().equals("ad")&&password.getText().toString().equals("adm")){
-                    Toast.makeText(getActivity(), "登入成功", Toast.LENGTH_SHORT).show();//new
-                    replaceFragment(new EditFragment());
-                }else {
-                    Toast.makeText(getActivity(), "帳號密碼輸入錯誤", Toast.LENGTH_SHORT).show();//new
-                    replaceFragment(new EditFragment());
-                }
-
+                String mix=scount+";"+pname+";"+recipeTime.getText().toString() + ";" + alertTime.getText().toString();
+                Bundle bundle=new Bundle();
+                bundle.putString("key",mix);
+                EditFragment fragment=new EditFragment();
+                //starteditFragment fragment=new starteditFragment();
+                fragment.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).commit();
             }
         });
 
         return view;
-    }//public View onCreateView整串改過
-
-
-    private void replaceFragment(Fragment fragment){
-
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout, fragment);
-        fragmentTransaction.commit();
     }
 
+    private void updateUserData(String result) {
+        try {
+            pmode = data.getString("mid");
+            pname= data.getString("name");
+            alerttime = data.getString("alertTime");
+            recipetime = data.getString("recipeTime");
+            modename=data.getString("mname");
+            name.setText(pname);
+            if(pmode.equals("1")||pmode.equals("2")||pmode.equals("3")||pmode.equals("4")){
+                mode.setText(modename);
+            }else {
+                mode.setText("客製化");
+            }
 
 
+            String[] split = alerttime.split(":");
+            String atime=split[0]+":"+split[1];
+            alertTime.setText(atime);
+            String[] split1 = recipetime.split(":");
+            String rtime=split1[0]+":"+split1[1];
+            recipeTime.setText(rtime);
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void user(String result,String uid){
+        String id;
+
+        try {
+            obj = new JSONObject(result);
+            table = obj.getJSONArray("user");
+            for (int i =0; i< table.length();++i){
+                data = table.getJSONObject(i);
+                id = data.getString("uid");
+                if(id.equals(uid)){
+                    break;
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
 }
 
-//public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_profile, container, false);
-//
-//    }
-
-
-//    @Override
-//    public void onActivityCreated(Bundle savedInstanceState){
-//        super.onActivityCreated(savedInstanceState);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getActivity(), "aaaaaaa", Toast.LENGTH_SHORT).show();
-
-//            }
-//        });
-
-//    }
 
 
 
 //原本在編輯裡的code
-//要先判斷帳號密碼是否正確
+    //要先判斷帳號密碼是否正確
 //    AlertDialog.Builder alert = new AlertDialog.Builder(getContext());//只需要context
 //                alert.setMessage("確定更改？");
 //                        alert.setMessage("名稱："+personname+"\n飲食條件：");

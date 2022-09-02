@@ -14,15 +14,19 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tencent.nanodetncnn.fridge.MyFridgeFragment;
+
 import java.util.ArrayList;
 
 
 public class MergeRecipeListFragment extends Fragment implements View.OnTouchListener,RecyclerViewInterface{
 
     public static String currentMode;
+    public static String currentName;
     public static void getMode(String mode){
         currentMode = mode;
     }
+    public static void getSearch(String name){ currentName = name; }
 
 
     @Override
@@ -51,11 +55,16 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
         Recipesugar = new ArrayList();
         Recipesalt = new ArrayList();
         Recipeoil = new ArrayList();
+
         ImageView backbtn = (ImageView) view.findViewById(R.id.merge_backstack_button);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new SearchFragment());
+                if(currentMode == "autosearch"){
+                    replaceFragment(new MyFridgeFragment());
+                }else{
+                    replaceFragment(new SearchFragment());
+                }
                 backbtn.setVisibility(View.INVISIBLE);
             }
         });
@@ -72,8 +81,11 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
                 Recipesalt.add(NormalRecipeList.allRecipeSalt);
                 Recipeoil.add(NormalRecipeList.allRecipeOil);
             }
-
-
+            MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(listAdapter);
+            MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "fitness"){
             modeText.setText("健身模式");
@@ -85,9 +97,12 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
                 Recipesugar.add(FitnessRecipeList.allRecipeSugar);
                 Recipesalt.add(FitnessRecipeList.allRecipeSalt);
                 Recipeoil.add(FitnessRecipeList.allRecipeOil);
-
             }
-
+            MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(listAdapter);
+            MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "manage"){
             modeText.setText("管理模式");
@@ -99,9 +114,12 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
                 Recipesugar.add(ManageRecipeList.allRecipeSugar);
                 Recipesalt.add(ManageRecipeList.allRecipeSalt);
                 Recipeoil.add(ManageRecipeList.allRecipeOil);
-
             }
-
+            MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(listAdapter);
+            MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "relax"){
             modeText.setText("頹廢模式");
@@ -113,8 +131,12 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
                 Recipesugar.add(RelaxRecipeList.allRecipeSugar);
                 Recipesalt.add(RelaxRecipeList.allRecipeSalt);
                 Recipeoil.add(RelaxRecipeList.allRecipeOil);
-
             }
+            MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(listAdapter);
+            MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "search"){
             modeText.setText(AllRecipeList.searchtext2);
@@ -127,20 +149,28 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
                 Recipesalt.add(AllRecipeList.allRecipeSalt);
                 Recipeoil.add(AllRecipeList.allRecipeOil);
             }
+            MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(listAdapter);
+            MergeDetailFragment.getContext(getContext());
         }
-        MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
-
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        recyclerView.setAdapter(listAdapter);
-
-        MergeDetailFragment.getContext(getContext());
-
-
-
-
+        else if(currentMode == "autosearch"){
+            modeText.setText(currentName);
+            for( int i = 0; i < AutoRecipeList.count; i++) {
+                Recipeimages.add(AutoRecipeList.imgName);
+                Recipenames.add(AutoRecipeList.allRecipeNames);
+                Recipefood.add(AutoRecipeList.tempallRecipeFood);
+                Recipesugar.add(AutoRecipeList.allRecipeSugar);
+                Recipesalt.add(AutoRecipeList.allRecipeSalt);
+                Recipeoil.add(AutoRecipeList.allRecipeOil);
+            }
+            MergeListAdapter listAdapter = new MergeListAdapter(getContext(), Recipeimages, Recipenames,Recipefood,Recipesugar,Recipesalt,Recipeoil,this,currentMode);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(listAdapter);
+            MergeDetailFragment.getContext(getContext());
+        }
 
         return view;
     }

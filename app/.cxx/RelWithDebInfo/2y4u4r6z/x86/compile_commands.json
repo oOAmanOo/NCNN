@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/x86",
+  "command": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=i686-none-linux-android24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/NCNN/app/src/main/jni/ncnn-20210525-android-vulkan/x86/include/ncnn -isystem /home/bingo/Public/NCNN/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -o CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o -c /home/bingo/Public/NCNN/app/src/main/jni/yolov5ncnn.cpp",
+  "file": "/home/bingo/Public/NCNN/app/src/main/jni/yolov5ncnn.cpp"
+},
+
+{
+  "directory": "/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/x86",
+  "command": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=i686-none-linux-android24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/NCNN/app/src/main/jni/ncnn-20210525-android-vulkan/x86/include/ncnn -isystem /home/bingo/Public/NCNN/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -o CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o -c /home/bingo/Public/NCNN/app/src/main/jni/yolov5.cpp",
+  "file": "/home/bingo/Public/NCNN/app/src/main/jni/yolov5.cpp"
+},
+
+{
+  "directory": "/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/x86",
+  "command": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=i686-none-linux-android24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/NCNN/app/src/main/jni/ncnn-20210525-android-vulkan/x86/include/ncnn -isystem /home/bingo/Public/NCNN/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -o CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o -c /home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp",
+  "file": "/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp"
+}
+]

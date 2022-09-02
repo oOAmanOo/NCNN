@@ -74,7 +74,7 @@ public class editfridge_dfragment2 extends DialogFragment {
             public void onClick(View v) {
                 int next = 1;
 
-                for (int i = 0; i < MainActivity.editfridge_fault.length; i++) {
+                for (int i = 0; i < MainActivity.editfridgedb_index; i++) {
 
                     if(MainActivity.editfridge_fault[i] == -2){
 
@@ -133,19 +133,6 @@ public class editfridge_dfragment2 extends DialogFragment {
                     MainActivity.current_editdialog = 0;
                     editdialog2.hide();
                     MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
-                }else{
-
-                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
-                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
-                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>食物數量不可小於 1"));
-                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                    AlertDialog dialog = dumb.create();
-                    dialog.show();
                 }
             }
         });

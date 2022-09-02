@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.FrameLayout;
+import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,33 +21,24 @@ public final class FragmentCust1Binding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button btnback;
-
-  @NonNull
   public final Button btntest;
 
   @NonNull
-  public final CheckBox cb1;
+  public final Spinner oilsp;
 
   @NonNull
-  public final CheckBox cb2;
+  public final Spinner saltsp;
 
   @NonNull
-  public final CheckBox cb3;
+  public final Spinner sugarsp;
 
-  @NonNull
-  public final CheckBox cb4;
-
-  private FragmentCust1Binding(@NonNull FrameLayout rootView, @NonNull Button btnback,
-      @NonNull Button btntest, @NonNull CheckBox cb1, @NonNull CheckBox cb2, @NonNull CheckBox cb3,
-      @NonNull CheckBox cb4) {
+  private FragmentCust1Binding(@NonNull FrameLayout rootView, @NonNull Button btntest,
+      @NonNull Spinner oilsp, @NonNull Spinner saltsp, @NonNull Spinner sugarsp) {
     this.rootView = rootView;
-    this.btnback = btnback;
     this.btntest = btntest;
-    this.cb1 = cb1;
-    this.cb2 = cb2;
-    this.cb3 = cb3;
-    this.cb4 = cb4;
+    this.oilsp = oilsp;
+    this.saltsp = saltsp;
+    this.sugarsp = sugarsp;
   }
 
   @Override
@@ -77,43 +68,31 @@ public final class FragmentCust1Binding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnback;
-      Button btnback = ViewBindings.findChildViewById(rootView, id);
-      if (btnback == null) {
-        break missingId;
-      }
-
       id = R.id.btntest;
       Button btntest = ViewBindings.findChildViewById(rootView, id);
       if (btntest == null) {
         break missingId;
       }
 
-      id = R.id.cb1;
-      CheckBox cb1 = ViewBindings.findChildViewById(rootView, id);
-      if (cb1 == null) {
+      id = R.id.oilsp;
+      Spinner oilsp = ViewBindings.findChildViewById(rootView, id);
+      if (oilsp == null) {
         break missingId;
       }
 
-      id = R.id.cb2;
-      CheckBox cb2 = ViewBindings.findChildViewById(rootView, id);
-      if (cb2 == null) {
+      id = R.id.saltsp;
+      Spinner saltsp = ViewBindings.findChildViewById(rootView, id);
+      if (saltsp == null) {
         break missingId;
       }
 
-      id = R.id.cb3;
-      CheckBox cb3 = ViewBindings.findChildViewById(rootView, id);
-      if (cb3 == null) {
+      id = R.id.sugarsp;
+      Spinner sugarsp = ViewBindings.findChildViewById(rootView, id);
+      if (sugarsp == null) {
         break missingId;
       }
 
-      id = R.id.cb4;
-      CheckBox cb4 = ViewBindings.findChildViewById(rootView, id);
-      if (cb4 == null) {
-        break missingId;
-      }
-
-      return new FragmentCust1Binding((FrameLayout) rootView, btnback, btntest, cb1, cb2, cb3, cb4);
+      return new FragmentCust1Binding((FrameLayout) rootView, btntest, oilsp, saltsp, sugarsp);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

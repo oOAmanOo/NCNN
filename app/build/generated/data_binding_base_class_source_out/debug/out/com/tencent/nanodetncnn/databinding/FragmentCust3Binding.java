@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,20 +21,37 @@ public final class FragmentCust3Binding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button btnsql;
+  public final TextView alertTime;
 
   @NonNull
-  public final TextView display;
+  public final Button button2;
 
   @NonNull
-  public final EditText phpname;
+  public final Button info;
 
-  private FragmentCust3Binding(@NonNull FrameLayout rootView, @NonNull Button btnsql,
-      @NonNull TextView display, @NonNull EditText phpname) {
+  @NonNull
+  public final TextView mode;
+
+  @NonNull
+  public final TextView name;
+
+  @NonNull
+  public final FrameLayout profile;
+
+  @NonNull
+  public final TextView recipeTime;
+
+  private FragmentCust3Binding(@NonNull FrameLayout rootView, @NonNull TextView alertTime,
+      @NonNull Button button2, @NonNull Button info, @NonNull TextView mode, @NonNull TextView name,
+      @NonNull FrameLayout profile, @NonNull TextView recipeTime) {
     this.rootView = rootView;
-    this.btnsql = btnsql;
-    this.display = display;
-    this.phpname = phpname;
+    this.alertTime = alertTime;
+    this.button2 = button2;
+    this.info = info;
+    this.mode = mode;
+    this.name = name;
+    this.profile = profile;
+    this.recipeTime = recipeTime;
   }
 
   @Override
@@ -65,25 +81,46 @@ public final class FragmentCust3Binding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnsql;
-      Button btnsql = ViewBindings.findChildViewById(rootView, id);
-      if (btnsql == null) {
+      id = R.id.alertTime;
+      TextView alertTime = ViewBindings.findChildViewById(rootView, id);
+      if (alertTime == null) {
         break missingId;
       }
 
-      id = R.id.display;
-      TextView display = ViewBindings.findChildViewById(rootView, id);
-      if (display == null) {
+      id = R.id.button2;
+      Button button2 = ViewBindings.findChildViewById(rootView, id);
+      if (button2 == null) {
         break missingId;
       }
 
-      id = R.id.phpname;
-      EditText phpname = ViewBindings.findChildViewById(rootView, id);
-      if (phpname == null) {
+      id = R.id.info;
+      Button info = ViewBindings.findChildViewById(rootView, id);
+      if (info == null) {
         break missingId;
       }
 
-      return new FragmentCust3Binding((FrameLayout) rootView, btnsql, display, phpname);
+      id = R.id.mode;
+      TextView mode = ViewBindings.findChildViewById(rootView, id);
+      if (mode == null) {
+        break missingId;
+      }
+
+      id = R.id.name;
+      TextView name = ViewBindings.findChildViewById(rootView, id);
+      if (name == null) {
+        break missingId;
+      }
+
+      FrameLayout profile = (FrameLayout) rootView;
+
+      id = R.id.recipeTime;
+      TextView recipeTime = ViewBindings.findChildViewById(rootView, id);
+      if (recipeTime == null) {
+        break missingId;
+      }
+
+      return new FragmentCust3Binding((FrameLayout) rootView, alertTime, button2, info, mode, name,
+          profile, recipeTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -30,7 +30,6 @@ public class NormalRecipeList {
     public static String[] allRecipeDid= new String[500];
     public static String[] allRecipeFoodImg = new String[500];
 
-    public static String[] finalallRecipeFood= new String[500];
     public static int recipe_food_num = 0;
     public static int recipeindex = 0;
 
@@ -40,6 +39,32 @@ public class NormalRecipeList {
 
 
     public static void recipe(String result){
+
+        allRecipeId = new String[500];
+        imgName = new String[500];
+        allRecipeNames = new String[500];
+        allRecipeSteps = new String[500];
+
+        allRecipeSugar = new String[500];
+        allRecipeSalt = new String[500];
+        allRecipeOil = new String[500];
+
+        recipefoodRid = new String[500];
+        recipefoodDid = new String[500];
+
+        allfoodDid = new String[800];
+        allfoodName = new String[800];
+        allfoodImg = new String[800];
+
+        allRecipeFood= new String[500];
+        allRecipeDid= new String[500];
+        allRecipeFoodImg = new String[500];
+
+        recipe_food_num = 0;
+        recipeindex = 0;
+
+        allfoodhistoryDid = new String[1000];
+        allfoodhistoryName = new String[1000];
 
         JSONObject obj = null;
         JSONArray recipe = null;
@@ -61,7 +86,6 @@ public class NormalRecipeList {
         int z = 0;
             for (int i =0; i< recipe.length();++i){ // 從第一筆食譜看
                 recipedata = recipe.getJSONObject(i); //得到單筆食譜資料
-
                 if(recipedata.getString("sugar").equals("正常糖") && recipedata.getString("salt").equals("正常鹽") && recipedata.getString("oil").equals("正常油")){
                     imgName[recipeindex] = recipedata.getString("imgName");
                     allRecipeSugar[recipeindex] = recipedata.getString("sugar");
@@ -71,86 +95,45 @@ public class NormalRecipeList {
                     allRecipeId[recipeindex] = recipedata.getString("rid");
                     allRecipeSteps[recipeindex] =recipedata.getString("step");
                     ++recipeindex;
-
                 }
                 else{
                     continue;
                 }
-
-
-
             }
 
-
             for(int a = 0; a < recipe_food.length(); ++a){
-
                 recipefooddata = recipe_food.getJSONObject(a);
-
                 recipefoodRid[a] = recipefooddata.getString("rid").toString();
-
                 tempRid = recipefoodRid[a];
-
-
                 if(Objects.equals(currentRid, null) || currentRid.equals(tempRid)){
                     currentRid = tempRid;
-
                 }
                 else{
-
                     foodDic(result,recipefoodDid);
-
                     for(int clear = 0; clear<allfoodName.length; ++clear){
                         if(allfoodName[clear]!=null){
                             allfoodName[clear] = null;
                         }
-
                     }
                     currentRid = tempRid;
                     z = 0;
-
                 }
 
-
-
                  for(int x=0; x<allRecipeId.length; x++){
-
-
                     if (recipefoodRid[a].equals(allRecipeId[x]) && recipefoodRid[a].equals(currentRid) ){
-
-
                         recipefoodDid[z] = recipefooddata.getString("did");
-
-
                         ++z;
                     }
                     else{
                         continue;
                     }
-
-
-
                  }
-
-
-
-
             }
             foodDic(result,recipefoodDid);
-
             recipefoodDid = null;
-
-
-
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public static void findDic(){
-
     }
 
     public static void foodDic(String result, String[] foodDid) {

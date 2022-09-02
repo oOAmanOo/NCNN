@@ -123,11 +123,16 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
             else{
                 holder.recipe_img.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(AllRecipeList.imgName[position]),"drawable", context.getPackageName()));
             }
+        }else if(mode == "autosearch"){
+            holder.recipe_name.setText(AutoRecipeList.allRecipeNames[position]);
+            holder.recipe_food.setText(AutoRecipeList.allRecipeFood[position]);
+            if(AutoRecipeList.allRecipeSugar[position] == null){
+                holder.recipe_tag.setText(null);
+            }else{
+                holder.recipe_tag.setText(AutoRecipeList.allRecipeSugar[position]+AutoRecipeList.allRecipeSalt[position]+AutoRecipeList.allRecipeOil[position]);
+            }
+            holder.recipe_img.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(AutoRecipeList.imgName[position]),"drawable", context.getPackageName()));
         }
-
-
-
-
     }
 
 
@@ -165,7 +170,7 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
                         if(pos != RecyclerView.NO_POSITION){
                             recyclerViewInterface.onItemClick(pos);
 //                            NormalDetailFragment.postion(pos);
-                            MergeDetailFragment.postion(pos);
+                            MergeDetailFragment.postion(AutoRecipeList.allRecipeFoodIndex[pos]);
                             MergeDetailFragment.getmode(mode);
                         }
                     }
