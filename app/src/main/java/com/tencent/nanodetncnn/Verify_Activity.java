@@ -121,7 +121,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     public void onCreate(Bundle savedInstanceState)
     {
         getActionBar().hide();
-        File file_test = new File("/data/data/com.tencent.nanodetncnn/result.txt");
+        File file_test = new File("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt");
         file_test.delete();
 
         final FragmentManager fm = getSupportFragmentManager() ;
@@ -208,7 +208,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                 VarButton.setText("開始辨識");
                 NcnnYolov5.varifyCheck(result_java);
                 try {
-                    FileInputStream fis = new FileInputStream("/data/data/com.tencent.nanodetncnn/result.txt");
+                    FileInputStream fis = new FileInputStream("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt");
                     BufferedReader in = new BufferedReader(new InputStreamReader((fis)));
 //              BufferedReader in = new BufferedReader(new FileReader("result.txt"));
                     Scanner read = new Scanner(in);

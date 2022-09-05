@@ -3,13 +3,17 @@ package com.tencent.nanodetncnn.fridge;
 //import android.support.v7.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.DialogInterface;
+import android.text.Html;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -83,32 +87,72 @@ public class fridge_editfridge_ListAdapter_22 extends RecyclerView.Adapter<fridg
 //        holder.d2_imageView.setImageResource(R.drawable.pic1);
         holder.ef22_amount_textview.setText(String.valueOf(editfridgedb_amount[position]));
         holder.ef22_editTextNumber.setText(String.valueOf(editfridgedb_editnum[position]));
-        holder.ef22_editTextNumber.addTextChangedListener(new TextWatcher() {
+        holder.ef22_editTextNumber.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                fridge_editfridge_dfragment2.editdialog2.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-            }
+            public void onClick(View v) {
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                final EditText input = new EditText(MainActivity.mContext2);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                AlertDialog.Builder number = new AlertDialog.Builder(v.getContext());
 
-            }
+//                number.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+//                number.setMessage(Html.fromHtml("<font color='#00455F'>編輯數值不得為負數"));
+                number.setView(input);
 
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(!(holder.ef22_editTextNumber.getText().toString().matches(""))){
-                    if(Integer.parseInt(holder.ef22_editTextNumber.getText().toString()) > editfridgedb_amount[position]){
-                        MainActivity.editfridge_fault[editfridge_index21] = -2;
-                    }else if(Integer.parseInt(holder.ef22_editTextNumber.getText().toString()) < 0){
-                        MainActivity.editfridge_fault[editfridge_index21] = -1;
-                    }else{
-                        MainActivity.editfridge_fault[editfridge_index21] = 0;
-                        MainActivity.editfridgedb_editnum[count_index + position] = Integer.parseInt(holder.ef22_editTextNumber.getText().toString());
+                AlertDialog dialog_a = number.create();;
+
+                input.setOnEditorActionListener(new TextView.OnEditorActionListener(){
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        if(event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE){
+                            if(!(input.getText().toString().matches(""))){
+                                if(Integer.parseInt(input.getText().toString()) > editfridgedb_amount[position]){
+//                                    MainActivity.editfridge_fault[editfridge_index21] = -2;
+                                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數量超過存儲數量"));
+                                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                                    AlertDialog dialog = dumb.create();
+                                    dialog.show();
+                                }else if(Integer.parseInt(input.getText().toString()) < 0){
+//                                    MainActivity.editfridge_fault[editfridge_index21] = -1;
+                                    AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+                                    dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+                                    dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數值不得為負數"));
+                                    dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                                    AlertDialog dialog = dumb.create();
+                                    dialog.show();
+                                }else{
+                                    MainActivity.editfridgedb_editnum[count_index + position] = Integer.parseInt(input.getText().toString());
+                                    editfridgedb_editnum[position] = MainActivity.editfridgedb_editnum[count_index + position];
+                                    holder.ef22_editTextNumber.setText(String.valueOf(MainActivity.editfridgedb_editnum[count_index + position]));
+                                    dialog_a.dismiss();
+                                    return true;
+                                }
+                            }else{
+                                MainActivity.editfridgedb_editnum[count_index + position] = 0;
+                                editfridgedb_editnum[position] = MainActivity.editfridgedb_editnum[count_index + position];
+                                holder.ef22_editTextNumber.setText(String.valueOf(MainActivity.editfridgedb_editnum[count_index + position]));
+                                dialog_a.dismiss();
+                                return true;
+                            }
+                        }
+                        return false;
                     }
-                }else{
-//                    holder.ef22_editTextNumber.setText(String.valueOf(0));
-                    MainActivity.editfridgedb_editnum[count_index + position] = 0;
-                }
+                });
+                input.requestFocus();
+                dialog_a.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                dialog_a.show();
             }
         });
     }

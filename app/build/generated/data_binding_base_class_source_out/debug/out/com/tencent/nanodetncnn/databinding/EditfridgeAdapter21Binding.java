@@ -4,6 +4,7 @@ package com.tencent.nanodetncnn.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +24,9 @@ public final class EditfridgeAdapter21Binding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final EditText editTextTextPersonName2;
+
+  @NonNull
   public final CardView ef21Card;
 
   @NonNull
@@ -40,10 +44,12 @@ public final class EditfridgeAdapter21Binding implements ViewBinding {
   @NonNull
   public final TextView textView4;
 
-  private EditfridgeAdapter21Binding(@NonNull FrameLayout rootView, @NonNull CardView ef21Card,
+  private EditfridgeAdapter21Binding(@NonNull FrameLayout rootView,
+      @NonNull EditText editTextTextPersonName2, @NonNull CardView ef21Card,
       @NonNull ImageView ef21ImageView, @NonNull RecyclerView ef21Recyclerview,
       @NonNull TextView ef21TextView, @NonNull TextView textView3, @NonNull TextView textView4) {
     this.rootView = rootView;
+    this.editTextTextPersonName2 = editTextTextPersonName2;
     this.ef21Card = ef21Card;
     this.ef21ImageView = ef21ImageView;
     this.ef21Recyclerview = ef21Recyclerview;
@@ -79,6 +85,12 @@ public final class EditfridgeAdapter21Binding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.editTextTextPersonName2;
+      EditText editTextTextPersonName2 = ViewBindings.findChildViewById(rootView, id);
+      if (editTextTextPersonName2 == null) {
+        break missingId;
+      }
+
       id = R.id.ef21_card;
       CardView ef21Card = ViewBindings.findChildViewById(rootView, id);
       if (ef21Card == null) {
@@ -115,8 +127,8 @@ public final class EditfridgeAdapter21Binding implements ViewBinding {
         break missingId;
       }
 
-      return new EditfridgeAdapter21Binding((FrameLayout) rootView, ef21Card, ef21ImageView,
-          ef21Recyclerview, ef21TextView, textView3, textView4);
+      return new EditfridgeAdapter21Binding((FrameLayout) rootView, editTextTextPersonName2,
+          ef21Card, ef21ImageView, ef21Recyclerview, ef21TextView, textView3, textView4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

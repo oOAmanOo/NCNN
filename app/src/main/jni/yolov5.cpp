@@ -550,9 +550,9 @@ int Yolov5::draw(cv::Mat& rgb, const std::vector<Object>& objects)
             return 0;
         }
         if(new_txt == '0'){
-            file = fopen("/data/data/com.tencent.nanodetncnn/result.txt", "a");
+            file = fopen("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt", "a");
         }else {
-            file = fopen("/data/data/com.tencent.nanodetncnn/result.txt", "w");
+            file = fopen("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt", "w");
             new_txt = '0';
         }
         if(file == NULL){

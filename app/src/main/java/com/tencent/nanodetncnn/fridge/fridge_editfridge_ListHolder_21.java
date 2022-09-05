@@ -14,14 +14,17 @@ public class fridge_editfridge_ListHolder_21 extends RecyclerView.ViewHolder {
     ImageView ef21_imageView;
     TextView ef21_textView;
     RecyclerView ef21_recyclerview;
+    TextView editTextTextPersonName2;
     public fridge_editfridge_ListHolder_21(@NonNull View itemView) {
         super(itemView);
         ImageView ef21_imageView;
         TextView ef21_textView;
         RecyclerView ef21_recyclerview;
+        TextView editTextTextPersonName2;
         ef21_imageView = (ImageView) itemView.findViewById(R.id.ef21_imageView);
         ef21_textView= (TextView) itemView.findViewById(R.id.ef21_textView);
         ef21_recyclerview = (RecyclerView) itemView.findViewById(R.id.ef21_recyclerview);
+        editTextTextPersonName2 = (TextView) itemView.findViewById(R.id.editTextTextPersonName2);
     }
 
 }

@@ -24,7 +24,6 @@
         android:id="@+id/ef2_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ef2_recyclerView"
             android:layout_width="match_parent"
@@ -32,16 +31,14 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="20"
-            android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="false"
+            app:fastScrollEnabled="false"
             app:layout_constrainedHeight="true"
             app:layout_constraintBaseline_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_max="200dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:fastScrollEnabled="false">
-
+            app:layout_constraintTop_toTopOf="parent">
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

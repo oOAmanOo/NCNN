@@ -1,12 +1,9 @@
 package com.tencent.nanodetncnn.fridge;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,42 +63,42 @@ public class fridge_editfridge_dfragment2 extends DialogFragment {
         next_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                int next = 1;
-
-                for (int i = 0; i < MainActivity.editfridgedb_index; i++) {
-
-                    if(MainActivity.editfridge_fault[i] == -2){
-                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
-                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
-                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數量超過存儲數量"));
-                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        AlertDialog dialog = dumb.create();
-                        dialog.show();
-                        next = 0;
-                        break;
-                    }
-                    else if(MainActivity.editfridge_fault[i] == -1){
-                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
-                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
-                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數值不得為負數"));
-                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        AlertDialog dialog = dumb.create();
-                        dialog.show();
-                        next = 0;
-                        break;
-                    }
-                }
-                if(next == 1){
+//                int next = 1;
+//
+//                for (int i = 0; i < MainActivity.editfridgedb_index; i++) {
+//
+//                    if(MainActivity.editfridge_fault[i] == -2){
+//                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+//                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+//                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數量超過存儲數量"));
+//                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                dialog.dismiss();
+//                            }
+//                        });
+//                        AlertDialog dialog = dumb.create();
+//                        dialog.show();
+//                        next = 0;
+//                        break;
+//                    }
+//                    else if(MainActivity.editfridge_fault[i] == -1){
+//                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
+//                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
+//                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數值不得為負數"));
+//                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                dialog.dismiss();
+//                            }
+//                        });
+//                        AlertDialog dialog = dumb.create();
+//                        dialog.show();
+//                        next = 0;
+//                        break;
+//                    }
+//                }
+//                if(next == 1){
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.append("[");
                     int first = 0;
@@ -125,7 +122,7 @@ public class fridge_editfridge_dfragment2 extends DialogFragment {
                     MainActivity.current_editdialog = 0;
                     editdialog2.hide();
                     MainActivity.editfridgedialog_change(0, 2, MainActivity.fm_p);
-                }
+//                }
             }
         });
         return view;
@@ -140,6 +137,8 @@ public class fridge_editfridge_dfragment2 extends DialogFragment {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             dialog.getWindow().setGravity(Gravity.CENTER);
+//            fridge_editfridge_dfragment2.editdialog2.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+
         }
     }
 }

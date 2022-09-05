@@ -1,12 +1,9 @@
 package com.tencent.nanodetncnn;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,68 +69,29 @@ public class editfridge_dfragment2 extends DialogFragment {
         next_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                int next = 1;
-
-                for (int i = 0; i < MainActivity.editfridgedb_index; i++) {
-
-                    if(MainActivity.editfridge_fault[i] == -2){
-
-                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
-                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
-                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數量超過存儲數量"));
-                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        AlertDialog dialog = dumb.create();
-                        dialog.show();
-                        next = 0;
-                        break;
-                    }else if(MainActivity.editfridge_fault[i] == -1){
-
-                        AlertDialog.Builder dumb = new AlertDialog.Builder(v.getContext());
-                        dumb.setTitle(Html.fromHtml("<font color='#00455F'>錯誤"));
-                        dumb.setMessage(Html.fromHtml("<font color='#00455F'>編輯數值不得為負數"));
-                        dumb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        AlertDialog dialog = dumb.create();
-                        dialog.show();
-                        next = 0;
-                        break;
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("[");
+                int first = 0;
+                for (int i = 0; i < MainActivity.editfridgedb_index; ++i){
+                    if(MainActivity.editfridgedb_editnum[i] == 0){
+                        continue;
+                    }else if(first == 0){
+                        ++first;
+                        stringBuilder.append("{");
+                    }else{
+                        stringBuilder.append(",{");
                     }
+                    stringBuilder.append("\"did\":\"" + MainActivity.editfridgedb_did[i] + "\",");
+                    stringBuilder.append("\"fid\":\"" + MainActivity.editfridgedb_fid[i] + "\",");
+                    stringBuilder.append("\"name\":\"" + MainActivity.editfridgedb_name[i] + "\",");
+                    stringBuilder.append("\"editnum\":\"" + MainActivity.editfridgedb_editnum[i] + "\"");
+                    stringBuilder.append("}");
                 }
-                if(next == 1){
-
-                    StringBuilder stringBuilder = new StringBuilder();
-                    stringBuilder.append("[");
-                    int first = 0;
-                    for (int i = 0; i < MainActivity.editfridgedb_index; ++i){
-                        if(MainActivity.editfridgedb_editnum[i] == 0){
-                            continue;
-                        }else if(first == 0){
-                            ++first;
-                            stringBuilder.append("{");
-                        }else{
-                            stringBuilder.append(",{");
-                        }
-                        stringBuilder.append("\"did\":\"" + MainActivity.editfridgedb_did[i] + "\",");
-                        stringBuilder.append("\"fid\":\"" + MainActivity.editfridgedb_fid[i] + "\",");
-                        stringBuilder.append("\"name\":\"" + MainActivity.editfridgedb_name[i] + "\",");
-                        stringBuilder.append("\"editnum\":\"" + MainActivity.editfridgedb_editnum[i] + "\"");
-                        stringBuilder.append("}");
-                    }
-                    stringBuilder.append("]");
-                    MainActivity.editjsonupload = stringBuilder.toString();
-                    MainActivity.current_editdialog = 0;
-                    editdialog2.hide();
-                    MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
-                }
+                stringBuilder.append("]");
+                MainActivity.editjsonupload = stringBuilder.toString();
+                MainActivity.current_editdialog = 0;
+                editdialog2.hide();
+                MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
             }
         });
         return view;

@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private NormalRecipeList normalRecipeList = new NormalRecipeList();
 
+
+
     //    duck dialog
     public static int[] editfridge_count = new int[100];
     public static int[] editfridge_fault = new int[100];
@@ -111,6 +113,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         profilereload_MainActivity = this;
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
