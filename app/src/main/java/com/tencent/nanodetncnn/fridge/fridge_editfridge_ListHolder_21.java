@@ -24,7 +24,6 @@ public class fridge_editfridge_ListHolder_21 extends RecyclerView.ViewHolder {
         ef21_imageView = (ImageView) itemView.findViewById(R.id.ef21_imageView);
         ef21_textView= (TextView) itemView.findViewById(R.id.ef21_textView);
         ef21_recyclerview = (RecyclerView) itemView.findViewById(R.id.ef21_recyclerview);
-        editTextTextPersonName2 = (TextView) itemView.findViewById(R.id.editTextTextPersonName2);
     }
 
 }

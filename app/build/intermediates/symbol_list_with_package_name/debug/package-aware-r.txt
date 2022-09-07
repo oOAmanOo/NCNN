@@ -2950,7 +2950,6 @@ id easeInOut
 id easeOut
 id east
 id editTextTextPersonName
-id editTextTextPersonName2
 id edit_query
 id edittext_dropdown_editable
 id edittext_dropdown_noneditable
@@ -3193,6 +3192,7 @@ id oilsp
 id on
 id onInterceptTouchReturnSwipe
 id outline
+id outsidecamera
 id outward
 id overshoot
 id packed

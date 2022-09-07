@@ -35,6 +35,9 @@ public final class VerifyMainBinding implements ViewBinding {
   public final Button endVarify;
 
   @NonNull
+  public final LinearLayout outsidecamera;
+
+  @NonNull
   public final Spinner spinnerCPUGPU;
 
   @NonNull
@@ -42,12 +45,14 @@ public final class VerifyMainBinding implements ViewBinding {
 
   private VerifyMainBinding(@NonNull LinearLayout rootView, @NonNull Button buttonSwitchCamera,
       @NonNull SurfaceView cameraview, @NonNull ImageButton changeButton, @NonNull Button endVarify,
-      @NonNull Spinner spinnerCPUGPU, @NonNull Spinner spinnerModel) {
+      @NonNull LinearLayout outsidecamera, @NonNull Spinner spinnerCPUGPU,
+      @NonNull Spinner spinnerModel) {
     this.rootView = rootView;
     this.buttonSwitchCamera = buttonSwitchCamera;
     this.cameraview = cameraview;
     this.changeButton = changeButton;
     this.endVarify = endVarify;
+    this.outsidecamera = outsidecamera;
     this.spinnerCPUGPU = spinnerCPUGPU;
     this.spinnerModel = spinnerModel;
   }
@@ -103,6 +108,12 @@ public final class VerifyMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.outsidecamera;
+      LinearLayout outsidecamera = ViewBindings.findChildViewById(rootView, id);
+      if (outsidecamera == null) {
+        break missingId;
+      }
+
       id = R.id.spinnerCPUGPU;
       Spinner spinnerCPUGPU = ViewBindings.findChildViewById(rootView, id);
       if (spinnerCPUGPU == null) {
@@ -116,7 +127,7 @@ public final class VerifyMainBinding implements ViewBinding {
       }
 
       return new VerifyMainBinding((LinearLayout) rootView, buttonSwitchCamera, cameraview,
-          changeButton, endVarify, spinnerCPUGPU, spinnerModel);
+          changeButton, endVarify, outsidecamera, spinnerCPUGPU, spinnerModel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
