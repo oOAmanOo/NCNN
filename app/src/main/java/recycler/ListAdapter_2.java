@@ -119,11 +119,13 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
                 //取得Calender物件資訊
                 int year = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONTH);
+                System.out.println(month);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
                 //取出年月日
                 DatePickerDialog  datePickerDialog = new DatePickerDialog(Verify_Activity.mContext2, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        String dateTime = String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
+                        System.out.println(month);
+                        String dateTime = String.valueOf(year)+"-"+String.valueOf(month + 1)+"-"+String.valueOf(day);  //這是希望它選取後顯示上去的文字格式
                         holder.d2_expireddate_date.setText(dateTime);//setText上去editText~
                         Verify_Activity.fridge_expiredate[position] = dateTime;
                     }

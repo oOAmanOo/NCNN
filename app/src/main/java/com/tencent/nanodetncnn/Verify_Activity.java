@@ -120,6 +120,9 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("data_uid");
+
         getActionBar().hide();
         File file_test = new File("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt");
         file_test.delete();
@@ -136,9 +139,8 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
 
         Thread thread = new Thread(multiThread);
         thread.start();
-
         cameraView = (SurfaceView) findViewById(R.id.cameraview);
-
+//        outsidecamera.addView(cameraView);
         cameraView.getHolder().setFormat(PixelFormat.RGBA_8888);
         cameraView.getHolder().addCallback(this);
         Button buttonSwitchCamera = (Button) findViewById(R.id.buttonSwitchCamera);
@@ -193,7 +195,11 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
         change_button = change_button_0;
         change_button.setOnClickListener(view -> {
             Intent intent = new Intent(Verify_Activity.this, MainActivity.class);
+            Bundle bundl = new Bundle();
+            bundl.putString("data_uid", uid);
+            intent.putExtras(bundl);   // put進去
             startActivity(intent);
+            finish();
         });
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
@@ -284,7 +290,6 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                 }
             }
         });
-
         reload();
     }
 
@@ -392,10 +397,10 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?uid=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?uid="+uid);//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("uid","duck"));
+                params.add(new BasicNameValuePair("uid",uid));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件

@@ -114,8 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
-
         profilereload_MainActivity = this;
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -175,11 +173,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
-        Intent intent=new Intent(MainActivity.this, Verify_Activity.class); startActivity(intent);
+        Intent intent=new Intent(MainActivity.this, Verify_Activity.class);
+        Bundle bundl = new Bundle();
+        bundl.putString("data_uid", uid);
+        intent.putExtras(bundl);   // put進去
+        startActivity(intent);
     }
 
     private void scanCode(){
-
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setOrientationLocked(false);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);

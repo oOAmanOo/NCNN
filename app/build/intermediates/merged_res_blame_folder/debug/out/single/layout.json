@@ -8,6 +8,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_merge_recipe_list.xml"
     },
     {
+        "merged": "com.tencent.nanodetncnn.app-mergeDebugResources-4:/layout/verify_main.xml",
+        "source": "com.tencent.nanodetncnn.app-main-7:/layout/verify_main.xml"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-mergeDebugResources-4:/layout/list_adapter4.xml",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/list_adapter4.xml"
     },
@@ -130,10 +134,6 @@
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-mergeDebugResources-4:/layout/fragment_cust22222.xml",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_cust22222.xml"
-    },
-    {
-        "merged": "com.tencent.nanodetncnn.app-mergeDebugResources-4:/layout/editfridge_adapter22.xml",
-        "source": "com.tencent.nanodetncnn.app-main-7:/layout/editfridge_adapter22.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-mergeDebugResources-4:/layout/fragment4_layout.xml",
