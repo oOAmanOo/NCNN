@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability = "beforeDescendants">
+
+    <item android:title="Fridge"
+        android:icon="@drawable/ic_baseline_crop_din_24"
+        android:descendantFocusability = "beforeDescendants"
+        android:id="@+id/myFridge"/>
+    <item android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:descendantFocusability = "beforeDescendants"
+        android:id="@+id/search"/>
+    <item android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:descendantFocusability = "beforeDescendants"
+        android:id="@+id/profile"/>
+
+</menu>

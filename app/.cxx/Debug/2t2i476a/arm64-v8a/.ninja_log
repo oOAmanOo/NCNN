@@ -1,0 +1,24 @@
+# ninja log v5
+0	2035	1661153817	CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o	8512088343b82d5a
+17	2041	1661153817	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+0	2159	1661153817	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	fe15de1d223b7316
+2159	3411	1661153818	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+1	1950	1661259654	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+1950	3420	1661259655	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+1	646	1661259862	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+646	795	1661259862	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+1	670	1661262404	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+670	842	1661262404	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+1	609	1661262516	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+609	735	1661262516	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+1	655	1661262625	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+655	896	1661262625	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+0	77	1661320869	build.ninja	cbd6866db58dc2ad
+0	37	0	clean	472a3b139898160c
+0	48	1661320872	build.ninja	cbd6866db58dc2ad
+55	1450	1661320874	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+55	1452	1661320874	CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o	8512088343b82d5a
+55	1558	1661320874	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	fe15de1d223b7316
+1558	3746	1661320876	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+22	5476	1662387963	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	fe15de1d223b7316
+5476	7855	1662387965	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e

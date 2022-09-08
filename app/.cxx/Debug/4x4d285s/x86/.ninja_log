@@ -1,0 +1,26 @@
+# ninja log v5
+5	452	1659325292	CMakeFiles/ncnnyolov5.dir/test.cpp.o	34c6041feaa1739d
+703	874	1659345653	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	698	1659330491	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	f21292db5ee6f664
+0	720	1659330491	CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o	dff28cc005da9c9b
+3	703	1659345653	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+0	628	1659346537	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+628	710	1659346537	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+0	584	1659346556	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+584	665	1659346556	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	742	1659346570	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+742	836	1659346571	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+0	612	1659346631	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+612	723	1659346631	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	608	1659347409	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+608	692	1659347409	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	705	1659347435	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+705	848	1659347436	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	605	1659347460	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+605	691	1659347460	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	715	1659349382	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+715	2072	1659349383	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	1568	1659407120	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+1568	4037	1659407123	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af
+1	680	1659407306	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	4c59ab1921a7c772
+680	795	1659407306	/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cxx/Debug/4x4d285s/obj/x86/libncnnyolov5.so	34f62f9d512a92af

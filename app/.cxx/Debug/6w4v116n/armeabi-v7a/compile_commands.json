@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/bingo/Public/NCNN-0812/app/.cxx/Debug/6w4v116n/armeabi-v7a",
+  "command": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/NCNN-0812/app/src/main/jni/ncnn-20210525-android-vulkan/armeabi-v7a/include/ncnn -isystem /home/bingo/Public/NCNN-0812/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -o CMakeFiles/ncnnyolov5.dir/yolov5ncnn.cpp.o -c /home/bingo/Public/NCNN-0812/app/src/main/jni/yolov5ncnn.cpp",
+  "file": "/home/bingo/Public/NCNN-0812/app/src/main/jni/yolov5ncnn.cpp"
+},
+
+{
+  "directory": "/home/bingo/Public/NCNN-0812/app/.cxx/Debug/6w4v116n/armeabi-v7a",
+  "command": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/NCNN-0812/app/src/main/jni/ncnn-20210525-android-vulkan/armeabi-v7a/include/ncnn -isystem /home/bingo/Public/NCNN-0812/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -o CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o -c /home/bingo/Public/NCNN-0812/app/src/main/jni/yolov5.cpp",
+  "file": "/home/bingo/Public/NCNN-0812/app/src/main/jni/yolov5.cpp"
+},
+
+{
+  "directory": "/home/bingo/Public/NCNN-0812/app/.cxx/Debug/6w4v116n/armeabi-v7a",
+  "command": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/NCNN-0812/app/src/main/jni/ncnn-20210525-android-vulkan/armeabi-v7a/include/ncnn -isystem /home/bingo/Public/NCNN-0812/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -o CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o -c /home/bingo/Public/NCNN-0812/app/src/main/jni/ndkcamera.cpp",
+  "file": "/home/bingo/Public/NCNN-0812/app/src/main/jni/ndkcamera.cpp"
+}
+]

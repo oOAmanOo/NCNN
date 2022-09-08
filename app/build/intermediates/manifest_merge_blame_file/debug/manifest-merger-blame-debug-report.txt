@@ -1,0 +1,224 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tencent.nanodetncnn_tempmerge"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:5-65
+11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:22-62
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:5-67
+12-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:5-78
+13-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:10:22-76
+14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+14-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:5-75
+14-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:11:22-73
+15
+16    <uses-feature android:name="android.hardware.camera2.full" />
+16-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:5-66
+16-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:13:19-63
+17
+18    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+19    <uses-feature
+19-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:25:5-27:36
+20        android:name="android.hardware.camera"
+20-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:26:9-47
+21        android:required="false" />
+21-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:27:9-33
+22    <uses-feature
+22-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
+23        android:name="android.hardware.camera.front"
+23-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
+24        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+24-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
+25    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+26    <uses-feature
+26-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
+27        android:name="android.hardware.camera.autofocus"
+27-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
+28        android:required="false" />
+28-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
+29    <uses-feature
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
+30        android:name="android.hardware.camera.flash"
+30-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
+31        android:required="false" />
+31-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
+32    <uses-feature
+32-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
+33        android:name="android.hardware.screen.landscape"
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
+34        android:required="false" />
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
+35    <uses-feature
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
+36        android:name="android.hardware.wifi"
+36-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
+37        android:required="false" />
+37-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
+38
+39    <application
+39-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:15:5-70:19
+40        android:allowBackup="true"
+40-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:16:6-32
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.8.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/cd33f26b4f6a5be75c2c675ec5e179dc/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+42        android:dataExtractionRules="@xml/data_extraction_rules"
+42-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:17:9-65
+43        android:debuggable="true"
+44        android:extractNativeLibs="false"
+45        android:fullBackupContent="@xml/backup_rules"
+45-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:18:9-54
+46        android:icon="@mipmap/ic_add_blue"
+46-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:19:9-43
+47        android:label="@string/app_name"
+47-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:9-41
+48        android:roundIcon="@mipmap/ic_launcher_round"
+48-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:9-54
+49        android:supportsRtl="true"
+49-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:9-35
+50        android:testOnly="true"
+51        android:theme="@style/Theme.MyApplication_scan"
+51-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:23:9-56
+52        android:usesCleartextTraffic="true" >
+52-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:24:9-44
+53        <uses-library
+53-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:27:9-29:40
+54            android:name="org.apache.http.legacy"
+54-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:28:13-50
+55            android:required="false" />
+55-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:29:13-37
+56
+57        <activity
+57-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:31:6-40:20
+58            android:name="com.tencent.nanodetncnn.MainActivity"
+58-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:32:13-41
+59            android:exported="true"
+59-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:33:13-36
+60            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan" >
+60-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:35:13-77
+61
+62            <!-- <intent-filter> -->
+63            <!-- <action android:name="android.intent.action.MAIN" /> -->
+64            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+65            <!-- </intent-filter> -->
+66        </activity>
+67        <activity
+67-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:41:9-43:40
+68            android:name="com.tencent.nanodetncnn.passvaluecustActivity"
+68-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:42:13-50
+69            android:exported="false" />
+69-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:43:13-37
+70        <activity
+70-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:44:9-46:40
+71            android:name="com.tencent.nanodetncnn.passvalueActivity"
+71-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:45:13-46
+72            android:exported="false" />
+72-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:46:13-37
+73        <activity
+73-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:47:9-53:20
+74            android:name="com.tencent.nanodetncnn.Verify_Activity"
+74-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:48:13-44
+75            android:exported="true"
+75-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:52:13-36
+76            android:label="@string/app_name"
+76-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:49:13-45
+77            android:screenOrientation="portrait"
+77-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:50:13-49
+78            android:theme="@style/MyTheme" >
+78-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:51:13-43
+79        </activity>
+80        <activity
+80-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:54:9-57:60
+81            android:name="com.tencent.nanodetncnn.login.LoginActivity"
+81-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:55:13-48
+82            android:exported="false"
+82-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:56:13-37
+83            android:label="@string/title_activity_login" />
+83-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:57:13-57
+84        <activity
+84-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:58:9-65:20
+85            android:name="com.tencent.nanodetncnn.MainActivitywelcome"
+85-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:59:13-48
+86            android:exported="true" >
+86-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:60:13-36
+87            <intent-filter>
+87-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:61:13-64:29
+88                <action android:name="android.intent.action.MAIN" />
+88-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:62:17-69
+88-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:62:25-66
+89
+90                <category android:name="android.intent.category.LAUNCHER" />
+90-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:63:17-77
+90-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:63:27-74
+91            </intent-filter>
+92        </activity>
+93        <activity
+93-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:66:9-69:20
+94            android:name="com.tencent.nanodetncnn.MainActivityreg"
+94-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:67:13-44
+95            android:exported="true" >
+95-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:68:13-36
+96        </activity>
+97
+98        <provider
+98-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+99            android:name="androidx.startup.InitializationProvider"
+99-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+100            android:authorities="com.tencent.nanodetncnn_tempmerge.androidx-startup"
+100-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+101            android:exported="false" >
+101-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+102            <meta-data
+102-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+103                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+103-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+104                android:value="androidx.startup" />
+104-->[androidx.emoji2:emoji2:1.2.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/5e91b023516a338285bd49f27692db4f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+105            <meta-data
+105-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+106                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+106-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+107                android:value="androidx.startup" />
+107-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/60d66295239e7383db0bc717e0e4f288/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+108        </provider>
+109
+110        <uses-library
+110-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+111            android:name="androidx.window.extensions"
+111-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+112            android:required="false" />
+112-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+113        <uses-library
+113-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+114            android:name="androidx.window.sidecar"
+114-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+115            android:required="false" />
+115-->[androidx.window:window:1.0.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/29a4a2635fe3ae7324fd4158242cc016/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+116
+117        <activity
+117-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+118            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+118-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
+119            android:clearTaskOnLaunch="true"
+119-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+120            android:screenOrientation="sensorLandscape"
+120-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+121            android:stateNotNeeded="true"
+121-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+122            android:theme="@style/zxing_CaptureTheme"
+122-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+123            android:windowSoftInputMode="stateAlwaysHidden" />
+123-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/bingo/Public/ncnn-Android-Yolov5/gradle/caches/transforms-3/a3fa0670dfb5a9102e987c83e600aac5/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+124    </application>
+125
+126</manifest>

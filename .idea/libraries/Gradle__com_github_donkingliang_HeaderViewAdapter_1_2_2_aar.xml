@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.donkingliang:HeaderViewAdapter:1.2.2@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/c74b7154aaf95eeab110644a97dc6ea8/transformed/jetified-HeaderViewAdapter-1.2.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/c74b7154aaf95eeab110644a97dc6ea8/transformed/jetified-HeaderViewAdapter-1.2.2/res" />
+      <root url="file://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/c74b7154aaf95eeab110644a97dc6ea8/transformed/jetified-HeaderViewAdapter-1.2.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/modules-2/files-2.1/com.github.donkingliang/HeaderViewAdapter/1.2.2/5e3d0cbaf89ea6aecf25b907bae5c5aa8af5ff64/HeaderViewAdapter-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

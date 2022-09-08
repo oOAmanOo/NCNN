@@ -1,0 +1,3 @@
+/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/x86/CMakeFiles/rebuild_cache.dir
+/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/x86/CMakeFiles/edit_cache.dir
+/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/x86/CMakeFiles/ncnnyolov5.dir

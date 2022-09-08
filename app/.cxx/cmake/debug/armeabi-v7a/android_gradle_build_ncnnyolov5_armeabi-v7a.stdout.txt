@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/cmake/debug/armeabi-v7a'
+ninja: no work to do.

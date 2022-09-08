@@ -1,0 +1,1 @@
+/home/bingo/Public/NCNN/app/build/intermediates/cxx/RelWithDebInfo/2y4u4r6z/obj/x86

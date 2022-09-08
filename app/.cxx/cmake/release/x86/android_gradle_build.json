@@ -1,0 +1,70 @@
+{
+  "stringTable": {
+    "0": "/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/cmake/release/x86",
+    "1": "--target=i686-none-linux-android24 --sysroot=/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dncnnyolov5_EXPORTS -isystem /home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/include/ncnn -isystem /home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DNDEBUG -fPIC -fno-rtti -fno-exceptions -std=gnu++11"
+  },
+  "buildFiles": [
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/ncnn/ncnnConfig.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/OGLCompilerTargets-release.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/ncnn/ncnn.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/OpenCVConfig.cmake",
+    "/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/platforms.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/glslangTargets-release.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/compiler_id.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/abi-x86/OpenCVConfig.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/SPIRVTargets-release.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/CMakeLists.txt",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/abi-x86/OpenCVModules-release.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/OSDependentTargets-release.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/OGLCompilerTargets.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/SPIRVTargets.cmake",
+    "/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android-legacy.toolchain.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/opencv-mobile-4.5.1-android/sdk/native/jni/abi-x86/OpenCVModules.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/glslangTargets.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/ncnn/ncnn-release.cmake",
+    "/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake",
+    "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ncnn-20210525-android-vulkan/x86/lib/cmake/OSDependentTargets.cmake"
+  ],
+  "cleanCommands": [
+    "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/cmake/release/x86\" clean"
+  ],
+  "buildTargetsCommand": "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/cmake/release/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "ncnnyolov5-Release-x86": {
+      "buildCommand": "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/bingo/Public/ncnn-Android-Yolov5/app/.cxx/cmake/release/x86\" ncnnyolov5",
+      "buildType": "release",
+      "toolchain": "1509101236",
+      "abi": "x86",
+      "artifactName": "ncnnyolov5",
+      "files": [
+        {
+          "src": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/yolov5ncnn.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/yolov5.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/bingo/Public/ncnn-Android-Yolov5/app/src/main/jni/ndkcamera.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/bingo/Public/ncnn-Android-Yolov5/app/build/intermediates/cmake/release/obj/x86/libncnnyolov5.so"
+    }
+  },
+  "toolchains": {
+    "1509101236": {
+      "cppCompilerExecutable": "/home/bingo/Android/Sdk/ndk/25.0.8775105/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
