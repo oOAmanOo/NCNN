@@ -430,7 +430,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_insert.php?uid=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_insert.php?uid="+uid);//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));

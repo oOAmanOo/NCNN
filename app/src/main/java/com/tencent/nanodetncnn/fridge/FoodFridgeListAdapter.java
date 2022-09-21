@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tencent.nanodetncnn.Consts;
+import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.R;
 import com.tencent.nanodetncnn.model.FridgeFoodSumModel;
 import com.tencent.nanodetncnn.utils.MyUtils;
@@ -146,6 +147,11 @@ public class FoodFridgeListAdapter extends FrameLayout {
                     break;
             }
 
+            if(map.amount ==0){
+                viewHolder.adapter_food_fridge_list_item_bg.setBackgroundColor(getResources().getColor(R.color.food_0));
+
+            }
+
 
 
 
@@ -180,7 +186,7 @@ public class FoodFridgeListAdapter extends FrameLayout {
 
 
             FridgeFoodSumModel map = (FridgeFoodSumModel) v.getTag();
-            ((com.tencent.nanodetncnn.MainActivity) getContext()).addFragment(
+            ((MainActivity) getContext()).addFragment(
                     FridgeHistoryFragment.newInstance(map));
         }
     }

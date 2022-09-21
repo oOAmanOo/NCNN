@@ -45,7 +45,7 @@ public class editfridge_dfragment4 extends DialogFragment {
         ef4_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.notify_uid = ef4_spinner.getSelectedItem().toString();
+                MainActivity.notify_uid = MainActivity.notify_user_id[ef4_spinner.getSelectedItemPosition()];
             }
 
             @Override

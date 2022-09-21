@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button scanBtn;
+    ImageView todolist;
+    ImageView alertbtn;
     ActivityMainBinding binding;
     public static String result;
     public static int count;
@@ -111,9 +114,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String foodhatename[]=new String[200];
     public static int hatefood_index=0;
 
+    //notify
+    public static String alarm_index;
+    public static String alarmrecipe;
+    public static String alarmrecipe_food;
+    public static String alarm_mode = "null";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        System.out.println(alarm_index+"alarm_index");
         profilereload_MainActivity = this;
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -123,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //John
         Bundle bundle = getIntent().getExtras();
         uid = bundle.getString("data_uid");
-
+//        alarm_mode = bundle.getString("alarm_mode");
         Thread thread = new Thread(mutiThread);
         thread.start();
 
@@ -138,9 +147,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportFragmentManager().beginTransaction().add(R.id.frame_layout,new cust1Fragment()).commit();
         //end
 
-        scanBtn =findViewById(R.id.scanBtn);
+        scanBtn = findViewById(R.id.scanBtn);
         scanBtn_public = scanBtn;
         scanBtn.setOnClickListener(this);
+
+        todolist = findViewById(R.id.todolistBtn);
+        alertbtn = findViewById(R.id.alertBtn);
+
+        todolist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ToDoListActivity.class);
+                Bundle bundl = new Bundle();
+                bundl.putString("data_uid", uid);
+                intent.putExtras(bundl);   // put進去
+                startActivity(intent);
+            }
+        });
+        alertbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Alert_History_Activity.class);
+                Bundle bundl = new Bundle();
+                bundl.putString("data_uid", uid);
+                intent.putExtras(bundl);   // put進去
+                startActivity(intent);
+            }
+        });
 
         replaceFragment(new MyFridgeFragment());
 
@@ -156,9 +189,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new SearchFragment());
                     scanBtn.setVisibility(View.INVISIBLE);
                     break;
-//                case R.id.expiration:
-//                    replaceFragment(new ExpirationFragment());
-//                    break;
                 case R.id.profile:
                     replaceFragment(new ProfileFragment());
                     scanBtn.setVisibility(View.INVISIBLE);
@@ -168,7 +198,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             thread_0.start();
             return true;
         });
-
     }
 
     @Override
@@ -222,7 +251,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Bundle bundle=new Bundle();
         bundle.putString("data",result);
-
         bundle.putString("data_uid",uid);
 
 //        FragmentManager fragmentManager = getSupportFragmentManager();
@@ -302,8 +330,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity.editfridgedb_index = 0;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
-//            MainActivity.recipe_reload = 1;
-//            dialog_fragment.listDid.length = 0;
         }
     }
 
@@ -372,7 +398,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?uid="+uid);//宣告使用post方法連線
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
                 HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
                 InputStream inputStream = httpEntity.getContent();//宣告輸入串流
@@ -448,14 +474,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                // alarm
+                try {
+                    JSONObject obj=null;
+                    JSONArray table=null;
+                    JSONObject data=null;
+
+                    obj = new JSONObject(result);
+                    table = obj.getJSONArray("user_data");
+                    data = table.getJSONObject(0);
+                    alarm_index = data.getString("alarm");
+                    System.out.println(alarm_index+"alarm_index is here");
+                    //food
+                    if(!(alarm_index.equals("NULL"))){
+                        try {
+                            Integer.parseInt(alarm_index);
+                            table = obj.getJSONArray("alarm_recipe");
+                            data = table.getJSONObject(0);
+                            MainActivity.alarmrecipe = data.toString();
+                            table = obj.getJSONArray("alarm_recipe_food");
+                            MainActivity.alarmrecipe_food = table.toString();
+                            MergeDetailFragment.currentMode = "alarm";
+                            replaceFragment(new MergeDetailFragment());
+                            if(first_load == 1){
+                                first_load = 0;
+                            }
+                        } catch (NumberFormatException e){
+//                            replaceFragment(new MyFridgeFragment());
+                            //FOOD
+//                            if(first_load == 1){
+//                                first_load = 0;
+//                            }
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }catch (Exception e){
                 result = e.toString();
             }
             // 當這個執行緒完全跑完後執行
             MainActivity.runOnUI(new Runnable() {
                 public void run() {
-                    if(first_load == 1){
+                     if(first_load == 1){
                         replaceFragment(new MyFridgeFragment());
+                         System.out.println("failed QQ!!");
                         first_load = 0;
                     }
                 }
@@ -471,7 +535,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_editsearch.php?uid=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_editsearch.php?uid="+uid);//宣告使用post方法連線
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
                 params.add(new BasicNameValuePair("json", MainActivity.editjson));
@@ -493,7 +557,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result_data = box;
-//                System.out.println("result_data: "+result_data);
             } catch (Exception e) {
                 result_data = e.toString();
             }
@@ -556,11 +619,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_modify.php?uid=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_modify.php?uid="+uid);//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
-//                System.out.println(MainActivity.editjsonupload);
                 params.add(new BasicNameValuePair("json", MainActivity.editjsonupload));
                 params.add(new BasicNameValuePair("uid", "duck"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
@@ -580,7 +641,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result_data = box;
-//                System.out.println(result_data);
             } catch (Exception e) {
                 result_data = e.toString();
             }
@@ -609,7 +669,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                String url = "http://140.117.71.11/bingodb_copy.php?uid="+user;
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/notify_insert.php?uid=duck");//宣告使用post方法連線
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/notify_insert.php?uid="+uid);//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
@@ -633,7 +693,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result_data = box;
-//                System.out.println(result_data);
             } catch (Exception e) {
                 result_data = e.toString();
             }

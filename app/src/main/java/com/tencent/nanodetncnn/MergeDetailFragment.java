@@ -14,6 +14,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -292,6 +296,68 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
                 if(AllfoodDid[i] != true){
                     AllfoodDid[i] = false;
                 }
+            }
+        }
+
+        else if(currentMode == "alarm"){
+            JSONObject dataRecipe = null;
+            JSONArray table = null;
+            JSONObject data = null;
+            String ItemList = null;
+            String DidList = null;
+            String ImgList = null;
+
+            try {
+                dataRecipe = new JSONObject(MainActivity.alarmrecipe);
+
+                table = new JSONArray(MainActivity.alarmrecipe_food);
+                for (int i = 0; i < table.length(); i++) {
+                    data = table.getJSONObject(i);
+                    if(i == 0){
+                        ItemList += data.getString("name");
+                        DidList += data.getString("did");
+                        ImgList += data.getString("imgName");
+                    }else{
+                        ItemList += "," + data.getString("name");
+                        DidList += "," + data.getString("did");
+                        ImgList += "," + data.getString("imgName");
+                    }
+
+                }
+
+                merge_recipe_name_detail.setText(dataRecipe.getString("name"));
+                merge_recipe_food_detail.setText(AutoRecipeList.tempallRecipeFood[position_now]);
+                merge_recipe_tag_detail.setText(dataRecipe.getString("sugar") + dataRecipe.getString("salt") + dataRecipe.getString("oil"));
+                merge_recipe_step_detail.setText(dataRecipe.getString("step"));
+                merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(dataRecipe.getString("imgName")),"drawable", context.getPackageName()));
+
+
+
+                listItem = ItemList.split(",");
+                listDId = DidList.split(",");
+                listImg = ImgList.split(",");
+                HistoryfoodName = AutoRecipeList.allfoodhistoryName;
+                HistoryfoodDid = AutoRecipeList.allfoodhistoryDid;
+
+                checkedItem = new boolean[listItem.length];
+                AllfoodDid = new boolean[listItem.length];
+                int num = 0;
+                System.out.println("listDid.length"+listDId.length);
+                for(int i = 0; i < AutoRecipeList.allfoodhistoryName.length; ++i ){
+                    for (int j = 0; j < listItem.length; j++) {
+                        if(Objects.equals(listItem[j], AutoRecipeList.allfoodhistoryName[i])){
+                            AllfoodDid[j] = true;
+                            break;
+                        }
+                    }
+                }
+                for (int i = 0; i < AllfoodDid.length; i++) {
+                    if(AllfoodDid[i] != true){
+                        AllfoodDid[i] = false;
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
 

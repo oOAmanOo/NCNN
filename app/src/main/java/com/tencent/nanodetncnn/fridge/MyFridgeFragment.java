@@ -99,11 +99,18 @@ public class MyFridgeFragment extends Fragment {
     }
 
 
+    public void cancelEdit(){
+        resetChoseMode();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         myFragment = inflater.inflate(R.layout.fragment_my_fridge, container, false);
+
+
+
 
         viewPager = myFragment.findViewById(R.id.viewPager);
         tabLayout = myFragment.findViewById(R.id.tabLayout);

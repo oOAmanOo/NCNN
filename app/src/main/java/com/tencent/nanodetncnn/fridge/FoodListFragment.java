@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 
 import com.tencent.nanodetncnn.R;
 import com.tencent.nanodetncnn.model.FridgeFoodSumModel;
-import com.tencent.nanodetncnn.Consts;
 
 import java.util.ArrayList;
 
@@ -79,19 +78,9 @@ public class FoodListFragment extends Fragment {
         if (firstIN) {
             firstIN = false;
 
-            switch (pageType) {
-                case Consts.Fridge_Food_all:
-                    break;
-                case Consts.Fridge_Food_Ready_to_eat:
-                    break;
-                case Consts.Fridge_Food_Expired:
-                    break;
-            }
-
 
 
         }
-
         showData();
 
 

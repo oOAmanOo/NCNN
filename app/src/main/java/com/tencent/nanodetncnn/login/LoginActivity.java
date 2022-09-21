@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.MainActivityreg;
 import com.tencent.nanodetncnn.databinding.ActivityLoginBinding;
 
@@ -58,49 +57,14 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
         usernameEditText = binding.uid;
         passwordEditText = binding.password;
         final Button loginButton = binding.login;
-        //
         final Button registerButton = binding.register;//
         final ProgressBar loadingProgressBar = binding.loading;
-//        ff=binding.ff;
-
-//        //取得名稱密碼並至資料庫搜尋
-//        new Thread(new Runnable(){
-//
-//            @Override
-//            public void run() {
-//                Looper.prepare();
-//                // TODO Auto-generated method stub
-//                HttpClient client = new DefaultHttpClient();
-//
-//                HttpPost myPost = new HttpPost("http://10.0.2.2/connect/login.php");
-//                try {
-//                    List<NameValuePair> params = new ArrayList<NameValuePair>();
-//                    params.add(new BasicNameValuePair("pname",usernameEditText.getText().toString()));
-//                    //params.add(new BasicNameValuePair("password",passwordEditText.getText().toString()));
-//                    myPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//                    HttpResponse response = new DefaultHttpClient().execute(myPost);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                Looper.loop();
-//            }}).start();
-        //取得名稱密碼並至資料庫搜尋end
-
-
-        //new add
-//        Thread thread = new Thread(mutiThread);
-//        thread.start(); // 開始執行
-        //new end
-//        ff.setText(result);
-
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -117,26 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-//        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-//            @Override
-//            public void onChanged(@Nullable LoginResult loginResult) {
-//                if (loginResult == null) {
-//                    return;
-//                }
-//                loadingProgressBar.setVisibility(View.GONE);
-//                if (loginResult.getError() != null) {
-//                    showLoginFailed(loginResult.getError());
-//                }
-//                if (loginResult.getSuccess() != null) {
-//                    updateUiWithUser(loginResult.getSuccess());
-//                }
-//                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-//                finish();
-//            }
-//        });
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -176,27 +120,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 Thread thread = new Thread(mutiThread);
                 thread.start(); // 開始執行
-
-//                if(usernameEditText.getText().toString().equals(pname)&&passwordEditText.getText().toString().equals(pwd)){
-//                    //查詢資料庫，判斷是否正確
-//                    Intent intent=new Intent(LoginActivity.this, MainActivityfuc.class); startActivity(intent);
-//                }else {
-//                    dialogw();
-//                    usernameEditText.setText(pname);
-//                    passwordEditText.setText("");//帳號密碼錯誤將密碼清空
-//                }
-
-
-                //loadingProgressBar.setVisibility(View.VISIBLE);
-                //loginViewModel.login(usernameEditText.getText().toString(),passwordEditText.getText().toString());
-
-//                if(usernameEditText.getText().toString().equals(name)&&passwordEditText.getText().toString().equals(pwd)){
-//                    //查詢資料庫，判斷是否正確
-//                    Intent intent=new Intent(LoginActivity.this, MainActivityfuc.class); startActivity(intent);
-//                }else {
-//                    dialogw();
-//                    passwordEditText.setText("");//帳號密碼錯誤將密碼清空
-//                    }
             }
 
         });
@@ -208,12 +131,8 @@ public class LoginActivity extends AppCompatActivity {
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
                 Intent intent=new Intent(LoginActivity.this, MainActivityreg.class); startActivity(intent);
-                //Intent intent=new Intent(LoginActivity.this, MainActivityfuc.class); startActivity(intent);
-
-
             }
-
-        });//
+        });
     }
 
     private void dialogw() {
@@ -287,7 +206,8 @@ public class LoginActivity extends AppCompatActivity {
                 String text =parent.getString(0);
                 if(text.equals("登入成功")){
                     Toast.makeText(LoginActivity.this, "登入成功", Toast.LENGTH_SHORT).show();//new
-                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+//                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent=new Intent(LoginActivity.this, AlarmActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("data_uid",usernameEditText.getText().toString());
                     intent.putExtras(bundle);   // put進去
@@ -299,16 +219,7 @@ public class LoginActivity extends AppCompatActivity {
                 passwordEditText.setText("");
                 e.printStackTrace();
             }
-
-
-
         }
     };
-
-
-
-
-
 //new end
-
 }

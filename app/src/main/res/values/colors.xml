@@ -22,6 +22,7 @@
     <color name="food_ok">#F2F2F3</color>
     <color name="food_re">#FFEEBE</color>
     <color name="food_ex">#FDC2C2</color>
+    <color name="food_0">#555555</color>
 
     <color name="gray1">#EFEFEF</color>
     <color name="gray2">#666666</color>

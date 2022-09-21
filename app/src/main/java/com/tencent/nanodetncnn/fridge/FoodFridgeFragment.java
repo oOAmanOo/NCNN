@@ -1,18 +1,19 @@
 package com.tencent.nanodetncnn.fridge;
 
+import static com.tencent.nanodetncnn.MainActivity.replaceFragment;
+
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.tencent.nanodetncnn.AutoRecipeList;
 import com.tencent.nanodetncnn.MainActivity;
@@ -20,9 +21,11 @@ import com.tencent.nanodetncnn.MergeRecipeListFragment;
 import com.tencent.nanodetncnn.MyApplication;
 import com.tencent.nanodetncnn.R;
 import com.tencent.nanodetncnn.model.FridgeFoodSumModel;
+import com.tencent.nanodetncnn.model.MyCompartor_datetime;
 import com.tencent.nanodetncnn.utils.MyUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class FoodFridgeFragment extends Fragment {
@@ -30,9 +33,8 @@ public class FoodFridgeFragment extends Fragment {
     private FridgeFoodSumModel foodModel;
     private FoodFridgeListAdapter fragment_food_fridge_list_Adapter;
     private ImageView fragment_food_fridge_list_pic;
-    private Button autosearch;
     private TextView fragment_food_fridge_list_name;
-    public static String autosearchinput = null;
+
 
     private boolean nowEditType = false;
 
@@ -80,10 +82,17 @@ public class FoodFridgeFragment extends Fragment {
         fragment_food_fridge_list_Adapter = v.findViewById(R.id.fragment_food_fridge_list_Adapter);
         fragment_food_fridge_list_pic = v.findViewById(R.id.fragment_food_fridge_list_pic);
         fragment_food_fridge_list_name = v.findViewById(R.id.fragment_food_fridge_list_name);
-        autosearch = (Button) v.findViewById(R.id.fragment_food_fridge_list_check);
-        autosearch.setOnClickListener(new View.OnClickListener() {
+        ImageView fragment_food_fridge_list_back = v.findViewById(R.id.fragment_food_fridge_list_back);
+        fragment_food_fridge_list_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                MyUtils.onBack();
+            }
+        });
+      TextView fragment_food_fridge_list_check = v.findViewById(R.id.fragment_food_fridge_list_check);
+        fragment_food_fridge_list_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 if(foodModel.name.length() != 0){
                     AutoRecipeList.search(foodModel.name);
                     MergeRecipeListFragment.getMode("autosearch");
@@ -95,13 +104,7 @@ public class FoodFridgeFragment extends Fragment {
             }
         });
 
-        ImageView fragment_food_fridge_list_back = v.findViewById(R.id.fragment_food_fridge_list_back);
-        fragment_food_fridge_list_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MyUtils.onBack();
-            }
-        });
+
 
         Resources resources = getContext().getResources();
         final int resourceId = resources.getIdentifier(foodModel.imgName, "drawable",
@@ -120,7 +123,9 @@ public class FoodFridgeFragment extends Fragment {
         if (firstIN) {
             firstIN = false;
         }
+
         showData();
+
     }
 
 
@@ -129,26 +134,36 @@ public class FoodFridgeFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+
     }
 
     @Override
     public void onStop() {
         super.onStop();
         firstIN = true;
+
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void showData() {
+
         ArrayList<FridgeFoodSumModel> list = MyApplication.foodModelPraise.getAllFridgeFoodByDid(foodModel.did);
+
+        //依日期排序
+        MyCompartor_datetime comparator_datetime  = new MyCompartor_datetime();
+//        MyCompartor_amount comparator_amount = new MyCompartor_amount();
+
+        Collections.sort(list, comparator_datetime);
+//        Collections.sort(list, comparator_datetime.thenComparing(comparator_amount));
         fragment_food_fridge_list_Adapter.initData(list);
     }
 
-    private void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getFragmentManager();
-        Bundle bundle=new Bundle();
-        fragment.setArguments(bundle);
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout, fragment);
-        fragmentTransaction.commit();
-    }
+
+
+
+
+
+
+
 }

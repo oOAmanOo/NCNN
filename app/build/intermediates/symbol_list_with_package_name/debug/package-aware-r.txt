@@ -1332,6 +1332,7 @@ color font_b
 color font_blue_1
 color font_g
 color font_l
+color food_0
 color food_ex
 color food_ok
 color food_re
@@ -2565,6 +2566,7 @@ drawable avd_show_password
 drawable bamboo
 drawable banana
 drawable bell_pepper
+drawable bingo
 drawable boneless
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2781,8 +2783,13 @@ id adapter_fridge_history_list_item_updateAmount
 id adapter_fridge_history_list_item_updatenum
 id adapter_fridge_history_list_item_use
 id add
+id alertBtn
 id alertTime
 id alertTitle
+id alert_backstack_button
+id alert_recylerview
+id alertcontent
+id alerttime
 id aligned
 id all
 id allFoodImage
@@ -2811,6 +2818,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
+id bingo_logo
 id blocking
 id bottom
 id bottomNavigationView
@@ -2927,6 +2935,10 @@ id dialog_button
 id dialog_food_card
 id dialog_food_img
 id dialog_food_name
+id dialog_yes_no_btn_cancel
+id dialog_yes_no_btn_confirm
+id dialog_yes_no_msg
+id dialog_yes_no_title
 id dimensions
 id direct
 id disableHome
@@ -2999,7 +3011,6 @@ id expanded_menu
 id expiredImage
 id expiredName
 id expiredNum
-id expired_recyclerview
 id expireddate_textview
 id f
 id fade
@@ -3021,10 +3032,6 @@ id food
 id forever
 id fragmentSearch
 id fragment_container_view_tag
-id fragment_food_detail_line1
-id fragment_food_detail_line2
-id fragment_food_detail_name
-id fragment_food_detail_pic
 id fragment_food_fridge_list_Adapter
 id fragment_food_fridge_list_back
 id fragment_food_fridge_list_check
@@ -3085,7 +3092,12 @@ id line3
 id linear
 id linearLayout
 id listMode
+id list_backstack_button
 id list_item
+id listdone
+id listfood
+id listname
+id listtime
 id loading
 id locale
 id login
@@ -3358,6 +3370,8 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id todolistBtn
+id todolist_recylerview
 id toggle
 id top
 id topPanel
@@ -3509,6 +3523,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_alert_history
 layout activity_login
 layout activity_main
 layout activity_main_activityreg
@@ -3516,13 +3531,16 @@ layout activity_main_activitywelcome
 layout activity_passvalue
 layout activity_passvaluecust
 layout activity_settimedb
+layout activity_to_do_list
 layout adapter_food_fridge_list
 layout adapter_food_fridge_list_item
 layout adapter_food_list
 layout adapter_food_list_item
 layout adapter_fridge_history_list
 layout adapter_fridge_history_list_item
+layout alert_history_adapter
 layout all_food_adapter
+layout appbar
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3541,6 +3559,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_food_adapter
 layout dialog_food_layout
+layout dialog_yes_no
 layout editfridge2_layout
 layout editfridge3_layout
 layout editfridge4_layout
@@ -3558,8 +3577,6 @@ layout fragment_cust3
 layout fragment_dashboard
 layout fragment_edit
 layout fragment_editmode
-layout fragment_expired
-layout fragment_food_detail
 layout fragment_food_fridge_list
 layout fragment_food_list
 layout fragment_fridge_history_list
@@ -3664,6 +3681,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout todo_list_adapter
 layout verify_main
 layout view_recycle
 layout view_recycle_sliding

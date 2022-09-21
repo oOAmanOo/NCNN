@@ -12,6 +12,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-feature android:name="android.hardware.camera2.full" />
 
@@ -56,7 +58,9 @@
 
         <activity
             android:name="com.tencent.nanodetncnn.MainActivity"
+            android:excludeFromRecents="true"
             android:exported="true"
+            android:taskAffinity=""
             android:windowSoftInputMode="stateHidden|adjustResize|adjustPan" >
 
             <!-- <intent-filter> -->
@@ -75,8 +79,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/MyTheme" >
-        </activity>
+            android:theme="@style/MyTheme" />
         <activity
             android:name="com.tencent.nanodetncnn.login.LoginActivity"
             android:exported="false"
@@ -92,8 +95,39 @@
         </activity>
         <activity
             android:name="com.tencent.nanodetncnn.MainActivityreg"
+            android:exported="true" />
+        <activity
+            android:name="com.tencent.nanodetncnn.login.AlarmActivity"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.tencent.nanodetncnn.login.AlarmReceiver_food"
             android:exported="true" >
-        </activity>
+            <intent-filter>
+                <action android:name="notification_cancelled" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.tencent.nanodetncnn.login.AlarmReceiver_recipe_mode"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="notification_cancelled" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.tencent.nanodetncnn.login.AlarmReceiver_recipe_fridge"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="notification_cancelled" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.tencent.nanodetncnn.Alert_History_Activity"
+            android:exported="true" />
+        <activity
+            android:name="com.tencent.nanodetncnn.ToDoListActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

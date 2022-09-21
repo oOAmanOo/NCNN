@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tencent.nanodetncnn.Consts;
 import com.tencent.nanodetncnn.MainActivity;
+import com.tencent.nanodetncnn.MyApplication;
 import com.tencent.nanodetncnn.R;
 import com.tencent.nanodetncnn.model.FridgeFoodSumModel;
 import com.tencent.nanodetncnn.utils.MyViewRecycle;
@@ -27,6 +28,7 @@ public class FoodListAdapter extends FrameLayout {
     private DataAdapter dataAdapter = null;
     private MyViewRecycle adapter_food_list_MyViewRecycleSliding = null;
     private int spanCount = 1;//橫向數量
+    private boolean isEdit = false;
 
     public FoodListAdapter(Context context) {
         super(context);
@@ -66,6 +68,8 @@ public class FoodListAdapter extends FrameLayout {
 
     //
     public void setEditType(boolean isEdit) {
+        this.isEdit = isEdit;
+        MyApplication.isEditMode = isEdit;
         dataAdapter.setEditType(isEdit);
         adapter_food_list_MyViewRecycleSliding.setEditType(isEdit);
     }
@@ -175,7 +179,7 @@ public class FoodListAdapter extends FrameLayout {
 
             viewHolder.adapter_food_list_item_pic.setImageResource(resourceId);
 
-
+//            int tt_color = MyUtils.checkColorByType(map.alertDate,map.expireDate);
             switch (map.food_color) {
                 case Consts.Fridge_Food_color_ok:
                     viewHolder.adapter_food_list_item_bg.setBackgroundColor(getResources().getColor(R.color.food_ok));
@@ -187,6 +191,13 @@ public class FoodListAdapter extends FrameLayout {
                     viewHolder.adapter_food_list_item_bg.setBackgroundColor(getResources().getColor(R.color.food_ex));
                     break;
             }
+
+            if(map.amount ==0){
+                viewHolder.adapter_food_list_item_bg.setBackgroundColor(getResources().getColor(R.color.food_0));
+
+            }
+
+
 
             viewHolder.adapter_food_list_item_chose.setVisibility(isEditMode ? VISIBLE : INVISIBLE);
 //            viewHolder.adapter_food_list_item_date.setVisibility(isEditMode ? VISIBLE : INVISIBLE);
@@ -235,8 +246,11 @@ public class FoodListAdapter extends FrameLayout {
             adapter_food_list_item_bg.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    FridgeFoodSumModel map = (FridgeFoodSumModel) view.getTag();
-                    ((MainActivity) getContext()).addFragment(FoodFridgeFragment.newInstance(map));
+                    if(!isEdit) {
+                        FridgeFoodSumModel map = (FridgeFoodSumModel) view.getTag();
+                        ((MainActivity) getContext()).addFragment(
+                                FoodFridgeFragment.newInstance(map));
+                    }
 
 
                 }

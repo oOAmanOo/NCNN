@@ -101,7 +101,6 @@ public class passvaluecustActivity extends AppCompatActivity {
                 }
                 inputStream.close();
                 result = box;
-                System.out.println(result);
             } catch (Exception e) {
                 result = e.toString();
             }

@@ -19,7 +19,7 @@ public class MyApplication extends Application {
     public static  ArrayList<FridgeFoodSumModel> choseItem_List = new ArrayList<FridgeFoodSumModel>();
     public static int DisplayMetrics_widthPixels;
     public static int DisplayMetrics_heightPixels;
-
+    public static boolean isEditMode = false;
 
     @Override
     public void onCreate() {
