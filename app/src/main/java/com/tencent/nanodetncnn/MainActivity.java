@@ -115,14 +115,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int hatefood_index=0;
 
     //notify
-    public static String alarm_index;
+    public static String alarm_content;
     public static String alarmrecipe;
     public static String alarmrecipe_food;
-    public static String alarm_mode = "null";
+    public static int alarm[]=new int[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println(alarm_index+"alarm_index");
         profilereload_MainActivity = this;
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -283,20 +282,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(current_editdialog == 0){ //send
             first_load = 1;
-            if(MainActivity.notify_dialog == 1){
+            if(notify_dialog == 1){
                 Thread thread = new Thread(notifyupload);
                 thread.start();
-                MainActivity.notify_dialog = 0;
-                MainActivity.run_editdialog = 0;
-                MainActivity.editfridgedb_index = 0;
+                notify_dialog = 0;
+                run_editdialog = 0;
+                editfridgedb_index = 0;
             }else{
-                if(MainActivity.editjsonupload.equals("[]")){
+                if(editjsonupload.equals("[]")){
                     Toast.makeText(mContext, "未編輯任何食物", Toast.LENGTH_SHORT).show();
                 }else{
                     Thread thread = new Thread(editupload);
                     thread.start();
-                    MainActivity.run_editdialog = 0;
-                    MainActivity.editfridgedb_index = 0;
+                    run_editdialog = 0;
+                    editfridgedb_index = 0;
                 }
             }
             MainActivity.origin_editdialog = MainActivity.current_editdialog;
@@ -307,14 +306,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             dialog_fragment.show(fm, "editdialog_tag");
             MainActivity.origin_editdialog = MainActivity.current_editdialog;
         }else if(current_editdialog == 2){
-            if(MainActivity.run_editdialog == 0){
+            if(run_editdialog == 0){
                 Thread thread = new Thread(editsearch);
                 thread.start();
-                MainActivity.run_editdialog = 1;
-            }else if(MainActivity.run_editdialog == 1){
+                run_editdialog = 1;
+            }else if(run_editdialog == 1){
                 fm.beginTransaction().remove(editfridge_dfragment2).commit();
                 editfridge_dfragment2.show(fm, "editdialog_tag");
-                MainActivity.run_editdialog = 0;
+                run_editdialog = 0;
                 MainActivity.origin_editdialog = MainActivity.current_editdialog;
             }
         }else if(current_editdialog == 3){
@@ -326,8 +325,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editfridge_dfragment4.show(fm, "editdialog_tag");
             MainActivity.current_editdialog = MainActivity.origin_editdialog;
         }else if(current_editdialog == -1){
-            MainActivity.run_editdialog = 0;
-            MainActivity.editfridgedb_index = 0;
+            run_editdialog = 0;
+            editfridgedb_index = 0;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
         }
@@ -343,40 +342,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(current_editdialog == 0){ //send
             first_load = 1;
-            if(MainActivity.notify_dialog == 1){
+            if(notify_dialog == 1){
                 Thread thread = new Thread(notifyupload);
                 thread.start();
-                MainActivity.notify_dialog = 0;
-                MainActivity.run_editdialog = 0;
-                MainActivity.editfridgedb_index = 0;
+                notify_dialog = 0;
+                run_editdialog = 0;
+                editfridgedb_index = 0;
             }else{
-                if(MainActivity.editjsonupload.equals("[]")){
+                if(editjsonupload.equals("[]")){
                     Toast.makeText(mContext, "未編輯任何食物", Toast.LENGTH_SHORT).show();
                 }else{
                     Thread thread = new Thread(editupload);
                     thread.start();
-                    MainActivity.run_editdialog = 0;
-                    MainActivity.editfridgedb_index = 0;
+                    run_editdialog = 0;
+                    editfridgedb_index = 0;
                 }
             }
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
         }else if(current_editdialog == 2){
-            if(MainActivity.fridge_run_editdialog == 0){
+            if(fridge_run_editdialog == 0){
                 Thread thread = new Thread(editsearch);
                 thread.start();
-                MainActivity.fridge_run_editdialog = 1;
-            }else if(MainActivity.fridge_run_editdialog == 1){
+                fridge_run_editdialog = 1;
+            }else if(fridge_run_editdialog == 1){
                 fm.beginTransaction().remove(editfridge_dfragment2).commit();
                 editfridge_dfragment2.show(fm, "editdialog_tag");
-                MainActivity.fridge_run_editdialog = 0;
+                fridge_run_editdialog = 0;
             }
         }else if(current_editdialog == 3){
             fm.beginTransaction().remove(editfridge_dfragment3).commit();
             editfridge_dfragment3.show(fm, "editdialog_tag");
         }else if(current_editdialog == -1){
-            MainActivity.run_editdialog = 0;
-            MainActivity.editfridgedb_index = 0;
+            run_editdialog = 0;
+            editfridgedb_index = 0;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
         }
@@ -474,54 +473,79 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                // alarm
-                try {
-                    JSONObject obj=null;
-                    JSONArray table=null;
-                    JSONObject data=null;
-
-                    obj = new JSONObject(result);
-                    table = obj.getJSONArray("user_data");
-                    data = table.getJSONObject(0);
-                    alarm_index = data.getString("alarm");
-                    System.out.println(alarm_index+"alarm_index is here");
-                    //food
-                    if(!(alarm_index.equals("NULL"))){
-                        try {
-                            Integer.parseInt(alarm_index);
-                            table = obj.getJSONArray("alarm_recipe");
-                            data = table.getJSONObject(0);
-                            MainActivity.alarmrecipe = data.toString();
-                            table = obj.getJSONArray("alarm_recipe_food");
-                            MainActivity.alarmrecipe_food = table.toString();
-                            MergeDetailFragment.currentMode = "alarm";
-                            replaceFragment(new MergeDetailFragment());
-                            if(first_load == 1){
-                                first_load = 0;
-                            }
-                        } catch (NumberFormatException e){
-//                            replaceFragment(new MyFridgeFragment());
-                            //FOOD
-//                            if(first_load == 1){
-//                                first_load = 0;
-//                            }
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             }catch (Exception e){
                 result = e.toString();
             }
             // 當這個執行緒完全跑完後執行
-            MainActivity.runOnUI(new Runnable() {
+            runOnUI(new Runnable() {
                 public void run() {
                      if(first_load == 1){
                         replaceFragment(new MyFridgeFragment());
-                         System.out.println("failed QQ!!");
                         first_load = 0;
+
+                         // alarm
+                         try {
+                             JSONObject obj = null;
+                             JSONArray table = null;
+                             JSONObject data = null;
+
+                             obj = new JSONObject(result);
+                             table = obj.getJSONArray("user_data");
+                             data = table.getJSONObject(0);
+
+
+                             //recipe_mode
+                             alarm_content = data.getString("alarm_recipe_mode");
+                             if(alarm_content != "null"){
+                                 JSONArray alarm_table = null;
+                                 JSONObject alarm_data = null;
+                                 alarm_table = obj.getJSONArray("alarm_recipe_mode");
+                                 alarm_data = alarm_table.getJSONObject(0);
+                                 AlarmDialog_recipe_mode.name = alarm_data.getString("name");
+                                 AlarmDialog_recipe_mode.alarmrecipe = alarm_data.toString();
+                                 alarm_table = obj.getJSONArray("alarm_recipe_mode_food");
+                                 AlarmDialog_recipe_mode.alarmrecipe_food = alarm_table.toString();
+                                 final AlarmDialog_recipe_mode AlarmDialog_recipe_mode = new AlarmDialog_recipe_mode();
+                                 fm_p.beginTransaction().remove(AlarmDialog_recipe_mode).commit();
+                                 AlarmDialog_recipe_mode.show(fm_p, "dialog_tag");
+                                 alarm[1] = 1;
+                             }
+                             //alarm_recipe_fridge
+                             alarm_content = data.getString("alarm_recipe_fridge");
+                             if(alarm_content != "null"){
+                                 JSONArray alarm_table = null;
+                                 JSONObject alarm_data = null;
+                                 alarm_table = obj.getJSONArray("alarm_recipe_fridge");
+                                 alarm_data = alarm_table.getJSONObject(0);
+                                 AlarmDialog_recipe_fridge.name = alarm_data.getString("name");
+                                 AlarmDialog_recipe_fridge.alarmrecipe = alarm_data.toString();
+                                 alarm_table = obj.getJSONArray("alarm_recipe_fridge_food");
+                                 AlarmDialog_recipe_fridge.alarmrecipe_food = alarm_table.toString();
+                                 final AlarmDialog_recipe_fridge AlarmDialog_recipe_fridge = new AlarmDialog_recipe_fridge();
+                                 fm_p.beginTransaction().remove(AlarmDialog_recipe_fridge).commit();
+                                 AlarmDialog_recipe_fridge.show(fm_p, "dialog_tag");
+                                 alarm[2] = 1;
+                             }
+                             //food
+                             alarm_content = data.getString("alarm_food");
+                             if(alarm_content != "null"){
+                                 JSONArray alarm_table = null;
+                                 JSONObject alarm_data = null;
+                                 alarm_table = obj.getJSONArray("alarm_food");
+                                 System.out.println(alarm_table.toString());
+                                 alarm_data = alarm_table.getJSONObject(0);
+                                 System.out.println(alarm_data.getString("text"));
+                                 AlarmDialog_Food.text = alarm_data.getString("text");
+                                 final AlarmDialog_Food AlarmDialog_Food = new AlarmDialog_Food();
+                                 fm_p.beginTransaction().remove(AlarmDialog_Food).commit();
+                                 AlarmDialog_Food.show(fm_p, "dialog_tag");
+                                 alarm[0] = 1;
+                             }
+                         } catch (JSONException e) {
+                             e.printStackTrace();
+                         }
                     }
+
                 }
             });
         }
@@ -538,7 +562,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_editsearch.php?uid="+uid);//宣告使用post方法連線
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
-                params.add(new BasicNameValuePair("json", MainActivity.editjson));
+                params.add(new BasicNameValuePair("json", editjson));
                 params.add(new BasicNameValuePair("uid", "duck"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
@@ -562,7 +586,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             String finalResult = result_data;
-            MainActivity.runOnUI(new Runnable() {
+            runOnUI(new Runnable() {
                 public void run() {
                     try {
                         JSONArray table = null;
@@ -597,10 +621,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                             editfridge_count[j+1] = 0;
                         }
-                        if(MainActivity.run_editdialog == 1){
-                            MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
-                        }else if(MainActivity.fridge_run_editdialog == 1){
-                            MainActivity.editfridgedialog_change(2, 0, MainActivity.fm_p);
+                        if(run_editdialog == 1){
+                            editdialog_change(current_editdialog, origin_editdialog, fm_p);
+                        }else if(fridge_run_editdialog == 1){
+                            editfridgedialog_change(2, 0, fm_p);
 
                         }
 
@@ -622,7 +646,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_modify.php?uid="+uid);//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("json", MainActivity.editjsonupload));
+                params.add(new BasicNameValuePair("json", editjsonupload));
                 params.add(new BasicNameValuePair("uid", "duck"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
@@ -646,7 +670,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             String finalResult = result_data;
-            MainActivity.runOnUI(new Runnable() {
+            runOnUI(new Runnable() {
                 public void run() {
                     String return_val = null;
                     try {
@@ -673,9 +697,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
-                params.add(new BasicNameValuePair("uid", MainActivity.notify_uid));
-                params.add(new BasicNameValuePair("notification", MainActivity.notify_notification));
-                params.add(new BasicNameValuePair("notifyTime", MainActivity.notify_notifyTime));
+                params.add(new BasicNameValuePair("uid", notify_uid));
+                params.add(new BasicNameValuePair("notification", notify_notification));
+                params.add(new BasicNameValuePair("notifyTime", notify_notifyTime));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
@@ -698,7 +722,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             String finalResult = result_data;
-            MainActivity.runOnUI(new Runnable() {
+            runOnUI(new Runnable() {
                 public void run() {
                     String return_val = null;
                     try {

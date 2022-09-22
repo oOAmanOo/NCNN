@@ -1,5 +1,7 @@
 package com.tencent.nanodetncnn.login;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,6 +13,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.R;
 
 import org.apache.http.HttpEntity;
@@ -59,8 +62,8 @@ public class AlarmReceiver_recipe_fridge extends BroadcastReceiver {
         Thread thread_upload = new Thread(upload);
         thread_upload.start();
 
-        Intent click_Intent = new Intent(context, LoginActivity.class);
-        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,0);
+        Intent click_Intent = new Intent(context, MainActivity.class);
+        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent, FLAG_IMMUTABLE);
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel(NOTIFICATION_id, NOTIFICATION_NAME, importance);
         channel.setDescription(NOTIFICATION_description);
@@ -172,7 +175,6 @@ public class AlarmReceiver_recipe_fridge extends BroadcastReceiver {
                 }
                 inputStream.close();
                 result = box;
-                System.out.println("fridge  "+result);
             } catch (Exception e) {
                 result = e.toString();
             }

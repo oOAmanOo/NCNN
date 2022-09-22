@@ -1,5 +1,7 @@
 package com.tencent.nanodetncnn.login;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,6 +13,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.R;
 
 import org.apache.http.HttpEntity;
@@ -53,12 +56,10 @@ public class AlarmReceiver_food extends BroadcastReceiver {
         Thread thread = new Thread(multiThread);
         thread.start();
         while(threadDone == 0){}
-        Thread alarmUpdate = new Thread(update_alarm);
-        alarmUpdate.start();
         Thread thread_upload = new Thread(upload);
         thread_upload.start();
-        Intent click_Intent = new Intent(context, LoginActivity.class);
-        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,0);
+        Intent click_Intent = new Intent(context, MainActivity.class);
+        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,FLAG_IMMUTABLE);
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel(NOTIFICATION_id, NOTIFICATION_NAME, importance);
         channel.setDescription(NOTIFICATION_description);
@@ -148,39 +149,7 @@ public class AlarmReceiver_food extends BroadcastReceiver {
             }
         }
     };
-    private final Runnable update_alarm = new Runnable() {
-        public void run() {
-            String result;
-            try {
-                //開始宣告HTTP連線需要的物件
-                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/alarm_update.php?uid="+AlarmActivity.uid);//宣告使用post方法連線
 
-                List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("alarm", "alarm_food"));
-                params.add(new BasicNameValuePair("alarm", "alarm_food"));
-                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-
-                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
-                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
-                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
-
-                //讀取輸入船劉並存到字串
-                //取得資料後可在此處理
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
-                String box = "";
-                String line = null;
-                while ((line = bufferedReader.readLine()) != null) {
-                    box += line;
-                    box += "\n";
-                }
-                inputStream.close();
-                result = box;
-            } catch (Exception e) {
-                result = e.toString();
-            }
-        }
-    };
     private static final Runnable upload = new Runnable() {
         public void run() {
             String result;
@@ -209,6 +178,7 @@ public class AlarmReceiver_food extends BroadcastReceiver {
                 }
                 inputStream.close();
                 result = box;
+                System.out.println(result);
             } catch (Exception e) {
                 result = e.toString();
             }

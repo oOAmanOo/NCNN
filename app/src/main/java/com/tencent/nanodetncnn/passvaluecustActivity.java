@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.tencent.nanodetncnn.login.AlarmActivity;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -118,7 +120,7 @@ public class passvaluecustActivity extends AppCompatActivity {
                     }
                     Toast.makeText(MainActivity.mContext2, "個人資料 - "+return_val, Toast.LENGTH_SHORT).show();
                     MainActivity.profilereload_MainActivity.finish();
-                    Intent intent = new Intent(passvaluecustActivity.this, MainActivity.class);
+                    Intent intent = new Intent(passvaluecustActivity.this, AlarmActivity.class);
                     Bundle bundl = new Bundle();
                     bundl.putString("data_uid", id);
                     intent.putExtras(bundl);   // put進去

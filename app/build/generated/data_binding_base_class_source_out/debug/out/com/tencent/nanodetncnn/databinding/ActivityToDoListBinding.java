@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,15 +22,24 @@ public final class ActivityToDoListBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ConstraintLayout constraintLayout;
+
+  @NonNull
   public final ImageView listBackstackButton;
+
+  @NonNull
+  public final TextView noTodoContent;
 
   @NonNull
   public final RecyclerView todolistRecylerview;
 
   private ActivityToDoListBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView listBackstackButton, @NonNull RecyclerView todolistRecylerview) {
+      @NonNull ConstraintLayout constraintLayout, @NonNull ImageView listBackstackButton,
+      @NonNull TextView noTodoContent, @NonNull RecyclerView todolistRecylerview) {
     this.rootView = rootView;
+    this.constraintLayout = constraintLayout;
     this.listBackstackButton = listBackstackButton;
+    this.noTodoContent = noTodoContent;
     this.todolistRecylerview = todolistRecylerview;
   }
 
@@ -60,9 +70,21 @@ public final class ActivityToDoListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.constraintLayout;
+      ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout == null) {
+        break missingId;
+      }
+
       id = R.id.list_backstack_button;
       ImageView listBackstackButton = ViewBindings.findChildViewById(rootView, id);
       if (listBackstackButton == null) {
+        break missingId;
+      }
+
+      id = R.id.noTodoContent;
+      TextView noTodoContent = ViewBindings.findChildViewById(rootView, id);
+      if (noTodoContent == null) {
         break missingId;
       }
 
@@ -72,8 +94,8 @@ public final class ActivityToDoListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityToDoListBinding((ConstraintLayout) rootView, listBackstackButton,
-          todolistRecylerview);
+      return new ActivityToDoListBinding((ConstraintLayout) rootView, constraintLayout,
+          listBackstackButton, noTodoContent, todolistRecylerview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,17 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpEntity;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpResponse;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.HttpClient;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.HttpPost;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.impl.client.DefaultHttpClient;
-
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -30,6 +30,7 @@ public class Alert_History_Activity extends AppCompatActivity {
     public static String[] alerttime = new String[500];
     public static String[] alertcontent= new String[500];
     public static RecyclerView recyclerView;
+    public static TextView noAlertContent;
 
     public static String uid;
 
@@ -42,6 +43,7 @@ public class Alert_History_Activity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert_history);
+        noAlertContent = findViewById(R.id.noAlertContent);
         back = findViewById(R.id.alert_backstack_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,22 +118,23 @@ public class Alert_History_Activity extends AppCompatActivity {
             obj = new JSONObject(result_todo);
             list = obj.getJSONArray("notify_history");
 
-            for(int i = 0; i < list.length(); ++i){
-                listdata = list.getJSONObject(i);
-                alertname[count] = listdata.getString("uid");
-                alerttime[count] = listdata.getString("timestamp");
-                alertcontent[count] = listdata.getString("text");
-                ++count;
-
+            if(list.length() == 0){
+                noAlertContent.setVisibility(View.VISIBLE);
             }
-
-
+            else{
+                for(int i = 0; i < list.length(); ++i){
+                    listdata = list.getJSONObject(i);
+                    alertname[count] = listdata.getString("uid");
+                    alerttime[count] = listdata.getString("timestamp");
+                    alertcontent[count] = listdata.getString("text");
+                    ++count;
+                }
+            }
         }
         catch (Exception e){
             e.printStackTrace();
         }
         throwtoadapter();
-
     }
     public void throwtoadapter(){
         recyclerView = findViewById(R.id.alert_recylerview);

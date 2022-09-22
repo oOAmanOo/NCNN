@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.tencent.nanodetncnn.fridge.MyFridgeFragment;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -70,8 +72,14 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new MergeRecipeListFragment());
-                backbtn.setVisibility(View.INVISIBLE);
+                if(currentMode.equals("alarm")){
+                    replaceFragment(new MyFridgeFragment());
+                    MainActivity.scanBtn_public.setVisibility(View.VISIBLE);
+                    backbtn.setVisibility(View.INVISIBLE);
+                }else{
+                    replaceFragment(new MergeRecipeListFragment());
+                    backbtn.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
@@ -322,14 +330,13 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
                         DidList += "," + data.getString("did");
                         ImgList += "," + data.getString("imgName");
                     }
-
                 }
 
                 merge_recipe_name_detail.setText(dataRecipe.getString("name"));
                 merge_recipe_food_detail.setText(AutoRecipeList.tempallRecipeFood[position_now]);
                 merge_recipe_tag_detail.setText(dataRecipe.getString("sugar") + dataRecipe.getString("salt") + dataRecipe.getString("oil"));
                 merge_recipe_step_detail.setText(dataRecipe.getString("step"));
-                merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(dataRecipe.getString("imgName")),"drawable", context.getPackageName()));
+//                merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(dataRecipe.getString("imgName")),"drawable", context.getPackageName()));
 
 
 

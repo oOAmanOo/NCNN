@@ -2,107 +2,127 @@ package com.tencent.nanodetncnn;
 
 
 import android.app.Dialog;
-import android.os.Build;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
+import android.view.WindowManager;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 
-import java.io.File;
-import java.time.LocalDate;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
-import recycler.ListAdapter;
-
-public class fragment1 extends DialogFragment {
+public class AlarmDialog_Food extends DialogFragment {
 
 //    @Nullable
-    public Dialog dialog1;
+    public static Dialog dialog1;
+    public static String text;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment1_layout, container);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.d1_recyclerView);
-        ListAdapter listAdapter = new ListAdapter(this.getActivity(), Verify_Activity.confirm_class_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        recyclerView.setAdapter(listAdapter);
+        View view = inflater.inflate(R.layout.alarmdialog_food_layout, container);
 
         dialog1 = this.getDialog();
         dialog1.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog1.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
 
-        Button re_button = (Button) view.findViewById(R.id.d1_re_button);
-        re_button.setOnClickListener(new View.OnClickListener(){
+        ImageView alarm_food_img = (ImageView) view.findViewById(R.id.alarm_food_img);
+        if(text.matches(".*已過期.*")){
+            System.out.println(".*已過期.*");
+            alarm_food_img.setImageResource(R.drawable.pic1);
+        }else if(text.matches(".*即將過期.*")){
+            System.out.println(".*即將過期.*");
+            alarm_food_img.setImageResource(R.drawable.pic1);
+        }else{
+            System.out.println("No過期");
+            alarm_food_img.setImageResource(R.drawable.pic1);
+        }
+        System.out.println(text);
+        TextView alarm_food_text = (TextView) view.findViewById(R.id.alarm_food_text);
+        alarm_food_text.setText(text);
+        CheckBox alarm_food_checkBox = (CheckBox) view.findViewById(R.id.alarm_food_checkBox);
+        ImageButton alarm_food_close = (ImageButton) view.findViewById(R.id.alarm_food_close);
+        alarm_food_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Verify_Activity.result_java = '1';
-                Verify_Activity.verButton.setText("完成辨識");
-                File file = new File("/data/data/com.tencent.nanodetncnn/result.txt");
-                file.delete();
-                NcnnYolov5.varifyCheck(Verify_Activity.result_java);
-                Verify_Activity.current_dialog = -1;
-                Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
-                dialog1.hide();
+                if(alarm_food_checkBox.isChecked()){
+                    Thread alarmUpdate = new Thread(update_alarm);
+                    alarmUpdate.start();
+                }
+                dialog1.dismiss();
             }
         });
-        Button next_button = (Button) view.findViewById(R.id.d1_next_button);
-        next_button.setOnClickListener(new View.OnClickListener(){
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                int click_check = 0;
-                for (int i = 0; i < Verify_Activity.confirm_class_list.length; i++) {
-                    if(Verify_Activity.class_list_checked[i].equals("1")) {
-                        click_check = 1;
-                        break;
-                    }
-                }
-                if(click_check == 1) {
-                    try {
-                        Verify_Activity.fridge_index = 0;
-                        JSONObject obj = null;
-                        JSONArray table = null;
-                        JSONObject data = null;
-                        obj = new JSONObject(Verify_Activity.result);
-                        table = obj.getJSONArray("food_dic");
-                        for (int i = 0; i < table.length(); i++) {
-                            data = table.getJSONObject(i);
-                            for (int j = 0; j < Verify_Activity.confirm_class_list.length; j++) {
-                                if (data.getString("name").equals(Verify_Activity.confirm_class_list[j]) && Verify_Activity.class_list_checked[j].equals("1")) {
-                                    Verify_Activity.fridge_did[Verify_Activity.fridge_index] = data.getString("did");
-                                    Verify_Activity.fridge_name[Verify_Activity.fridge_index] = data.getString("name");
-                                    Verify_Activity.fridge_position[Verify_Activity.fridge_index] = data.getString("position");
-                                    Verify_Activity.fridge_expiredate[Verify_Activity.fridge_index] = LocalDate.now().plusDays(Integer.parseInt(data.getString("expireDay"))).toString();
-                                    Verify_Activity.fridge_imgName[Verify_Activity.fridge_index] = data.getString("imgName");
-                                    Verify_Activity.fridge_amount[Verify_Activity.fridge_index] = "1";
-                                    Verify_Activity.fridge_memo[Verify_Activity.fridge_index] = "#";
-                                    ++Verify_Activity.fridge_index;
-                                }
-                            }
-                        }
-                        Verify_Activity.old_fridge_index = Verify_Activity.fridge_index;
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    Verify_Activity.current_dialog = 2;
-                }else{
-                    Verify_Activity.current_dialog = 3;
-                }
-                dialog1.hide();
-                Verify_Activity.dialog_change(Verify_Activity.current_dialog, Verify_Activity.origin_dialog, Verify_Activity.last_dialog, fm);
-            }
-        });
+
         return view;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setGravity(Gravity.CENTER);
+        }
+    }
+    private final Runnable update_alarm = new Runnable() {
+        public void run() {
+            String result;
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/alarm_update.php?uid="+ MainActivity.uid);//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair("alarm", "alarm_food"));
+                params.add(new BasicNameValuePair("rid", "NULL"));
+                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                String box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    box += line;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+            } catch (Exception e) {
+                result = e.toString();
+            }
+        }
+    };
+
 }

@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
@@ -39,25 +39,25 @@ import java.util.List;
 public class AlarmDialog_recipe_fridge extends DialogFragment {
 
 //    @Nullable
-    public Dialog dialog1;
+    public static Dialog dialog1;
     public static String name;
+    public static String alarmrecipe;
+    public static String alarmrecipe_food;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.alarmdialog_recipe_mode_layout, container);
+        View view = inflater.inflate(R.layout.alarmdialog_recipe_fridge_layout, container);
 
         dialog1 = this.getDialog();
         dialog1.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog1.setCanceledOnTouchOutside(false);
         final FragmentManager fm = getParentFragmentManager();
 
-        TextView title = (TextView) view.findViewById(R.id.alarm_recipe_mode_title);
-        title.setText("您可能喜歡...");
-        ImageView img = (ImageView) view.findViewById(R.id.alarm_recipe_mode_img);
+        ImageView img = (ImageView) view.findViewById(R.id.alarm_recipe_fridge_img);
         img.setImageResource(R.drawable.pic1);
-        TextView text = (TextView) view.findViewById(R.id.alarm_recipe_mode_text);
+        TextView text = (TextView) view.findViewById(R.id.alarm_recipe_fridge_text);
         text.setText(name);
-        CheckBox checkBox = (CheckBox) view.findViewById(R.id.alarm_recipe_mode_checkBox);
-        ImageButton close = (ImageButton) view.findViewById(R.id.alarm_recipe_mode_close);
+        CheckBox checkBox = (CheckBox) view.findViewById(R.id.alarm_recipe_fridge_checkBox);
+        ImageButton close = (ImageButton) view.findViewById(R.id.alarm_recipe_fridge_close);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,17 +69,28 @@ public class AlarmDialog_recipe_fridge extends DialogFragment {
             }
         });
 
-        ScrollView scrollView = (ScrollView) view.findViewById(R.id.alarm_recipe_mode);
-        scrollView.setOnClickListener(new View.OnClickListener(){
+        LinearLayout LinearLayout = (LinearLayout) view.findViewById(R.id.alarm_recipe_fridge);
+        LinearLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 if(checkBox.isChecked()){
                     Thread alarmUpdate = new Thread(update_alarm);
                     alarmUpdate.start();
                 }
+                MainActivity.alarmrecipe = alarmrecipe;
+                MainActivity.alarmrecipe_food = alarmrecipe_food;
+                MainActivity.scanBtn_public.setVisibility(View.INVISIBLE);
                 MergeDetailFragment.currentMode = "alarm";
                 MainActivity.replaceFragment(new MergeDetailFragment());
                 dialog1.dismiss();
+                if(MainActivity.alarm[0] == 1){
+                    AlarmDialog_Food.dialog1.dismiss();
+                    MainActivity.alarm[0] = 0;
+                }
+                if(MainActivity.alarm[1] == 1){
+                    AlarmDialog_recipe_mode.dialog1.dismiss();
+                    MainActivity.alarm[1] = 0;
+                }
             }
         });
 
@@ -107,8 +118,8 @@ public class AlarmDialog_recipe_fridge extends DialogFragment {
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/alarm_update.php?uid="+ MainActivity.uid);//宣告使用post方法連線
 
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("alarm", "alarm_recipe_mode"));
-                params.add(new BasicNameValuePair("rid", null));
+                params.add(new BasicNameValuePair("alarm", "alarm_recipe_fridge"));
+                params.add(new BasicNameValuePair("rid", "NULL"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
 
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
@@ -126,6 +137,8 @@ public class AlarmDialog_recipe_fridge extends DialogFragment {
                 }
                 inputStream.close();
                 result = box;
+                System.out.println("result");
+                System.out.println(result);
             } catch (Exception e) {
                 result = e.toString();
             }

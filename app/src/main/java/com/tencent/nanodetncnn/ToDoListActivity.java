@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -46,6 +47,7 @@ public class ToDoListActivity extends AppCompatActivity {
 
     public static RecyclerView recyclerView;
     public static Activity todolist;
+    public static TextView noTodoContent;
 
     public static String uid;
 
@@ -57,6 +59,7 @@ public class ToDoListActivity extends AppCompatActivity {
         todolist = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_list);
+        noTodoContent = findViewById(R.id.noTodoContent);
         back = findViewById(R.id.list_backstack_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,11 +156,16 @@ public class ToDoListActivity extends AppCompatActivity {
                 listdata = list.getJSONObject(i);
 
                 if(listdone[i].equals("0")){
+                    noTodoContent.setVisibility(View.INVISIBLE);
                     listnid[count] = listdata.getString("nid");
                     listname[count] = listdata.getString("uid");
                     listtime[count] = listdata.getString("notifyTime");
                     listfood[count] = listdata.getString("notification");
+
                     ++count;
+                }
+                else{
+                    noTodoContent.setVisibility(View.VISIBLE);
                 }
 
             }

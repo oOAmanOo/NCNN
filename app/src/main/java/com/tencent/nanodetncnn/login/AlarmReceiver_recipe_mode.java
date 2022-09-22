@@ -1,5 +1,7 @@
 package com.tencent.nanodetncnn.login;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -70,7 +72,7 @@ public class AlarmReceiver_recipe_mode extends BroadcastReceiver {
         Bundle bundle = new Bundle();
         bundle.putString("data_uid", uid);
         intent.putExtras(bundle);   // put進去
-        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,0);
+        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,FLAG_IMMUTABLE);
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel(NOTIFICATION_id, NOTIFICATION_NAME, importance);
         channel.setDescription(NOTIFICATION_description);

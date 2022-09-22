@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -22,7 +23,16 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageView alertBtn;
+
+  @NonNull
+  public final ImageView bingoLogo;
+
+  @NonNull
   public final BottomNavigationView bottomNavigationView;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout2;
 
   @NonNull
   public final FrameLayout frameLayout;
@@ -30,13 +40,21 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Button scanBtn;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull BottomNavigationView bottomNavigationView, @NonNull FrameLayout frameLayout,
-      @NonNull Button scanBtn) {
+  @NonNull
+  public final ImageView todolistBtn;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView alertBtn,
+      @NonNull ImageView bingoLogo, @NonNull BottomNavigationView bottomNavigationView,
+      @NonNull ConstraintLayout constraintLayout2, @NonNull FrameLayout frameLayout,
+      @NonNull Button scanBtn, @NonNull ImageView todolistBtn) {
     this.rootView = rootView;
+    this.alertBtn = alertBtn;
+    this.bingoLogo = bingoLogo;
     this.bottomNavigationView = bottomNavigationView;
+    this.constraintLayout2 = constraintLayout2;
     this.frameLayout = frameLayout;
     this.scanBtn = scanBtn;
+    this.todolistBtn = todolistBtn;
   }
 
   @Override
@@ -66,9 +84,27 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.alertBtn;
+      ImageView alertBtn = ViewBindings.findChildViewById(rootView, id);
+      if (alertBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.bingo_logo;
+      ImageView bingoLogo = ViewBindings.findChildViewById(rootView, id);
+      if (bingoLogo == null) {
+        break missingId;
+      }
+
       id = R.id.bottomNavigationView;
       BottomNavigationView bottomNavigationView = ViewBindings.findChildViewById(rootView, id);
       if (bottomNavigationView == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout2;
+      ConstraintLayout constraintLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout2 == null) {
         break missingId;
       }
 
@@ -84,8 +120,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, bottomNavigationView, frameLayout,
-          scanBtn);
+      id = R.id.todolistBtn;
+      ImageView todolistBtn = ViewBindings.findChildViewById(rootView, id);
+      if (todolistBtn == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, alertBtn, bingoLogo,
+          bottomNavigationView, constraintLayout2, frameLayout, scanBtn, todolistBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

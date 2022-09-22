@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,11 +27,16 @@ public final class ActivityAlertHistoryBinding implements ViewBinding {
   @NonNull
   public final RecyclerView alertRecylerview;
 
+  @NonNull
+  public final TextView noAlertContent;
+
   private ActivityAlertHistoryBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView alertBackstackButton, @NonNull RecyclerView alertRecylerview) {
+      @NonNull ImageView alertBackstackButton, @NonNull RecyclerView alertRecylerview,
+      @NonNull TextView noAlertContent) {
     this.rootView = rootView;
     this.alertBackstackButton = alertBackstackButton;
     this.alertRecylerview = alertRecylerview;
+    this.noAlertContent = noAlertContent;
   }
 
   @Override
@@ -72,8 +78,14 @@ public final class ActivityAlertHistoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.noAlertContent;
+      TextView noAlertContent = ViewBindings.findChildViewById(rootView, id);
+      if (noAlertContent == null) {
+        break missingId;
+      }
+
       return new ActivityAlertHistoryBinding((ConstraintLayout) rootView, alertBackstackButton,
-          alertRecylerview);
+          alertRecylerview, noAlertContent);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

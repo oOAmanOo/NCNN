@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -33,14 +34,19 @@ public final class FragmentMergeRecipeListBinding implements ViewBinding {
   @NonNull
   public final EditText mergeTitle;
 
+  @NonNull
+  public final TextView noSearchContent;
+
   private FragmentMergeRecipeListBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout fragmentMergeRecipeList, @NonNull ImageView mergeBackstackButton,
-      @NonNull RecyclerView mergeRecyclerview, @NonNull EditText mergeTitle) {
+      @NonNull RecyclerView mergeRecyclerview, @NonNull EditText mergeTitle,
+      @NonNull TextView noSearchContent) {
     this.rootView = rootView;
     this.fragmentMergeRecipeList = fragmentMergeRecipeList;
     this.mergeBackstackButton = mergeBackstackButton;
     this.mergeRecyclerview = mergeRecyclerview;
     this.mergeTitle = mergeTitle;
+    this.noSearchContent = noSearchContent;
   }
 
   @Override
@@ -90,8 +96,15 @@ public final class FragmentMergeRecipeListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.noSearchContent;
+      TextView noSearchContent = ViewBindings.findChildViewById(rootView, id);
+      if (noSearchContent == null) {
+        break missingId;
+      }
+
       return new FragmentMergeRecipeListBinding((ConstraintLayout) rootView,
-          fragmentMergeRecipeList, mergeBackstackButton, mergeRecyclerview, mergeTitle);
+          fragmentMergeRecipeList, mergeBackstackButton, mergeRecyclerview, mergeTitle,
+          noSearchContent);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

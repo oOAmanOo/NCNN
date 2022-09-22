@@ -52,7 +52,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="backstack"/>
-
+    <TextView
+        android:id="@+id/noSearchContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="無食譜搜尋內容"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/merge_recyclerview"
         android:layout_width="match_parent"

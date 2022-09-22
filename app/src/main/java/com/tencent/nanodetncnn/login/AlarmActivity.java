@@ -1,5 +1,8 @@
 package com.tencent.nanodetncnn.login;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -47,13 +50,14 @@ public class AlarmActivity extends AppCompatActivity {
     public static String alerttime_recipe;
 
     public static String uid;
+    public static Activity alarm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         uid = bundle.getString("data_uid");
-
+        threadDone = 0;
         Thread thread = new Thread(multiThread);
         thread.start();
         while(threadDone == 0){}
@@ -82,6 +86,7 @@ public class AlarmActivity extends AppCompatActivity {
         bundle.putString("data_uid",uid);
         intent.putExtras(bundle);   // put進去
         startActivity(intent);
+        finish();
     }
 
     //            取得目前時間
@@ -129,7 +134,7 @@ public class AlarmActivity extends AppCompatActivity {
         bundl.putString("data_uid", uid);
         intent.putExtras(bundl);   // put進去
         //PendingIntent.getBroadcast調用廣播
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this, 0, intent, FLAG_IMMUTABLE);
         //獲得AlarmManager物件
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //設定單次提醒
@@ -142,7 +147,7 @@ public class AlarmActivity extends AppCompatActivity {
         bundl.putString("data_uid", uid);
         intent.putExtras(bundl);   // put進去
         //PendingIntent.getBroadcast調用廣播
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this, 0, intent, FLAG_IMMUTABLE);
         //獲得AlarmManager物件
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //設定單次提醒
@@ -154,7 +159,7 @@ public class AlarmActivity extends AppCompatActivity {
         bundl.putString("data_uid", uid);
         intent.putExtras(bundl);   // put進去
         //PendingIntent.getBroadcast調用廣播
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this, 0, intent, FLAG_IMMUTABLE);
         //獲得AlarmManager物件
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //設定單次提醒
@@ -182,22 +187,18 @@ public class AlarmActivity extends AppCompatActivity {
                 }
                 inputStream.close();
                 result = box;
+                System.out.println(result);
                 try {
                     JSONObject obj=null;
                     JSONArray table=null;
                     JSONObject data=null;
 
                     obj=new JSONObject(result);
-                    table=obj.getJSONArray("user");
-                    for (int i = 0; i < table.length(); i++) {
-                        data = table.getJSONObject(i);
-                        if(data.getString("uid").equals(uid)){
-                            AlarmActivity.alerttime_food = data.getString("alertTime");
-                            AlarmActivity.alerttime_recipe = data.getString("recipeTime");
-                            AlarmActivity.threadDone = 1;
-                            break;
-                        }
-                    }
+                    table=obj.getJSONArray("user_data");
+                    data = table.getJSONObject(0);
+                    AlarmActivity.alerttime_food = data.getString("alertTime");
+                    AlarmActivity.alerttime_recipe = data.getString("recipeTime");
+                    AlarmActivity.threadDone = 1;
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
