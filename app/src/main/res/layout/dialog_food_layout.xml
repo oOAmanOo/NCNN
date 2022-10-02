@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="0.9"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:translationZ="-30dp">
 
         <TextView

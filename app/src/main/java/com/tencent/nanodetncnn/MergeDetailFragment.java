@@ -99,7 +99,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         if(currentMode == "normal"){
             merge_recipe_name_detail.setText(NormalRecipeList.allRecipeNames[position_now]);
             merge_recipe_food_detail.setText(NormalRecipeList.allRecipeFood[position_now]);
-            merge_recipe_tag_detail.setText(NormalRecipeList.allRecipeSugar[position_now]+NormalRecipeList.allRecipeSalt[position_now]+NormalRecipeList.allRecipeOil[position_now]);
+            merge_recipe_tag_detail.setText(NormalRecipeList.allRecipeSugar[position_now]+"糖"+NormalRecipeList.allRecipeSalt[position_now]+"鹽"+NormalRecipeList.allRecipeOil[position_now]+"油");
             merge_recipe_step_detail.setText(NormalRecipeList.allRecipeSteps[position_now]);
             merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(NormalRecipeList.imgName[position_now]),"drawable", context.getPackageName()));
 
@@ -132,7 +132,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         else if(currentMode == "manage"){
             merge_recipe_name_detail.setText(ManageRecipeList.allRecipeNames[position_now]);
             merge_recipe_food_detail.setText(ManageRecipeList.allRecipeFood[position_now]);
-            merge_recipe_tag_detail.setText(ManageRecipeList.allRecipeSugar[position_now]+ManageRecipeList.allRecipeSalt[position_now]+ManageRecipeList.allRecipeOil[position_now]);
+            merge_recipe_tag_detail.setText(ManageRecipeList.allRecipeSugar[position_now]+"糖"+ManageRecipeList.allRecipeSalt[position_now]+"鹽"+ManageRecipeList.allRecipeOil[position_now]+"油");
             merge_recipe_step_detail.setText(ManageRecipeList.allRecipeSteps[position_now]);
             merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(ManageRecipeList.imgName[position_now]),"drawable", context.getPackageName()));
 
@@ -167,7 +167,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         else if(currentMode == "fitness"){
             merge_recipe_name_detail.setText(FitnessRecipeList.allRecipeNames[position_now]);
             merge_recipe_food_detail.setText(FitnessRecipeList.allRecipeFood[position_now]);
-            merge_recipe_tag_detail.setText(FitnessRecipeList.allRecipeSugar[position_now]+FitnessRecipeList.allRecipeSalt[position_now]+FitnessRecipeList.allRecipeOil[position_now]);
+            merge_recipe_tag_detail.setText(FitnessRecipeList.allRecipeSugar[position_now]+"糖"+FitnessRecipeList.allRecipeSalt[position_now]+"鹽"+FitnessRecipeList.allRecipeOil[position_now]+"油");
             merge_recipe_step_detail.setText(FitnessRecipeList.allRecipeSteps[position_now]);
             merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(FitnessRecipeList.imgName[position_now]),"drawable", context.getPackageName()));
 
@@ -202,7 +202,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         else if(currentMode == "relax"){
             merge_recipe_name_detail.setText(RelaxRecipeList.allRecipeNames[position_now]);
             merge_recipe_food_detail.setText(RelaxRecipeList.allRecipeFood[position_now]);
-            merge_recipe_tag_detail.setText(RelaxRecipeList.allRecipeSugar[position_now]+RelaxRecipeList.allRecipeSalt[position_now]+RelaxRecipeList.allRecipeOil[position_now]);
+            merge_recipe_tag_detail.setText(RelaxRecipeList.allRecipeSugar[position_now]+"糖"+RelaxRecipeList.allRecipeSalt[position_now]+"鹽"+RelaxRecipeList.allRecipeOil[position_now]+"油");
             merge_recipe_step_detail.setText(RelaxRecipeList.allRecipeSteps[position_now]);
             merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(RelaxRecipeList.imgName[position_now]),"drawable", context.getPackageName()));
 
@@ -237,7 +237,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         else if(currentMode == "search"){
             merge_recipe_name_detail.setText(AllRecipeList.allRecipeNames[position_now]);
             merge_recipe_food_detail.setText(AllRecipeList.allRecipeFood[position_now]);
-            merge_recipe_tag_detail.setText(AllRecipeList.allRecipeSugar[position_now]+AllRecipeList.allRecipeSalt[position_now]+AllRecipeList.allRecipeOil[position_now]);
+            merge_recipe_tag_detail.setText(AllRecipeList.allRecipeSugar[position_now]+"糖"+AllRecipeList.allRecipeSalt[position_now]+"鹽"+AllRecipeList.allRecipeOil[position_now]+"油");
             merge_recipe_step_detail.setText(AllRecipeList.allRecipeSteps[position_now]);
             merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(AllRecipeList.imgName[position_now]),"drawable", context.getPackageName()));
 
@@ -273,7 +273,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
 
             merge_recipe_name_detail.setText(AutoRecipeList.allRecipeNames[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]);
             merge_recipe_food_detail.setText(AutoRecipeList.tempallRecipeFood[position_now]);
-            merge_recipe_tag_detail.setText(AutoRecipeList.allRecipeSugar[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+AutoRecipeList.allRecipeSalt[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+AutoRecipeList.allRecipeOil[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]);
+            merge_recipe_tag_detail.setText(AutoRecipeList.allRecipeSugar[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+"糖"+AutoRecipeList.allRecipeSalt[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+"鹽"+AutoRecipeList.allRecipeOil[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]+"油");
             merge_recipe_step_detail.setText(AutoRecipeList.allRecipeSteps[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]);
             merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(AutoRecipeList.imgName[AutoRecipeList.detail_allRecipeFoodIndex[position_now]]),"drawable", context.getPackageName()));
 
@@ -334,7 +334,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
 
                 merge_recipe_name_detail.setText(dataRecipe.getString("name"));
                 merge_recipe_food_detail.setText(AutoRecipeList.tempallRecipeFood[position_now]);
-                merge_recipe_tag_detail.setText(dataRecipe.getString("sugar") + dataRecipe.getString("salt") + dataRecipe.getString("oil"));
+                merge_recipe_tag_detail.setText(dataRecipe.getString("sugar")+"糖" + dataRecipe.getString("salt")+"鹽" + dataRecipe.getString("oil")+"油");
                 merge_recipe_step_detail.setText(dataRecipe.getString("step"));
 //                merge_recipe_img_detail.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(dataRecipe.getString("imgName")),"drawable", context.getPackageName()));
 

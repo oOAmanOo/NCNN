@@ -39,9 +39,6 @@ public class SearchFragment extends Fragment {
         searchtext = (EditText)v.findViewById(R.id.search_input);
         searchbtn = (ImageView) v.findViewById(R.id.searchbtn);
 
-
-
-
         searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,16 +47,12 @@ public class SearchFragment extends Fragment {
 
 
                 if(text.length() != 0){
-                    for(int i = 0; i<2; i ++){
-                        AllRecipeList.search(text);
-                    }
+                    AllRecipeList.search(text);
                     MergeRecipeListFragment.getMode("search");
                     replaceFragment(new MergeRecipeListFragment());
                     text = null;
 
                 }
-
-
 
             }
         });

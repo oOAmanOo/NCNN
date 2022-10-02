@@ -23,7 +23,7 @@
         android:focusableInTouchMode="false"
         android:gravity="center"
         android:text="一般模式"
-        android:textColor="#595A5A"
+        android:textColor="@color/font_b"
         app:layout_constraintStart_toEndOf="@+id/merge_backstack_button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_goneMarginTop="8dp" />
@@ -34,6 +34,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="6dp"
+        android:textColor="@color/font_b"
         android:text="的搜尋結果："
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/merge_recyclerview"

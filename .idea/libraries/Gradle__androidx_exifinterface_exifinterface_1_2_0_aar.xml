@@ -5,7 +5,6 @@
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/bfa6771d2463f303715f2a7303711069/transformed/exifinterface-1.2.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/bfa6771d2463f303715f2a7303711069/transformed/exifinterface-1.2.0/res" />
       <root url="file://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/bfa6771d2463f303715f2a7303711069/transformed/exifinterface-1.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

@@ -20,6 +20,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/mipmap-hdpi/ic_launcher.png"
     },
     {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_edit.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-7:/layout/fragment_edit.xml"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_olive_oil.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxhdpi/olive_oil.png"
     },
@@ -172,20 +176,28 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_startedit.xml"
     },
     {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_bingologo.png.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/bingologo.png"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_search_24.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic18.jpg.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic18.jpg"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_carrot.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxhdpi/carrot.png"
     },
     {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_expired_adapter.xml.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/expired_adapter.xml"
-    },
-    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_lotus.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/lotus.png"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_expired_adapter.xml.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/expired_adapter.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_local_phone_24.xml.flat",
@@ -224,6 +236,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/ic_home_black_24dp.xml"
     },
     {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_editmode.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-7:/layout/fragment_editmode.xml"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_ginger.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/ginger.png"
     },
@@ -248,12 +264,12 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/dialog_yes_no.xml"
     },
     {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_merge_recipe_list.xml.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_merge_recipe_list.xml"
-    },
-    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_apple.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xhdpi/apple.png"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_merge_recipe_list.xml.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_merge_recipe_list.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_head_food_list.xml.flat",
@@ -310,10 +326,6 @@
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_eggplant.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/eggplant.png"
-    },
-    {
-        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_to_do_list.xml.flat",
-        "source": "com.tencent.nanodetncnn.app-main-7:/layout/activity_to_do_list.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_appbar.xml.flat",
@@ -404,6 +416,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic3.jpg"
     },
     {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic14.jpg.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic14.jpg"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_passvalue.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/activity_passvalue.xml"
     },
@@ -416,12 +432,12 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/activity_main.xml"
     },
     {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_potato.png.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/potato.png"
-    },
-    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_vpn_key_24.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/ic_baseline_vpn_key_24.xml"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_potato.png.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/potato.png"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_olive_oil.png.flat",
@@ -536,16 +552,16 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/alert.png"
     },
     {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_dialog_food_layout.xml.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/dialog_food_layout.xml"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_search.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_search.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xhdpi_ic_add_blue.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/mipmap-xhdpi/ic_add_blue.png"
-    },
-    {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_dialog_food_layout.xml.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/dialog_food_layout.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_checked.png.flat",
@@ -596,6 +612,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/flour.png"
     },
     {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic7.jpg.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic7.jpg"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/mipmap-mdpi_ic_add_blue.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/mipmap-mdpi/ic_add_blue.png"
     },
@@ -604,12 +624,12 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/editfridge4_layout.xml"
     },
     {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_alarmdialog_food_layout.xml.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/alarmdialog_food_layout.xml"
-    },
-    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_onion.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xhdpi/onion.png"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_alarmdialog_food_layout.xml.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/alarmdialog_food_layout.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_dialog_food_adapter.xml.flat",
@@ -622,6 +642,10 @@
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_carrot.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xhdpi/carrot.png"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic20.jpg.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic20.jpg"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher_white.png.flat",
@@ -672,6 +696,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/ic_baseline_playlist_add_check_24.xml"
     },
     {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic6.jpg.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic6.jpg"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/mipmap-hdpi_ic_launcher_white.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/mipmap-hdpi/ic_launcher_white.png"
     },
@@ -682,6 +710,10 @@
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_garlic.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xhdpi/garlic.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_profile.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-7:/layout/fragment_profile.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_head_food_fridge_list.xml.flat",
@@ -720,6 +752,10 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/activity_main_activityreg.xml"
     },
     {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic5.jpg.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable/pic5.jpg"
+    },
+    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_pumpkin.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xhdpi/pumpkin.png"
     },
@@ -736,12 +772,12 @@
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_cust22222.xml.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_cust22222.xml"
-    },
-    {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_merge_detail.xml.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_merge_detail.xml"
+    },
+    {
+        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_cust22222.xml.flat",
+        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/fragment_cust22222.xml"
     },
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_top_back1.png.flat",
@@ -834,9 +870,5 @@
     {
         "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_curry.png.flat",
         "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/drawable-xxxhdpi/curry.png"
-    },
-    {
-        "merged": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-merged_res-5:/layout_alarmdialog_recipe_layout.xml.flat",
-        "source": "/home/bingo/Public/ncnn-Android-Yolov5/gradle/daemon/7.3.3/com.tencent.nanodetncnn.app-main-7:/layout/alarmdialog_recipe_layout.xml"
     }
 ]

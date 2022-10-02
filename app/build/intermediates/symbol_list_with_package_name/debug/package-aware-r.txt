@@ -2571,6 +2571,7 @@ drawable bamboo
 drawable banana
 drawable bell_pepper
 drawable bingo
+drawable bingologo
 drawable boneless
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2679,9 +2680,15 @@ drawable notify_panel_notification_icon_bg
 drawable olive_oil
 drawable onion
 drawable pic1
+drawable pic14
+drawable pic18
 drawable pic2
+drawable pic20
 drawable pic3
 drawable pic4
+drawable pic5
+drawable pic6
+drawable pic7
 drawable potato
 drawable pumpkin
 drawable question

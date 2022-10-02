@@ -280,7 +280,6 @@ int NdkCamera::open(int _camera_facing)
         camera_device_state_callbacks.context = this;
         camera_device_state_callbacks.onDisconnected = onDisconnected;
         camera_device_state_callbacks.onError = onError;
-
         ACameraManager_openCamera(camera_manager, camera_id.c_str(), &camera_device_state_callbacks, &camera_device);
     }
 

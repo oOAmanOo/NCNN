@@ -1,2 +1,20 @@
 ninja: Entering directory `/home/bingo/Public/NCNN/app/.cxx/Debug/2t2i476a/x86'
-ninja: no work to do.
+[1/2] Building CXX object CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o
+/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp:152:117: warning: format specifies type 'long' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "onCaptureSequenceCompleted %p %d %ld", session, sequenceId, frameNumber);
+                                                                                         ~~~                        ^~~~~~~~~~~
+                                                                                         %lld
+/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp:283:54: warning: format specifies type 'char *' but the argument has type 'ACameraManager **' [-Wformat]
+        printf("camera_manager%scamera_id.c_str()%s",&camera_manager,&camera_id);
+                              ~~                     ^~~~~~~~~~~~~~~
+/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp:283:70: warning: format specifies type 'char *' but the argument has type 'std::string *' (aka 'basic_string<char, char_traits<char>, allocator<char>> *') [-Wformat]
+        printf("camera_manager%scamera_id.c_str()%s",&camera_manager,&camera_id);
+                                                 ~~                  ^~~~~~~~~~
+/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp:284:66: warning: format specifies type 'char *' but the argument has type 'ACameraDevice_StateCallbacks *' [-Wformat]
+        printf("&camera_device_state_callbacks%scamera_device%s",&camera_device_state_callbacks,&camera_device);
+                                              ~~                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/bingo/Public/NCNN/app/src/main/jni/ndkcamera.cpp:284:97: warning: format specifies type 'char *' but the argument has type 'ACameraDevice **' [-Wformat]
+        printf("&camera_device_state_callbacks%scamera_device%s",&camera_device_state_callbacks,&camera_device);
+                                                             ~~                                 ^~~~~~~~~~~~~~
+5 warnings generated.
+[2/2] Linking CXX shared library /home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/x86/libncnnyolov5.so

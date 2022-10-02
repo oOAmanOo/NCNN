@@ -60,7 +60,7 @@ public class AlarmActivity extends AppCompatActivity {
         threadDone = 0;
         Thread thread = new Thread(multiThread);
         thread.start();
-        while(threadDone == 0){}
+        while(threadDone == 0){System.out.println("x");}
 
         currentTime(calendar);
         String[] splitstring = alerttime_food.split(":");
@@ -187,7 +187,6 @@ public class AlarmActivity extends AppCompatActivity {
                 }
                 inputStream.close();
                 result = box;
-                System.out.println(result);
                 try {
                     JSONObject obj=null;
                     JSONArray table=null;

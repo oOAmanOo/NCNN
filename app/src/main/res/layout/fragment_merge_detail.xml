@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ImageView
@@ -35,6 +37,8 @@
             android:paddingBottom="90dp"
             android:scrollbars="vertical"
             app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/white"
+            android:background="@color/white"
             app:layout_constraintHorizontal_bias="0.0">
 
             <ImageView
@@ -67,6 +71,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
+                    android:background="@color/white"
+                    android:textColor="@color/font_b"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -93,6 +99,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
+                    android:background="@color/white"
+                    android:textColor="@color/font_b"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -119,6 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:textColor="@color/font_b"
                     android:text="TextView"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -151,6 +160,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@color/white"
+                android:textColor="@color/font_b"
                 android:text="TextView"
                 android:textSize="16sp" />
 
@@ -160,6 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/white"
                 android:text="評估" />
 
 

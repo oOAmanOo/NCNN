@@ -170,7 +170,7 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
                 for (int i = 0; i < AutoRecipeList.count; i++) {
                     Recipeimages.add(AutoRecipeList.imgName);
                     Recipenames.add(AutoRecipeList.allRecipeNames);
-                    Recipefood.add(AutoRecipeList.tempallRecipeFood);
+                    Recipefood.add(AutoRecipeList.allRecipeFood);
                     Recipesugar.add(AutoRecipeList.allRecipeSugar);
                     Recipesalt.add(AutoRecipeList.allRecipeSalt);
                     Recipeoil.add(AutoRecipeList.allRecipeOil);

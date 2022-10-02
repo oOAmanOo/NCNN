@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static FragmentManager fm_p;
     public static int first_load = 1;
     public static Activity profilereload_MainActivity;
+    public static int searchtag = 1;
 
     //notify_user
     public static String[] notify_user_id = new String[200];
@@ -134,6 +135,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        alarm_mode = bundle.getString("alarm_mode");
         Thread thread = new Thread(mutiThread);
         thread.start();
+//        Thread thread1 = new Thread(mutiThread1);
+//        thread1.start();
+//        Thread thread2 = new Thread(mutiThread2);
+//        thread2.start();
+//        Thread thread3 = new Thread(mutiThread3);
+//        thread3.start();
+//        Thread thread4 = new Thread(mutiThread4);
+//        thread4.start();
+//        Thread thread5 = new Thread(mutiThread5);
+//        thread5.start();
 
         final FragmentManager fm = getSupportFragmentManager() ;
         fm_p = fm;
@@ -439,17 +450,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //recipe
                 AllRecipeList.result(result);
                 AllRecipeList.getallfoodhistory(result);
-                NormalRecipeList.recipe(result);
                 NormalRecipeList.getallfoodhistory(result);
-                ManageRecipeList.recipe(result);
                 ManageRecipeList.getallfoodhistory(result);
-                FitnessRecipeList.recipe(result);
                 FitnessRecipeList.getallfoodhistory(result);
-                RelaxRecipeList.recipe(result);
                 RelaxRecipeList.getallfoodhistory(result);
-                AutoRecipeList.recipe(result);
                 AutoRecipeList.getallfoodhistory(result);
-
                 // bee part
                 MyApplication.foodModelPraise.praiseFoodJsonString(result);
 
@@ -550,6 +555,274 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
         }
     };
+    private Runnable mutiThread1 = new Runnable(){
+        public void run()
+        {
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/recipe_search.php");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+
+                NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
+                params.add(pair1);
+                params.add(pair2);
+                params.add(pair3);
+                httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
+
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
+                String  box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null){
+                    box += line ;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+
+                NormalRecipeList.recipe(result);
+                System.out.println("pass2");
+
+            }catch (Exception e){
+                result = e.toString();
+            }
+        }
+    };
+    private Runnable mutiThread2 = new Runnable(){
+        public void run()
+        {
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/recipe_search.php");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+
+                NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
+                NameValuePair pair4 = new BasicNameValuePair("sugar", "少");
+                NameValuePair pair5 = new BasicNameValuePair("salt", "少");
+                NameValuePair pair6 = new BasicNameValuePair("oil", "少");
+                params.add(pair1);
+                params.add(pair2);
+                params.add(pair3);
+                params.add(pair4);
+                params.add(pair5);
+                params.add(pair6);
+                httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
+                String  box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null){
+                    box += line ;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+                ManageRecipeList.recipe(result);
+                System.out.println("pass3");
+
+            }catch (Exception e){
+                result = e.toString();
+            }
+
+
+
+            // 當這個執行緒完全跑完後執行
+            runOnUiThread(new Runnable() {
+                public void run() {
+
+//                    updateUserData(result);
+                }
+            });
+        }
+    };
+    private Runnable mutiThread3 = new Runnable(){
+        public void run()
+        {
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/recipe_search.php");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+
+                NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
+                NameValuePair pair4 = new BasicNameValuePair("sugar", "少");
+                NameValuePair pair5 = new BasicNameValuePair("salt", "少");
+                NameValuePair pair6 = new BasicNameValuePair("oil", "少");
+                NameValuePair pair7 = new BasicNameValuePair("salt", "多");
+                NameValuePair pair8 = new BasicNameValuePair("oil", "多");
+                params.add(pair1);
+                params.add(pair2);
+                params.add(pair3);
+                params.add(pair4);
+                params.add(pair5);
+                params.add(pair6);
+                params.add(pair7);
+                params.add(pair8);
+                httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
+
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
+                String  box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null){
+                    box += line ;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+                FitnessRecipeList.recipe(result);
+                System.out.println("pass4");
+
+
+
+            }catch (Exception e){
+                result = e.toString();
+            }
+        }
+    };
+    private Runnable mutiThread4 = new Runnable(){
+        public void run()
+        {
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/recipe_search.php");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+
+                NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
+                NameValuePair pair4 = new BasicNameValuePair("sugar", "多");
+                NameValuePair pair5 = new BasicNameValuePair("salt", "多");
+                NameValuePair pair6 = new BasicNameValuePair("oil", "多");
+                params.add(pair1);
+                params.add(pair2);
+                params.add(pair3);
+                params.add(pair4);
+                params.add(pair5);
+                params.add(pair6);
+                httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
+                String  box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null){
+                    box += line ;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+                RelaxRecipeList.recipe(result);
+                System.out.println("pass5");
+
+
+            }catch (Exception e){
+                result = e.toString();
+            }
+        }
+    };
+    private Runnable mutiThread5 = new Runnable(){
+        public void run()
+        {
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/recipe_search.php");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+
+                NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
+                NameValuePair pair4 = new BasicNameValuePair("sugar", "多");
+                NameValuePair pair5 = new BasicNameValuePair("salt", "多");
+                NameValuePair pair6 = new BasicNameValuePair("oil", "多");
+                NameValuePair pair7 = new BasicNameValuePair("sugar", "少");
+                NameValuePair pair8 = new BasicNameValuePair("salt", "少");
+                NameValuePair pair9 = new BasicNameValuePair("oil", "少");
+                params.add(pair1);
+                params.add(pair2);
+                params.add(pair3);
+                params.add(pair4);
+                params.add(pair5);
+                params.add(pair6);
+                params.add(pair7);
+                params.add(pair8);
+                params.add(pair9);
+                httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
+                String  box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null){
+                    box += line ;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+
+                AllRecipeList.result1(result);
+                System.out.println("pass1");
+
+                AutoRecipeList.result2 = result;
+                System.out.println("pass6");
+
+
+            }catch (Exception e){
+                result = e.toString();
+            }
+
+        }
+    };
 
     //duck dialog
     private static final Runnable editsearch = new Runnable() {
@@ -561,7 +834,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/fridge_editsearch.php?uid="+uid);//宣告使用post方法連線
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
                 params.add(new BasicNameValuePair("json", editjson));
                 params.add(new BasicNameValuePair("uid", "duck"));
                 httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));

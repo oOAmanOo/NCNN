@@ -11,7 +11,7 @@
 9-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:5-65
+11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:5-64
 11-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:8:22-62
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:9:5-67
@@ -89,7 +89,7 @@
 47        android:extractNativeLibs="false"
 48        android:fullBackupContent="@xml/backup_rules"
 48-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:20:9-54
-49        android:icon="@mipmap/ic_add_blue"
+49        android:icon="@drawable/bingologo"
 49-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:21:9-43
 50        android:label="@string/app_name"
 50-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:22:9-41
@@ -140,7 +140,7 @@
 77            android:exported="false" />
 77-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:51:13-37
 78        <activity
-78-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:52:9-57:55
+78-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:52:9-57:46
 79            android:name="com.tencent.nanodetncnn.Verify_Activity"
 79-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:53:13-44
 80            android:exported="true"
@@ -177,13 +177,13 @@
 95            </intent-filter>
 96        </activity>
 97        <activity
-97-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:71:9-73:48
+97-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:71:9-73:39
 98            android:name="com.tencent.nanodetncnn.MainActivityreg"
 98-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:72:13-44
 99            android:exported="true" />
 99-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:73:13-36
 100        <activity
-100-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:74:9-76:48
+100-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:74:9-76:39
 101            android:name="com.tencent.nanodetncnn.login.AlarmActivity"
 101-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:75:13-48
 102            android:exported="true" />
@@ -230,13 +230,13 @@
 124        </receiver>
 125
 126        <activity
-126-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:100:9-102:48
+126-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:100:9-102:39
 127            android:name="com.tencent.nanodetncnn.Alert_History_Activity"
 127-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:101:13-51
 128            android:exported="true" />
 128-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:102:13-36
 129        <activity
-129-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:103:9-105:48
+129-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:103:9-105:39
 130            android:name="com.tencent.nanodetncnn.ToDoListActivity"
 130-->/home/bingo/Public/NCNN/app/src/main/AndroidManifest.xml:104:13-45
 131            android:exported="true" />

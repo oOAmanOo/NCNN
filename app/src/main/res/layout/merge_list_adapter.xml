@@ -47,12 +47,14 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:textColor="@color/colorAccent"
                     android:text="食譜名稱" />
 
                 <TextView
                     android:id="@+id/merge_recipe_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/font_b"
                     android:text="TextView" />
             </LinearLayout>
 
@@ -68,12 +70,14 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:textColor="@color/colorAccent"
                     android:text="食譜標籤" />
 
                 <TextView
                     android:id="@+id/merge_recipe_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/font_b"
                     android:text="TextView" />
             </LinearLayout>
 
@@ -88,6 +92,7 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:textColor="@color/colorAccent"
                     android:text="所需食材" />
 
                 <TextView
@@ -95,6 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
+                    android:textColor="@color/font_b"
                     android:text="TextView" />
             </LinearLayout>
 

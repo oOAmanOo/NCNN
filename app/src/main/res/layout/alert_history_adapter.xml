@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:backgroundTint="@color/white"
+
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
@@ -25,6 +26,7 @@
                 android:id="@+id/alertcontent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/font_b"
                 android:layout_gravity="top"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -38,6 +40,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
+                android:textColor="@color/font_b"
                 android:gravity="right"
                 android:text="每日 11:00" />
         </LinearLayout>

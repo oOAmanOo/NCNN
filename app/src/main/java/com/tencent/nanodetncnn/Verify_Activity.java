@@ -126,24 +126,29 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
         getActionBar().hide();
         File file_test = new File("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt");
         file_test.delete();
-
+        System.out.println(0);
         final FragmentManager fm = getSupportFragmentManager() ;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verify_main);
         mContext = Verify_Activity.this;
         mContext2 = this;
-
+        System.out.println(0);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-
+        System.out.println(0);
         Thread thread = new Thread(multiThread);
         thread.start();
+        System.out.println(0);
         cameraView = (SurfaceView) findViewById(R.id.cameraview);
 //        outsidecamera.addView(cameraView);
+        System.out.println(0);
         cameraView.getHolder().setFormat(PixelFormat.RGBA_8888);
+        System.out.println(0);
         cameraView.getHolder().addCallback(this);
+        System.out.println(0);
         Button buttonSwitchCamera = (Button) findViewById(R.id.buttonSwitchCamera);
+        System.out.println(1);
         buttonSwitchCamera.setOnClickListener(arg0 -> {
 
             int new_facing = 1 - facing;
@@ -417,7 +422,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                     box += "\n";
                 }
                 inputStream.close();
-                result = box;
+                result= box;
             } catch (Exception e) {
                 result = e.toString();
             }
