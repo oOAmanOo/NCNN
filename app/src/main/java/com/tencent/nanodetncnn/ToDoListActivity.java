@@ -64,9 +64,10 @@ public class ToDoListActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ToDoListActivity.this,MainActivity.class);
+                Intent intent = new Intent(ToDoListActivity.this,MainActivitywelcomeverify.class);
                 Bundle bundl = new Bundle();
                 bundl.putString("data_uid", uid);
+                bundl.putString("to", "MainActivity");
                 intent.putExtras(bundl);   // put進去
                 startActivity(intent);
             }
@@ -74,18 +75,6 @@ public class ToDoListActivity extends AppCompatActivity {
 
         Thread thread = new Thread(mutiThread);
         thread.start();
-
-//        recyclerView = findViewById(R.id.todolist_recylerview);
-//
-//        ToDoListAdapter listAdapter = new ToDoListAdapter(getApplicationContext(),listname,listfood,listtime);
-//
-//
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-//
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//
-//        recyclerView.setAdapter(listAdapter);
-
 
     }
 
@@ -147,28 +136,26 @@ public class ToDoListActivity extends AppCompatActivity {
             obj = new JSONObject(result_todo);
             list = obj.getJSONArray("user_notify");
 
-            for(int i = 0; i < list.length(); ++i){
-                listdata = list.getJSONObject(i);
-                listdone[i] = listdata.getString("done");
-            }
+//            for(int i = 0; i < list.length(); ++i){
+//                listdata = list.getJSONObject(i);
+//                listdone[i] = listdata.getString("done");
+//            }
 
-            for (int i = 0; i < listdone.length; i++) {
+            for (int i = 0; i < list.length(); i++) {
                 listdata = list.getJSONObject(i);
 
-                if(listdone[i].equals("0")){
+                if(listdata.getString("done").equals("0")){
                     noTodoContent.setVisibility(View.INVISIBLE);
                     listnid[count] = listdata.getString("nid");
                     listname[count] = listdata.getString("uid");
                     listtime[count] = listdata.getString("notifyTime");
                     listfood[count] = listdata.getString("notification");
-
                     ++count;
                 }
                 else{
                     noTodoContent.setVisibility(View.VISIBLE);
                 }
-
-            }
+            }System.out.println("count = "+count);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -178,7 +165,7 @@ public class ToDoListActivity extends AppCompatActivity {
 
     }
     public void throwtoadapter(){
-
+        System.out.println("adapter");
         recyclerView = findViewById(R.id.todolist_recylerview);
 
         ToDoListAdapter listAdapter = new ToDoListAdapter(getApplicationContext(),listname,listfood,listtime);
@@ -188,6 +175,7 @@ public class ToDoListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setAdapter(listAdapter);
+        System.out.println("setadapter");
 
         listAdapter.setOnItemClickedListener(new ToDoListAdapter.OnItemClickedListener() {
             @Override

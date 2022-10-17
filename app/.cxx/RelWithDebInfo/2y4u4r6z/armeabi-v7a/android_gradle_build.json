@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/home/bingo/Public/NCNN/app/src/main/jni/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ncnnyolov5-RelWithDebInfo-armeabi-v7a": {
+      "buildCommandComponents": [
+        "/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/armeabi-v7a",
+        "ncnnyolov5"
+      ],
+      "buildType": "release",
+      "abi": "armeabi-v7a",
+      "artifactName": "ncnnyolov5",
+      "output": "/home/bingo/Public/NCNN/app/build/intermediates/cxx/RelWithDebInfo/2y4u4r6z/obj/armeabi-v7a/libncnnyolov5.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

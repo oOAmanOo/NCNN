@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/x86_64'
+ninja: no work to do.

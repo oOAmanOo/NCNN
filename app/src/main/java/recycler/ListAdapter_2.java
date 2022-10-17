@@ -73,7 +73,7 @@ public class ListAdapter_2 extends RecyclerView.Adapter<ListAdapter_2.ListHolder
         holder.d2_textView.setText(fridge_name[position]);
 //        holder.d2_imageView.setImageResource(R.drawable.pic1);
         holder.d2_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(fridge_imgName[position]),"drawable", context.getPackageName()));
-        if(fridge_position[position].equals("1")){
+        if(fridge_position[position].equals("0")){
             holder.d2_Position_spinner.setSelection(0);
         }else{
             holder.d2_Position_spinner.setSelection(1);

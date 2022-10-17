@@ -1,13 +1,18 @@
 package com.tencent.nanodetncnn.fridge;
 
+import static com.tencent.nanodetncnn.MainActivity.replaceFragment;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.tencent.nanodetncnn.MainActivity;
+import com.tencent.nanodetncnn.MergeRecipeListFragment;
 import com.tencent.nanodetncnn.R;
 import com.tencent.nanodetncnn.model.FridgeFoodSumModel;
 
@@ -68,6 +73,7 @@ public class FoodListFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_food_list, container, false);
         fragment_food_list_Adapter = v.findViewById(R.id.fragment_food_fridge_list_Adapter);
 
+
         return v;
     }
 
@@ -81,9 +87,9 @@ public class FoodListFragment extends Fragment {
 
 
         }
+
+
         showData();
-
-
 
     }
 

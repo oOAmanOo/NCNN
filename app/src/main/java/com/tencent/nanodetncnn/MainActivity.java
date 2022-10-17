@@ -2,26 +2,24 @@ package com.tencent.nanodetncnn;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+import com.gu.toolargetool.TooLargeTool;
 import com.tencent.nanodetncnn.databinding.ActivityMainBinding;
 import com.tencent.nanodetncnn.fridge.MyFridgeFragment;
 import com.tencent.nanodetncnn.fridge.fridge_editfridge_dfragment2;
@@ -92,6 +90,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int first_load = 1;
     public static Activity profilereload_MainActivity;
     public static int searchtag = 1;
+    public static int normal_start = 0;
+    public static int manage_start = 0;
+    public static int fitness_start = 0;
+    public static int relax_start = 0;
+    public static int allmode_start = 0;
+    public static int auto_start = 0;
+    public static volatile int normal_loop = 1;
+    public static volatile int manage_loop = 1;
+    public static volatile int fitness_loop = 1;
+    public static volatile int relax_loop = 1;
+    public static volatile int allmode_loop = 1;
+    public static volatile int auto_loop = 1;
+
+    private static int wait;
+
 
     //notify_user
     public static String[] notify_user_id = new String[200];
@@ -123,72 +136,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        profilereload_MainActivity = this;
+        TooLargeTool.startLogging(getApplication());
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-
+        profilereload_MainActivity = this;
         setContentView(binding.getRoot());
-
-        //John
-        Bundle bundle = getIntent().getExtras();
-        uid = bundle.getString("data_uid");
-//        alarm_mode = bundle.getString("alarm_mode");
-        Thread thread = new Thread(mutiThread);
-        thread.start();
-//        Thread thread1 = new Thread(mutiThread1);
-//        thread1.start();
-//        Thread thread2 = new Thread(mutiThread2);
-//        thread2.start();
-//        Thread thread3 = new Thread(mutiThread3);
-//        thread3.start();
-//        Thread thread4 = new Thread(mutiThread4);
-//        thread4.start();
-//        Thread thread5 = new Thread(mutiThread5);
-//        thread5.start();
-
-        final FragmentManager fm = getSupportFragmentManager() ;
-        fm_p = fm;
-        mContext = MainActivity.this;
-        mContext2 = this;
-
-
-
-        //fragment傳data的東西
-        getSupportFragmentManager().beginTransaction().add(R.id.frame_layout,new cust1Fragment()).commit();
-        //end
-
-        scanBtn = findViewById(R.id.scanBtn);
-        scanBtn_public = scanBtn;
-        scanBtn.setOnClickListener(this);
-
-        todolist = findViewById(R.id.todolistBtn);
-        alertbtn = findViewById(R.id.alertBtn);
-
-        todolist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ToDoListActivity.class);
-                Bundle bundl = new Bundle();
-                bundl.putString("data_uid", uid);
-                intent.putExtras(bundl);   // put進去
-                startActivity(intent);
-            }
-        });
-        alertbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Alert_History_Activity.class);
-                Bundle bundl = new Bundle();
-                bundl.putString("data_uid", uid);
-                intent.putExtras(bundl);   // put進去
-                startActivity(intent);
-            }
-        });
-
-        replaceFragment(new MyFridgeFragment());
-
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-
             switch (item.getItemId()) {
 
                 case R.id.myFridge:
@@ -204,58 +157,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     scanBtn.setVisibility(View.INVISIBLE);
                     break;
             }
-            Thread thread_0 = new Thread(mutiThread);
-            thread_0.start();
             return true;
         });
+
+        //John
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("data_uid");
+//        alarm_mode = bundle.getString("alarm_mode");
+
+        FragmentManager fm = getSupportFragmentManager() ;
+        fm_p = fm;
+        mContext = MainActivity.this;
+        mContext2 = this;
+
+        //fragment傳data的東西
+        getSupportFragmentManager().beginTransaction().add(R.id.frame_layout,new cust1Fragment()).commit();
+        //end
+
+
+        todolist = findViewById(R.id.todolistBtn);
+        alertbtn = findViewById(R.id.alertBtn);
+
+        todolist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MainActivitywelcomeverify.class);
+                Bundle bundl = new Bundle();
+                bundl.putString("data_uid", uid);
+                bundl.putString("to", "ToDoList");
+                intent.putExtras(bundl);   // put進去
+                startActivity(intent);
+            }
+        });
+        alertbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MainActivitywelcomeverify.class);
+                Bundle bundl = new Bundle();
+                bundl.putString("data_uid", uid);
+                bundl.putString("to", "Alert_History");
+                intent.putExtras(bundl);   // put進去
+                startActivity(intent);
+            }
+        });
+        scanBtn = findViewById(R.id.scanBtn);
+        scanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivitywelcomeverify.class);
+                Bundle bundl = new Bundle();
+                bundl.putString("data_uid", uid);
+                bundl.putString("to", "Verify");
+                intent.putExtras(bundl);   // put進去
+                startActivity(intent);
+            }
+        });
+        scanBtn_public = scanBtn;
+        Thread thread = new Thread(mutiThread);
+        thread.start();
+        wait = 1;
+        while (wait == 1){
+            System.out.println();
+        }
+        thread.interrupt();
+
+        replaceFragment(new MyFridgeFragment());
     }
 
     @Override
     public void onClick(View v){
-        Intent intent=new Intent(MainActivity.this, Verify_Activity.class);
+        Intent intent=new Intent(MainActivity.this, MainActivitywelcomeverify.class);
         Bundle bundl = new Bundle();
         bundl.putString("data_uid", uid);
         intent.putExtras(bundl);   // put進去
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-    }
-
-    private void scanCode(){
-        IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.setOrientationLocked(false);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-        integrator.setPrompt("Scanning Code");
-        integrator.initiateScan();
+//        finish();
     }
 
     @Override
     protected void  onActivityResult(int requestCode, int resultCode, Intent data){
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-        if(result != null){
-            if(result.getContents() != null){
-                AlertDialog.Builder builder =new AlertDialog.Builder(this);
-                builder.setMessage(result.getContents());
-                builder.setTitle("Scan result");
-                builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        scanCode();
-                    }
-                }).setNegativeButton("finish", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-//                        finish();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-            else{
-                Toast.makeText(this,"No Result",Toast.LENGTH_LONG).show();
-            }
-        }else{
-            super.onActivityResult(requestCode,resultCode,data);
-        }
-
+        super.onActivityResult(requestCode,resultCode,data);
     }
     public static void replaceFragment(Fragment fragment){
 
@@ -312,6 +294,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity.origin_editdialog = MainActivity.current_editdialog;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
+            wait = 1;
+            while (wait == 1){
+                System.out.println(1);
+            }
+            thread_0.interrupt();
         }else if(current_editdialog == 1){
             fm.beginTransaction().remove(dialog_fragment).commit();
             dialog_fragment.show(fm, "editdialog_tag");
@@ -340,6 +327,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editfridgedb_index = 0;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
+            wait = 1;
+            while (wait == 1){
+                System.out.println(1);
+            }
+            thread_0.interrupt();
         }
     }
 
@@ -371,6 +363,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
+            wait = 1;
+            while (wait == 1){
+                System.out.println(1);
+            }
+            thread_0.interrupt();
         }else if(current_editdialog == 2){
             if(fridge_run_editdialog == 0){
                 Thread thread = new Thread(editsearch);
@@ -389,6 +386,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editfridgedb_index = 0;
             Thread thread_0 = new Thread(mutiThread);
             thread_0.start();
+            wait = 1;
+            while (wait == 1){
+                System.out.println(1);
+            }
+            thread_0.interrupt();
         }
     }
 
@@ -400,6 +402,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static void runOnUI(Runnable runnable) {
         UIHandler.post(runnable);
     }
+
+    public static void thread1_run(){
+
+        try {
+            System.out.println("innn");
+            if (normal_start == 1) {
+                Thread thread1 = new Thread(mutiThread1);
+                thread1.start();
+            } else if (manage_start == 1) {
+                Thread thread2 = new Thread(mutiThread2);
+                thread2.start();
+            } else if (fitness_start == 1) {
+                Thread thread3 = new Thread(mutiThread3);
+                thread3.start();
+            } else if (relax_start == 1) {
+                Thread thread4 = new Thread(mutiThread4);
+                thread4.start();
+            } else if (allmode_start == 1) {
+                Thread thread5 = new Thread(mutiThread5);
+                thread5.start();
+            } else if (auto_start == 1) {
+                Thread thread6 = new Thread(mutiThread6);
+                thread6.start();
+            }
+        }catch (Exception e){
+            Log.e("1111","===>"+e.toString());
+        }
+    }
+
 
 
     private static final Runnable mutiThread = new Runnable(){
@@ -423,7 +454,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result = box;
-
+                System.out.println(result);
                 //John
                 ProfileFragment.user(result,uid);
                 EditFragment.user(result,uid);
@@ -446,18 +477,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                System.out.println(1);
 
                 //recipe
-                AllRecipeList.result(result);
-                AllRecipeList.getallfoodhistory(result);
-                NormalRecipeList.getallfoodhistory(result);
-                ManageRecipeList.getallfoodhistory(result);
-                FitnessRecipeList.getallfoodhistory(result);
-                RelaxRecipeList.getallfoodhistory(result);
-                AutoRecipeList.getallfoodhistory(result);
+//                AllRecipeList.result(result);
+//                AllRecipeList.getallfoodhistory(result);
+//                NormalRecipeList.getallfoodhistory(result);
+//                ManageRecipeList.getallfoodhistory(result);
+//                FitnessRecipeList.getallfoodhistory(result);
+//                RelaxRecipeList.getallfoodhistory(result);
+//                AutoRecipeList.getallfoodhistory(result);
                 // bee part
+
                 MyApplication.foodModelPraise.praiseFoodJsonString(result);
 
+                Log.d("ddd","====>"+result);
+                System.out.println(2);
                 //notify_user
                 try {
                     JSONObject obj = null;
@@ -478,86 +513,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                System.out.println(3);
+                System.out.println(4);
+                System.out.println(first_load == 1);
+                if(first_load == 1){
+                    replaceFragment(new MyFridgeFragment());
+                    // alarm
+                    try {
+                        JSONObject obj = null;
+                        JSONArray table = null;
+                        JSONObject data = null;
+
+                        obj = new JSONObject(result);
+                        table = obj.getJSONArray("user_data");
+                        data = table.getJSONObject(0);
+                        System.out.println(31);
+                        //recipe_mode
+                        alarm_content = data.getString("alarm_recipe_mode");
+                        if(alarm_content != "null"){
+                            JSONArray alarm_table = null;
+                            JSONObject alarm_data = null;
+                            alarm_table = obj.getJSONArray("alarm_recipe_mode");
+                            alarm_data = alarm_table.getJSONObject(0);
+                            AlarmDialog_recipe_mode.name = alarm_data.getString("name");
+                            AlarmDialog_recipe_mode.alarmrecipe = alarm_data.toString();
+                            alarm_table = obj.getJSONArray("alarm_recipe_mode_food");
+                            AlarmDialog_recipe_mode.alarmrecipe_food = alarm_table.toString();
+                            AlarmDialog_recipe_mode AlarmDialog_recipe_mode = new AlarmDialog_recipe_mode();
+                            fm_p.beginTransaction().remove(AlarmDialog_recipe_mode).commit();
+                            AlarmDialog_recipe_mode.show(fm_p, "dialog_tag");
+                            alarm[1] = 1;
+                        }
+                        System.out.println(32);
+                        //alarm_recipe_fridge
+                        alarm_content = data.getString("alarm_recipe_fridge");
+                        if(alarm_content != "null"){
+                            JSONArray alarm_table = null;
+                            JSONObject alarm_data = null;
+                            alarm_table = obj.getJSONArray("alarm_recipe_fridge");
+                            alarm_data = alarm_table.getJSONObject(0);
+                            AlarmDialog_recipe_fridge.name = alarm_data.getString("name");
+                            AlarmDialog_recipe_fridge.alarmrecipe = alarm_data.toString();
+                            alarm_table = obj.getJSONArray("alarm_recipe_fridge_food");
+                            AlarmDialog_recipe_fridge.alarmrecipe_food = alarm_table.toString();
+                            AlarmDialog_recipe_fridge AlarmDialog_recipe_fridge = new AlarmDialog_recipe_fridge();
+                            fm_p.beginTransaction().remove(AlarmDialog_recipe_fridge).commit();
+                            AlarmDialog_recipe_fridge.show(fm_p, "dialog_tag");
+                            alarm[2] = 1;
+                        }
+                        System.out.println(33);
+                        //food
+                        alarm_content = data.getString("alarm_food");
+                        if(alarm_content != "null"){
+                            JSONArray alarm_table = null;
+                            JSONObject alarm_data = null;
+                            alarm_table = obj.getJSONArray("alarm_food");
+                            System.out.println(alarm_table.toString());
+                            alarm_data = alarm_table.getJSONObject(0);
+                            System.out.println(alarm_data.getString("text"));
+                            AlarmDialog_Food.text = alarm_data.getString("text");
+                            AlarmDialog_Food AlarmDialog_Food = new AlarmDialog_Food();
+                            fm_p.beginTransaction().remove(AlarmDialog_Food).commit();
+                            AlarmDialog_Food.show(fm_p, "dialog_tag");
+                            alarm[0] = 1;
+                        }
+                        System.out.println(5);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    first_load = 0;
+                    MainActivity.wait = 0;
+                }else{
+                    replaceFragment(new MyFridgeFragment());
+                    MainActivity.wait = 0;
+                }
+
             }catch (Exception e){
                 result = e.toString();
             }
-            // 當這個執行緒完全跑完後執行
-            runOnUI(new Runnable() {
-                public void run() {
-                     if(first_load == 1){
-                        replaceFragment(new MyFridgeFragment());
-                        first_load = 0;
-
-                         // alarm
-                         try {
-                             JSONObject obj = null;
-                             JSONArray table = null;
-                             JSONObject data = null;
-
-                             obj = new JSONObject(result);
-                             table = obj.getJSONArray("user_data");
-                             data = table.getJSONObject(0);
-
-
-                             //recipe_mode
-                             alarm_content = data.getString("alarm_recipe_mode");
-                             if(alarm_content != "null"){
-                                 JSONArray alarm_table = null;
-                                 JSONObject alarm_data = null;
-                                 alarm_table = obj.getJSONArray("alarm_recipe_mode");
-                                 alarm_data = alarm_table.getJSONObject(0);
-                                 AlarmDialog_recipe_mode.name = alarm_data.getString("name");
-                                 AlarmDialog_recipe_mode.alarmrecipe = alarm_data.toString();
-                                 alarm_table = obj.getJSONArray("alarm_recipe_mode_food");
-                                 AlarmDialog_recipe_mode.alarmrecipe_food = alarm_table.toString();
-                                 final AlarmDialog_recipe_mode AlarmDialog_recipe_mode = new AlarmDialog_recipe_mode();
-                                 fm_p.beginTransaction().remove(AlarmDialog_recipe_mode).commit();
-                                 AlarmDialog_recipe_mode.show(fm_p, "dialog_tag");
-                                 alarm[1] = 1;
-                             }
-                             //alarm_recipe_fridge
-                             alarm_content = data.getString("alarm_recipe_fridge");
-                             if(alarm_content != "null"){
-                                 JSONArray alarm_table = null;
-                                 JSONObject alarm_data = null;
-                                 alarm_table = obj.getJSONArray("alarm_recipe_fridge");
-                                 alarm_data = alarm_table.getJSONObject(0);
-                                 AlarmDialog_recipe_fridge.name = alarm_data.getString("name");
-                                 AlarmDialog_recipe_fridge.alarmrecipe = alarm_data.toString();
-                                 alarm_table = obj.getJSONArray("alarm_recipe_fridge_food");
-                                 AlarmDialog_recipe_fridge.alarmrecipe_food = alarm_table.toString();
-                                 final AlarmDialog_recipe_fridge AlarmDialog_recipe_fridge = new AlarmDialog_recipe_fridge();
-                                 fm_p.beginTransaction().remove(AlarmDialog_recipe_fridge).commit();
-                                 AlarmDialog_recipe_fridge.show(fm_p, "dialog_tag");
-                                 alarm[2] = 1;
-                             }
-                             //food
-                             alarm_content = data.getString("alarm_food");
-                             if(alarm_content != "null"){
-                                 JSONArray alarm_table = null;
-                                 JSONObject alarm_data = null;
-                                 alarm_table = obj.getJSONArray("alarm_food");
-                                 System.out.println(alarm_table.toString());
-                                 alarm_data = alarm_table.getJSONObject(0);
-                                 System.out.println(alarm_data.getString("text"));
-                                 AlarmDialog_Food.text = alarm_data.getString("text");
-                                 final AlarmDialog_Food AlarmDialog_Food = new AlarmDialog_Food();
-                                 fm_p.beginTransaction().remove(AlarmDialog_Food).commit();
-                                 AlarmDialog_Food.show(fm_p, "dialog_tag");
-                                 alarm[0] = 1;
-                             }
-                         } catch (JSONException e) {
-                             e.printStackTrace();
-                         }
-                    }
-
-                }
-            });
         }
     };
-    private Runnable mutiThread1 = new Runnable(){
+    private static final Runnable mutiThread1 = new Runnable(){
         public void run()
         {
+            String result;
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
@@ -569,15 +609,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
                 NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
                 NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
+                NameValuePair pair4 = new BasicNameValuePair("search", "0");
                 params.add(pair1);
                 params.add(pair2);
                 params.add(pair3);
+                params.add(pair4);
                 httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
-
-
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
                 HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
-
                 InputStream inputStream = httpEntity.getContent();//宣告輸入串流
 
                 //讀取輸入船劉並存到字串
@@ -591,18 +630,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result = box;
-
                 NormalRecipeList.recipe(result);
-                System.out.println("pass2");
-
             }catch (Exception e){
                 result = e.toString();
             }
         }
     };
-    private Runnable mutiThread2 = new Runnable(){
+    private static final Runnable mutiThread2 = new Runnable(){
         public void run()
         {
+            String result;
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
@@ -613,18 +650,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
                 NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
-                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
-                NameValuePair pair4 = new BasicNameValuePair("sugar", "少");
-                NameValuePair pair5 = new BasicNameValuePair("salt", "少");
-                NameValuePair pair6 = new BasicNameValuePair("oil", "少");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "少");
+                NameValuePair pair4 = new BasicNameValuePair("search", "0");
                 params.add(pair1);
                 params.add(pair2);
                 params.add(pair3);
                 params.add(pair4);
-                params.add(pair5);
-                params.add(pair6);
                 httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
-
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
                 HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
                 InputStream inputStream = httpEntity.getContent();//宣告輸入串流
@@ -646,21 +678,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }catch (Exception e){
                 result = e.toString();
             }
-
-
-
-            // 當這個執行緒完全跑完後執行
-            runOnUiThread(new Runnable() {
-                public void run() {
-
-//                    updateUserData(result);
-                }
-            });
         }
     };
-    private Runnable mutiThread3 = new Runnable(){
+    private static final Runnable mutiThread3 = new Runnable(){
         public void run()
         {
+            String result;
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
@@ -670,24 +693,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
 
                 NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
-                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
-                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
-                NameValuePair pair4 = new BasicNameValuePair("sugar", "少");
-                NameValuePair pair5 = new BasicNameValuePair("salt", "少");
-                NameValuePair pair6 = new BasicNameValuePair("oil", "少");
-                NameValuePair pair7 = new BasicNameValuePair("salt", "多");
-                NameValuePair pair8 = new BasicNameValuePair("oil", "多");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "多");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "少");
+                NameValuePair pair4 = new BasicNameValuePair("search", "0");
                 params.add(pair1);
                 params.add(pair2);
                 params.add(pair3);
                 params.add(pair4);
-                params.add(pair5);
-                params.add(pair6);
-                params.add(pair7);
-                params.add(pair8);
                 httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
-
-
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
                 HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
                 InputStream inputStream = httpEntity.getContent();//宣告輸入串流
@@ -705,17 +718,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 result = box;
                 FitnessRecipeList.recipe(result);
                 System.out.println("pass4");
-
-
-
             }catch (Exception e){
                 result = e.toString();
             }
         }
     };
-    private Runnable mutiThread4 = new Runnable(){
+    private static final Runnable mutiThread4 = new Runnable(){
         public void run()
         {
+            String result;
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
@@ -725,19 +736,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
 
                 NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
-                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
-                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
-                NameValuePair pair4 = new BasicNameValuePair("sugar", "多");
-                NameValuePair pair5 = new BasicNameValuePair("salt", "多");
-                NameValuePair pair6 = new BasicNameValuePair("oil", "多");
+                NameValuePair pair2 = new BasicNameValuePair("salt", "多");
+                NameValuePair pair3 = new BasicNameValuePair("oil", "多");
+                NameValuePair pair4 = new BasicNameValuePair("search", "0");
                 params.add(pair1);
                 params.add(pair2);
                 params.add(pair3);
                 params.add(pair4);
-                params.add(pair5);
-                params.add(pair6);
                 httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
-
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
                 HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
 
@@ -757,15 +763,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 RelaxRecipeList.recipe(result);
                 System.out.println("pass5");
 
-
             }catch (Exception e){
                 result = e.toString();
             }
         }
     };
-    private Runnable mutiThread5 = new Runnable(){
+    private static final Runnable mutiThread5 = new Runnable(){
         public void run()
         {
+            String result;
             try {
                 //開始宣告HTTP連線需要的物件
                 HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
@@ -774,24 +780,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 //                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
 
-                NameValuePair pair1 = new BasicNameValuePair("sugar", "正常");
-                NameValuePair pair2 = new BasicNameValuePair("salt", "正常");
-                NameValuePair pair3 = new BasicNameValuePair("oil", "正常");
-                NameValuePair pair4 = new BasicNameValuePair("sugar", "多");
-                NameValuePair pair5 = new BasicNameValuePair("salt", "多");
-                NameValuePair pair6 = new BasicNameValuePair("oil", "多");
-                NameValuePair pair7 = new BasicNameValuePair("sugar", "少");
-                NameValuePair pair8 = new BasicNameValuePair("salt", "少");
-                NameValuePair pair9 = new BasicNameValuePair("oil", "少");
+                NameValuePair pair1 = new BasicNameValuePair("search", SearchFragment.text);
+                System.out.println("SearchFragment.text  "+SearchFragment.text);
                 params.add(pair1);
-                params.add(pair2);
-                params.add(pair3);
-                params.add(pair4);
-                params.add(pair5);
-                params.add(pair6);
-                params.add(pair7);
-                params.add(pair8);
-                params.add(pair9);
                 httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
 
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
@@ -809,11 +800,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result = box;
+                System.out.println("result5"+result);
+                AllRecipeList.recipe(result);
 
-                AllRecipeList.result1(result);
-                System.out.println("pass1");
+            }catch (Exception e){
+                result = e.toString();
+            }
 
-                AutoRecipeList.result2 = result;
+        }
+    };
+    private static final Runnable mutiThread6 = new Runnable(){
+        public void run()
+        {
+            String result;
+            try {
+                //開始宣告HTTP連線需要的物件
+                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpPost httpPost = new HttpPost("http://140.117.71.11/recipe_search.php");//宣告使用post方法連線
+
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("uid",usernameEditText.getText().toString()));
+
+                NameValuePair pair1 = new BasicNameValuePair("search", "-1");
+                NameValuePair pair2 = new BasicNameValuePair("food", MergeRecipeListFragment.currentName);
+                params.add(pair1);
+                params.add(pair2);
+                httpPost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
+
+                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
+                String  box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null){
+                    box += line ;
+                    box += "\n";
+                }
+                inputStream.close();
+                result = box;
+                AutoRecipeList.recipe(result);
                 System.out.println("pass6");
 
 

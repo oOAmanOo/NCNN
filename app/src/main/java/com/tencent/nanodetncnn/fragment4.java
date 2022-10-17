@@ -78,7 +78,8 @@ public class fragment4 extends DialogFragment {
                         JSONArray table = null;
                         JSONObject data = null;
                         obj = new JSONObject(Verify_Activity.result);
-                        table = obj.getJSONArray("food_dic");
+                        System.out.println(Verify_Activity.result);
+                        table = obj.getJSONArray("food_dic_ver");
 
                         for (int i = 0; i < table.length(); i++) {
                             data = table.getJSONObject(i);
@@ -95,6 +96,7 @@ public class fragment4 extends DialogFragment {
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
+
                     }
                     Verify_Activity.current_dialog = 2;
                     dialog4.hide();

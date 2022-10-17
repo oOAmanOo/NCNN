@@ -62,7 +62,7 @@ public class ListAdapter_4 extends RecyclerView.Adapter<ListAdapter_4.ListHolder
                     Verify_Activity.fridge_name[index] = holder.d4_editTextName.getText().toString();
                     Verify_Activity.fridge_expiredate[index] = LocalDate.now().plusDays(2).toString();
                     Verify_Activity.fridge_imgName[index] ="question";
-                    Verify_Activity.fridge_position[index] = "2";
+                    Verify_Activity.fridge_position[index] = "1";
                     Verify_Activity.fridge_amount[index] = "1";
                     Verify_Activity.fridge_memo[index] = "#";
                 }

@@ -44,16 +44,20 @@ public class SearchFragment extends Fragment {
             public void onClick(View v) {
                 text = null;
                 text = searchtext.getText().toString().trim();
-
+//                text = "咖哩";
 
                 if(text.length() != 0){
-                    AllRecipeList.search(text);
+                    System.out.println("text  "+text);
+                    MainActivity.allmode_loop = 1;
+                    MainActivity.allmode_start = 1;
+                    MainActivity.thread1_run();
                     MergeRecipeListFragment.getMode("search");
+//                    replaceFragment(new MergeRecipeListFragment());
+                    while(MainActivity.allmode_loop == 1){System.out.println(".");}
                     replaceFragment(new MergeRecipeListFragment());
-                    text = null;
+                    MainActivity.allmode_start = 0;
 
                 }
-
             }
         });
 
@@ -61,17 +65,28 @@ public class SearchFragment extends Fragment {
         normalmode_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity.normal_loop = 1;
+                MainActivity.normal_start = 1;
+                MainActivity.thread1_run();
                 MergeRecipeListFragment.getMode("normal");
+//                replaceFragment(new MergeRecipeListFragment());
+                while(MainActivity.normal_loop == 1){System.out.println(".");}
                 replaceFragment(new MergeRecipeListFragment());
+                MainActivity.normal_start = 0;
 
             }
         });
         managemode_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity.manage_loop = 1;
+                MainActivity.manage_start = 1;
+                MainActivity.thread1_run();
                 MergeRecipeListFragment.getMode("manage");
+//                replaceFragment(new MergeRecipeListFragment());
+                while(MainActivity.manage_loop == 1){System.out.println(".");}
                 replaceFragment(new MergeRecipeListFragment());
-
+                MainActivity.manage_start = 0;
 
             }
         });
@@ -79,17 +94,28 @@ public class SearchFragment extends Fragment {
         fitnessmode_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity.fitness_loop = 1;
+                MainActivity.fitness_start = 1;
+                MainActivity.thread1_run();
                 MergeRecipeListFragment.getMode("fitness");
+//                replaceFragment(new MergeRecipeListFragment());
+                while(MainActivity.fitness_loop == 1){System.out.println(".");}
                 replaceFragment(new MergeRecipeListFragment());
-
+                MainActivity.fitness_start = 0;
 
             }
         });
         relaxmode_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity.relax_loop = 1;
+                MainActivity.relax_start = 1;
+                MainActivity.thread1_run();
                 MergeRecipeListFragment.getMode("relax");
+//                replaceFragment(new MergeRecipeListFragment());
+                while(MainActivity.relax_loop == 1){System.out.println(".");}
                 replaceFragment(new MergeRecipeListFragment());
+                MainActivity.relax_start = 0;
 
             }
         });

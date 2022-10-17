@@ -1,0 +1,270 @@
+[
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_merge_recipe_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_merge_recipe_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_dashboard.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/adapter_food_fridge_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_fridge_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/list_adapter4.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/list_adapter4.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/alarmdialog_food_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alarmdialog_food_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/adapter_fridge_history_list_item.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_fridge_history_list_item.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_main_activitywelcome.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_main_activitywelcome.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/dialog_food_adapter.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/dialog_food_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_main.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/appbar.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/appbar.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/adapter_fridge_history_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_fridge_history_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/all_food_adapter.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/all_food_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_edit.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_edit.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/merge_list_adapter.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/merge_list_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_merge_detail.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_merge_detail.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/dialog_yes_no.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/dialog_yes_no.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_alert_history.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_alert_history.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_startedit.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_startedit.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_passvaluecust.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_passvaluecust.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/adapter_food_list_item.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_list_item.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_notifications.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/expired_adapter.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/expired_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_fridge_history_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_fridge_history_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_cust1.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_cust1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/head_food_list_edit.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_food_list_edit.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_food_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_food_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/verify_main.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/verify_main.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/alarmdialog_recipe_mode_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alarmdialog_recipe_mode_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/view_recycle_sliding.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/view_recycle_sliding.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_editmode.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_editmode.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/editfridge4_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge4_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_to_do_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_to_do_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/editfridge3_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge3_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_ready_to_eat.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_ready_to_eat.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_profile.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/alarmdialog_recipe_fridge_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alarmdialog_recipe_fridge_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_passvalue.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_passvalue.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_cust3.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_cust3.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/head_food_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_food_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_search.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/list_adapter1.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/list_adapter1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_login.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/head_fridge_history_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_fridge_history_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/makeable.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/makeable.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_food_fridge_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_food_fridge_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment1_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment1_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/dialog_food_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/dialog_food_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment2_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment2_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/editfridge_adapter21.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge_adapter21.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment4_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment4_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment3_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment3_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/adapter_food_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/editfridge_adapter22.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge_adapter22.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/list_adapter2.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/list_adapter2.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/alert_history_adapter.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alert_history_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/view_recycle.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/view_recycle.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/todo_list_adapter.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/todo_list_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_cust22222.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_cust22222.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_all_food.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_all_food.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/adapter_food_fridge_list_item.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_fridge_list_item.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/head_food_fridge_list.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_food_fridge_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_settimedb.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_settimedb.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_my_fridge.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_my_fridge.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/activity_main_activityreg.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_main_activityreg.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_blank.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_blank.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/editfridge2_layout.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge2_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout/fragment_home.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_home.xml"
+    }
+]

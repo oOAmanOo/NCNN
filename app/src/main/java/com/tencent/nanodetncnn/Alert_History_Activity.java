@@ -40,7 +40,6 @@ public class Alert_History_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Bundle bundle = getIntent().getExtras();
         uid = bundle.getString("data_uid");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert_history);
         noAlertContent = findViewById(R.id.noAlertContent);
@@ -48,9 +47,10 @@ public class Alert_History_Activity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Alert_History_Activity.this,MainActivity.class);
+                Intent intent = new Intent(Alert_History_Activity.this, MainActivitywelcomeverify.class);
                 Bundle bundl = new Bundle();
                 bundl.putString("data_uid", uid);
+                bundl.putString("to", "MainActivity");
                 intent.putExtras(bundl);   // put進去
                 startActivity(intent);
             }
@@ -75,9 +75,7 @@ public class Alert_History_Activity extends AppCompatActivity {
                 HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?uid="+uid);//宣告使用post方法連線
                 HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
                 HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
-
                 InputStream inputStream = httpEntity.getContent();//宣告輸入串流
-
                 //讀取輸入船劉並存到字串
                 //取得資料後可在此處理
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
@@ -89,11 +87,9 @@ public class Alert_History_Activity extends AppCompatActivity {
                 }
                 inputStream.close();
                 result = box;
-
             }catch (Exception e){
                 result = e.toString();
             }
-
 
             // 當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
@@ -112,7 +108,6 @@ public class Alert_History_Activity extends AppCompatActivity {
         JSONObject listdata = null;
 
         count = 0;
-
 
         try{
             obj = new JSONObject(result_todo);
@@ -138,17 +133,10 @@ public class Alert_History_Activity extends AppCompatActivity {
     }
     public void throwtoadapter(){
         recyclerView = findViewById(R.id.alert_recylerview);
-
         AlertHistoryAdapter listAdapter = new AlertHistoryAdapter(getApplicationContext(),alertname,alerttime,alertcontent);
-
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-
         recyclerView.setLayoutManager(linearLayoutManager);
-
         recyclerView.setAdapter(listAdapter);
-
-
     }
 
 

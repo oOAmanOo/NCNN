@@ -1,0 +1,866 @@
+[
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_banana.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/banana.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic7.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic7.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic20.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic20.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_edit.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_edit.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_water.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/water.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_merge_recipe_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_merge_recipe_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_guava.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/guava.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_login.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_bamboo.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/bamboo.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_crop_din_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_crop_din_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-mdpi_ic_launcher_white.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-mdpi/ic_launcher_white.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_unchecked.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/unchecked.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_merge_list_adapter.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/merge_list_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_top_back1.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/top_back1.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_playlist_add_check_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_playlist_add_check_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxhdpi_ic_launcher_white.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxhdpi/ic_launcher_white.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_food_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_food_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_search.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_list_adapter4.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/list_adapter4.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_fitness_center_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_fitness_center_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_milk_powder.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/milk_powder.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_garlic.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/garlic.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_appbar.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/appbar.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_how_to_reg_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_how_to_reg_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_cust22222.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_cust22222.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_a10_bg_shape_1.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/a10_bg_shape_1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_pumpkin.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/pumpkin.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_pumpkin.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/pumpkin.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_normal.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/normal.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_accessibility_new_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_accessibility_new_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_view_recycle_sliding.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/view_recycle_sliding.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_fitness.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/fitness.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_ready_to_eat.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_ready_to_eat.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_carrot.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/carrot.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment2_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment2_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_flour.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/flour.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_food_fridge_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_food_fridge_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_diet.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/diet.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_notifications.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_boneless.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/boneless.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_guava.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/guava.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_head_food_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_food_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_fastfood_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_fastfood_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_alert_history_adapter.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alert_history_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic5.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic5.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_list.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/list.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_a10_bg_shape_3.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/a10_bg_shape_3.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_curry.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/curry.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_merge_detail.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_merge_detail.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_honey.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/honey.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_editmode.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_editmode.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_home.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_potato.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/potato.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_flour.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/flour.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_lotus.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/lotus.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_egg.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/egg.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_boneless.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/boneless.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_search_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_eggplant.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/eggplant.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_adapter_food_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_olive_oil.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/olive_oil.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_circle_notifications_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_circle_notifications_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_aa_bg_shape_co1.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/aa_bg_shape_co1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_to_do_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_to_do_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_milk_powder.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/milk_powder.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_my_fridge.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_my_fridge.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_onion.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/onion.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_curry.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/curry.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_todo_list_adapter.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/todo_list_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_honey.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/honey.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_apple.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/apple.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_ginger.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/ginger.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_editfridge2_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge2_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/menu_button_nav_menu.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/menu/button_nav_menu.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic18.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic18.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_eggplant.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/eggplant.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_aa_bg_shape_w.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/aa_bg_shape_w.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_verified_user_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_verified_user_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout-w1240dp_activity_login.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout-w1240dp/activity_login.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_expired_adapter.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/expired_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xhdpi_ic_add_blue.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xhdpi/ic_add_blue.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment4_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment4_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxhdpi_ic_add_blue.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxhdpi/ic_add_blue.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic6.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic6.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_bell_pepper.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/bell_pepper.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-mdpi_ic_add_blue.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-mdpi/ic_add_blue.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_ginger.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/ginger.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_passvaluecust.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_passvaluecust.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_view_recycle.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/view_recycle.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_verify_main.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/verify_main.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_carrot.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/carrot.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment1_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment1_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-hdpi_ic_launcher_white.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-hdpi/ic_launcher_white.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_water.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/water.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_bingologo.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/bingologo.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_fridge_history_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_fridge_history_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_cust3.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_cust3.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_flour.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/flour.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_dialog_food_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/dialog_food_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_all_food.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_all_food.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_access_time_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_access_time_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_banana.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/banana.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_vpn_key_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_vpn_key_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_aa_bg_shape_co1g.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/aa_bg_shape_co1g.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_blank.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_blank.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_relax.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/relax.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_lotus.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/lotus.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_pumpkin.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/pumpkin.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_bingo.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/bingo.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_egg.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/egg.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_all_food_adapter.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/all_food_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic1.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic1.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_milk_powder.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/milk_powder.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_main_activitywelcome.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_main_activitywelcome.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_local_phone_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_local_phone_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_top_back1.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/top_back1.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher_white.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxxhdpi/ic_launcher_white.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_main_activityreg.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_main_activityreg.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/xml_data_extraction_rules.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_honey.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/honey.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_apple.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/apple.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_checked.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/checked.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_garlic.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/garlic.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic2.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic2.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_aa_bg_shape_recipe.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/aa_bg_shape_recipe.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_editfridge4_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge4_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_settimedb.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_settimedb.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_eggplant.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/eggplant.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_head_food_list_edit.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_food_list_edit.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_garlic.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/garlic.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_adapter_food_fridge_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_fridge_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment3_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment3_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_editfridge_adapter22.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge_adapter22.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_alarmdialog_food_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alarmdialog_food_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_carrot.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/carrot.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_main.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxxhdpi_ic_add_blue.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxxhdpi/ic_add_blue.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_ginger.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/ginger.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_adapter_fridge_history_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_fridge_history_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_access_alarms_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_access_alarms_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout-w936dp_activity_login.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout-w936dp/activity_login.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_cust1.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_cust1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_dialog_food_adapter.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/dialog_food_adapter.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_alert_history.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_alert_history.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_drive_file_rename_outline_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_drive_file_rename_outline_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_banana.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/banana.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_manage.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/manage.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_question.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/question.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_potato.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/potato.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_home_black_24dp.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_bamboo.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/bamboo.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_dialog_yes_no.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/dialog_yes_no.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_profile.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_dashboard.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic3.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic3.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-hdpi_ic_add_blue.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-hdpi/ic_add_blue.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_alert.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/alert.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xhdpi_ic_launcher_white.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xhdpi/ic_launcher_white.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_alarmdialog_recipe_fridge_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alarmdialog_recipe_fridge_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_makeable.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/makeable.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_curry.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/curry.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_general.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/general.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_food_bank_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_food_bank_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_fragment_startedit.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/fragment_startedit.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_onion.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/onion.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_nopic1.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/nopic1.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_olive_oil.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/olive_oil.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_boneless.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/boneless.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_guava.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/guava.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/xml_backup_rules.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_list_adapter1.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/list_adapter1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_aa_bg_shape_a1.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/aa_bg_shape_a1.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_apple.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/apple.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic4.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic4.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_pic14.jpg.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/pic14.jpg"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_aa_btn_confirm.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/aa_btn_confirm.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_activity_passvalue.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/activity_passvalue.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_a10_bg_shape_2.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/a10_bg_shape_2.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_editfridge3_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge3_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_egg.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/egg.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_adapter_food_list_item.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_list_item.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_alarmdialog_recipe_mode_layout.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/alarmdialog_recipe_mode_layout.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_lotus.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/lotus.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_search.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/search.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_shape_dialog_bg_circle.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/shape_dialog_bg_circle.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_head_food_fridge_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_food_fridge_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xhdpi_water.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xhdpi/water.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_olive_oil.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/olive_oil.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_onion.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/onion.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_adapter_food_fridge_list_item.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_food_fridge_list_item.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_top_back1.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/top_back1.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_adapter_fridge_history_list_item.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/adapter_fridge_history_list_item.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_potato.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/potato.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_bell_pepper.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/bell_pepper.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxhdpi_bell_pepper.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxhdpi/bell_pepper.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_keyboard_backspace_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_keyboard_backspace_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_list_adapter2.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/list_adapter2.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable_ic_baseline_person_24.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable/ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/drawable-xxxhdpi_bamboo.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/drawable-xxxhdpi/bamboo.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_head_fridge_history_list.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/head_fridge_history_list.xml"
+    },
+    {
+        "merged": "com.tencent.nanodetncnn.app-merged_res-5:/layout_editfridge_adapter21.xml.flat",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout/editfridge_adapter21.xml"
+    }
+]

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.gu.android:toolargetool:0.3.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/dc275c30ba5ef1002faf0dc9ff89480d/transformed/jetified-toolargetool-0.3.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/transforms-3/dc275c30ba5ef1002faf0dc9ff89480d/transformed/jetified-toolargetool-0.3.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/modules-2/files-2.1/com.gu.android/toolargetool/0.3.0/c05ce80292cd77742845668a1fc58883179d842d/toolargetool-0.3.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../ncnn-Android-Yolov5/gradle/caches/modules-2/files-2.1/com.gu.android/toolargetool/0.3.0/72553189a10b456f057ce880534a3eaadd65a4d0/toolargetool-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

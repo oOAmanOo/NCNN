@@ -16,6 +16,7 @@ package com.tencent.nanodetncnn;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -86,6 +87,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     public static int addNum = 0;
     public static String uid;
     public static String confirm_class_list[];
+    public static String confirm_class_imgName[];
     public static String class_list_checked[];
     public static String fridge_did[] = new String[50];
     public static String fridge_name[] = new String[50];
@@ -109,7 +111,8 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     Handler handler;
     private SurfaceView cameraView;
     public static String result;
-
+    public static Activity verify_finish;
+    public static int loading_done = 0;
 
     public Verify_Activity() throws IOException{
 
@@ -120,35 +123,31 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        Bundle bundle = getIntent().getExtras();
-        uid = bundle.getString("data_uid");
+        verify_finish = this;
+//        Bundle bundle = getIntent().getExtras();
+//        uid = bundle.getString("data_uid");
 
         getActionBar().hide();
         File file_test = new File("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt");
         file_test.delete();
-        System.out.println(0);
-        final FragmentManager fm = getSupportFragmentManager() ;
+
+
+         FragmentManager fm = getSupportFragmentManager() ;
 
         super.onCreate(savedInstanceState);
+//        MainActivity.profilereload_MainActivity.finishAndRemoveTask();
         setContentView(R.layout.verify_main);
         mContext = Verify_Activity.this;
         mContext2 = this;
-        System.out.println(0);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        System.out.println(0);
         Thread thread = new Thread(multiThread);
         thread.start();
-        System.out.println(0);
         cameraView = (SurfaceView) findViewById(R.id.cameraview);
 //        outsidecamera.addView(cameraView);
-        System.out.println(0);
         cameraView.getHolder().setFormat(PixelFormat.RGBA_8888);
-        System.out.println(0);
         cameraView.getHolder().addCallback(this);
-        System.out.println(0);
         Button buttonSwitchCamera = (Button) findViewById(R.id.buttonSwitchCamera);
-        System.out.println(1);
         buttonSwitchCamera.setOnClickListener(arg0 -> {
 
             int new_facing = 1 - facing;
@@ -199,12 +198,12 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
         ImageButton change_button_0 = (ImageButton) findViewById(R.id.change_button);
         change_button = change_button_0;
         change_button.setOnClickListener(view -> {
-            Intent intent = new Intent(Verify_Activity.this, MainActivity.class);
+            Intent intent = new Intent(Verify_Activity.this, MainActivitywelcomeverify.class);
             Bundle bundl = new Bundle();
             bundl.putString("data_uid", uid);
+            bundl.putString("to", "MainActivity");
             intent.putExtras(bundl);   // put進去
             startActivity(intent);
-            finish();
         });
 
         Button VarButton = (Button) findViewById(R.id.endVarify);
@@ -214,7 +213,10 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                 result_java = '1';
                 VarButton.setText("完成辨識");
                 NcnnYolov5.varifyCheck(result_java);
+                onPause();
+                surfaceDestroyed(cameraView.getHolder());
             }else {
+                surfaceCreated(cameraView.getHolder());
                 result_java = '2';
                 VarButton.setText("開始辨識");
                 NcnnYolov5.varifyCheck(result_java);
@@ -245,17 +247,19 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
 //        ********************************************************************************************
 
                     confirm_class_list = class_list.toArray(new String[class_list.size()]);
+                    confirm_class_imgName = class_list.toArray(new String[class_list.size()]);
                     class_list_checked = class_list.toArray(new String[class_list.size()]);
 
                     check = confirm_class_list.length;
                     try {
                         obj = new JSONObject(result);
-                        table = obj.getJSONArray("food_dic");
-                        for (int i = 0; i < table.length(); i++) {
+                        table = obj.getJSONArray("food_dic_ver");
+                        for (int i = 0; i < 87; i++) {
                             data = table.getJSONObject(i);
                             for (int j = 0; j < confirm_class_list.length; j++) {
                                 if (data.getString("engName").equals(confirm_class_list[j])) {
                                     confirm_class_list[j] = data.getString("name");
+                                    confirm_class_imgName[j] = data.getString("imgName");
                                     --check;
                                     break;
                                 }
@@ -295,6 +299,9 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                 }
             }
         });
+        if(loading_done == 0){
+            loading_done = 1;
+        }
         reload();
     }
 

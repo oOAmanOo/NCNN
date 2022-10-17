@@ -21,7 +21,6 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
     ArrayList Recipeimages, Recipenames,Recipefood, Recipesugar, Recipesalt, Recipeoil;
 
 
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
@@ -57,9 +56,10 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
                 holder.recipe_tag.setText(null);
             }
             else{
-                holder.recipe_tag.setText(NormalRecipeList.allRecipeSugar[position]+"糖"+NormalRecipeList.allRecipeSalt[position]+"鹽"+NormalRecipeList.allRecipeOil[position]+"油");
+                holder.recipe_tag.setText(NormalRecipeList.allRecipeSugar[position]+"糖"+"/"+NormalRecipeList.allRecipeSalt[position]+"鹽"+"/"+NormalRecipeList.allRecipeOil[position]+"油");
             }
             holder.recipe_img.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(NormalRecipeList.imgName[position]),"drawable", context.getPackageName()));
+
         }
         else if(mode == "manage"){
             holder.recipe_name.setText(ManageRecipeList.allRecipeNames[position]);
@@ -68,7 +68,7 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
                 holder.recipe_tag.setText(null);
             }
             else{
-                holder.recipe_tag.setText(ManageRecipeList.allRecipeSugar[position]+"糖"+ManageRecipeList.allRecipeSalt[position]+"鹽"+ManageRecipeList.allRecipeOil[position]+"油");
+                holder.recipe_tag.setText(ManageRecipeList.allRecipeSugar[position]+"糖"+"/"+ManageRecipeList.allRecipeSalt[position]+"鹽"+"/"+ManageRecipeList.allRecipeOil[position]+"油");
             }
 
             holder.recipe_img.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(ManageRecipeList.imgName[position]),"drawable", context.getPackageName()));
@@ -80,7 +80,7 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
                 holder.recipe_tag.setText(null);
             }
             else{
-                holder.recipe_tag.setText(FitnessRecipeList.allRecipeSugar[position]+"糖"+FitnessRecipeList.allRecipeSalt[position]+"鹽"+FitnessRecipeList.allRecipeOil[position]+"油");
+                holder.recipe_tag.setText(FitnessRecipeList.allRecipeSugar[position]+"糖"+"/"+FitnessRecipeList.allRecipeSalt[position]+"鹽"+"/"+FitnessRecipeList.allRecipeOil[position]+"油");
             }
 
             holder.recipe_img.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(FitnessRecipeList.imgName[position]),"drawable", context.getPackageName()));
@@ -92,7 +92,7 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
                 holder.recipe_tag.setText(null);
             }
             else{
-                holder.recipe_tag.setText(RelaxRecipeList.allRecipeSugar[position]+"糖"+RelaxRecipeList.allRecipeSalt[position]+"鹽"+RelaxRecipeList.allRecipeOil[position]+"油");
+                holder.recipe_tag.setText(RelaxRecipeList.allRecipeSugar[position]+"糖"+"/"+RelaxRecipeList.allRecipeSalt[position]+"鹽"+"/"+RelaxRecipeList.allRecipeOil[position]+"油");
             }
 
             holder.recipe_img.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(RelaxRecipeList.imgName[position]),"drawable", context.getPackageName()));
@@ -115,7 +115,7 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
                 holder.recipe_tag.setText(null);
             }
             else{
-                holder.recipe_tag.setText(AllRecipeList.allRecipeSugar[position]+"糖"+AllRecipeList.allRecipeSalt[position]+"鹽"+AllRecipeList.allRecipeOil[position]+"油");
+                holder.recipe_tag.setText(AllRecipeList.allRecipeSugar[position]+"糖"+"/"+AllRecipeList.allRecipeSalt[position]+"鹽"+"/"+AllRecipeList.allRecipeOil[position]+"油");
             }
             if(AllRecipeList.imgName[position] ==null){
                 holder.recipe_img.setImageResource(R.drawable.ic_baseline_access_time_24);
@@ -126,14 +126,12 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
         }else if(mode == "autosearch"){
             if(AutoRecipeList.allRecipeNames[position] == null){
                 holder.recipe_name.setText(null);
-
             }
             else{
                 holder.recipe_name.setText(AutoRecipeList.allRecipeNames[position]);
             }
             if(AutoRecipeList.allRecipeFood[position] == null){
                 holder.recipe_food.setText(null);
-
             }
             else{
                 holder.recipe_food.setText(AutoRecipeList.allRecipeFood[position]);
@@ -159,7 +157,7 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
 
     @Override
     public int getItemCount() {
-
+        System.out.println("Recipenames.size() "+Recipenames.size());
         return Recipenames.size();
     }
 

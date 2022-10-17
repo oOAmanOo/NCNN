@@ -29,7 +29,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
-
+        System.out.println("onCreateViewHolder");
         return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.todo_list_adapter,parent,false),mlistener);
 
     }
@@ -49,12 +49,12 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyView
         holder.listname.setText(listname[position]+": ");
         holder.listfood.setText("待辦內容: "+listfood[position]);
         holder.listtime.setText("每日 "+listtime[position]);
-
+        System.out.println("setText"+position);
     }
 
     @Override
     public int getItemCount() {
-
+        System.out.println("getItemCount"+ToDoListActivity.count);
         return ToDoListActivity.count;
     }
 
@@ -73,6 +73,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyView
             listtime = itemView.findViewById(R.id.listtime);
             listfood = itemView.findViewById(R.id.listfood);
             listdone = itemView.findViewById(R.id.listdone);
+            System.out.println("getItem");
 
             listdone.setOnClickListener(new View.OnClickListener() {
                 @Override

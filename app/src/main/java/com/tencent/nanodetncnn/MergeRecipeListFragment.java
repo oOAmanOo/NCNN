@@ -61,9 +61,22 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(currentMode == "autosearch"){
+                    MainActivity.normal_start = 0;
+                    MainActivity.manage_start = 0;
+                    MainActivity.fitness_start = 0;
+                    MainActivity.relax_start = 0;
+                    MainActivity.allmode_start = 0;
+                    MainActivity.auto_start = 0;
                     replaceFragment(new MyFridgeFragment());
                 }else{
+                    MainActivity.normal_start = 0;
+                    MainActivity.manage_start = 0;
+                    MainActivity.fitness_start = 0;
+                    MainActivity.relax_start = 0;
+                    MainActivity.allmode_start = 0;
+                    MainActivity.auto_start = 0;
                     replaceFragment(new SearchFragment());
                 }
                 backbtn.setVisibility(View.INVISIBLE);
@@ -71,10 +84,9 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
         });
 
         if(currentMode == "normal"){
+            while(MainActivity.normal_loop == 1){System.out.println(".");}
             modeText.setText("一般模式");
-
             for( int i = 0; i < NormalRecipeList.recipeindex; i++) {
-
                 Recipeimages.add(NormalRecipeList.imgName);
                 Recipenames.add(NormalRecipeList.allRecipeNames);
                 Recipefood.add(NormalRecipeList.allRecipeFood);
@@ -89,8 +101,8 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
             MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "fitness"){
+            while(MainActivity.fitness_loop == 1){System.out.println(".");}
             modeText.setText("健身模式");
-
             for( int i = 0; i < FitnessRecipeList.recipeindex; i++) {
                 Recipeimages.add(FitnessRecipeList.imgName);
                 Recipenames.add(FitnessRecipeList.allRecipeNames);
@@ -106,8 +118,8 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
             MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "manage"){
+            while(MainActivity.manage_loop == 1){System.out.println(".");}
             modeText.setText("管理模式");
-
             for( int i = 0; i < ManageRecipeList.recipeindex; i++) {
                 Recipeimages.add(ManageRecipeList.imgName);
                 Recipenames.add(ManageRecipeList.allRecipeNames);
@@ -123,8 +135,8 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
             MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "relax"){
+            while(MainActivity.relax_loop == 1){System.out.println(".");}
             modeText.setText("頹廢模式");
-
             for( int i = 0; i < RelaxRecipeList.recipeindex; i++) {
                 Recipeimages.add(RelaxRecipeList.imgName);
                 Recipenames.add(RelaxRecipeList.allRecipeNames);
@@ -140,8 +152,9 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
             MergeDetailFragment.getContext(getContext());
         }
         else if(currentMode == "search"){
-            modeText.setText(AllRecipeList.searchtext2);
-
+            while(MainActivity.allmode_loop == 1){System.out.println(".");}
+            modeText.setText(SearchFragment.text);
+            modeText.setText(SearchFragment.text);
             if(AllRecipeList.recipeindex == 0){
                 noSearchContent.setVisibility(View.VISIBLE);
             }
@@ -162,12 +175,12 @@ public class MergeRecipeListFragment extends Fragment implements View.OnTouchLis
             }
         }
         else if(currentMode == "autosearch") {
+            while(MainActivity.auto_loop == 1){System.out.println(".");}
             modeText.setText(currentName);
-
-            if (AutoRecipeList.count == 0) {
+            if (AutoRecipeList.recipeindex == 0) {
                 noSearchContent.setVisibility(View.VISIBLE);
             } else {
-                for (int i = 0; i < AutoRecipeList.count; i++) {
+                for (int i = 0; i < AutoRecipeList.recipeindex; i++) {
                     Recipeimages.add(AutoRecipeList.imgName);
                     Recipenames.add(AutoRecipeList.allRecipeNames);
                     Recipefood.add(AutoRecipeList.allRecipeFood);

@@ -28,7 +28,7 @@ import recycler.ListAdapter;
 public class fragment1 extends DialogFragment {
 
 //    @Nullable
-    public Dialog dialog1;
+    public static Dialog dialog1;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1_layout, container);
@@ -75,7 +75,7 @@ public class fragment1 extends DialogFragment {
                         JSONArray table = null;
                         JSONObject data = null;
                         obj = new JSONObject(Verify_Activity.result);
-                        table = obj.getJSONArray("food_dic");
+                        table = obj.getJSONArray("food_dic_ver");
                         for (int i = 0; i < table.length(); i++) {
                             data = table.getJSONObject(i);
                             for (int j = 0; j < Verify_Activity.confirm_class_list.length; j++) {

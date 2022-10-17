@@ -1,0 +1,23 @@
+                    Executable : /home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/home/bingo/Public/NCNN/app/src/main/jni
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=24
+-DANDROID_PLATFORM=android-24
+-DANDROID_ABI=x86_64
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DANDROID_NDK=/home/bingo/Android/Sdk/ndk/25.0.8775105
+-DCMAKE_ANDROID_NDK=/home/bingo/Android/Sdk/ndk/25.0.8775105
+-DCMAKE_TOOLCHAIN_FILE=/home/bingo/Android/Sdk/ndk/25.0.8775105/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/home/bingo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/bingo/Public/NCNN/app/build/intermediates/cxx/RelWithDebInfo/2y4u4r6z/obj/x86_64
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/home/bingo/Public/NCNN/app/build/intermediates/cxx/RelWithDebInfo/2y4u4r6z/obj/x86_64
+-DCMAKE_BUILD_TYPE=RelWithDebInfo
+-B/home/bingo/Public/NCNN/app/.cxx/RelWithDebInfo/2y4u4r6z/x86_64
+-GNinja
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 2

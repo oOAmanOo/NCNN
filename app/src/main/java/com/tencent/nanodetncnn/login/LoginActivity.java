@@ -212,6 +212,7 @@ public class LoginActivity extends AppCompatActivity {
                     bundle.putString("data_uid",usernameEditText.getText().toString());
                     intent.putExtras(bundle);   // put進去
                     startActivity(intent);
+                    finish();
                 }
 
             } catch (JSONException e) {

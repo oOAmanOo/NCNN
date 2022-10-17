@@ -5,6 +5,43 @@ import org.json.JSONObject;
 
 import java.util.Objects;
 
+//            obj = new JSONObject(result2);
+//            recipe = obj.getJSONArray("recipe");
+//
+//            int j = 0;
+//            int z = 0;
+//            recipeindex = 0;
+//            if(searchtext3 == null){
+//                allRecipeId[j] = null;
+//                imgName[j] = null;
+//                allRecipeSugar[j] = null;
+//                allRecipeSalt[j] = null;
+//                allRecipeOil[j] = null;
+//                allRecipeNames[j] = null;
+//                allRecipeFood[j] = null;
+//            }
+//
+//
+//            for (int i =0; i< 30;++i){ // 從第一筆食譜看
+//                recipedata = recipe.getJSONObject(i); //得到單筆食譜資料
+//
+//                if(recipedata.getString("name").contains(searchtext3)){ //當前搜尋字與該筆食譜名稱相同
+//
+//                    allRecipeId[j] = recipedata.getString("rid");
+//                    imgName[j] = recipedata.getString("imgName");
+//                    allRecipeSugar[j] = recipedata.getString("sugar");
+//                    allRecipeSalt[j] = recipedata.getString("salt");
+//                    allRecipeOil[j] = recipedata.getString("oil");
+//                    allRecipeNames[j] = recipedata.getString("name");
+//                    allRecipeSteps[j] =recipedata.getString("step");
+//                    ++j;
+//                    ++recipeindex;
+//                }
+//                else{
+//                    continue;
+//                }
+//            }
+//            recipe_fetch(allRecipeId);
 
 public class AllRecipeList {//    setText要用的
     public static String[] allRecipeId = new String[500];
@@ -46,89 +83,120 @@ public class AllRecipeList {//    setText要用的
     public static String result2 = null;
     public static String searchtext2 = null;
 
-    public static void search(String searchtext) {
-        recipe_food_num = 0;
-        searchtext2 = searchtext;
-        recipe(searchtext2);
-    }
+//    public static void search(String searchtext) {
+//        recipe_food_num = 0;
+//        searchtext2 = searchtext;
+//        recipe();
+//    }
 
-    public static void result(String result) {
-        result2 = result;
-    }
-    public static void result1(String result) {
-        result1 = result;
-    }
-    public static void recipe(String searchtext3) {
+//    public static void result(String result) {
+//        result2 = result;
+//    }
+//    public static void result1(String result) {
+//        result1 = result;
+//    }
+    public static void recipe(String result) {
         allRecipeId = new String[500];
         imgName = new String[500];
         allRecipeNames = new String[500];
         allRecipeSteps = new String[500];
-
         allRecipeSugar = new String[500];
         allRecipeSalt = new String[500];
         allRecipeOil = new String[500];
-
-        recipefoodRid = new String[500];
-        recipefoodDid = new String[500];
-
-        allfoodDid = new String[800];
-        allfoodName = new String[800];
-        allfoodImg = new String[800];
-
         allRecipeFood= new String[500];
         allRecipeDid= new String[500];
         allRecipeFoodImg = new String[500];
-
+        recipefoodRid = new String[800];
+        recipefoodDid = new String[800];
+        recipefoodName = new String[800];
+        recipefoodImg = new String[800];
+        recipeName = new String[800];
+        recipeSteps = new String[800];
+        recipeImg = new String[800];
+        recipeSugar = new String[800];
+        recipeSalt = new String[800];
+        recipeOil = new String[800];
+        allfoodDid = new String[800];
+        allfoodName = new String[800];
+        allfoodImg = new String[800];
         recipe_food_num = 0;
         recipeindex = 0;
-
+        lastnum = 0;
         allfoodhistoryDid = new String[1000];
         allfoodhistoryName = new String[1000];
 
         JSONObject obj = null;
         JSONArray recipe = null;
         JSONObject recipedata = null;
+        String tempRid = null;//現在進來的RID
+        String currentRid = null;//正在使用的RID
 
         try{
-            obj = new JSONObject(result2);
-
-            recipe = obj.getJSONArray("recipe");
-
+            recipe = new JSONArray(result);
             int j = 0;
             int z = 0;
-            recipeindex = 0;
-            if(searchtext3 == null){
-                allRecipeId[j] = null;
-                imgName[j] = null;
-                allRecipeSugar[j] = null;
-                allRecipeSalt[j] = null;
-                allRecipeOil[j] = null;
-                allRecipeNames[j] = null;
-                allRecipeFood[j] = null;
-            }
-
-
-            for (int i =0; i< 37;++i){ // 從第一筆食譜看
+            for (int i =0; i< recipe.length();++i){ // 從第一筆食譜看
                 recipedata = recipe.getJSONObject(i); //得到單筆食譜資料
+                recipefoodRid[i] = recipedata.getString("rid");
+                recipefoodDid[i] = recipedata.getString("did");
+                recipefoodName[i] = recipedata.getString("foodName");
+                recipefoodImg[i] = recipedata.getString("foodimgName");
+                recipeName[i] = recipedata.getString("name");
+                recipeSteps[i] =recipedata.getString("step");
+                recipeImg[i] = recipedata.getString("imgName");
+                recipeSugar[i] = recipedata.getString("sugar");
+                recipeSalt[i] = recipedata.getString("salt");
+                recipeOil[i] = recipedata.getString("oil");
+            }
+            for (int i = 0; i < recipefoodRid.length; i++) {
+//            System.out.println("recipedata = "+recipedata);
+                tempRid = recipefoodRid[i];
+                if(currentRid == null || currentRid.equals(tempRid)){
+                    currentRid = tempRid;
 
-                if(recipedata.getString("name").contains(searchtext3)){ //當前搜尋字與該筆食譜名稱相同
+                    allfoodName[j] = recipefoodName[i];
+                    allfoodDid[j] = recipefoodDid[i];
+                    allfoodImg[j] = recipefoodImg[i];
 
-                    allRecipeId[j] = recipedata.getString("rid");
-                    imgName[j] = recipedata.getString("imgName");
-                    allRecipeSugar[j] = recipedata.getString("sugar");
-                    allRecipeSalt[j] = recipedata.getString("salt");
-                    allRecipeOil[j] = recipedata.getString("oil");
-                    allRecipeNames[j] = recipedata.getString("name");
-                    allRecipeSteps[j] =recipedata.getString("step");
                     ++j;
-                    ++recipeindex;
                 }
-                else{
-                    continue;
+                else if(!Objects.equals(tempRid, currentRid)){
+                    allRecipeId[recipeindex] = recipefoodRid[i-1];
+                    allRecipeNames[recipeindex] = recipeName[i-1];
+                    allRecipeSteps[recipeindex] =recipeSteps[i-1];
+                    imgName[recipeindex] = recipeImg[i-1];
+                    allRecipeSugar[recipeindex] = recipeSugar[i-1];
+                    allRecipeSalt[recipeindex] = recipeSalt[i-1];
+                    allRecipeOil[recipeindex] = recipeOil[i-1];
+                    lastnum = i;
+                    ++recipeindex;
+
+
+                    recipefood(allfoodName,allfoodDid,allfoodImg);
+                    allfoodName = new String[800];
+                    allfoodDid = new String[800];
+                    allfoodImg = new String[800];
+                    currentRid = tempRid;
+
+                    j = 0;
+                    allfoodName[j] = recipefoodName[i];
+                    allfoodDid[j] = recipefoodDid[i];
+                    allfoodImg[j] = recipefoodImg[i];
+                    ++j;
                 }
             }
-            recipe_fetch(allRecipeId);
-
+            allRecipeId[recipeindex] = recipefoodRid[lastnum];
+            allRecipeNames[recipeindex] = recipeName[lastnum];
+            allRecipeSteps[recipeindex] =recipeSteps[lastnum];
+            imgName[recipeindex] = recipeImg[lastnum];
+            allRecipeSugar[recipeindex] = recipeSugar[lastnum];
+            allRecipeSalt[recipeindex] = recipeSalt[lastnum];
+            allRecipeOil[recipeindex] = recipeOil[lastnum];
+//            ++recipeindex;
+            recipefood(allfoodName,allfoodDid,allfoodImg);
+            allfoodName = new String[800];
+            allfoodDid = new String[800];
+            allfoodImg = new String[800];
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -225,6 +293,7 @@ public class AllRecipeList {//    setText要用的
                 break;
             }
         }
+        MainActivity.allmode_loop = 0;
         recipe_food_num++;
     }
 

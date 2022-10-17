@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -50,25 +51,28 @@ public class FitnessRecipeList {  //    setText要用的
         imgName = new String[500];
         allRecipeNames = new String[500];
         allRecipeSteps = new String[500];
-
         allRecipeSugar = new String[500];
         allRecipeSalt = new String[500];
         allRecipeOil = new String[500];
-
-        recipefoodRid = new String[500];
-        recipefoodDid = new String[500];
-
-        allfoodDid = new String[800];
-        allfoodName = new String[800];
-        allfoodImg = new String[800];
-
         allRecipeFood= new String[500];
         allRecipeDid= new String[500];
         allRecipeFoodImg = new String[500];
-
+        recipefoodRid = new String[800];
+        recipefoodDid = new String[800];
+        recipefoodName = new String[800];
+        recipefoodImg = new String[800];
+        recipeName = new String[800];
+        recipeSteps = new String[800];
+        recipeImg = new String[800];
+        recipeSugar = new String[800];
+        recipeSalt = new String[800];
+        recipeOil = new String[800];
+        allfoodDid = new String[800];
+        allfoodName = new String[800];
+        allfoodImg = new String[800];
         recipe_food_num = 0;
         recipeindex = 0;
-
+        lastnum = 0;
         allfoodhistoryDid = new String[1000];
         allfoodhistoryName = new String[1000];
 
@@ -82,7 +86,7 @@ public class FitnessRecipeList {  //    setText要用的
         try {  recipe = new JSONArray(result);
             int j = 0;
             int z = 0;
-            for (int i =0; i< 37;++i){ // 從第一筆食譜看
+            for (int i =0; i< recipe.length();++i){ // 從第一筆食譜看
                 recipedata = recipe.getJSONObject(i); //得到單筆食譜資料
                 recipefoodRid[i] = recipedata.getString("rid");
                 recipefoodDid[i] = recipedata.getString("did");
@@ -96,7 +100,7 @@ public class FitnessRecipeList {  //    setText要用的
                 recipeOil[i] = recipedata.getString("oil");
 
             }
-            for (int i = 0; i < 37; i++) {
+            for (int i = 0; i < recipe.length(); i++) {
                 tempRid = recipefoodRid[i];
                 if(currentRid == null || currentRid.equals(tempRid)){
                     currentRid = tempRid;
@@ -184,6 +188,8 @@ public class FitnessRecipeList {  //    setText要用的
                 break;
             }
         }
+        System.out.println("allRecipeFood "+ Arrays.toString(allRecipeFood));
+        MainActivity.fitness_loop = 0;
         recipe_food_num++;
 
     }

@@ -80,7 +80,8 @@
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/MyTheme" />
+            android:theme="@style/MyTheme" >
+        </activity>
         <activity
             android:name="com.tencent.nanodetncnn.login.LoginActivity"
             android:exported="false"
@@ -93,6 +94,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.nanodetncnn.MainActivitywelcomeverify"
+            android:exported="true" >
         </activity>
         <activity
             android:name="com.tencent.nanodetncnn.MainActivityreg"

@@ -174,10 +174,11 @@ public class FoodListAdapter extends FrameLayout {
 
 
             Resources resources = getContext().getResources();
-            final int resourceId = resources.getIdentifier(map.imgName, "drawable",
-                    getContext().getPackageName());
-
-            viewHolder.adapter_food_list_item_pic.setImageResource(resourceId);
+//            final int resourceId = resources.getIdentifier(String.valueOf(map.imgName), "drawable",
+//                    getContext().getPackageName());
+            System.out.println(map.imgName);
+            viewHolder.adapter_food_list_item_pic.setImageResource(getContext().getApplicationContext().getResources().getIdentifier(String.valueOf(map.imgName), "drawable",
+                    getContext().getPackageName()));
 
 //            int tt_color = MyUtils.checkColorByType(map.alertDate,map.expireDate);
             switch (map.food_color) {

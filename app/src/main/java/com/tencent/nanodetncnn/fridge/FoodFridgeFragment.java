@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
-import com.tencent.nanodetncnn.AutoRecipeList;
 import com.tencent.nanodetncnn.MainActivity;
 import com.tencent.nanodetncnn.MergeRecipeListFragment;
 import com.tencent.nanodetncnn.MyApplication;
@@ -94,13 +93,22 @@ public class FoodFridgeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(foodModel.name.length() != 0){
-                    AutoRecipeList.search(foodModel.name);
+                    MainActivity.auto_loop = 1;
+                    MainActivity.auto_start = 1;
+                    MainActivity.thread1_run();
                     MergeRecipeListFragment.getMode("autosearch");
                     MergeRecipeListFragment.getSearch(foodModel.name);
                     MainActivity.scanBtn_public.setVisibility(View.INVISIBLE);
+                    while(MainActivity.auto_loop == 1){System.out.println(".");}
                     replaceFragment(new MergeRecipeListFragment());
                     foodModel.name = null;
+                    MainActivity.auto_start = 0;
+
                 }
+
+
+
+
             }
         });
 

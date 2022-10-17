@@ -92,7 +92,7 @@ public class MainActivityreg extends AppCompatActivity {
     private void dialogs() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivityreg.this);
 
-        builder.setTitle("成功");
+        builder.setTitle("註冊成功！");
         //System.out.println(result);//設置標題
         //builder.setIcon(R.mipmap.ic_launcher_round); //標題前面那個小圖示
         //builder.setMessage("帳號註冊成功！"); //提示訊息
@@ -113,33 +113,45 @@ public class MainActivityreg extends AppCompatActivity {
 
     private Runnable mutiThread = new Runnable() {
         public void run() {
-                // TODO Auto-generated method stub
-                try {
-                    HttpClient client = new DefaultHttpClient();
-                    HttpPost myPost = new HttpPost("http://140.117.71.11/user_insert.php");
-                    List<NameValuePair> params = new ArrayList<NameValuePair>();
-                    params.add(new BasicNameValuePair("uid", usercellphone.getText().toString()));
-                    params.add(new BasicNameValuePair("name", username.getText().toString()));
-                    params.add(new BasicNameValuePair("pw", password.getText().toString()));
-                    myPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-                    HttpResponse httpResponse = client.execute(myPost);//宣告HTTP回應物件
-                    HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
-                    InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+            //Looper.prepare();
+            // TODO Auto-generated method stub
 
-                    //讀取輸入船劉並存到字串
-                    //取得資料後可在此處理
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
-                    String box = "";
-                    String line = null;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        box += line;
-                        box += "\n";
-                    }
-                    inputStream.close();
-                    result = box;
-                } catch (Exception e) {
-                    result = e.toString();
+
+            try {
+                HttpClient client = new DefaultHttpClient();
+                HttpPost myPost = new HttpPost("http://140.117.71.11/user_insert.php");
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair("uid", usercellphone.getText().toString()));
+                params.add(new BasicNameValuePair("name", username.getText().toString()));
+                params.add(new BasicNameValuePair("pw", password.getText().toString()));
+                myPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+                //HttpResponse response = new DefaultHttpClient().execute(myPost);
+                //開始宣告HTTP連線需要的物件
+//                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+//                HttpResponse httpResponse = httpClient.execute(myPost);//宣告HTTP回應物件
+//                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+//                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+//                    HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
+                HttpResponse httpResponse = client.execute(myPost);//宣告HTTP回應物件
+                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
+                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
+
+                //讀取輸入船劉並存到字串
+                //取得資料後可在此處理
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                String box = "";
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    box += line;
+                    box += "\n";
                 }
+                inputStream.close();
+                result = box;
+                //System.out.println(1);
+            } catch (Exception e) {
+                result = e.toString();
+                //System.out.println(2);
+            }
             //當這個執行緒完全跑完後執行
             runOnUiThread(new Runnable() {
                 public void run() {
@@ -147,6 +159,7 @@ public class MainActivityreg extends AppCompatActivity {
                 }
             });
         }
+//    };
 
         private void updateUserData(String result) {
             try {
@@ -158,6 +171,36 @@ public class MainActivityreg extends AppCompatActivity {
                 }else {
                     dialogw();
                 }
+
+
+
+
+//            pw =child.getString("pw");
+//            if(passwordEditText.getText().toString().equals(pw)){
+//                Intent intent=new Intent(LoginActivity.this, MainActivityfuc.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("uid",usernameEditText.getText().toString());
+//                intent.putExtras(bundle);   // put進去
+//                startActivity(intent);
+//            }else{
+//                //dialogw();
+//                passwordEditText.setText("");//帳號密碼錯誤將密碼清空
+//            }
+//            ff.setText(result);
+//            mode= child.getString("mode");
+//            pwd =child.getString("password");
+//                String rid =child.getString("rid");
+//                String rname =child.getString("rname");
+//                String step =child.getString("step");
+//            Glide.with(this).load("img").into(recipe_image_id);
+
+//                Glide.with(this).load(Uri.parse(img)).into(recipe_image_id);
+                //textView.setText(pwd);
+//                recipeName_txt.setText(rname);
+//                step_txt.setText(step);
+//            progressDialog.hide();
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

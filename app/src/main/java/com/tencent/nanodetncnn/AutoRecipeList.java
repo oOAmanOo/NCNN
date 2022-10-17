@@ -7,9 +7,6 @@ import java.util.Objects;
 
 
 public class AutoRecipeList {
-
-
-
     //    setText要用的
     public static String[] allRecipeId = new String[500];
     public static String[] imgName = new String[500];
@@ -27,6 +24,12 @@ public class AutoRecipeList {
     public static String[] recipefoodDid = new String[800];
     public static String[] recipefoodName = new String[800];
     public static String[] recipefoodImg = new String[800];
+    public static String[] recipeName = new String[800];
+    public static String[] recipeSteps = new String[800];
+    public static String[] recipeImg = new String[800];
+    public static String[] recipeSugar = new String[800];
+    public static String[] recipeSalt = new String[800];
+    public static String[] recipeOil = new String[800];
 
     public static String[] allfoodDid = new String[800];
     public static String[] allfoodName = new String[800];
@@ -53,38 +56,46 @@ public class AutoRecipeList {
     public static boolean match;
 
 
-    public static void search(String searchtext1) {
-        searchtext2 = searchtext1;
-        System.out.println("searchtext2 ="+searchtext2);
-        recipe();
-    }
+//    public static void search(String searchtext1) {
+//        searchtext2 = searchtext1;
+//        System.out.println("searchtext2 ="+searchtext2);
+//        recipe();
+//    }
 
-    public static void recipe() {
+    public static void recipe(String result) {
+        result2 = null;
         allRecipeId = new String[500];
         imgName = new String[500];
         allRecipeNames = new String[500];
         allRecipeSteps = new String[500];
-
         allRecipeSugar = new String[500];
         allRecipeSalt = new String[500];
         allRecipeOil = new String[500];
-
-        recipefoodRid = new String[500];
-        recipefoodDid = new String[500];
-
-        allfoodDid = new String[800];
-        allfoodName = new String[800];
-        allfoodImg = new String[800];
-
         allRecipeFood= new String[500];
         allRecipeDid= new String[500];
         allRecipeFoodImg = new String[500];
-
+        recipefoodRid = new String[800];
+        recipefoodDid = new String[800];
+        recipefoodName = new String[800];
+        recipefoodImg = new String[800];
+        recipeName = new String[800];
+        recipeSteps = new String[800];
+        recipeImg = new String[800];
+        recipeSugar = new String[800];
+        recipeSalt = new String[800];
+        recipeOil = new String[800];
+        allfoodDid = new String[800];
+        allfoodName = new String[800];
+        allfoodImg = new String[800];
         recipe_food_num = 0;
         recipeindex = 0;
-
+        lastnum = 0;
         allfoodhistoryDid = new String[1000];
         allfoodhistoryName = new String[1000];
+        count = 0;
+        allRecipeFoodIndex = new int[800];
+        result2 = result;
+
 
         JSONObject obj = null;
         JSONArray recipe = null;
@@ -93,42 +104,32 @@ public class AutoRecipeList {
         String currentRid = null;//正在使用的RID
 
         try{
-            recipe = new JSONArray(result2);
+            recipe = new JSONArray(result);
+            System.out.println("recipe6  "+recipe);
             int j = 0;
             int z = 0;
             recipeindex = 0;
-
-            for (int i = 0; i < 37; i++) {
+//            if(result.length()>50)
+            for (int i = 0; i < recipe.length(); i++) {
                 recipedata = recipe.getJSONObject(i); //得到單筆食譜資料
-                System.out.println("recipedata.getString = "+recipedata.getString("foodName"));
-                if(Objects.equals(searchtext2, recipedata.getString("foodName"))){
-                    allRecipeFoodIndex[count] = i;
-                    allRecipeId[j] = recipedata.getString("rid");
-                    imgName[j] = recipedata.getString("imgName");
-                    allRecipeSugar[j] = recipedata.getString("sugar");
-                    allRecipeSalt[j] = recipedata.getString("salt");
-                    allRecipeOil[j] = recipedata.getString("oil");
-                    allRecipeNames[j] = recipedata.getString("name");
-                    allRecipeSteps[j] =recipedata.getString("step");
-                    detail_allRecipeFoodIndex[i] = j;
-                    System.out.println("j = "+j+"allRecipeId[j] = "+allRecipeId[j]);
-                    System.out.println("allRecipeNames[j] = "+allRecipeNames[j]);
-                    System.out.println("recipeindex ="+recipeindex );
-                    ++j;
-                    ++recipeindex;
-
-                }
-                else {
-                    continue;
-                }
+                allRecipeFoodIndex[count] = i;
+                recipefoodRid[i] = recipedata.getString("rid");
+                recipeImg[i] = recipedata.getString("imgName");
+                recipeSugar[i] = recipedata.getString("sugar");
+                recipeSalt[i] = recipedata.getString("salt");
+                recipeOil[i] = recipedata.getString("oil");
+                recipeName[i] = recipedata.getString("name");
+                recipeSteps[i] =recipedata.getString("step");
+//                detail_allRecipeFoodIndex[i] = j;
             }
-            recipe_fetch(allRecipeId);
+            recipe_fetch(recipefoodRid);
+
 
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-    public static void recipe_fetch(String[] allRecipeId1){
+    public static void recipe_fetch(String[] recipefoodRid1){
         JSONArray recipe = null;
         JSONObject recipedata = null;
         String tempRid = null;//現在進來的RID
@@ -137,37 +138,43 @@ public class AutoRecipeList {
         int z = 0;
         try{
             recipe = new JSONArray(result2);
-            for (int i = 0; i < 200; i++) {
+            for (int i = 0; i < recipe.length(); i++) {
                 recipedata = recipe.getJSONObject(i); //得到單筆食譜資料
-                for (int j = 0; j < allRecipeId1.length; j++) {
-                    if(recipedata.getString("rid").equals(allRecipeId1[j])){
+                for (int j = 0; j < recipefoodRid1.length; j++) {
+                    if(recipedata.getString("rid").equals(recipefoodRid1[j])){
                         recipefoodRid[count] = recipedata.getString("rid");
                         recipefoodDid[count] = recipedata.getString("did");
                         recipefoodName[count] = recipedata.getString("foodName");
                         recipefoodImg[count] = recipedata.getString("foodimgName");
-                        System.out.println("count = "+count+"  recipefoodName = "+recipefoodName[count]);
                         ++count;
                         break;
                     }
                 }
             }
-            for (int i = 0; i < 200; i++) {
+            for (int i = 0; i < recipefoodRid.length; i++) {
                 tempRid = recipefoodRid[i];
                 if(currentRid == null || currentRid.equals(tempRid)){
                     currentRid = tempRid;
                     allfoodName[z] = recipefoodName[i];
                     allfoodDid[z] = recipefoodDid[i];
                     allfoodImg[z] = recipefoodImg[i];
-
                     ++z;
                 }
                 else if(!Objects.equals(tempRid, currentRid)){
+                    allRecipeId[recipeindex] = recipefoodRid[i-1];
+                    allRecipeNames[recipeindex] = recipeName[i-1];
+                    allRecipeSteps[recipeindex] =recipeSteps[i-1];
+                    imgName[recipeindex] = recipeImg[i-1];
+                    allRecipeSugar[recipeindex] = recipeSugar[i-1];
+                    allRecipeSalt[recipeindex] = recipeSalt[i-1];
+                    allRecipeOil[recipeindex] = recipeOil[i-1];
+                    lastnum = i;
+                    ++recipeindex;
                     recipefood(allfoodName,allfoodDid,allfoodImg);
                     allfoodName = new String[800];
                     allfoodDid = new String[800];
                     allfoodImg = new String[800];
                     currentRid = tempRid;
-
                     z = 0;
                     allfoodName[z] = recipefoodName[i];
                     allfoodDid[z] = recipefoodDid[i];
@@ -175,6 +182,13 @@ public class AutoRecipeList {
                     ++z;
                 }
             }
+            allRecipeId[recipeindex] = recipefoodRid[lastnum];
+            allRecipeNames[recipeindex] = recipeName[lastnum];
+            allRecipeSteps[recipeindex] =recipeSteps[lastnum];
+            imgName[recipeindex] = recipeImg[lastnum];
+            allRecipeSugar[recipeindex] = recipeSugar[lastnum];
+            allRecipeSalt[recipeindex] = recipeSalt[lastnum];
+            allRecipeOil[recipeindex] = recipeOil[lastnum];
             recipefood(allfoodName,allfoodDid,allfoodImg);
             allfoodName = new String[800];
             allfoodDid = new String[800];
@@ -189,7 +203,6 @@ public class AutoRecipeList {
 
     public static void recipefood(String[] allfoodName, String[] allfoodDid, String[] allfoodImg){
 
-        int tag = 0;
 
         for(int y = 0; y<allfoodName.length; ++y){
             if(allfoodName[y] != null){
@@ -221,6 +234,7 @@ public class AutoRecipeList {
                 break;
             }
         }
+        MainActivity.auto_loop = 0;
         recipe_food_num++;
     }
 

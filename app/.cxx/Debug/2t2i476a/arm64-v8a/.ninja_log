@@ -22,3 +22,5 @@
 1558	3746	1661320876	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
 22	5476	1662387963	CMakeFiles/ncnnyolov5.dir/yolov5.cpp.o	fe15de1d223b7316
 5476	7855	1662387965	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e
+118	15784	1664721898	CMakeFiles/ncnnyolov5.dir/ndkcamera.cpp.o	bf701751b3b0e04e
+15784	22235	1664721904	/home/bingo/Public/NCNN/app/build/intermediates/cxx/Debug/2t2i476a/obj/arm64-v8a/libncnnyolov5.so	d1bd97591887e23e

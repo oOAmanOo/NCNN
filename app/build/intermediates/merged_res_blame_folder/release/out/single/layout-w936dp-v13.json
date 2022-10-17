@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.tencent.nanodetncnn.app-mergeReleaseResources-4:/layout-w936dp-v13/activity_login.xml",
+        "source": "com.tencent.nanodetncnn.app-main-6:/layout-w936dp/activity_login.xml"
+    }
+]

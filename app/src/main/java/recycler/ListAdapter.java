@@ -37,10 +37,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ListHolder holder, @SuppressLint("RecyclerView") int position) {
-//        holder.textView.setText(list[position]);
         holder.d1_textView.setText(list[position]);
-        holder.d1_imageView.setImageResource(R.drawable.pic1);
-//        holder.d1_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(imgName[position]),"drawable", context.getPackageName()));
+        holder.d1_imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(String.valueOf(Verify_Activity.confirm_class_imgName[position]),"drawable", context.getPackageName()));
         if(Verify_Activity.last_dialog != 0){
             if(Verify_Activity.class_list_checked[position] == String.valueOf(1)) {
                 holder.d1_textView.setTextColor(Color.parseColor("#F2F2F3"));
