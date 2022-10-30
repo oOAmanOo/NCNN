@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -73,8 +72,9 @@ public class FitnessRecipeList {  //    setText要用的
         recipe_food_num = 0;
         recipeindex = 0;
         lastnum = 0;
-        allfoodhistoryDid = new String[1000];
-        allfoodhistoryName = new String[1000];
+        //Don't new allfoodhistoryDid and allfoodhistoryName
+//        allfoodhistoryDid = new String[1000];
+//        allfoodhistoryName = new String[1000];
 
         JSONObject obj = null;
         JSONArray recipe = null;
@@ -188,7 +188,6 @@ public class FitnessRecipeList {  //    setText要用的
                 break;
             }
         }
-        System.out.println("allRecipeFood "+ Arrays.toString(allRecipeFood));
         MainActivity.fitness_loop = 0;
         recipe_food_num++;
 

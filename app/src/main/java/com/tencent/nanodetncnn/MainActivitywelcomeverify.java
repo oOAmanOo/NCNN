@@ -9,27 +9,31 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.gu.toolargetool.TooLargeTool;
-
 public class MainActivitywelcomeverify extends AppCompatActivity {
     public static String uid;
     public static String to;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TooLargeTool.startLogging(getApplication());
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         uid = bundle.getString("data_uid");
         to = bundle.getString("to");
         System.out.println(to);
-        MainActivity.profilereload_MainActivity.finish();
+        if(to.equals("MainActivityverify")){
+            Verify_Activity.verify_finish.finish();
+        }else if(!to.equals("MainActivity")){
+            MainActivity.profilereload_MainActivity.finish();
+        }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main_activitywelcome);
-        handler.sendEmptyMessageDelayed(0,500);
-
+        if(to.equals("MainActivityverify") || to.equals("MainActivityNotification")){
+            handler.sendEmptyMessageDelayed(0,2000);
+        }else{
+            handler.sendEmptyMessageDelayed(0,500);
+        }
     }
 
     private Handler handler = new Handler() {
@@ -44,7 +48,7 @@ public class MainActivitywelcomeverify extends AppCompatActivity {
             if(to.equals("ToDoList")){
                 ToDoList();
             }
-            if(to.equals("MainActivity")){
+            if(to.equals("MainActivity") || to.equals("MainActivityverify") || to.equals("MainActivityNotification")){
                 Main();
             }
             super.handleMessage(msg);

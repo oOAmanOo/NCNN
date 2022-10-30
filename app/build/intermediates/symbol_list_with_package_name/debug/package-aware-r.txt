@@ -2571,6 +2571,9 @@ drawable bamboo
 drawable banana
 drawable bell_pepper
 drawable bingo
+drawable bingo_blue
+drawable bingo_icon
+drawable bingo_white
 drawable bingologo
 drawable boneless
 drawable btn_checkbox_checked_mtrl
@@ -2584,6 +2587,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable carrot
 drawable checked
 drawable curry
+drawable cutlery
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2594,6 +2598,7 @@ drawable egg
 drawable eggplant
 drawable fitness
 drawable flour
+drawable fridge
 drawable garlic
 drawable general
 drawable ginger

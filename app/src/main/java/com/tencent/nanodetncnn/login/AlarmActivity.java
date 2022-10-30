@@ -51,6 +51,7 @@ public class AlarmActivity extends AppCompatActivity {
 
     public static String uid;
     public static Activity alarm;
+    public static String multi_result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +140,7 @@ public class AlarmActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //設定單次提醒
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+        AlarmReceiver_food.multi_result = multi_result;
 
     }
     private void setAlarm2() {
@@ -152,6 +154,7 @@ public class AlarmActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //設定單次提醒
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+        AlarmReceiver_recipe_mode.multi_result = multi_result;
     }
     private void setAlarm3() {
         Intent intent = new Intent(AlarmActivity.this, AlarmReceiver_recipe_fridge.class);
@@ -164,6 +167,7 @@ public class AlarmActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //設定單次提醒
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+        AlarmReceiver_recipe_fridge.multi_result = multi_result;
     }
     private static final Runnable multiThread = new Runnable(){
         public void run()
@@ -187,6 +191,7 @@ public class AlarmActivity extends AppCompatActivity {
                 }
                 inputStream.close();
                 result = box;
+                multi_result = result;
                 try {
                     JSONObject obj=null;
                     JSONArray table=null;

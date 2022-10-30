@@ -1,7 +1,5 @@
 package com.tencent.nanodetncnn.login;
 
-import static android.app.PendingIntent.FLAG_IMMUTABLE;
-
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,10 +8,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 
-import com.tencent.nanodetncnn.MainActivity;
+import com.tencent.nanodetncnn.MainActivitywelcomeverify;
 import com.tencent.nanodetncnn.R;
 
 import org.apache.http.HttpEntity;
@@ -49,17 +48,59 @@ public class AlarmReceiver_food extends BroadcastReceiver {
     public static String notify_text;
     public static int threadDone;
 
+    private String uid = null;
+    public static String multi_result = null;
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onReceive(Context context, Intent intent) {
-        System.out.println("receive_food");
-        Thread thread = new Thread(multiThread);
-        thread.start();
-        while(threadDone == 0){}
+        Bundle bundle = intent.getExtras();
+        uid = bundle.getString("data_uid");
+        try {
+            JSONObject obj = null;
+            JSONArray table = null;
+            JSONObject data = null;
+            notify_text = "冰箱存儲有";
+            int alert = 1;
+            int expire = 1;
+            obj=new JSONObject(multi_result);
+
+            table=obj.getJSONArray("alert_food");
+            if(table.length() == 0){
+                alert = 0;
+            }else{
+                notify_text += table.length() + "樣即將過期，";
+            }
+
+            table=obj.getJSONArray("expire_food");
+            if(table.length() == 0){
+                expire = 0;
+            }else{
+                notify_text += table.length() + "樣已過期，";
+            }
+
+            if(alert == 0 && expire == 0){
+                notify_text = "美好的一天~ 冰箱沒有任何即期過期食品";
+            }else if(alert == 0 && expire != 0){
+                notify_text += "請盡快清除";
+            }else if(alert != 0 && expire != 0){
+                notify_text += "請盡速處理";
+            }else{
+                notify_text += "請盡快清除";
+            }
+            threadDone = 1;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         Thread thread_upload = new Thread(upload);
         thread_upload.start();
-        Intent click_Intent = new Intent(context, MainActivity.class);
-        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,FLAG_IMMUTABLE);
+
+        Intent click_Intent = new Intent(context, MainActivitywelcomeverify.class);
+        Bundle bundl = new Bundle();
+        bundl.putString("data_uid", uid);
+        bundl.putString("to", "MainActivityNotification");
+        click_Intent.putExtras(bundl);
+        PendingIntent click_pendingIntent = PendingIntent.getActivity(context,0, click_Intent,PendingIntent.FLAG_UPDATE_CURRENT);
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel(NOTIFICATION_id, NOTIFICATION_NAME, importance);
         channel.setDescription(NOTIFICATION_description);
@@ -69,7 +110,7 @@ public class AlarmReceiver_food extends BroadcastReceiver {
         // 建立通知物件內容
         notification = new Notification.Builder(context)
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.bingo_white)
                 .setContentTitle("即期過期提醒")
                 .setContentText(notify_text)
                 .setContentIntent(click_pendingIntent)
@@ -84,71 +125,6 @@ public class AlarmReceiver_food extends BroadcastReceiver {
         // 發送通知
         notificationManager.notify(NOTIFICATION_ID, notification);
     }
-
-    private static final Runnable multiThread = new Runnable(){
-        public void run()
-        {
-            String result;
-            try {
-                //開始宣告HTTP連線需要的物件
-                HttpClient httpClient = new DefaultHttpClient();//宣告網路連線物件
-                HttpPost httpPost = new HttpPost("http://140.117.71.11/bingodb.php?uid="+ AlarmActivity.uid);//宣告使用post方法連線
-                HttpResponse httpResponse = httpClient.execute(httpPost);//宣告HTTP回應物件
-                HttpEntity httpEntity = httpResponse.getEntity();//宣告HTTP實體化物件
-                InputStream inputStream = httpEntity.getContent();//宣告輸入串流
-                //讀取輸入船劉並存到字串
-                //取得資料後可在此處理
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"),8);
-                String  box = "";
-                String line = null;
-                while ((line = bufferedReader.readLine()) != null){
-                    box += line ;
-                    box += "\n";
-                }
-                inputStream.close();
-                result = box;
-
-                try {
-                    JSONObject obj = null;
-                    JSONArray table = null;
-                    JSONObject data = null;
-                    notify_text = "冰箱存儲有";
-                    int alert = 1;
-                    int expire = 1;
-                    obj=new JSONObject(result);
-
-                    table=obj.getJSONArray("alert_food");
-                    if(table.length() == 0){
-                        alert = 0;
-                    }else{
-                        notify_text += table.length() + "樣即將過期，";
-                    }
-
-                    table=obj.getJSONArray("expire_food");
-                    if(table.length() == 0){
-                        expire = 0;
-                    }else{
-                        notify_text += table.length() + "樣已過期，";
-                    }
-
-                    if(alert == 0 && expire == 0){
-                        notify_text = "美好的一天~ 冰箱沒有任何即期過期食品";
-                    }else if(alert == 0 && expire != 0){
-                        notify_text += "請盡快清除";
-                    }else if(alert != 0 && expire != 0){
-                        notify_text += "請盡速處理";
-                    }else{
-                        notify_text += "請盡快清除";
-                    }
-                    threadDone = 1;
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }catch (Exception e){
-                result = e.toString();
-            }
-        }
-    };
 
     private static final Runnable upload = new Runnable() {
         public void run() {

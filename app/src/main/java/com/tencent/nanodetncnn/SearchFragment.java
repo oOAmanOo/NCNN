@@ -47,7 +47,6 @@ public class SearchFragment extends Fragment {
 //                text = "咖哩";
 
                 if(text.length() != 0){
-                    System.out.println("text  "+text);
                     MainActivity.allmode_loop = 1;
                     MainActivity.allmode_start = 1;
                     MainActivity.thread1_run();

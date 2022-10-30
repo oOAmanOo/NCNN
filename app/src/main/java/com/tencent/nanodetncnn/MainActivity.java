@@ -19,7 +19,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.gu.toolargetool.TooLargeTool;
 import com.tencent.nanodetncnn.databinding.ActivityMainBinding;
 import com.tencent.nanodetncnn.fridge.MyFridgeFragment;
 import com.tencent.nanodetncnn.fridge.fridge_editfridge_dfragment2;
@@ -69,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String[] editfridgedb_insertDate = new String[200];
     public static String[] editfridgedb_expireDate = new String[200];
     public static String[] editfridgedb_uid = new String[200];
+    public static String[] editfridgedb_uid_name = new String[200];
     public static int[] editfridgedb_amount = new int[200];
     public static String[] editfridgedb_memo = new String[200];
     public static int[] editfridgedb_editnum = new int[200];
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String info_editfridgedb_insertDate;
     public static String info_editfridgedb_expireDate;
     public static String info_editfridgedb_uid;
+    public static String info_editfridgedb_uid_name;
     public static String info_editfridgedb_amount;
     public static String info_editfridgedb_memo;
     public static int current_editdialog = 0;
@@ -102,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static volatile int relax_loop = 1;
     public static volatile int allmode_loop = 1;
     public static volatile int auto_loop = 1;
-
     private static int wait;
 
 
@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TooLargeTool.startLogging(getApplication());
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         profilereload_MainActivity = this;
@@ -222,6 +221,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         thread.interrupt();
 
         replaceFragment(new MyFridgeFragment());
+        scanBtn.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             thread_0.start();
             wait = 1;
             while (wait == 1){
-                System.out.println(1);
+                System.out.println();
             }
             thread_0.interrupt();
         }else if(current_editdialog == 1){
@@ -329,7 +329,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             thread_0.start();
             wait = 1;
             while (wait == 1){
-                System.out.println(1);
+                System.out.println();
             }
             thread_0.interrupt();
         }
@@ -365,7 +365,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             thread_0.start();
             wait = 1;
             while (wait == 1){
-                System.out.println(1);
+                System.out.println();
             }
             thread_0.interrupt();
         }else if(current_editdialog == 2){
@@ -388,7 +388,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             thread_0.start();
             wait = 1;
             while (wait == 1){
-                System.out.println(1);
+                System.out.println();
             }
             thread_0.interrupt();
         }
@@ -406,7 +406,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static void thread1_run(){
 
         try {
-            System.out.println("innn");
             if (normal_start == 1) {
                 Thread thread1 = new Thread(mutiThread1);
                 thread1.start();
@@ -454,7 +453,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 inputStream.close();
                 result = box;
-                System.out.println(result);
                 //John
                 ProfileFragment.user(result,uid);
                 EditFragment.user(result,uid);
@@ -477,22 +475,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                System.out.println(1);
 
                 //recipe
 //                AllRecipeList.result(result);
-//                AllRecipeList.getallfoodhistory(result);
-//                NormalRecipeList.getallfoodhistory(result);
-//                ManageRecipeList.getallfoodhistory(result);
-//                FitnessRecipeList.getallfoodhistory(result);
-//                RelaxRecipeList.getallfoodhistory(result);
-//                AutoRecipeList.getallfoodhistory(result);
-                // bee part
+                AllRecipeList.getallfoodhistory(result);
+                NormalRecipeList.getallfoodhistory(result);
+                ManageRecipeList.getallfoodhistory(result);
+                FitnessRecipeList.getallfoodhistory(result);
+                RelaxRecipeList.getallfoodhistory(result);
+                AutoRecipeList.getallfoodhistory(result);
 
+                // bee part
                 MyApplication.foodModelPraise.praiseFoodJsonString(result);
 
                 Log.d("ddd","====>"+result);
-                System.out.println(2);
                 //notify_user
                 try {
                     JSONObject obj = null;
@@ -513,11 +509,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                System.out.println(3);
-                System.out.println(4);
                 System.out.println(first_load == 1);
                 if(first_load == 1){
                     replaceFragment(new MyFridgeFragment());
+                    scanBtn_public.setVisibility(View.VISIBLE);
                     // alarm
                     try {
                         JSONObject obj = null;
@@ -527,7 +522,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         obj = new JSONObject(result);
                         table = obj.getJSONArray("user_data");
                         data = table.getJSONObject(0);
-                        System.out.println(31);
                         //recipe_mode
                         alarm_content = data.getString("alarm_recipe_mode");
                         if(alarm_content != "null"){
@@ -544,7 +538,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             AlarmDialog_recipe_mode.show(fm_p, "dialog_tag");
                             alarm[1] = 1;
                         }
-                        System.out.println(32);
                         //alarm_recipe_fridge
                         alarm_content = data.getString("alarm_recipe_fridge");
                         if(alarm_content != "null"){
@@ -561,7 +554,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             AlarmDialog_recipe_fridge.show(fm_p, "dialog_tag");
                             alarm[2] = 1;
                         }
-                        System.out.println(33);
                         //food
                         alarm_content = data.getString("alarm_food");
                         if(alarm_content != "null"){
@@ -586,6 +578,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     MainActivity.wait = 0;
                 }else{
                     replaceFragment(new MyFridgeFragment());
+                    scanBtn_public.setVisibility(View.VISIBLE);
                     MainActivity.wait = 0;
                 }
 
@@ -910,6 +903,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 editfridgedb_insertDate[editfridgedb_index] = data.getString("insertDate");
                                 editfridgedb_expireDate[editfridgedb_index] = data.getString("expireDate");
                                 editfridgedb_uid[editfridgedb_index] = data.getString("uid");
+                                editfridgedb_uid_name[editfridgedb_index] = data.getString("uname");
                                 editfridgedb_amount[editfridgedb_index] = Integer.parseInt(data.getString("amount"));
                                 if(data.getString("memo").equals("")){
                                     editfridgedb_memo[editfridgedb_index] = "#";

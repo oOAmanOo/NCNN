@@ -57,6 +57,7 @@ public class editfridge_ListAdapter_21 extends RecyclerView.Adapter<editfridge_L
         String[] editfridgedb_insertDate = new String[MainActivity.editfridge_count[position]];
         String[] editfridgedb_expireDate = new String[MainActivity.editfridge_count[position]];
         String[] editfridgedb_uid = new String[MainActivity.editfridge_count[position]];
+        String[] editfridgedb_uid_name = new String[MainActivity.editfridge_count[position]];
         int[] editfridgedb_amount = new int[MainActivity.editfridge_count[position]];
         String[] editfridgedb_memo = new String[MainActivity.editfridge_count[position]];
         int[] editfridgedb_editnum = new int[MainActivity.editfridge_count[position]];
@@ -71,11 +72,12 @@ public class editfridge_ListAdapter_21 extends RecyclerView.Adapter<editfridge_L
             editfridgedb_insertDate[i] = MainActivity.editfridgedb_insertDate[count_index + i];
             editfridgedb_expireDate[i] = MainActivity.editfridgedb_expireDate[count_index + i];
             editfridgedb_uid[i] = MainActivity.editfridgedb_uid[count_index + i];
+            editfridgedb_uid_name[i] = MainActivity.editfridgedb_uid_name[count_index + i];
             editfridgedb_amount[i] = MainActivity.editfridgedb_amount[count_index + i];
             editfridgedb_memo[i] = MainActivity.editfridgedb_memo[count_index + i];
             editfridgedb_editnum[i] = MainActivity.editfridgedb_editnum[count_index + i];
         }
-        editfridge_ListAdapter_22 editfridge_listAdapter_22 = new editfridge_ListAdapter_22(editfridge_dfragment2.nested_f, position, editfridge_name[position], editfridge_imgName[position], count_index, editfridgedb_fid, editfridgedb_did, editfridgedb_position, editfridgedb_insertDate, editfridgedb_expireDate, editfridgedb_uid, editfridgedb_amount, editfridgedb_memo, editfridgedb_editnum);
+        editfridge_ListAdapter_22 editfridge_listAdapter_22 = new editfridge_ListAdapter_22(editfridge_dfragment2.nested_f, position, editfridge_name[position], editfridge_imgName[position], count_index, editfridgedb_fid, editfridgedb_did, editfridgedb_position, editfridgedb_insertDate, editfridgedb_expireDate, editfridgedb_uid, editfridgedb_uid_name, editfridgedb_amount, editfridgedb_memo, editfridgedb_editnum);
         holder.ef21_recyclerview.setLayoutManager(new LinearLayoutManager(holder.ef21_recyclerview.getContext()));
         holder.ef21_recyclerview.setAdapter(editfridge_listAdapter_22);
     }

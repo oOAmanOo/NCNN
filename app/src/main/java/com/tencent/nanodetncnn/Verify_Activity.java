@@ -112,7 +112,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     private SurfaceView cameraView;
     public static String result;
     public static Activity verify_finish;
-    public static int loading_done = 0;
+    public static int uploading = 0;
 
     public Verify_Activity() throws IOException{
 
@@ -123,19 +123,20 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        super.onCreate(savedInstanceState);
+        uploading = 0;
         verify_finish = this;
-//        Bundle bundle = getIntent().getExtras();
-//        uid = bundle.getString("data_uid");
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("data_uid");
 
         getActionBar().hide();
         File file_test = new File("/data/data/com.tencent.nanodetncnn_tempmerge/result.txt");
         file_test.delete();
 
 
-         FragmentManager fm = getSupportFragmentManager() ;
 
-        super.onCreate(savedInstanceState);
-//        MainActivity.profilereload_MainActivity.finishAndRemoveTask();
+        FragmentManager fm = getSupportFragmentManager() ;
+
         setContentView(R.layout.verify_main);
         mContext = Verify_Activity.this;
         mContext2 = this;
@@ -143,6 +144,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
 
         Thread thread = new Thread(multiThread);
         thread.start();
+        uploading = 1;
         cameraView = (SurfaceView) findViewById(R.id.cameraview);
 //        outsidecamera.addView(cameraView);
         cameraView.getHolder().setFormat(PixelFormat.RGBA_8888);
@@ -198,10 +200,15 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
         ImageButton change_button_0 = (ImageButton) findViewById(R.id.change_button);
         change_button = change_button_0;
         change_button.setOnClickListener(view -> {
+            String to = null;
+            if(uploading != 0){
+                thread.interrupt();
+                uploading = 0;
+            }
             Intent intent = new Intent(Verify_Activity.this, MainActivitywelcomeverify.class);
             Bundle bundl = new Bundle();
             bundl.putString("data_uid", uid);
-            bundl.putString("to", "MainActivity");
+            bundl.putString("to", "MainActivityverify");
             intent.putExtras(bundl);   // put進去
             startActivity(intent);
         });
@@ -299,11 +306,9 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                 }
             }
         });
-        if(loading_done == 0){
-            loading_done = 1;
-        }
         reload();
     }
+
 
     public static void dialog_change(int current_dialog, int origin_dialog, int last_dialog, FragmentManager fm){
         final fragment1 fragment1 = new fragment1();
@@ -481,6 +486,7 @@ public class Verify_Activity extends FragmentActivity implements SurfaceHolder.C
                         e.printStackTrace();
                     }
                     Toast.makeText(mContext, return_val, Toast.LENGTH_SHORT).show();
+                    uploading = 2;
                     change_button.callOnClick();
                 }
             });

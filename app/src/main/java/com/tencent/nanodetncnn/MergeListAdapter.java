@@ -157,7 +157,6 @@ public class MergeListAdapter extends RecyclerView.Adapter<MergeListAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        System.out.println("Recipenames.size() "+Recipenames.size());
         return Recipenames.size();
     }
 

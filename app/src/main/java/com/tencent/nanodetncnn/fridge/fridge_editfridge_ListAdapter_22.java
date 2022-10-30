@@ -37,13 +37,14 @@ public class fridge_editfridge_ListAdapter_22 extends RecyclerView.Adapter<fridg
     String[] editfridgedb_insertDate;
     String[] editfridgedb_expireDate;
     String[] editfridgedb_uid;
+    String[] editfridgedb_uid_name;
     int[] editfridgedb_amount;
     String[] editfridgedb_memo;
     int[] editfridgedb_editnum;
 
     Context context;
 
-    public fridge_editfridge_ListAdapter_22(FragmentActivity context, int position, String editfridge_name, String editfridge_imgName, int count_index, String[] editfridgedb_fid, String[] editfridgedb_did, String[] editfridgedb_position, String[] editfridgedb_insertDate, String[] editfridgedb_expireDate, String[] editfridgedb_uid, int[] editfridgedb_amount, String[] editfridgedb_memo, int[] editfridgedb_editnum){
+    public fridge_editfridge_ListAdapter_22(FragmentActivity context, int position, String editfridge_name, String editfridge_imgName, int count_index, String[] editfridgedb_fid, String[] editfridgedb_did, String[] editfridgedb_position, String[] editfridgedb_insertDate, String[] editfridgedb_expireDate, String[] editfridgedb_uid, String[] editfridgedb_uid_name, int[] editfridgedb_amount, String[] editfridgedb_memo, int[] editfridgedb_editnum){
         this.editfridge_index21 = position;
         this.editfridge_name = editfridge_name;
         this.editfridge_imgName = editfridge_imgName;
@@ -54,6 +55,7 @@ public class fridge_editfridge_ListAdapter_22 extends RecyclerView.Adapter<fridg
         this.editfridgedb_insertDate = editfridgedb_insertDate;
         this.editfridgedb_expireDate = editfridgedb_expireDate;
         this.editfridgedb_uid = editfridgedb_uid;
+        this.editfridgedb_uid_name = editfridgedb_uid_name;
         this.editfridgedb_amount = editfridgedb_amount;
         this.editfridgedb_memo = editfridgedb_memo;
         this.editfridgedb_editnum = editfridgedb_editnum;
@@ -78,6 +80,7 @@ public class fridge_editfridge_ListAdapter_22 extends RecyclerView.Adapter<fridg
                 MainActivity.info_editfridgedb_insertDate = editfridgedb_insertDate[position];
                 MainActivity.info_editfridgedb_expireDate = editfridgedb_expireDate[position];
                 MainActivity.info_editfridgedb_uid = editfridgedb_uid[position];
+                MainActivity.info_editfridgedb_uid_name = editfridgedb_uid_name[position];
                 MainActivity.info_editfridgedb_amount = String.valueOf(editfridgedb_amount[position]);
                 MainActivity.info_editfridgedb_memo = editfridgedb_memo[position];
                 MainActivity.editfridgedialog_change(3, 2, MainActivity.fm_p);

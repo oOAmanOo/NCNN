@@ -36,7 +36,7 @@ public class editfridge_dfragment3 extends DialogFragment {
 
         ef3_imageView.setImageResource(getContext().getApplicationContext().getResources().getIdentifier(String.valueOf(MainActivity.info_editfridge_imgName),"drawable", getContext().getPackageName()));
         ef3_textView.setText(MainActivity.info_editfridge_name);
-        ef3_owner_textview.setText(MainActivity.info_editfridgedb_uid);
+        ef3_owner_textview.setText(MainActivity.info_editfridgedb_uid_name);
 
         if(MainActivity.info_editfridgedb_position.equals("0")){
             ef3_position_textview.setText("冷凍");

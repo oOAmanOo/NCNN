@@ -37,8 +37,6 @@ public class dialog_fragment extends DialogFragment {
         listImg = listImgs;
         allfoodName = allfoodNames;
         allfoodDid = allfoodDids;
-
-
         checkeditems = new boolean[listItem.length];
 
     }

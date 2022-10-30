@@ -155,7 +155,7 @@ public class ToDoListActivity extends AppCompatActivity {
                 else{
                     noTodoContent.setVisibility(View.VISIBLE);
                 }
-            }System.out.println("count = "+count);
+            }
         }
         catch (Exception e){
             e.printStackTrace();
@@ -165,7 +165,6 @@ public class ToDoListActivity extends AppCompatActivity {
 
     }
     public void throwtoadapter(){
-        System.out.println("adapter");
         recyclerView = findViewById(R.id.todolist_recylerview);
 
         ToDoListAdapter listAdapter = new ToDoListAdapter(getApplicationContext(),listname,listfood,listtime);
@@ -175,7 +174,6 @@ public class ToDoListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setAdapter(listAdapter);
-        System.out.println("setadapter");
 
         listAdapter.setOnItemClickedListener(new ToDoListAdapter.OnItemClickedListener() {
             @Override

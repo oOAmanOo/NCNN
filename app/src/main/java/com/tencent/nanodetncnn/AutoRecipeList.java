@@ -90,8 +90,9 @@ public class AutoRecipeList {
         recipe_food_num = 0;
         recipeindex = 0;
         lastnum = 0;
-        allfoodhistoryDid = new String[1000];
-        allfoodhistoryName = new String[1000];
+        //Don't new allfoodhistoryDid and allfoodhistoryName
+//        allfoodhistoryDid = new String[1000];
+//        allfoodhistoryName = new String[1000];
         count = 0;
         allRecipeFoodIndex = new int[800];
         result2 = result;
@@ -105,7 +106,6 @@ public class AutoRecipeList {
 
         try{
             recipe = new JSONArray(result);
-            System.out.println("recipe6  "+recipe);
             int j = 0;
             int z = 0;
             recipeindex = 0;
@@ -193,7 +193,7 @@ public class AutoRecipeList {
             allfoodName = new String[800];
             allfoodDid = new String[800];
             allfoodImg = new String[800];
-
+//            System.out.println("AutoRecipeList.allfoodhistoryName: "+ Arrays.toString(AutoRecipeList.allfoodhistoryName));
 
         }catch(Exception e){
             e.printStackTrace();
@@ -250,11 +250,14 @@ public class AutoRecipeList {
                 foodObj = foodArray.getJSONObject(i);
                 if(!foodObj.getString("amount").equals("0")){
                     allfoodhistoryDid[i] = foodObj.getString("did");
+                    System.out.println("did"+i+": "+allfoodhistoryDid[i]);
                     allfoodhistoryName[i] = foodObj.getString("name");
-
+                    System.out.println("name"+i+": "+allfoodhistoryName[i]);
+                    System.out.println(" ");
                 }
-
+//                System.out.println("AutoRecipeList.allfoodhistoryName: "+ Arrays.toString(AutoRecipeList.allfoodhistoryName));
             }
+            System.out.println("end");
 
         }catch (Exception e){
             e.printStackTrace();

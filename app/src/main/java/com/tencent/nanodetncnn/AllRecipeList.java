@@ -76,7 +76,6 @@ public class AllRecipeList {//    setText要用的
     public static int recipeindex = 0;
     public static int lastnum = 0;
 
-
     public static String[] allfoodhistoryDid = new String[1000];
     public static String[] allfoodhistoryName = new String[1000];
     public static String result1 = null;
@@ -122,8 +121,9 @@ public class AllRecipeList {//    setText要用的
         recipe_food_num = 0;
         recipeindex = 0;
         lastnum = 0;
-        allfoodhistoryDid = new String[1000];
-        allfoodhistoryName = new String[1000];
+        //Don't new allfoodhistoryDid and allfoodhistoryName
+//        allfoodhistoryDid = new String[1000];
+//        allfoodhistoryName = new String[1000];
 
         JSONObject obj = null;
         JSONArray recipe = null;

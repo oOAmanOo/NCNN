@@ -3,11 +3,11 @@
     android:descendantFocusability = "beforeDescendants">
 
     <item android:title="Fridge"
-        android:icon="@drawable/ic_baseline_crop_din_24"
+        android:icon="@drawable/fridge"
         android:descendantFocusability = "beforeDescendants"
         android:id="@+id/myFridge"/>
-    <item android:title="Search"
-        android:icon="@drawable/ic_baseline_search_24"
+    <item android:title="Recipe"
+        android:icon="@drawable/cutlery"
         android:descendantFocusability = "beforeDescendants"
         android:id="@+id/search"/>
     <item android:title="Profile"

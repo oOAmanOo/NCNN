@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -258,7 +259,7 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         }
 
         else if(currentMode == "autosearch"){
-
+            System.out.println("AutoRecipeList.allfoodhistoryName: "+ Arrays.toString(AutoRecipeList.allfoodhistoryName));
             merge_recipe_name_detail.setText(AutoRecipeList.allRecipeNames[position_now]);
             merge_recipe_food_detail.setText(AutoRecipeList.allRecipeFood[position_now]);
             merge_recipe_tag_detail.setText(AutoRecipeList.allRecipeSugar[position_now]+AutoRecipeList.allRecipeSalt[position_now]+AutoRecipeList.allRecipeOil[position_now]);
@@ -271,15 +272,14 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
             HistoryfoodName = AutoRecipeList.allfoodhistoryName;
             HistoryfoodDid = AutoRecipeList.allfoodhistoryDid;
 
+
             checkedItem = new boolean[listItem.length];
             AllfoodDid = new boolean[listItem.length];
             int num = 0;
-            System.out.println("listDid.length"+listDId.length);
             for(int i = 0; i < AutoRecipeList.allfoodhistoryName.length; ++i ){
                 for (int j = 0; j < listItem.length; j++) {
                     if(Objects.equals(listItem[j], AutoRecipeList.allfoodhistoryName[i])){
                         AllfoodDid[j] = true;
-
                         break;
                     }
                 }
@@ -295,7 +295,6 @@ public class MergeDetailFragment extends Fragment implements View.OnTouchListene
         evaluate_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("listDid.length"+listDId.length);
                 dialog_fragment.getlistItem(listItem,listDId,listImg, HistoryfoodName,AllfoodDid);
                 MainActivity.current_editdialog = 1;
                 MainActivity.editdialog_change(MainActivity.current_editdialog, MainActivity.origin_editdialog, MainActivity.fm_p);
